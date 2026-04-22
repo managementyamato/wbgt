@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>高所作業者管理ボード</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#0d1117;color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#1a237e,#283593);border-bottom:2px solid #f57f17}
+#site-name{font-size:3vh;font-weight:bold;color:#fff;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.6);font-variant-numeric:tabular-nums}
+#summary{display:flex;gap:0;flex-shrink:0;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.1)}
+.stat-box{flex:1;text-align:center;padding:.4em .3em;border-right:1px solid rgba(255,255,255,.08)}
+.stat-box:last-child{border-right:none}
+.stat-label{font-size:1.4vh;color:rgba(255,255,255,.4)}
+.stat-val{font-size:3.5vh;font-weight:bold}
+.stat-ok{color:#66bb6a}
+.stat-ng{color:#ef5350;animation:blink .8s step-end infinite}
+.stat-blue{color:#42a5f5}
+.stat-orange{color:#ffca28}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+#list-header{display:grid;grid-template-columns:3fr 2.5fr 2fr 3fr 2fr 2fr;gap:.3em;padding:.25em .5em;font-size:1.5vh;color:rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.1);flex-shrink:0}
+#worker-list{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.worker-row{display:grid;grid-template-columns:3fr 2.5fr 2fr 3fr 2fr 2fr;gap:.3em;padding:.35em .5em;border-bottom:1px solid rgba(255,255,255,.05);align-items:center}
+.worker-row.row-ng{background:rgba(239,83,80,.08)}
+.w-name{font-size:2vh;font-weight:bold;color:#fff}
+.w-co{font-size:1.4vh;color:rgba(255,255,255,.4);display:block;font-weight:normal}
+.w-place{font-size:1.8vh;color:rgba(255,255,255,.7)}
+.w-height{font-size:2.5vh;font-weight:bold;text-align:center;font-variant-numeric:tabular-nums}
+.w-m{font-size:1.4vh;color:rgba(255,255,255,.4)}
+.h-low{color:#66bb6a}
+.h-mid{color:#ffca28}
+.h-high{color:#ef5350}
+.w-time{font-size:1.6vh;color:rgba(255,255,255,.5);font-variant-numeric:tabular-nums}
+.w-safety{font-size:1.6vh;font-weight:bold;text-align:center;padding:.15em .3em;border-radius:.3em}
+.safety-ok{background:#1b5e20;color:#a5d6a7}
+.safety-ng{background:#b71c1c;color:#ef9a9a}
+.w-note{font-size:1.4vh;color:rgba(255,255,255,.35);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header">
+  <span id="site-name">高所作業者管理</span>
+  <span id="clock">--:--</span>
+</div>
+<div id="summary">
+  <div class="stat-box"><div class="stat-label">作業中</div><div class="stat-val stat-blue" id="total-count">-</div></div>
+  <div class="stat-box"><div class="stat-label">安全帯未確認</div><div class="stat-val stat-ok" id="ng-count">-</div></div>
+  <div class="stat-box"><div class="stat-label">10m以上</div><div class="stat-val stat-orange" id="high-count">-</div></div>
+</div>
+<div id="list-header">
+  <span>氏名</span><span>作業場所</span><span style="text-align:center">高さ</span><span>時間</span><span style="text-align:center">安全帯</span><span>備考</span>
+</div>
+<div id="worker-list"></div>
+</body></html>

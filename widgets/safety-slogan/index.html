@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safety Slogan</title>
+  <style>
+    @font-face {
+      font-family: "keifont";
+      src: url("fonts/keifont.ttf");
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    #slogan {
+      line-height: 1.3;
+      letter-spacing: 0.08em;
+      text-align: center;
+      padding: 0 5%;
+      transition: opacity 0.8s ease-in-out;
+    }
+    #counter {
+      line-height: 1;
+      margin-top: 0.3em;
+      opacity: 0.5;
+    }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="slogan"></div>
+  <div id="counter"></div>
+</body>
+</html>

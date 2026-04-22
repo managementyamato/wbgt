@@ -1,0 +1,117 @@
+{
+  "type": "dynamic",
+  "fields": [
+    "text",
+    "speed",
+    "fontFamily",
+    "fontColor",
+    "bgColor",
+    "bold",
+    "italic",
+    "shadow",
+    "gap"
+  ],
+  "meta": {
+    "description": "スクロールテキスト",
+    "details": "横スクロールのテキストティッカーウィジェット。"
+  },
+  "schema": {
+    "text": {
+      "title": "表示テキスト",
+      "type": "Text",
+      "help": "スクロール表示するテキストを入力してください。",
+      "options": [
+        { "val": "サンプルテキスト　Sample Text", "label": "サンプル" }
+      ]
+    },
+    "speed": {
+      "title": "スクロール速度",
+      "type": "Select",
+      "help": "スクロールの速さを選択してください。",
+      "options": [
+        { "val": "80",  "label": "とても遅い" },
+        { "val": "140", "label": "遅い" },
+        { "val": "220", "label": "普通" },
+        { "val": "320", "label": "速い" },
+        { "val": "450", "label": "とても速い" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "help": "使用するフォントを選択してください。",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" },
+        { "val": "Georgia, serif",      "label": "Georgia" },
+        { "val": "Impact, sans-serif",  "label": "Impact" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "help": "テキストの色を選択してください。",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#ff0000", "label": "赤" },
+        { "val": "#ffff00", "label": "黄" },
+        { "val": "#00ff00", "label": "緑" },
+        { "val": "#00bfff", "label": "水色" },
+        { "val": "#ff8c00", "label": "オレンジ" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "help": "背景の色を選択してください。",
+      "options": [
+        { "val": "#000000",     "label": "黒" },
+        { "val": "#ffffff",     "label": "白" },
+        { "val": "#1a1a2e",     "label": "ダークネイビー" },
+        { "val": "#0d0d0d",     "label": "ほぼ黒" },
+        { "val": "#003366",     "label": "ネイビー" },
+        { "val": "#1a472a",     "label": "ダークグリーン" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    },
+    "bold": {
+      "title": "太字",
+      "type": "Select",
+      "help": "テキストを太字にするか選択してください。",
+      "options": [
+        { "val": "0", "label": "なし" },
+        { "val": "1", "label": "太字にする" }
+      ]
+    },
+    "italic": {
+      "title": "斜体",
+      "type": "Select",
+      "help": "テキストを斜体にするか選択してください。",
+      "options": [
+        { "val": "0", "label": "なし" },
+        { "val": "1", "label": "斜体にする" }
+      ]
+    },
+    "shadow": {
+      "title": "テキストシャドウ",
+      "type": "Select",
+      "help": "テキストに影を付けるか選択してください。",
+      "options": [
+        { "val": "0", "label": "なし" },
+        { "val": "1", "label": "影を付ける" }
+      ]
+    },
+    "gap": {
+      "title": "テキスト間隔",
+      "type": "Select",
+      "help": "テキストとテキストの間のスペースを選択してください。",
+      "options": [
+        { "val": "40",  "label": "狭い" },
+        { "val": "80",  "label": "普通" },
+        { "val": "160", "label": "広い" },
+        { "val": "300", "label": "とても広い" }
+      ]
+    }
+  }
+}

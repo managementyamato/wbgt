@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>緊急連絡先ボード</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: keifont, sans-serif; background: #1a1a2e; color: #fff; }
+    body { display: flex; flex-direction: column; }
+
+    /* ヘッダー */
+    #header {
+      display: flex; align-items: center; justify-content: center;
+      padding: 0.5em 0.8em; flex-shrink: 0;
+      background: linear-gradient(90deg, #b71c1c, #c62828);
+      border-bottom: 3px solid #ef5350;
+    }
+    #header-icon { font-size: 4vh; margin-right: 0.3em; }
+    #board-title { font-size: 4vh; font-weight: bold; color: #fff; letter-spacing: 0.15em; }
+
+    /* メインエリア */
+    #main { flex: 1; display: flex; overflow: hidden; }
+
+    /* 連絡先リスト */
+    #contact-list {
+      flex: 1; display: flex; flex-direction: column;
+      gap: 0.4em; padding: 0.6em 0.8em; overflow: hidden;
+    }
+
+    .contact-item {
+      flex: 1; display: flex; flex-direction: column;
+      justify-content: center; padding: 0.4em 0.7em;
+      background: rgba(255,255,255,0.06);
+      border-radius: 6px; border-left: 5px solid rgba(255,255,255,0.3);
+    }
+    .contact-label  { font-size: 2.2vh; color: rgba(255,255,255,0.65); letter-spacing: 0.08em; }
+    .contact-number { font-size: 5.5vh; font-weight: bold; letter-spacing: 0.05em; line-height: 1.1;
+                      font-variant-numeric: tabular-nums; }
+
+    /* QRパネル */
+    #qr-panel {
+      width: 22%; flex-shrink: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 0.5em; background: rgba(255,255,255,0.04);
+      border-left: 1px solid rgba(255,255,255,0.1);
+      gap: 0.5em;
+    }
+    #qr-canvas { border-radius: 4px; max-width: 100%; max-height: 70%; }
+    #qr-label { font-size: 1.5vh; color: rgba(255,255,255,0.5); text-align: center; line-height: 1.4; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <span id="header-icon">🚨</span>
+    <span id="board-title">緊急連絡先</span>
+  </div>
+  <div id="main">
+    <div id="contact-list"></div>
+    <div id="qr-panel">
+      <canvas id="qr-canvas" width="140" height="140"></canvas>
+      <div id="qr-label">QRコードで詳細確認</div>
+    </div>
+  </div>
+</body>
+</html>

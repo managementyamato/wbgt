@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>暑さ指数（WBGT）</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%; height: 100%; overflow: hidden;
+      font-family: keifont, sans-serif;
+      transition: background-color 0.8s ease;
+    }
+    body { display: flex; flex-direction: column; }
+
+    /* ── ヘッダー ── */
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.4em 0.8em; flex-shrink: 0;
+      background: rgba(0,0,0,0.25);
+      height: 10vh;
+    }
+    #location { font-size: 3.5vh; font-weight: bold; color: #fff; letter-spacing: 0.05em; }
+    #datetime { font-size: 2.2vh; color: rgba(255,255,255,0.7); text-align: right; line-height: 1.5; }
+
+    /* ── メイン：数値表示 ── */
+    #main {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 0.2em;
+    }
+    #wbgt-label { font-size: 2.5vh; color: rgba(255,255,255,0.8); letter-spacing: 0.15em; margin-bottom: 0.1em; }
+    #wbgt-value {
+      font-size: 28vh; font-weight: bold; color: #fff; line-height: 0.85;
+      letter-spacing: -0.02em;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    #wbgt-unit  { font-size: 4vh; color: rgba(255,255,255,0.7); margin-top: 0.2em; }
+
+    /* ── リスクレベルバー ── */
+    #level-bar {
+      flex-shrink: 0; height: 12vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.3); gap: 0.3em;
+      padding: 0.4em 1em;
+    }
+    #level-name {
+      font-size: 4.5vh; font-weight: bold; color: #fff;
+      letter-spacing: 0.1em;
+    }
+    #level-action { font-size: 2.2vh; color: rgba(255,255,255,0.9); }
+
+    /* ── フッター：5段階ゲージ ── */
+    #gauge {
+      flex-shrink: 0; height: 7vh;
+      display: flex; align-items: stretch;
+    }
+    .gauge-seg {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-size: 1.6vh; font-weight: bold; color: rgba(0,0,0,0.7);
+      cursor: default; transition: opacity 0.3s;
+      gap: 0.1em;
+    }
+    .gauge-seg.active { color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+    .gauge-seg:not(.active) { opacity: 0.45; }
+    .gauge-seg .g-temp { font-size: 1.4vh; }
+
+    /* レベルカラー */
+    .seg-safe     { background: #1565c0; }
+    .seg-caution  { background: #558b2f; }
+    .seg-warning  { background: #f9a825; }
+    .seg-danger   { background: #e65100; }
+    .seg-stop     { background: #b71c1c; }
+
+    /* 背景テーマ */
+    body.theme-safe     { background: linear-gradient(160deg, #1565c0 0%, #0d47a1 100%); }
+    body.theme-caution  { background: linear-gradient(160deg, #2e7d32 0%, #1b5e20 100%); }
+    body.theme-warning  { background: linear-gradient(160deg, #f57f17 0%, #e65100 100%); }
+    body.theme-danger   { background: linear-gradient(160deg, #bf360c 0%, #8d1c00 100%); }
+    body.theme-stop     { background: linear-gradient(160deg, #b71c1c 0%, #7f0000 100%); }
+    body.theme-none     { background: #1a1a2e; }
+
+    @keyframes danger-pulse {
+      0%,100% { opacity: 1; }
+      50%     { opacity: 0.6; }
+    }
+    body.theme-stop #wbgt-value { animation: danger-pulse 1.2s ease-in-out infinite; }
+
+    #no-data {
+      font-size: 3vh; color: rgba(255,255,255,0.4);
+      text-align: center; padding: 2em;
+    }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body class="theme-none">
+  <div id="header">
+    <div id="location">--</div>
+    <div id="datetime"></div>
+  </div>
+  <div id="main">
+    <div id="wbgt-label">暑さ指数（WBGT）</div>
+    <div id="wbgt-value">--</div>
+    <div id="wbgt-unit">°C</div>
+  </div>
+  <div id="level-bar">
+    <div id="level-name">-- </div>
+    <div id="level-action">データを設定してください</div>
+  </div>
+  <div id="gauge">
+    <div class="gauge-seg seg-safe"    data-level="safe">    <span>ほぼ安全</span><span class="g-temp">〜21</span></div>
+    <div class="gauge-seg seg-caution" data-level="caution"> <span>注意</span>    <span class="g-temp">21〜25</span></div>
+    <div class="gauge-seg seg-warning" data-level="warning"> <span>警戒</span>    <span class="g-temp">25〜28</span></div>
+    <div class="gauge-seg seg-danger"  data-level="danger">  <span>厳重警戒</span><span class="g-temp">28〜31</span></div>
+    <div class="gauge-seg seg-stop"    data-level="stop">    <span>運動中止</span><span class="g-temp">31〜</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "type": "dynamic",
+  "fields": ["boardTitle", "dataUrl", "refreshMin", "fontFamily"],
+  "meta": {
+    "description": "点呼・出欠ボード",
+    "details": "朝礼後の点呼結果を出勤/欠勤/遅刻/早退で色分け一覧表示。出勤人数サマリーも大きく表示。GoogleスプレッドシートCSV連携。建設・工場・物流向け。"
+  },
+  "schema": {
+    "boardTitle": { "title": "タイトル", "type": "Text", "options": [{ "val": "朝礼点呼", "label": "デフォルト" }] },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "列順：名前, 所属, ステータス(present/absent/late/leave), 備考",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "refreshMin": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [{ "val": "1", "label": "1分" }, { "val": "3", "label": "3分" }, { "val": "5", "label": "5分" }]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }]
+    }
+  }
+}

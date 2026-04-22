@@ -1,0 +1,49 @@
+{
+  "type": "dynamic",
+  "fields": ["siteTitle", "dataUrl", "formUrl", "qrLabel", "refreshMin", "fontFamily"],
+  "meta": {
+    "description": "KY活動ボード",
+    "details": "本日の危険予知（KY）活動の内容と対策を朝礼後にサイネージ掲示。GoogleフォームでKY結果を投稿→QRコード読み取りで投稿→即時反映。重大/注意/軽微の3段階色分け。"
+  },
+  "schema": {
+    "siteTitle": {
+      "title": "ボードタイトル",
+      "type": "Text",
+      "options": [{ "val": "本日のKY活動", "label": "デフォルト" }]
+    },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "GoogleスプレッドシートのCSV公開URL。列順：日付, リスク内容, 対策, レベル(high/medium/low), 担当班",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "formUrl": {
+      "title": "Google FormのURL",
+      "type": "Text",
+      "help": "KY結果投稿フォームのURL。QRコードとして表示されます。空欄でQRなし。",
+      "options": [{ "val": "", "label": "なし" }]
+    },
+    "qrLabel": {
+      "title": "QRコード説明文",
+      "type": "Text",
+      "options": [{ "val": "KY結果を投稿", "label": "デフォルト" }]
+    },
+    "refreshMin": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [
+        { "val": "1",  "label": "1分" },
+        { "val": "5",  "label": "5分" },
+        { "val": "10", "label": "10分" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" }
+      ]
+    }
+  }
+}

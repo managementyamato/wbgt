@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>スタッフ対応状況</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #111; font-family: keifont, sans-serif; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.3em 0.8em; height: 9vh; flex-shrink: 0;
+      background: rgba(0,0,0,0.3); border-bottom: 3px solid #00796b;
+    }
+    #title { font-size: 3.8vh; font-weight: bold; color: #fff; letter-spacing: 0.05em; }
+    #clock { font-size: 2.8vh; color: #aaa; }
+
+    #grid {
+      flex: 1; display: grid; gap: 0.5em; padding: 0.5em;
+      overflow: hidden; align-content: start;
+    }
+
+    .card {
+      display: flex; align-items: center;
+      padding: 0.5em 0.8em; border-radius: 8px;
+      background: rgba(255,255,255,0.05); gap: 0.8em;
+      border-left: 6px solid #555;
+    }
+    .card.free    { border-left-color: #00c853; }
+    .card.busy    { border-left-color: #e53935; background: rgba(229,57,53,0.07); }
+    .card.away    { border-left-color: #ffa000; }
+    .card.offline { border-left-color: #444; opacity: 0.5; }
+
+    .dot {
+      width: 2.8vh; height: 2.8vh; border-radius: 50%; flex-shrink: 0;
+    }
+    .free    .dot { background: #00c853; box-shadow: 0 0 8px #00c853; }
+    .busy    .dot { background: #e53935; box-shadow: 0 0 8px #e53935; animation: blink 1.5s ease-in-out infinite; }
+    .away    .dot { background: #ffa000; }
+    .offline .dot { background: #444; }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .card-name { font-size: 3.2vh; font-weight: bold; color: #fff; flex: 1; }
+    .card-role { font-size: 2vh; color: #888; }
+
+    .card-right { text-align: right; flex-shrink: 0; }
+    .card-status { font-size: 2.8vh; font-weight: bold; }
+    .free    .card-status { color: #00c853; }
+    .busy    .card-status { color: #ff6659; }
+    .away    .card-status { color: #ffa000; }
+    .offline .card-status { color: #666; }
+    .card-eta { font-size: 2vh; color: #888; margin-top: 0.1em; }
+
+    #footer {
+      height: 5vh; flex-shrink: 0;
+      display: flex; align-items: center; gap: 1.5em;
+      padding: 0 0.8em; background: rgba(0,0,0,0.2);
+      border-top: 1px solid #222;
+    }
+    .leg { font-size: 1.9vh; color: #aaa; display: flex; align-items: center; gap: 0.3em; }
+    .leg-dot { width: 1.2vh; height: 1.2vh; border-radius: 50%; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="title">スタッフ対応状況</div>
+    <div id="clock"></div>
+  </div>
+  <div id="grid"></div>
+  <div id="footer">
+    <div class="leg"><div class="leg-dot" style="background:#00c853"></div>対応可</div>
+    <div class="leg"><div class="leg-dot" style="background:#e53935"></div>対応中</div>
+    <div class="leg"><div class="leg-dot" style="background:#ffa000"></div>離席中</div>
+    <div class="leg"><div class="leg-dot" style="background:#444"></div>不在</div>
+  </div>
+</body>
+</html>

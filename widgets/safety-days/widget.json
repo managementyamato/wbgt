@@ -1,0 +1,40 @@
+{
+  "type": "dynamic",
+  "fields": ["siteTitle", "sinceDate", "noteText", "fontFamily"],
+  "meta": {
+    "description": "無災害記録カウンター",
+    "details": "最終災害発生日から今日までの無災害継続日数を大きく表示。100日・365日・1000日などの節目で色が変わりお祝いメッセージを表示。建設・製造・工場現場の安全掲示に。"
+  },
+  "schema": {
+    "siteTitle": {
+      "title": "現場・会社名",
+      "type": "Text",
+      "help": "現場名や会社名を入力してください。",
+      "options": [{ "val": "第一建設現場", "label": "サンプル" }]
+    },
+    "sinceDate": {
+      "title": "無災害開始日",
+      "type": "Text",
+      "help": "最後に災害が発生した翌日（YYYY-MM-DD形式）を入力してください。例：2022-01-15",
+      "options": [{ "val": "2022-01-15", "label": "サンプル" }]
+    },
+    "noteText": {
+      "title": "スローガン",
+      "type": "Text",
+      "help": "下部に表示する安全スローガンを入力してください。",
+      "options": [
+        { "val": "みんなで続けよう、ゼロ災害！", "label": "ゼロ災害" },
+        { "val": "安全第一、品質第二、生産第三", "label": "安全第一" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" },
+        { "val": "Impact, sans-serif",  "label": "Impact" }
+      ]
+    }
+  }
+}

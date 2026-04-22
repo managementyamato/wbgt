@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>診察室・会議室ステータス</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: keifont, sans-serif; background: #0a1628; color: #fff; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.4em 0.8em; flex-shrink: 0;
+      background: linear-gradient(90deg, #1a237e, #283593);
+      border-bottom: 2px solid #5c6bc0;
+    }
+    #facility-name { font-size: 3vh; font-weight: bold; color: #fff; letter-spacing: 0.1em; }
+    #header-right  { display: flex; align-items: center; gap: 1em; }
+    #avail-summary { font-size: 2.2vh; color: rgba(255,255,255,0.7); }
+    #avail-summary span { color: #66bb6a; font-weight: bold; font-size: 2.8vh; }
+    #clock { font-size: 2.5vh; color: rgba(255,255,255,0.65); font-variant-numeric: tabular-nums; }
+
+    #room-grid {
+      flex: 1; overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(20vh, 1fr));
+      gap: 0.6em; padding: 0.7em;
+      align-content: start;
+    }
+
+    .room-card {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 0.6em 0.4em; border-radius: 10px; gap: 0.2em;
+      border: 2px solid rgba(255,255,255,0.1);
+      min-height: 14vh;
+    }
+    .room-card.status-available { background: rgba(102,187,106,0.15); border-color: rgba(102,187,106,0.5); }
+    .room-card.status-busy      { background: rgba(239,83,80,0.15);   border-color: rgba(239,83,80,0.5); }
+    .room-card.status-cleaning  { background: rgba(255,202,40,0.1);   border-color: rgba(255,202,40,0.4); }
+    .room-card.status-reserved  { background: rgba(66,165,245,0.1);   border-color: rgba(66,165,245,0.35); }
+
+    .room-name   { font-size: 2vh; color: rgba(255,255,255,0.7); text-align: center; }
+    .room-icon   { font-size: 5vh; line-height: 1; }
+    .room-label  { font-size: 2.5vh; font-weight: bold; color: #fff; }
+    .room-person { font-size: 1.7vh; color: rgba(255,255,255,0.6); }
+    .room-end    { font-size: 1.7vh; color: rgba(255,255,255,0.5); }
+    .room-note   { font-size: 1.5vh; color: rgba(255,255,255,0.4); text-align: center; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <span id="facility-name">室内状況</span>
+    <div id="header-right">
+      <div id="avail-summary">空き <span id="count-available">--</span>/<span id="count-total">--</span></div>
+      <span id="clock">--:--</span>
+    </div>
+  </div>
+  <div id="room-grid"></div>
+</body>
+</html>

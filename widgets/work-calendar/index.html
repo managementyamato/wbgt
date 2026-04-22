@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>稼働日・休日カレンダー</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#0d1117;color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#1a1a1a,#2d2d2d);border-bottom:2px solid #546e7a}
+#cal-title{font-size:3vh;font-weight:bold;color:#b0bec5;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.6)}
+#month-bar{display:flex;align-items:center;justify-content:space-between;padding:.3em .8em;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1)}
+#month-label{font-size:2.5vh;font-weight:bold;color:#fff}
+.stat-pills{display:flex;gap:.5em}
+.pill{font-size:1.6vh;padding:.2em .6em;border-radius:1em}
+.pill-work{background:#1565c0;color:#90caf9}
+.pill-holiday{background:#37474f;color:#90a4ae}
+#cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:rgba(255,255,255,.07);flex:1;padding:0;overflow:hidden}
+.cal-hdr{background:#1a1a2e;text-align:center;padding:.3em;font-size:1.6vh;color:rgba(255,255,255,.5)}
+.cal-hdr.sun{color:#ef9a9a}
+.cal-hdr.sat{color:#90caf9}
+.cal-cell{background:#0d1117;padding:.3em;display:flex;flex-direction:column;align-items:center;gap:.1em;overflow:hidden}
+.cal-cell.empty{background:transparent}
+.cal-cell.today .c-day{background:#1565c0;color:#fff;border-radius:50%;width:2.2em;height:2.2em;display:flex;align-items:center;justify-content:center}
+.cal-cell.sun .c-day{color:#ef5350}
+.cal-cell.sat .c-day{color:#42a5f5}
+.cal-cell.t-holiday{background:rgba(100,100,100,.15)}
+.cal-cell.t-holiday .c-day{color:rgba(255,255,255,.35)}
+.cal-cell.t-special{background:rgba(255,167,38,.08)}
+.cal-cell.t-half{background:rgba(66,165,245,.06)}
+.c-day{font-size:1.8vh;font-variant-numeric:tabular-nums;line-height:2}
+.c-label{font-size:1.1vh;color:#ffca28;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;text-align:center}
+.t-special .c-label{color:#ffa726}
+#events-block{flex-shrink:0;border-top:1px solid rgba(255,255,255,.1);padding:.3em .5em}
+.events-title{font-size:1.5vh;color:rgba(255,255,255,.4);margin-bottom:.2em}
+#event-list{display:flex;flex-wrap:wrap;gap:.3em}
+.event-row{display:flex;align-items:center;gap:.3em}
+.ev-date{font-size:1.5vh;color:rgba(255,255,255,.4);font-variant-numeric:tabular-nums}
+.ev-label{font-size:1.6vh;color:#ffca28;background:rgba(255,202,40,.1);padding:.1em .4em;border-radius:.3em}
+.ev-none{font-size:1.5vh;color:rgba(255,255,255,.25)}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header">
+  <span id="cal-title">稼働日カレンダー</span>
+  <span id="clock">--:--</span>
+</div>
+<div id="month-bar">
+  <span id="month-label">-年-月</span>
+  <div class="stat-pills">
+    <span class="pill pill-work">稼働 <b id="work-days">-</b></span>
+    <span class="pill pill-holiday">休日 <b id="holiday-days">-</b></span>
+  </div>
+</div>
+<div id="cal-grid"></div>
+<div id="events-block">
+  <div class="events-title">今後の予定</div>
+  <div id="event-list"></div>
+</div>
+</body></html>

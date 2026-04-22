@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>資格・免許期限管理</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: keifont, sans-serif; background: #0d1117; color: #fff; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.4em 0.8em; flex-shrink: 0;
+      background: linear-gradient(90deg, #4a148c, #6a1b9a);
+      border-bottom: 2px solid #ab47bc;
+    }
+    #board-title { font-size: 3vh; font-weight: bold; color: #fff; letter-spacing: 0.08em; }
+    #today { font-size: 1.9vh; color: rgba(255,255,255,0.6); }
+
+    #summary {
+      display: flex; flex-shrink: 0;
+      background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .sum-box { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 0.4em 0; border-right: 1px solid rgba(255,255,255,0.07); }
+    .sum-box:last-child { border-right: none; }
+    .sum-label { font-size: 1.6vh; color: rgba(255,255,255,0.5); }
+    .sum-num   { font-size: 4.5vh; font-weight: bold; line-height: 1.1; }
+    .sum-unit  { font-size: 1.4vh; color: rgba(255,255,255,0.4); }
+    .sum-expired .sum-num { color: #ef5350; }
+    .sum-danger  .sum-num { color: #ff8a65; }
+    .sum-warn    .sum-num { color: #ffca28; }
+
+    .banner { flex-shrink: 0; padding: 0.4em 0.8em; font-size: 2.2vh; font-weight: bold; text-align: center; letter-spacing: 0.05em; }
+    .banner-expired { background: rgba(183,28,28,0.6); color: #ffcdd2; animation: pulse 1.2s ease-in-out infinite alternate; }
+    .banner-danger  { background: rgba(191,54,12,0.5); color: #ffccbc; }
+    @keyframes pulse { from { opacity: 1; } to { opacity: 0.7; } }
+
+    #license-list {
+      flex: 1; overflow: hidden; display: flex; flex-direction: column;
+      gap: 0.3em; padding: 0.4em 0.7em;
+    }
+    .license-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.35em 0.6em; border-radius: 5px; border-left: 4px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.04); flex-shrink: 0;
+    }
+    .level-expired { border-left-color: #ef5350; background: rgba(183,28,28,0.12); }
+    .level-danger  { border-left-color: #ff8a65; background: rgba(191,54,12,0.1); }
+    .level-warn    { border-left-color: #ffca28; background: rgba(245,127,23,0.08); }
+    .level-ok      { border-left-color: rgba(255,255,255,0.1); }
+
+    .li-info { flex: 1; display: flex; align-items: baseline; gap: 0.5em; min-width: 0; overflow: hidden; }
+    .li-name    { font-size: 2.2vh; font-weight: bold; color: #fff; white-space: nowrap; }
+    .li-company { font-size: 1.6vh; color: rgba(255,255,255,0.45); white-space: nowrap; }
+    .li-license { font-size: 1.8vh; color: rgba(255,255,255,0.6); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .li-expiry { display: flex; flex-direction: column; align-items: flex-end; flex-shrink: 0; gap: 0.05em; }
+    .li-date { font-size: 1.7vh; color: rgba(255,255,255,0.5); font-variant-numeric: tabular-nums; }
+    .li-days { font-size: 2vh; font-weight: bold; }
+    .level-expired .li-days { color: #ef9a9a; }
+    .level-danger  .li-days { color: #ffab91; }
+    .level-warn    .li-days { color: #fff9c4; }
+    .level-ok      .li-days { color: rgba(255,255,255,0.5); }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <span id="board-title">資格・免許 期限管理</span>
+    <span id="today"></span>
+  </div>
+  <div id="summary">
+    <div class="sum-box sum-expired">
+      <span class="sum-label">期限切れ</span>
+      <span id="count-expired" class="sum-num">--</span>
+      <span class="sum-unit">件</span>
+    </div>
+    <div class="sum-box sum-danger">
+      <span class="sum-label">30日以内</span>
+      <span id="count-danger" class="sum-num">--</span>
+      <span class="sum-unit">件</span>
+    </div>
+    <div class="sum-box sum-warn">
+      <span class="sum-label">90日以内</span>
+      <span id="count-warn" class="sum-num">--</span>
+      <span class="sum-unit">件</span>
+    </div>
+  </div>
+  <div id="alert-banner" class="banner" style="display:none"></div>
+  <div id="license-list"></div>
+</body>
+</html>

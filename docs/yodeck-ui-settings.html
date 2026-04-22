@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Yodeck UI設定 一覧</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', 'Noto Sans JP', sans-serif;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 1.4rem;
+      color: #e94560;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+    .subtitle {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: #0f3460;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-header h2 { font-size: 1rem; }
+    .card-header span { font-size: 0.8rem; color: #94a3b8; }
+    .copy-btn {
+      background: #e94560;
+      color: #fff;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover { background: #c73652; }
+    .copy-btn.copied { background: #22c55e; }
+    pre {
+      padding: 16px;
+      font-size: 0.78rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      color: #cbd5e1;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .how-to {
+      background: rgba(249,115,22,0.1);
+      border: 1px solid rgba(249,115,22,0.3);
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 28px;
+      font-size: 0.85rem;
+      color: #fdba74;
+      line-height: 1.8;
+    }
+    .how-to strong { color: #fb923c; }
+  </style>
+</head>
+<body>
+  <h1>Yodeck UI設定 一覧</h1>
+  <p class="subtitle">Yodeck管理画面の「UI設定」エディタに貼り付けるJSON設定ファイル</p>
+
+  <div class="how-to">
+    <strong>使い方：</strong><br>
+    1. Yodeck管理画面 → コンテンツ → アプリ（ウィジェット）→ 対象ウィジェットを開く<br>
+    2. ZIPファイルをアップロード済みであることを確認<br>
+    3. 「UI設定」エディタを開き、下の該当ウィジェットの「コピー」ボタンを押す<br>
+    4. エディタに貼り付けて保存
+  </div>
+
+  <div id="cards"></div>
+
+  <script>
+    var widgets = [
+      {
+        id: 'digital-clock',
+        name: 'デジタル時計',
+        zip: 'build/digital-clock.zip'
+      },
+      {
+        id: 'analog-clock',
+        name: 'アナログ時計',
+        zip: 'build/analog-clock.zip'
+      },
+      {
+        id: 'scroll-text',
+        name: 'スクロールテキスト',
+        zip: 'build/scroll-text.zip'
+      },
+      {
+        id: 'wbgt',
+        name: '暑さ指数（WBGT）',
+        zip: 'build/wbgt.zip'
+      },
+      {
+        id: 'wbgt-auto',
+        name: '暑さ指数（WBGT）自動取得',
+        zip: 'build/wbgt-auto.zip'
+      },
+      {
+        id: 'weather-forecast',
+        name: '天気予報',
+        zip: 'build/weather-forecast.zip'
+      },
+      {
+        id: 'musaigai',
+        name: '無災害記録表',
+        zip: 'build/musaigai.zip'
+      }
+    ];
+
+    var container = document.getElementById('cards');
+
+    widgets.forEach(function(w) {
+      fetch('../yodeck-ui-settings/' + w.id + '.json')
+        .then(function(r) {
+          if (!r.ok) throw new Error('not found');
+          return r.json();
+        })
+        .then(function(json) {
+          var text = JSON.stringify(json, null, 2);
+          var card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML =
+            '<div class="card-header">' +
+              '<div><h2>' + w.name + '</h2><span>' + w.zip + '</span></div>' +
+              '<button class="copy-btn" data-id="' + w.id + '">コピー</button>' +
+            '</div>' +
+            '<pre id="json-' + w.id + '">' + escapeHtml(text) + '</pre>';
+          container.appendChild(card);
+
+          card.querySelector('.copy-btn').addEventListener('click', function() {
+            navigator.clipboard.writeText(text).then(function() {
+              var btn = card.querySelector('.copy-btn');
+              btn.textContent = 'コピー済み ✓';
+              btn.classList.add('copied');
+              setTimeout(function() {
+                btn.textContent = 'コピー';
+                btn.classList.remove('copied');
+              }, 2000);
+            });
+          });
+        })
+        .catch(function() {
+          // UI設定ファイルがないウィジェットはスキップ
+        });
+    });
+
+    function escapeHtml(str) {
+      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+  </script>
+</body>
+</html>

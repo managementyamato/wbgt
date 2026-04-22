@@ -1,0 +1,23 @@
+# ビルド成果物（./build.sh で再生成可能）
+build/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+
+# Local temp
+*.log
+/tmp/

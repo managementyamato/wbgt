@@ -1,0 +1,90 @@
+{
+  "type": "dynamic",
+  "fields": [
+    "style",
+    "showSeconds",
+    "showNumbers",
+    "faceColor",
+    "handColor",
+    "secondHandColor",
+    "bgColor"
+  ],
+  "meta": {
+    "description": "アナログ時計",
+    "details": "スムーズな秒針が動くアナログ時計ウィジェット。任意のゾーンサイズに自動対応。"
+  },
+  "schema": {
+    "style": {
+      "title": "スタイル",
+      "type": "Select",
+      "help": "時計のデザインを選択してください。",
+      "options": [
+        { "val": "classic", "label": "クラシック（目盛りあり）" },
+        { "val": "minimal", "label": "シンプル" }
+      ]
+    },
+    "showSeconds": {
+      "title": "秒針",
+      "type": "Select",
+      "help": "秒針を表示するか選択してください。",
+      "options": [
+        { "val": "1", "label": "表示する" },
+        { "val": "0", "label": "非表示" }
+      ]
+    },
+    "showNumbers": {
+      "title": "数字表示",
+      "type": "Select",
+      "help": "12・3・6・9の数字を表示するか選択してください。",
+      "options": [
+        { "val": "1", "label": "表示する" },
+        { "val": "0", "label": "非表示" }
+      ]
+    },
+    "faceColor": {
+      "title": "文字盤色",
+      "type": "Select",
+      "help": "時計の文字盤の色を選択してください。",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#1a1a2e", "label": "ダークネイビー" },
+        { "val": "#003366", "label": "ネイビー" },
+        { "val": "#f5f0e8", "label": "クリーム" }
+      ]
+    },
+    "handColor": {
+      "title": "針の色（時・分）",
+      "type": "Select",
+      "help": "時針・分針の色を選択してください。",
+      "options": [
+        { "val": "#000000", "label": "黒" },
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#003366", "label": "ネイビー" },
+        { "val": "#333333", "label": "ダークグレー" }
+      ]
+    },
+    "secondHandColor": {
+      "title": "秒針の色",
+      "type": "Select",
+      "help": "秒針の色を選択してください。",
+      "options": [
+        { "val": "#ff0000", "label": "赤" },
+        { "val": "#ff8c00", "label": "オレンジ" },
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#000000", "label": "黒" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "help": "背景の色を選択してください。",
+      "options": [
+        { "val": "#000000",     "label": "黒" },
+        { "val": "#ffffff",     "label": "白" },
+        { "val": "#1a1a2e",     "label": "ダークネイビー" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>生産・製造KPI</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: keifont, sans-serif; background: #0a0e1a; color: #fff; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.4em 0.8em; flex-shrink: 0;
+      background: linear-gradient(90deg, #1a237e, #0d47a1);
+      border-bottom: 2px solid #42a5f5;
+    }
+    #line-name { font-size: 3vh; font-weight: bold; color: #fff; letter-spacing: 0.1em; }
+    #clock { font-size: 2.5vh; color: rgba(255,255,255,0.65); font-variant-numeric: tabular-nums; }
+
+    #kpi-grid {
+      flex: 1; overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(22vh, 1fr));
+      gap: 0.5em; padding: 0.6em;
+      align-content: start;
+    }
+    .kpi-card {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 0.5em 0.7em; border-radius: 8px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(66,165,245,0.25);
+    }
+    .kpi-card.kpi-warn { border-color: rgba(239,83,80,0.4); background: rgba(239,83,80,0.07); }
+
+    .kpi-label  { font-size: 1.9vh; color: rgba(255,255,255,0.6); margin-bottom: 0.1em; }
+    .kpi-value  { font-size: 6vh; font-weight: bold; color: #fff; line-height: 1; letter-spacing: -0.02em; }
+    .kpi-unit   { font-size: 2.5vh; color: rgba(255,255,255,0.5); margin-left: 0.1em; }
+    .kpi-target { font-size: 1.7vh; color: rgba(255,255,255,0.45); }
+    .kpi-trend  { font-size: 2vh; font-weight: bold; margin-top: 0.1em; }
+    .trend-up   { color: #a5d6a7; }
+    .trend-down { color: #ef9a9a; }
+    .kpi-note   { font-size: 1.5vh; color: rgba(255,255,255,0.4); }
+
+    #line-status {
+      flex-shrink: 0; display: flex; gap: 0.5em; flex-wrap: wrap;
+      padding: 0.4em 0.7em;
+      background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .line-item { display: flex; align-items: center; gap: 0.4em; padding: 0.2em 0.6em; border-radius: 4px; background: rgba(255,255,255,0.05); }
+    .line-dot   { font-size: 1.8vh; }
+    .line-name  { font-size: 2vh; color: #fff; }
+    .line-badge { font-size: 1.6vh; padding: 0.1em 0.4em; border-radius: 3px; font-weight: bold; }
+    .badge-running     { background: rgba(102,187,106,0.3); color: #a5d6a7; }
+    .badge-stopped     { background: rgba(239,83,80,0.3);   color: #ef9a9a; }
+    .badge-maintenance { background: rgba(255,202,40,0.3);  color: #fff9c4; }
+    .line-note  { font-size: 1.5vh; color: rgba(255,255,255,0.4); }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <span id="line-name">製造KPI</span>
+    <span id="clock">--:--</span>
+  </div>
+  <div id="kpi-grid"></div>
+  <div id="line-status" style="display:none"></div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+@font-face{
+	font-family: "keifont";
+	src: url("fonts/keifont.ttf");
+}
+/***************** common *********************/
+.container{
+	display:inline-block;
+	width:100%;
+	height:auto;
+	background-color:#ffffff;
+}
+.hdr{
+	display:block;
+	width:100%;
+	padding:2% 3%;
+	background-color:#f2be00;
+	font-family: "keifont";
+	font-size:90pt;
+	text-align:center;
+	letter-spacing:4px;
+	margin:0;
+}
+.current_date_wrap{
+	display:block;
+	width:100%;
+	text-align:center;
+	padding:3% 2%;
+	background-color:#ffffff;
+	font-family: "keifont";
+}
+.current_date{
+	font-size:120pt;
+	color:#1a1a1a;
+}
+.current_date_suffix{
+	font-size:60pt;
+	color:#1a1a1a;
+	margin-left:2%;
+}
+.tbl_container{
+	padding:2%;
+	background-color:#eeeeee;
+}
+.info_tbl{
+	display:block;
+	width:100%;
+}
+.info_row{
+	width:100%;
+	background-color:#ffffff;
+	margin-bottom:2%;
+	box-shadow:2px 2px 4px rgba(0,0,0,0.15);
+}
+.info_label{
+	width:55%;
+	padding:2% 3%;
+	font-family: "keifont";
+	font-size:85pt;
+	color:#555555;
+	white-space:nowrap;
+	vertical-align:middle;
+}
+.info_value{
+	width:45%;
+	padding:2% 3%;
+	font-family: "keifont";
+	font-size:85pt;
+	color:#1a1a1a;
+	white-space:nowrap;
+	text-align:right;
+	vertical-align:middle;
+}
+.error_note{
+	color:#cd0000;
+	font-size:20pt;
+}
+.error_note_2{
+	color:#cd0000;
+	font-size:40pt;
+}
+.anzen{
+	padding-left:2%;
+	padding-right:2%;
+	color:#28a428;
+	font-weight:bold;
+}

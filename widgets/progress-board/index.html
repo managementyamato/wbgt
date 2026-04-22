@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工程進捗ボード</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: keifont, sans-serif; background: #0d1117; color: #fff; }
+    body { display: flex; flex-direction: column; }
+
+    /* ヘッダー */
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.5em 0.8em; flex-shrink: 0;
+      background: linear-gradient(90deg, #1565c0, #0d47a1);
+      border-bottom: 2px solid #42a5f5;
+    }
+    #header-left { display: flex; align-items: center; gap: 0.5em; }
+    #header-icon { font-size: 3vh; }
+    #project-title { font-size: 3.2vh; font-weight: bold; color: #fff; letter-spacing: 0.08em; }
+    #clock { font-size: 2vh; color: rgba(255,255,255,0.6); }
+
+    /* 全体進捗バー */
+    #overall-bar {
+      flex-shrink: 0; padding: 0.5em 0.8em;
+      background: rgba(255,255,255,0.05);
+      display: flex; align-items: center; gap: 0.8em;
+    }
+    #overall-label { font-size: 2vh; color: rgba(255,255,255,0.6); min-width: 6em; flex-shrink: 0; }
+    #overall-bar-wrap {
+      flex: 1; height: 1.4vh; background: rgba(255,255,255,0.1);
+      border-radius: 4px; overflow: hidden;
+    }
+    #overall-bar-fill {
+      height: 100%; background: linear-gradient(90deg, #42a5f5, #66bb6a);
+      border-radius: 4px; transition: width 0.8s ease;
+    }
+    #overall-pct { font-size: 2.5vh; font-weight: bold; color: #42a5f5; min-width: 3em; text-align: right; }
+
+    /* リスト */
+    #progress-list {
+      flex: 1; overflow: hidden; display: flex; flex-direction: column;
+      gap: 0.35em; padding: 0.5em 0.8em;
+    }
+
+    .progress-item {
+      display: flex; flex-direction: column; gap: 0.2em;
+      padding: 0.4em 0.6em; border-radius: 6px;
+      background: rgba(255,255,255,0.05);
+      border-left: 4px solid rgba(255,255,255,0.2);
+      flex-shrink: 0;
+    }
+    .progress-item.status-done    { border-left-color: #66bb6a; }
+    .progress-item.status-active  { border-left-color: #42a5f5; }
+    .progress-item.status-pending { border-left-color: rgba(255,255,255,0.2); }
+    .progress-item.status-delayed { border-left-color: #ef5350; }
+
+    .item-header { display: flex; align-items: center; justify-content: space-between; gap: 0.5em; }
+    .item-name { font-size: 2.2vh; font-weight: bold; color: #fff; letter-spacing: 0.04em; }
+    .item-meta { display: flex; align-items: center; gap: 0.5em; flex-shrink: 0; }
+    .item-person { font-size: 1.7vh; color: rgba(255,255,255,0.5); }
+    .item-pct { font-size: 2vh; font-weight: bold; color: #fff; min-width: 3em; text-align: right; }
+
+    .item-badge {
+      font-size: 1.5vh; padding: 0.1em 0.5em; border-radius: 3px;
+      font-weight: bold; letter-spacing: 0.05em;
+    }
+    .badge-done    { background: rgba(102,187,106,0.3); color: #a5d6a7; }
+    .badge-active  { background: rgba(66,165,245,0.3);  color: #90caf9; }
+    .badge-pending { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); }
+    .badge-delayed { background: rgba(239,83,80,0.3);   color: #ef9a9a; }
+
+    .item-bar-wrap {
+      height: 0.8vh; background: rgba(255,255,255,0.08);
+      border-radius: 4px; overflow: hidden;
+    }
+    .item-bar-fill {
+      height: 100%; border-radius: 4px;
+      transition: width 0.8s ease;
+    }
+    .item-note { font-size: 1.5vh; color: rgba(255,255,255,0.4); padding-top: 0.1em; }
+
+    .empty { color: rgba(255,255,255,0.4); font-size: 2.5vh; text-align: center; padding: 2em; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="header-left">
+      <span id="header-icon">📋</span>
+      <span id="project-title">工程進捗</span>
+    </div>
+    <span id="clock"></span>
+  </div>
+  <div id="overall-bar">
+    <span id="overall-label">全体進捗</span>
+    <div id="overall-bar-wrap">
+      <div id="overall-bar-fill" style="width:0%"></div>
+    </div>
+    <span id="overall-pct">0%</span>
+  </div>
+  <div id="progress-list"></div>
+</body>
+</html>

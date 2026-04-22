@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>研修・安全クイズ</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#0d1117;color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#1a0a1a,#330d33);border-bottom:2px solid #6a1b9a}
+#quiz-title{font-size:3vh;font-weight:bold;color:#ce93d8;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.6)}
+#quiz-meta{display:flex;align-items:center;justify-content:space-between;padding:.3em .8em;flex-shrink:0}
+#q-num{font-size:1.8vh;color:rgba(255,255,255,.4)}
+#q-cat{font-size:1.8vh;color:#ce93d8}
+#q-block{flex:1;display:flex;flex-direction:column;justify-content:center;padding:.6em 1em;gap:.6em}
+#q-text{font-size:3.2vh;line-height:1.5;color:#fff;font-weight:bold;text-align:center;padding:.5em}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.choice-btn{background:rgba(255,255,255,.08);border-radius:.5em;padding:.5em .8em;font-size:2.2vh;color:#fff;text-align:left;transition:background .3s}
+.choice-btn.correct{background:#1b5e20;color:#a5d6a7;font-weight:bold}
+#answer-block{display:none;background:rgba(106,27,154,.2);border:1px solid #6a1b9a;border-radius:.5em;padding:.5em .8em;margin:.3em 0}
+#q-ans-label{font-size:2.2vh;font-weight:bold;color:#ce93d8}
+#q-explain{font-size:1.8vh;color:rgba(255,255,255,.8);margin-top:.3em;line-height:1.4}
+#dots{display:flex;gap:.4em;justify-content:center;padding:.3em;flex-shrink:0}
+.dot{width:1vh;height:1vh;border-radius:50%;background:rgba(255,255,255,.2)}
+.dot.active{background:#ce93d8}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header">
+  <span id="quiz-title">安全クイズ</span>
+  <span id="clock">--:--</span>
+</div>
+<div id="quiz-meta">
+  <span id="q-num">- / -</span>
+  <span id="q-cat"></span>
+</div>
+<div id="q-block">
+  <div id="q-text">-</div>
+  <div class="choices">
+    <div class="choice-btn" id="q-a">A. -</div>
+    <div class="choice-btn" id="q-b">B. -</div>
+    <div class="choice-btn" id="q-c">C. -</div>
+    <div class="choice-btn" id="q-d">D. -</div>
+  </div>
+  <div id="answer-block">
+    <div id="q-ans-label"></div>
+    <div id="q-explain"></div>
+  </div>
+</div>
+<div id="dots"></div>
+</body></html>

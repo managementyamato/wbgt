@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Clock</title>
+  <style>
+    @font-face {
+      font-family: "keifont";
+      src: url("fonts/keifont.ttf");
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+    body {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+    #time {
+      line-height: 1;
+      letter-spacing: 0.05em;
+    }
+    #date {
+      line-height: 1.2;
+      letter-spacing: 0.05em;
+      margin-top: 0.2em;
+    }
+    #day {
+      line-height: 1.2;
+      letter-spacing: 0.05em;
+    }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="time">--:--</div>
+  <div id="date" style="display:none;"></div>
+  <div id="day"  style="display:none;"></div>
+</body>
+</html>

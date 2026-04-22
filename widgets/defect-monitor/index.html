@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>不良品・歩留まりモニター</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#0d1117;color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#1a2a1a,#2a3d2a);border-bottom:2px solid #2e7d32}
+#facility-name{font-size:3vh;font-weight:bold;color:#a5d6a7;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.6);font-variant-numeric:tabular-nums}
+#summary{display:flex;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1)}
+.sum-box{flex:1;text-align:center;padding:.5em .3em;border-right:1px solid rgba(255,255,255,.08)}
+.sum-box:last-child{border-right:none}
+.sum-label{font-size:1.4vh;color:rgba(255,255,255,.4)}
+.sum-val{font-size:3.5vh;font-weight:bold;font-variant-numeric:tabular-nums}
+.rate-ok{color:#66bb6a}
+.rate-warn{color:#ffca28}
+.rate-bad{color:#ef5350;animation:blink .8s step-end infinite}
+.col-blue{color:#42a5f5}
+.col-red{color:#ef5350}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+#list-header{display:grid;grid-template-columns:3fr 2fr 1.5fr 5fr 2.5fr 2fr;gap:.3em;padding:.25em .5em;font-size:1.5vh;color:rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.1);flex-shrink:0}
+#line-list{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.line-row{display:grid;grid-template-columns:3fr 2fr 1.5fr 5fr 2.5fr 2fr;gap:.3em;padding:.4em .5em;border-bottom:1px solid rgba(255,255,255,.05);align-items:center}
+.l-name{font-size:2vh;font-weight:bold;color:#fff}
+.l-good{font-size:2.2vh;font-weight:bold;color:#66bb6a;text-align:right;font-variant-numeric:tabular-nums}
+.l-defect{font-size:2.2vh;font-weight:bold;color:#ef5350;text-align:center;font-variant-numeric:tabular-nums}
+.l-bar-wrap{height:1.6vh;background:rgba(255,255,255,.1);border-radius:1em;overflow:hidden;position:relative}
+.l-bar{height:100%;border-radius:1em;transition:width .5s ease}
+.l-bar.rate-ok{background:#66bb6a}
+.l-bar.rate-warn{background:#ffca28}
+.l-bar.rate-bad{background:#ef5350}
+.l-target-line{position:absolute;top:0;bottom:0;width:2px;background:rgba(255,255,255,.5)}
+.l-rate{font-size:2.2vh;font-weight:bold;text-align:right;font-variant-numeric:tabular-nums}
+.l-note{font-size:1.4vh;color:rgba(255,255,255,.35);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header">
+  <span id="facility-name">歩留まりモニター</span>
+  <span id="clock">--:--</span>
+</div>
+<div id="summary">
+  <div class="sum-box"><div class="sum-label">総生産数</div><div class="sum-val col-blue" id="total-prod">-</div></div>
+  <div class="sum-box"><div class="sum-label">良品数</div><div class="sum-val rate-ok" id="total-good">-</div></div>
+  <div class="sum-box"><div class="sum-label">不良数</div><div class="sum-val col-red" id="total-defect">-</div></div>
+  <div class="sum-box"><div class="sum-label">全体歩留まり</div><div class="sum-val" id="overall-rate">-</div></div>
+</div>
+<div id="list-header">
+  <span>ライン</span><span style="text-align:right">良品</span><span style="text-align:center">不良</span><span>歩留まり率</span><span style="text-align:right">達成率</span><span>備考</span>
+</div>
+<div id="line-list"></div>
+</body></html>

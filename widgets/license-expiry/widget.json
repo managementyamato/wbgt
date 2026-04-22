@@ -1,0 +1,24 @@
+{
+  "type": "dynamic",
+  "fields": ["boardTitle", "dataUrl", "warnDays", "dangerDays", "fontFamily"],
+  "meta": {
+    "description": "研修・資格期限ボード",
+    "details": "スタッフの資格・免許・定期健診の有効期限を期限が近い順に一覧表示。30日以内は赤・90日以内は黄色で警告。期限切れがあるとバナーで全員に告知。建設・製造・運送向け。"
+  },
+  "schema": {
+    "boardTitle": { "title": "タイトル", "type": "Text", "options": [{ "val": "資格・免許 期限管理", "label": "デフォルト" }] },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "列順：氏名, 資格名, 有効期限(YYYY-MM-DD), 所属, 備考",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "warnDays":   { "title": "黄色警告（日前）", "type": "Text", "options": [{ "val": "90", "label": "90日" }] },
+    "dangerDays": { "title": "赤警告（日前）",   "type": "Text", "options": [{ "val": "30", "label": "30日" }] },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }]
+    }
+  }
+}

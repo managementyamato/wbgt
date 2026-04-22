@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>現場天気予報</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: keifont, sans-serif; transition: background 0.8s; }
+    body { display: flex; flex-direction: column; }
+
+    /* テーマ */
+    body.theme-sunny   { background: linear-gradient(160deg, #1565c0 0%, #0277bd 100%); }
+    body.theme-cloudy  { background: linear-gradient(160deg, #546e7a 0%, #37474f 100%); }
+    body.theme-drizzle { background: linear-gradient(160deg, #4a6572 0%, #334152 100%); }
+    body.theme-rain    { background: linear-gradient(160deg, #263238 0%, #1a2a3a 100%); }
+    body.theme-fog     { background: linear-gradient(160deg, #607d8b 0%, #455a64 100%); }
+    body.theme-thunder { background: linear-gradient(160deg, #1a237e 0%, #311b92 100%); }
+    body.theme-loading { background: #1a1a2e; }
+
+    /* ヘッダー */
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.5em 0.8em; flex-shrink: 0;
+      background: rgba(0,0,0,0.25);
+    }
+    #location { font-size: 2.8vh; font-weight: bold; color: #fff; letter-spacing: 0.06em; }
+    #clock { font-size: 2.2vh; color: rgba(255,255,255,0.6); font-variant-numeric: tabular-nums; }
+
+    /* 現在の天気 */
+    #current {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      gap: 0.5em; padding: 0.5em;
+    }
+    #weather-icon { font-size: 18vh; line-height: 1; }
+    #current-info { display: flex; flex-direction: column; }
+    #current-temp { font-size: 20vh; font-weight: bold; color: #fff; line-height: 0.9;
+                    text-shadow: 0 4px 20px rgba(0,0,0,0.3); letter-spacing: -0.03em; }
+    #weather-desc { font-size: 4vh; color: rgba(255,255,255,0.9); letter-spacing: 0.08em; margin-top: 0.1em; }
+    #current-sub  { display: flex; gap: 1.2em; margin-top: 0.3em; flex-wrap: wrap; }
+    .sub-item     { font-size: 2vh; color: rgba(255,255,255,0.7); }
+
+    /* 3日間予報 */
+    #forecast {
+      flex-shrink: 0; height: 20vh;
+      display: flex; gap: 0; border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .forecast-col {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.2em; padding: 0.4em;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .forecast-col:last-child { border-right: none; }
+    .fc-date  { font-size: 2vh; color: rgba(255,255,255,0.6); }
+    .fc-icon  { font-size: 5vh; line-height: 1; }
+    .fc-temp  { display: flex; gap: 0.4em; align-items: baseline; }
+    .fc-max   { font-size: 2.8vh; font-weight: bold; color: #ff8a65; }
+    .fc-min   { font-size: 2.3vh; color: #90caf9; }
+    .fc-rain  { display: flex; align-items: center; gap: 0.3em; }
+    .rain-bar-wrap  { width: 4em; height: 0.6vh; background: rgba(255,255,255,0.15); border-radius: 3px; overflow: hidden; }
+    .rain-bar-fill  { height: 100%; background: #64b5f6; border-radius: 3px; }
+    .rain-pct { font-size: 1.8vh; color: #90caf9; min-width: 2.5em; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body class="theme-loading">
+  <div id="header">
+    <div id="location">--</div>
+    <div id="clock">--:--</div>
+  </div>
+  <div id="current">
+    <div id="weather-icon">⏳</div>
+    <div id="current-info">
+      <div id="current-temp">--°</div>
+      <div id="weather-desc">取得中…</div>
+      <div id="current-sub">
+        <span id="feels-like" class="sub-item"></span>
+        <span id="humidity"   class="sub-item"></span>
+        <span id="wind-speed" class="sub-item"></span>
+      </div>
+    </div>
+  </div>
+  <div id="forecast"></div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>暑さ指数（WBGT）</title>
+  <style>
+    @font-face { font-family:"keifont"; src:url("fonts/keifont.ttf"); }
+    *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;border:0;font-style:normal;font-weight:normal;}
+    html,body{width:100%;height:100%;overflow:hidden;background:#fff;}
+
+    .wrap{display:flex;flex-direction:column;width:100%;height:100%;}
+
+    /* ヘッダー */
+    .hdr{
+      background:#f2be00;
+      font-family:"keifont",sans-serif;
+      text-align:center;
+      letter-spacing:4px;
+      flex-shrink:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:13vh;
+      font-size:5vw;
+    }
+
+    /* 日時 */
+    .current_date_wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#fff;
+      position:relative;
+      height:11vh;
+      flex-shrink:0;
+    }
+    .current_date{font-family:"keifont",sans-serif;font-size:3vw;color:#1a1a1a;}
+    #status_msg{position:absolute;right:2%;font-size:1.2vw;color:#aaa;font-family:sans-serif;}
+
+    /* コンテンツ全体 */
+    .tbl_container{
+      flex:1;
+      background:#eee;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      padding:1%;
+      gap:1%;
+      min-height:0;
+    }
+
+    /* データ行（div ベース） */
+    .info_row{
+      display:flex;
+      align-items:stretch;
+      background:#fff;
+      box-shadow:2px 2px 4px rgba(0,0,0,.12);
+      flex:1;
+      min-height:0;
+      border-radius:2px;
+    }
+    .info_row.forecast-row{background:#f8f8ff;}
+
+    .info_label{
+      width:48%;
+      padding:0 3%;
+      font-family:"keifont",sans-serif;
+      font-size:3vw;
+      color:#555;
+      white-space:nowrap;
+      display:flex;
+      align-items:center;
+    }
+    .info_value{
+      width:52%;
+      padding:0 3%;
+      font-family:"keifont",sans-serif;
+      font-size:3vw;
+      color:#1a1a1a;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      text-align:right;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+    }
+
+    /* 区切り線 */
+    .section-divider{
+      flex-shrink:0;
+      height:3px;
+      background:#f2be00;
+    }
+
+    /* 危険度カラー */
+    .level-danger   {color:#dc2626;}
+    .level-warning  {color:#ea580c;}
+    .level-caution  {color:#ca8a04;}
+    .level-attention{color:#16a34a;}
+    .level-safe     {color:#2563eb;}
+
+    #error_msg{
+      display:none;
+      width:100%;
+      text-align:center;
+      font-family:"keifont",sans-serif;
+      font-size:2vw;
+      color:#e00;
+      padding:2%;
+      white-space:pre-line;
+      flex-shrink:0;
+    }
+    #location_note{font-size:1.2vw;color:#aaa;margin-left:1%;font-family:sans-serif;}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h2 class="hdr">暑さ指数（WBGT）</h2>
+  <div class="current_date_wrap">
+    <span id="current_time" class="current_date"></span>
+    <span id="status_msg"></span>
+  </div>
+  <div class="tbl_container">
+    <div id="error_msg"></div>
+
+    <!-- WBGT セクション -->
+    <div class="info_row">
+      <div class="info_label">測定地点<span id="location_note"></span></div>
+      <div class="info_value" id="location_value">取得中…</div>
+    </div>
+    <div class="info_row">
+      <div class="info_label">気温</div>
+      <div class="info_value" id="temp_value">--</div>
+    </div>
+    <div class="info_row">
+      <div class="info_label">湿度</div>
+      <div class="info_value" id="hum_value">--</div>
+    </div>
+    <div class="info_row">
+      <div class="info_label">暑さ指数</div>
+      <div class="info_value" id="wbgt_value">--</div>
+    </div>
+    <div class="info_row">
+      <div class="info_label">危険度</div>
+      <div class="info_value" id="level_value">--</div>
+    </div>
+
+    <!-- 区切り線 -->
+    <div class="section-divider"></div>
+
+    <!-- 天気予報セクション -->
+    <div class="info_row forecast-row">
+      <div class="info_label">今日の天気</div>
+      <div class="info_value" id="today_value">--</div>
+    </div>
+    <div class="info_row forecast-row">
+      <div class="info_label">明日の天気</div>
+      <div class="info_value" id="tomorrow_value">--</div>
+    </div>
+
+  </div>
+</div>
+<script src="js/widget_init.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

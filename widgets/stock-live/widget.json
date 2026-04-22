@@ -1,0 +1,17 @@
+{
+  "type": "dynamic",
+  "fields": ["title", "dataUrl", "refreshSec", "unit", "fontFamily", "fontColor", "bgColor"],
+  "meta": {
+    "description": "在庫・売切れライブ",
+    "details": "商品ごとの在庫数をリアルタイム表示。売り切れ・残りわずか・在庫ありを色分けで一目表示。飲食・パン屋・スーパー・物販向け。"
+  },
+  "schema": {
+    "title":      { "title": "タイトル",     "type": "Text",   "options": [{ "val": "在庫・売切れライブ", "label": "デフォルト" }] },
+    "dataUrl":    { "title": "データURL",    "type": "Text",   "help": "CSV列順：商品名, 在庫数, 警告しきい値, 単位, 備考", "options": [{ "val": "", "label": "なし（サンプル）" }] },
+    "refreshSec": { "title": "更新間隔",     "type": "Select", "options": [{ "val": "15", "label": "15秒" }, { "val": "30", "label": "30秒" }, { "val": "60", "label": "1分" }] },
+    "unit":       { "title": "単位（全体）", "type": "Text",   "help": "空欄の場合はCSVの単位を使用。全商品共通の単位を設定したい場合に入力。", "options": [{ "val": "", "label": "CSVの単位を使用" }] },
+    "fontFamily": { "title": "フォント",     "type": "Select", "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }] },
+    "fontColor":  { "title": "文字色",       "type": "Select", "options": [{ "val": "#ffffff", "label": "白" }, { "val": "#d9d9d9", "label": "ライトグレー" }] },
+    "bgColor":    { "title": "背景色",       "type": "Select", "options": [{ "val": "#111111", "label": "ほぼ黒" }, { "val": "#000000", "label": "黒" }, { "val": "#1a1a2e", "label": "ダークネイビー" }, { "val": "transparent", "label": "透明" }] }
+  }
+}

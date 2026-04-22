@@ -1,0 +1,78 @@
+{
+  "type": "dynamic",
+  "fields": ["title", "subtitle", "icon", "fontFamily", "fontColor", "bgColor"],
+  "meta": {
+    "description": "告知バナー",
+    "details": "大きな文字でシンプルな告知を表示。アイコン＋背景色カスタマイズ対応の汎用お知らせウィジェット。"
+  },
+  "schema": {
+    "title": {
+      "title": "タイトル",
+      "type": "Text",
+      "help": "大きく表示するメインテキスト。",
+      "options": [
+        { "val": "お知らせ", "label": "サンプル" }
+      ]
+    },
+    "subtitle": {
+      "title": "サブタイトル",
+      "type": "Text",
+      "help": "タイトル下に小さく表示する補足テキスト。空欄で非表示。",
+      "options": [
+        { "val": "", "label": "なし" }
+      ]
+    },
+    "icon": {
+      "title": "アイコン",
+      "type": "Select",
+      "options": [
+        { "val": "mega", "label": "メガホン" },
+        { "val": "bell", "label": "ベル" },
+        { "val": "info", "label": "インフォ" },
+        { "val": "warning", "label": "警告" },
+        { "val": "danger", "label": "危険" },
+        { "val": "check", "label": "チェック" },
+        { "val": "star", "label": "スター" },
+        { "val": "fire", "label": "炎" },
+        { "val": "party", "label": "パーティー" },
+        { "val": "clock", "label": "時計" },
+        { "val": "heart", "label": "ハート" },
+        { "val": "helmet", "label": "ヘルメット" },
+        { "val": "tools", "label": "工具" },
+        { "val": "none", "label": "なし" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント" },
+        { "val": "Arial, sans-serif", "label": "Arial" },
+        { "val": "Impact, sans-serif", "label": "Impact" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#ffff00", "label": "黄" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#e94560", "label": "レッド（注意喚起）" },
+        { "val": "#ff8c00", "label": "オレンジ（警告）" },
+        { "val": "#16a34a", "label": "グリーン（安全）" },
+        { "val": "#0369a1", "label": "ブルー（情報）" },
+        { "val": "#7c3aed", "label": "パープル（イベント）" },
+        { "val": "#1a1a2e", "label": "ダークネイビー" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#ffffff", "label": "白" }
+      ]
+    }
+  }
+}

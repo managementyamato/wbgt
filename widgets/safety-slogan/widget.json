@@ -1,0 +1,79 @@
+{
+  "type": "dynamic",
+  "fields": ["slogans", "interval", "fontFamily", "fontColor", "bgColor", "bold", "showCounter"],
+  "meta": {
+    "description": "安全スローガン表示",
+    "details": "複数の安全スローガン・注意喚起メッセージをフェードイン/アウトでローテーション表示するウィジェット。"
+  },
+  "schema": {
+    "slogans": {
+      "title": "スローガン一覧",
+      "type": "Text",
+      "help": "改行区切りで複数のスローガンを入力。空欄でデフォルトスローガンを使用。",
+      "options": [
+        { "val": "", "label": "デフォルト" }
+      ]
+    },
+    "interval": {
+      "title": "切替間隔（秒）",
+      "type": "Select",
+      "options": [
+        { "val": "5", "label": "5秒" },
+        { "val": "8", "label": "8秒" },
+        { "val": "10", "label": "10秒" },
+        { "val": "15", "label": "15秒" },
+        { "val": "20", "label": "20秒" },
+        { "val": "30", "label": "30秒" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif", "label": "Arial" },
+        { "val": "Impact, sans-serif", "label": "Impact" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#ffff00", "label": "黄" },
+        { "val": "#ff0000", "label": "赤" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#00ff00", "label": "緑" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#1a472a", "label": "ダークグリーン（安全色）" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#1a1a2e", "label": "ダークネイビー" },
+        { "val": "#003366", "label": "ネイビー" },
+        { "val": "#8b0000", "label": "ダークレッド（警告色）" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    },
+    "bold": {
+      "title": "太字",
+      "type": "Select",
+      "options": [
+        { "val": "1", "label": "太字にする" },
+        { "val": "0", "label": "なし" }
+      ]
+    },
+    "showCounter": {
+      "title": "カウンター表示",
+      "type": "Select",
+      "help": "現在何番目のスローガンか表示します。",
+      "options": [
+        { "val": "1", "label": "表示する" },
+        { "val": "0", "label": "非表示" }
+      ]
+    }
+  }
+}

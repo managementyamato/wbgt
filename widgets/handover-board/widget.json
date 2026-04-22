@@ -1,0 +1,17 @@
+{
+  "type": "dynamic",
+  "fields": ["title", "dataUrl", "refreshSec", "hint", "fontFamily", "fontColor", "bgColor"],
+  "meta": {
+    "description": "申し送りボード",
+    "details": "シフト間の申し送り事項を緊急/未処理/完了で色分け掲示。口頭伝達の抜け漏れをゼロに。GoogleスプレッドシートCSVと連携。"
+  },
+  "schema": {
+    "title":      { "title": "タイトル",         "type": "Text",   "help": "ウィジェット上部のタイトル。", "options": [{ "val": "申し送りボード", "label": "デフォルト" }] },
+    "dataUrl":    { "title": "データURL（CSV）", "type": "Text",   "help": "列順：内容, ステータス(open/done/urgent), 担当者, 日時, カテゴリ", "options": [{ "val": "", "label": "なし（サンプル）" }] },
+    "refreshSec": { "title": "更新間隔",         "type": "Select", "options": [{ "val": "15", "label": "15秒" }, { "val": "30", "label": "30秒" }, { "val": "60", "label": "1分" }] },
+    "hint":       { "title": "フッターメッセージ", "type": "Text", "help": "投稿方法の案内など。", "options": [{ "val": "Googleフォームで追加・完了報告", "label": "デフォルト" }] },
+    "fontFamily": { "title": "フォント",         "type": "Select", "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }] },
+    "fontColor":  { "title": "文字色",           "type": "Select", "options": [{ "val": "#ffffff", "label": "白" }, { "val": "#d9d9d9", "label": "ライトグレー" }] },
+    "bgColor":    { "title": "背景色",           "type": "Select", "options": [{ "val": "#111111", "label": "ほぼ黒" }, { "val": "#000000", "label": "黒" }, { "val": "#1a1a2e", "label": "ダークネイビー" }, { "val": "transparent", "label": "透明" }] }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "type": "dynamic",
+  "fields": ["url", "label", "sublabel", "fontFamily", "fontColor", "bgColor", "qrFgColor", "qrBgColor"],
+  "meta": {
+    "description": "QRコード表示",
+    "details": "任意のURLからQRコードを生成し、現場書類や連絡先へのアクセスを提供するウィジェット。"
+  },
+  "schema": {
+    "url": {
+      "title": "URL",
+      "type": "Text",
+      "help": "QRコードに埋め込むURLを入力してください。",
+      "options": [
+        { "val": "https://example.com", "label": "サンプル" }
+      ]
+    },
+    "label": {
+      "title": "ラベル（上部）",
+      "type": "Text",
+      "help": "QRコードの上に表示するラベル。空欄で非表示。",
+      "options": [
+        { "val": "現場安全書類", "label": "サンプル" }
+      ]
+    },
+    "sublabel": {
+      "title": "サブラベル（下部）",
+      "type": "Text",
+      "help": "QRコードの下に表示する説明文。空欄で非表示。",
+      "options": [
+        { "val": "スマホで読み取ってください", "label": "サンプル" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif", "label": "Arial" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#ffff00", "label": "黄" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#1a1a2e", "label": "ダークネイビー" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#003366", "label": "ネイビー" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    },
+    "qrFgColor": {
+      "title": "QRコード色",
+      "type": "Select",
+      "options": [
+        { "val": "#000000", "label": "黒" },
+        { "val": "#1a1a2e", "label": "ダークネイビー" },
+        { "val": "#003366", "label": "ネイビー" }
+      ]
+    },
+    "qrBgColor": {
+      "title": "QRコード背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#f5f0e8", "label": "クリーム" }
+      ]
+    }
+  }
+}

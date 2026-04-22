@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meigen</title>
+  <style>
+    @font-face {
+      font-family: "keifont";
+      src: url("fonts/keifont.ttf");
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    #quote {
+      line-height: 1.5;
+      letter-spacing: 0.06em;
+      text-align: center;
+      padding: 0 5%;
+      transition: opacity 1.0s ease-in-out;
+    }
+    #author {
+      line-height: 1.3;
+      text-align: center;
+      margin-top: 0.4em;
+      opacity: 0.65;
+      transition: opacity 1.0s ease-in-out;
+    }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="quote"></div>
+  <div id="author"></div>
+</body>
+</html>

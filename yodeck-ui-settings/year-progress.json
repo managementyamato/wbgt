@@ -1,0 +1,59 @@
+{
+  "type": "dynamic",
+  "fields": ["showDay", "fontFamily", "fontColor", "bgColor", "barColor"],
+  "meta": {
+    "description": "年月カウンター",
+    "details": "今年・今月・今日の進捗をプログレスバーで可視化するウィジェット。"
+  },
+  "schema": {
+    "showDay": {
+      "title": "今日の進捗表示",
+      "type": "Select",
+      "options": [
+        { "val": "1", "label": "表示する" },
+        { "val": "0", "label": "非表示" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント" },
+        { "val": "Arial, sans-serif", "label": "Arial" },
+        { "val": "Impact, sans-serif", "label": "Impact" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#d9d9d9", "label": "ライトグレー" },
+        { "val": "#000000", "label": "黒" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#1a1a2e", "label": "ダークネイビー" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#0d0d0d", "label": "ほぼ黒" },
+        { "val": "#ffffff", "label": "白" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    },
+    "barColor": {
+      "title": "バー色",
+      "type": "Select",
+      "options": [
+        { "val": "#e94560", "label": "レッド" },
+        { "val": "#ff8c00", "label": "オレンジ" },
+        { "val": "#4ade80", "label": "グリーン" },
+        { "val": "#00bfff", "label": "水色" },
+        { "val": "#a78bfa", "label": "パープル" },
+        { "val": "#fbbf24", "label": "イエロー" }
+      ]
+    }
+  }
+}

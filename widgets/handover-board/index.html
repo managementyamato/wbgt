@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>申し送りボード</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #111; font-family: keifont, sans-serif; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.3em 0.8em; height: 9vh; flex-shrink: 0;
+      background: rgba(0,0,0,0.3); border-bottom: 3px solid #7b1fa2;
+    }
+    #header-left { display: flex; align-items: center; gap: 0.6em; }
+    #title { font-size: 3.8vh; font-weight: bold; color: #fff; }
+    #date-badge { font-size: 2.2vh; color: #ce93d8; background: rgba(123,31,162,0.3); padding: 0.15em 0.6em; border-radius: 12px; }
+    #clock { font-size: 2.8vh; color: #aaa; }
+
+    #list {
+      flex: 1; display: flex; flex-direction: column;
+      gap: 0.4em; padding: 0.5em; overflow: hidden;
+    }
+
+    .card {
+      display: flex; align-items: flex-start;
+      padding: 0.45em 0.7em; border-radius: 8px;
+      background: rgba(255,255,255,0.05); gap: 0.7em;
+      border-left: 5px solid #7b1fa2; flex-shrink: 0;
+    }
+    .card.urgent { border-left-color: #e53935; background: rgba(229,57,53,0.08); }
+    .card.done   { border-left-color: #444; opacity: 0.5; }
+
+    .card-check {
+      font-size: 3vh; flex-shrink: 0; align-self: center;
+      width: 1.2em; text-align: center; cursor: default;
+    }
+    .card.done .card-check { color: #00c853; }
+    .card:not(.done) .card-check { color: #444; }
+
+    .card-body { flex: 1; min-width: 0; }
+    .card-text { font-size: 2.8vh; color: #fff; line-height: 1.3; }
+    .card.done .card-text { text-decoration: line-through; color: #666; }
+    .card.urgent .card-text { color: #ffcdd2; }
+    .card-meta { font-size: 1.9vh; color: #777; margin-top: 0.15em; }
+
+    .card-tag {
+      font-size: 2vh; font-weight: bold; flex-shrink: 0; align-self: center;
+      padding: 0.1em 0.5em; border-radius: 4px;
+    }
+    .card.urgent .card-tag { background: #e53935; color: #fff; }
+    .card:not(.urgent):not(.done) .card-tag { background: #7b1fa2; color: #fff; }
+    .card.done .card-tag { background: #333; color: #777; }
+
+    #footer {
+      height: 5.5vh; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 0.8em; background: rgba(0,0,0,0.2); border-top: 1px solid #222;
+    }
+    #footer-stats { display: flex; gap: 1.5em; }
+    .stat { font-size: 2vh; color: #aaa; }
+    .stat span { font-weight: bold; color: #fff; }
+    #footer-hint { font-size: 1.8vh; color: #555; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="header-left">
+      <div id="title">申し送りボード</div>
+      <div id="date-badge"></div>
+    </div>
+    <div id="clock"></div>
+  </div>
+  <div id="list"></div>
+  <div id="footer">
+    <div id="footer-stats"></div>
+    <div id="footer-hint">Googleフォームで追加・完了報告</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "type": "dynamic",
+  "fields": ["shopName", "dataUrl", "refreshSec", "fontFamily"],
+  "meta": {
+    "description": "テーブル状況ボード",
+    "details": "各テーブルの空席/使用中/清掃中/予約済をカードグリッドで表示。空席数を大きくサマリー表示。GoogleスプレッドシートCSV連携。飲食店・カフェ・ホテルのロビー向け。"
+  },
+  "schema": {
+    "shopName": { "title": "店舗名", "type": "Text", "options": [{ "val": "テーブル状況", "label": "デフォルト" }] },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "列順：テーブル名, ステータス(available/occupied/cleaning/reserved), 人数, 備考",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "refreshSec": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [{ "val": "15", "label": "15秒" }, { "val": "30", "label": "30秒" }, { "val": "60", "label": "1分" }]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "type": "dynamic",
+  "fields": ["boardTitle","label1","tel1","label2","tel2","label3","tel3","label4","tel4","label5","tel5","qrUrl","qrLabel","fontFamily"],
+  "meta": {
+    "description": "緊急連絡先ボード",
+    "details": "現場の緊急連絡先を大きな文字で表示。5件の連絡先（責任者・警察・消防等）を色分け表示し、QRコードで詳細連絡先へ誘導。建設・工場・オフィス向け。"
+  },
+  "schema": {
+    "boardTitle": {
+      "title": "ボードタイトル",
+      "type": "Text",
+      "help": "ヘッダーに表示するタイトルを入力してください。",
+      "options": [{ "val": "緊急連絡先", "label": "デフォルト" }]
+    },
+    "label1": { "title": "ラベル1", "type": "Text", "options": [{ "val": "現場責任者", "label": "デフォルト" }] },
+    "tel1":   { "title": "電話番号1", "type": "Text", "options": [{ "val": "090-XXXX-XXXX", "label": "サンプル" }] },
+    "label2": { "title": "ラベル2", "type": "Text", "options": [{ "val": "警察", "label": "デフォルト" }] },
+    "tel2":   { "title": "電話番号2", "type": "Text", "options": [{ "val": "110", "label": "警察" }] },
+    "label3": { "title": "ラベル3", "type": "Text", "options": [{ "val": "救急・消防", "label": "デフォルト" }] },
+    "tel3":   { "title": "電話番号3", "type": "Text", "options": [{ "val": "119", "label": "救急・消防" }] },
+    "label4": { "title": "ラベル4", "type": "Text", "options": [{ "val": "元請け連絡先", "label": "デフォルト" }] },
+    "tel4":   { "title": "電話番号4", "type": "Text", "options": [{ "val": "03-XXXX-XXXX", "label": "サンプル" }] },
+    "label5": { "title": "ラベル5", "type": "Text", "options": [{ "val": "近隣病院", "label": "デフォルト" }] },
+    "tel5":   { "title": "電話番号5", "type": "Text", "options": [{ "val": "03-XXXX-XXXX", "label": "サンプル" }] },
+    "qrUrl": {
+      "title": "QRコードURL",
+      "type": "Text",
+      "help": "QRコードに埋め込むURL（詳細連絡先ページ等）。空欄の場合はQRコードを非表示にします。",
+      "options": [{ "val": "", "label": "QRなし" }]
+    },
+    "qrLabel": {
+      "title": "QRコード説明文",
+      "type": "Text",
+      "options": [{ "val": "スマホで詳細確認", "label": "デフォルト" }]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" },
+        { "val": "Impact, sans-serif",  "label": "Impact" }
+      ]
+    }
+  }
+}

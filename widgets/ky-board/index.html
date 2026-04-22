@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KY活動ボード</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: keifont, sans-serif; background: #0d1a0d; color: #fff; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.45em 0.8em; flex-shrink: 0;
+      background: linear-gradient(90deg, #1b5e20, #2e7d32);
+      border-bottom: 2px solid #66bb6a;
+    }
+    #header-left { display: flex; align-items: center; gap: 0.5em; }
+    #site-title { font-size: 3.2vh; font-weight: bold; color: #fff; letter-spacing: 0.1em; }
+    #item-count { font-size: 2.2vh; color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.3); padding: 0.1em 0.5em; border-radius: 4px; }
+    #today-date { font-size: 2vh; color: rgba(255,255,255,0.65); }
+
+    #main { flex: 1; display: flex; overflow: hidden; gap: 0; }
+
+    #ky-list {
+      flex: 1; display: flex; flex-direction: column;
+      gap: 0.4em; padding: 0.5em 0.6em; overflow: hidden;
+    }
+
+    .ky-item {
+      flex: 1; display: flex; flex-direction: column; justify-content: center;
+      padding: 0.4em 0.7em; border-radius: 6px;
+      background: rgba(255,255,255,0.05);
+      border-left: 5px solid rgba(255,255,255,0.2);
+    }
+    .ky-item.level-high   { border-left-color: #ef5350; background: rgba(239,83,80,0.08); }
+    .ky-item.level-medium { border-left-color: #ffca28; background: rgba(255,202,40,0.06); }
+    .ky-item.level-low    { border-left-color: #66bb6a; background: rgba(102,187,106,0.06); }
+
+    .ky-header { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.2em; }
+    .ky-num   { font-size: 1.8vh; color: rgba(255,255,255,0.4); min-width: 1.5em; }
+    .ky-icon  { font-size: 2.2vh; }
+    .ky-level { font-size: 1.7vh; font-weight: bold; padding: 0.1em 0.4em; border-radius: 3px; }
+    .level-high   .ky-level { background: rgba(239,83,80,0.3);  color: #ef9a9a; }
+    .level-medium .ky-level { background: rgba(255,202,40,0.3); color: #fff9c4; }
+    .level-low    .ky-level { background: rgba(102,187,106,0.3); color: #c8e6c9; }
+    .ky-team  { font-size: 1.7vh; color: rgba(255,255,255,0.5); margin-left: auto; }
+
+    .ky-risk   { font-size: 2.5vh; font-weight: bold; color: #fff; letter-spacing: 0.04em; margin-bottom: 0.2em; }
+    .ky-action { font-size: 2vh; color: rgba(255,255,255,0.75); letter-spacing: 0.03em; }
+
+    #qr-panel {
+      width: 18%; flex-shrink: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0.6em;
+      padding: 0.5em; background: rgba(255,255,255,0.03);
+      border-left: 1px solid rgba(255,255,255,0.08);
+    }
+    #qr-canvas { border-radius: 4px; max-width: 90%; }
+    #qr-label { font-size: 1.5vh; color: rgba(255,255,255,0.5); text-align: center; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="header-left">
+      <span id="site-title">本日のKY活動</span>
+      <span id="item-count">--件</span>
+    </div>
+    <span id="today-date"></span>
+  </div>
+  <div id="main">
+    <div id="ky-list"></div>
+    <div id="qr-panel">
+      <canvas id="qr-canvas" width="140" height="140"></canvas>
+      <div id="qr-label">KY結果を投稿</div>
+    </div>
+  </div>
+</body>
+</html>

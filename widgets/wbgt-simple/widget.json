@@ -1,0 +1,100 @@
+{
+  "type": "dynamic",
+  "fields": [
+    "prefecture",
+    "dataBaseUrl",
+    "theme",
+    "refreshMin"
+  ],
+  "meta": {
+    "description": "暑さ指数（WBGT）シンプル版",
+    "details": "都道府県を選ぶだけで、環境省の公式WBGT予測値をそのまま表示。データは GitHub Actions が環境省CSVを定期取得して GitHub Pages で配信する専用プロキシ経由で供給される。CORS制限のある環境でも確実に動作。"
+  },
+  "schema": {
+    "prefecture": {
+      "title": "都道府県（必須）",
+      "type": "Select",
+      "help": "現場のある都道府県を1つ選択してください。選択すると自動的にその県の代表観測地点（県庁所在地）のデータを表示します。",
+      "options": [
+        { "val": "東京都",   "label": "東京都（東京）" },
+        { "val": "北海道",   "label": "北海道（札幌）" },
+        { "val": "青森県",   "label": "青森県（青森）" },
+        { "val": "岩手県",   "label": "岩手県（盛岡）" },
+        { "val": "宮城県",   "label": "宮城県（仙台）" },
+        { "val": "秋田県",   "label": "秋田県（秋田）" },
+        { "val": "山形県",   "label": "山形県（山形）" },
+        { "val": "福島県",   "label": "福島県（福島）" },
+        { "val": "茨城県",   "label": "茨城県（水戸）" },
+        { "val": "栃木県",   "label": "栃木県（宇都宮）" },
+        { "val": "群馬県",   "label": "群馬県（前橋）" },
+        { "val": "埼玉県",   "label": "埼玉県（さいたま）" },
+        { "val": "千葉県",   "label": "千葉県（千葉）" },
+        { "val": "神奈川県", "label": "神奈川県（横浜）" },
+        { "val": "新潟県",   "label": "新潟県（新潟）" },
+        { "val": "富山県",   "label": "富山県（富山）" },
+        { "val": "石川県",   "label": "石川県（金沢）" },
+        { "val": "福井県",   "label": "福井県（福井）" },
+        { "val": "山梨県",   "label": "山梨県（甲府）" },
+        { "val": "長野県",   "label": "長野県（長野）" },
+        { "val": "岐阜県",   "label": "岐阜県（岐阜）" },
+        { "val": "静岡県",   "label": "静岡県（静岡）" },
+        { "val": "愛知県",   "label": "愛知県（名古屋）" },
+        { "val": "三重県",   "label": "三重県（津）" },
+        { "val": "滋賀県",   "label": "滋賀県（彦根）" },
+        { "val": "京都府",   "label": "京都府（京都）" },
+        { "val": "大阪府",   "label": "大阪府（大阪）" },
+        { "val": "兵庫県",   "label": "兵庫県（神戸）" },
+        { "val": "奈良県",   "label": "奈良県（奈良）" },
+        { "val": "和歌山県", "label": "和歌山県（和歌山）" },
+        { "val": "鳥取県",   "label": "鳥取県（鳥取）" },
+        { "val": "島根県",   "label": "島根県（松江）" },
+        { "val": "岡山県",   "label": "岡山県（岡山）" },
+        { "val": "広島県",   "label": "広島県（広島）" },
+        { "val": "山口県",   "label": "山口県（下関）" },
+        { "val": "徳島県",   "label": "徳島県（徳島）" },
+        { "val": "香川県",   "label": "香川県（高松）" },
+        { "val": "愛媛県",   "label": "愛媛県（松山）" },
+        { "val": "高知県",   "label": "高知県（高知）" },
+        { "val": "福岡県",   "label": "福岡県（福岡）" },
+        { "val": "佐賀県",   "label": "佐賀県（佐賀）" },
+        { "val": "長崎県",   "label": "長崎県（長崎）" },
+        { "val": "熊本県",   "label": "熊本県（熊本）" },
+        { "val": "大分県",   "label": "大分県（大分）" },
+        { "val": "宮崎県",   "label": "宮崎県（宮崎）" },
+        { "val": "鹿児島県", "label": "鹿児島県（鹿児島）" },
+        { "val": "沖縄県",   "label": "沖縄県（那覇）" }
+      ]
+    },
+    "dataBaseUrl": {
+      "title": "データURL（必須）",
+      "type": "Text",
+      "help": "GitHub Pages で公開した WBGT データのベースURL。例: https://yourname.github.io/yourrepo/wbgt （末尾に /{code}.json が付く想定）",
+      "options": [
+        { "val": "https://yourname.github.io/yourrepo/wbgt", "label": "要変更" }
+      ]
+    },
+    "theme": {
+      "title": "配色テーマ",
+      "type": "Select",
+      "help": "表示の背景色と文字色。",
+      "options": [
+        { "val": "white", "label": "ホワイト（推奨）" },
+        { "val": "dark",  "label": "ダーク" },
+        { "val": "navy",  "label": "ネイビー" },
+        { "val": "black", "label": "ブラック" }
+      ]
+    },
+    "refreshMin": {
+      "title": "更新間隔（分）",
+      "type": "Select",
+      "help": "データを再取得する間隔。",
+      "options": [
+        { "val": "5",  "label": "5分" },
+        { "val": "10", "label": "10分（推奨）" },
+        { "val": "20", "label": "20分" },
+        { "val": "30", "label": "30分" },
+        { "val": "60", "label": "60分" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>騒音・振動モニター</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#0d0d1a;color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#1b1b2f,#2d2d44);border-bottom:2px solid #5c5c8a}
+#site-name{font-size:3vh;font-weight:bold;color:#fff;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.6);font-variant-numeric:tabular-nums}
+#main{flex:1;display:flex;flex-direction:column;padding:.5em;gap:.5em;overflow:hidden}
+.meter-block{display:flex;flex-direction:column;gap:.3em}
+.meter-title{font-size:2vh;color:rgba(255,255,255,.6);letter-spacing:.05em}
+.meter-row{display:flex;align-items:center;gap:.8em}
+.meter-val{font-size:5.5vh;font-weight:bold;font-variant-numeric:tabular-nums;min-width:4ch;text-align:right;line-height:1}
+.meter-unit{font-size:2.5vh;color:rgba(255,255,255,.5);align-self:flex-end;padding-bottom:.3em}
+.level{font-size:1.8vh;padding:.2em .6em;border-radius:.3em;font-weight:bold}
+.level-ok{background:#1b5e20;color:#a5d6a7}
+.level-warn{background:#e65100;color:#ffcc80}
+.level-over{background:#b71c1c;color:#ef9a9a;animation:blink .8s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.bar-wrap{height:1.8vh;background:rgba(255,255,255,.1);border-radius:1em;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:1em;transition:width .5s ease}
+.limit-label{font-size:1.4vh;color:rgba(255,255,255,.4);text-align:right}
+.meta-row{display:flex;gap:1em;font-size:1.8vh;color:rgba(255,255,255,.5)}
+.meta-row span{display:flex;gap:.3em}
+.meta-row .label{color:rgba(255,255,255,.35)}
+#divider{height:1px;background:rgba(255,255,255,.1)}
+#history-block{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.hist-header{display:grid;grid-template-columns:3fr 2fr 2fr 3fr;gap:.3em;padding:.2em .4em;font-size:1.6vh;color:rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.1)}
+#history{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:0}
+.hist-row{display:grid;grid-template-columns:3fr 2fr 2fr 3fr;gap:.3em;padding:.25em .4em;font-size:1.8vh;border-bottom:1px solid rgba(255,255,255,.05);align-items:center}
+.h-time{color:rgba(255,255,255,.6)}
+.h-noise,.h-vib{text-align:right;font-variant-numeric:tabular-nums}
+.h-noise.ok,.h-vib.ok{color:#66bb6a}
+.h-noise.warn,.h-vib.warn{color:#ffca28}
+.h-noise.over,.h-vib.over{color:#ef5350}
+.h-place{color:rgba(255,255,255,.5);font-size:1.6vh;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header">
+  <span id="site-name">騒音・振動モニター</span>
+  <span id="clock">--:--</span>
+</div>
+<div id="main">
+  <div class="meter-block">
+    <div class="meter-title">騒音レベル</div>
+    <div class="meter-row">
+      <div class="meter-val" id="noise-val">--.-</div>
+      <div class="meter-unit">dB</div>
+      <div class="level" id="noise-level">-</div>
+    </div>
+    <div class="bar-wrap"><div class="bar-fill" id="noise-bar" style="width:0%"></div></div>
+    <div class="limit-label" id="noise-limit-label">規制値: 85dB</div>
+  </div>
+  <div class="meter-block">
+    <div class="meter-title">振動レベル</div>
+    <div class="meter-row">
+      <div class="meter-val" id="vib-val">--.-</div>
+      <div class="meter-unit">dB</div>
+      <div class="level" id="vib-level">-</div>
+    </div>
+    <div class="bar-wrap"><div class="bar-fill" id="vib-bar" style="width:0%"></div></div>
+    <div class="limit-label" id="vib-limit-label">規制値: 75dB</div>
+  </div>
+  <div class="meta-row">
+    <span><span class="label">計測場所</span><span id="meas-place">-</span></span>
+    <span><span class="label">計測時刻</span><span id="meas-time">-</span></span>
+  </div>
+  <div id="divider"></div>
+  <div id="history-block">
+    <div class="hist-header">
+      <span>時刻</span><span style="text-align:right">騒音(dB)</span><span style="text-align:right">振動(dB)</span><span>場所</span>
+    </div>
+    <div id="history"></div>
+  </div>
+</div>
+</body></html>

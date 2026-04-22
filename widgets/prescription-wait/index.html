@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>処方箋待ち状況</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#0d1a0d;color:#fff;transition:background .3s}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#1b4332,#2d6a4f);border-bottom:2px solid #40916c}
+#pharmacy-name{font-size:3vh;font-weight:bold;color:#d8f3dc;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.6);font-variant-numeric:tabular-nums}
+/* 呼び出し中 */
+#called-block{flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.8em;background:rgba(64,145,108,.15);border-bottom:2px solid #40916c;gap:.2em}
+.called-label{font-size:2vh;color:#a8dadc;letter-spacing:.15em}
+#called-name{font-size:2.5vh;color:rgba(255,255,255,.7)}
+#called-num{font-size:9vh;font-weight:bold;color:#52b788;line-height:1}
+/* 準備完了 */
+#ready-block{flex-shrink:0;display:flex;align-items:center;gap:.5em;padding:.4em .8em;background:rgba(255,202,40,.08);border-bottom:1px solid rgba(255,202,40,.2)}
+.ready-label{font-size:1.8vh;color:#ffca28;white-space:nowrap}
+#ready-list{display:flex;flex-wrap:wrap;gap:.4em;flex:1}
+.ready-num{background:#ffca28;color:#000;font-size:2.5vh;font-weight:bold;padding:.2em .5em;border-radius:.3em;font-variant-numeric:tabular-nums}
+.ready-none{font-size:1.8vh;color:rgba(255,255,255,.3)}
+/* 待ち一覧 */
+#wait-header-row{display:flex;align-items:center;justify-content:space-between;padding:.3em .8em;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1)}
+.wait-title{font-size:1.8vh;color:rgba(255,255,255,.5)}
+#waiting-count{font-size:2vh;font-weight:bold;color:#42a5f5}
+#list-header{display:grid;grid-template-columns:2fr 3fr 3fr 4fr;gap:.3em;padding:.2em .8em;font-size:1.5vh;color:rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0}
+#wait-list{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.wait-row{display:grid;grid-template-columns:2fr 3fr 3fr 4fr;gap:.3em;padding:.35em .8em;border-bottom:1px solid rgba(255,255,255,.05);align-items:center}
+.row-preparing{background:rgba(66,165,245,.05)}
+.w-num{font-size:3vh;font-weight:bold;color:#42a5f5;font-variant-numeric:tabular-nums}
+.w-name{font-size:1.9vh;color:rgba(255,255,255,.7)}
+.w-wait{font-size:1.8vh;color:rgba(255,255,255,.5)}
+.row-preparing .w-wait{color:#42a5f5}
+.w-note{font-size:1.4vh;color:rgba(255,255,255,.3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header">
+  <span id="pharmacy-name">処方箋お待ちの方</span>
+  <span id="clock">--:--</span>
+</div>
+<div id="called-block">
+  <div class="called-label" id="ready-prefix">お呼びしています</div>
+  <div id="called-name"></div>
+  <div id="called-num">--</div>
+</div>
+<div id="ready-block">
+  <span class="ready-label">準備完了</span>
+  <div id="ready-list"><span class="ready-none">-</span></div>
+</div>
+<div id="wait-header-row">
+  <span class="wait-title">お待ちの方</span>
+  <span id="waiting-count">-</span>
+</div>
+<div id="list-header">
+  <span>番号</span><span>お名前</span><span>目安</span><span>状況</span>
+</div>
+<div id="wait-list"></div>
+</body></html>

@@ -1,0 +1,46 @@
+{
+  "type": "dynamic",
+  "fields": ["siteName", "dataUrl", "warnPct", "refreshMin", "fontFamily"],
+  "meta": {
+    "description": "産廃・廃棄物管理ボード",
+    "details": "建設現場の産業廃棄物区分ごとの排出量・月間上限・使用率をリアルタイム表示。警戒ラインを超えた廃棄物を色分けで警告。マニフェスト番号・処理業者も一覧表示。GoogleスプレッドシートCSVと連携。"
+  },
+  "schema": {
+    "siteName": {
+      "title": "現場名・タイトル",
+      "type": "Text",
+      "help": "ヘッダーに表示するタイトル。",
+      "options": [{ "val": "産廃管理ボード", "label": "デフォルト" }]
+    },
+    "dataUrl": {
+      "title": "データURL（スプレッドシートCSV）",
+      "type": "Text",
+      "help": "GoogleスプレッドシートのCSV公開URLを入力。空欄はサンプルデータを表示。列順：廃棄物区分, 今月排出量, 月間上限, 単位, マニフェスト番号, 処理業者, 備考",
+      "options": [{ "val": "", "label": "なし（サンプル表示）" }]
+    },
+    "warnPct": {
+      "title": "警戒ライン（%）",
+      "type": "Text",
+      "help": "この割合を超えると黄色警戒表示になります。100%以上は赤色表示。",
+      "options": [{ "val": "80", "label": "80%（デフォルト）" }]
+    },
+    "refreshMin": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [
+        { "val": "10",  "label": "10分" },
+        { "val": "30",  "label": "30分" },
+        { "val": "60",  "label": "60分" },
+        { "val": "360", "label": "360分" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" }
+      ]
+    }
+  }
+}

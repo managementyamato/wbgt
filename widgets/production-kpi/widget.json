@@ -1,0 +1,27 @@
+{
+  "type": "dynamic",
+  "fields": ["lineName", "dataUrl", "refreshSec", "fontFamily"],
+  "meta": {
+    "description": "生産・製造KPIボード",
+    "details": "生産数・良品率・稼働率などのKPIと各ラインの稼働状況をリアルタイム大表示。目標未達は赤でアラート。前日比トレンド表示。GoogleスプレッドシートCSV連携。製造業・工場向け。"
+  },
+  "schema": {
+    "lineName": { "title": "ライン名・タイトル", "type": "Text", "options": [{ "val": "製造KPI", "label": "デフォルト" }] },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "KPI行：指標名, 現在値, 目標値, 単位, 前日比(%), 備考 / ライン行：ライン名, running/stopped/maintenance, (空), (空), 備考",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "refreshSec": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [{ "val": "30", "label": "30秒" }, { "val": "60", "label": "1分" }, { "val": "300", "label": "5分" }]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }]
+    }
+  }
+}

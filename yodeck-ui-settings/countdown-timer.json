@@ -1,0 +1,68 @@
+{
+  "type": "dynamic",
+  "fields": ["label", "targetDate", "fontFamily", "fontColor", "bgColor", "accentColor"],
+  "meta": {
+    "description": "カウントダウンタイマー",
+    "details": "工期終了日や目標日までの残り日数をカウントダウン表示するウィジェット。"
+  },
+  "schema": {
+    "label": {
+      "title": "ラベル",
+      "type": "Text",
+      "help": "カウントダウンの上に表示するラベル文字。",
+      "options": [
+        { "val": "工期終了まで", "label": "工期終了まで" }
+      ]
+    },
+    "targetDate": {
+      "title": "目標日",
+      "type": "Text",
+      "help": "YYYY-MM-DD形式で目標日を入力してください。",
+      "options": [
+        { "val": "2026-12-31", "label": "サンプル" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif", "label": "Arial" },
+        { "val": "Impact, sans-serif", "label": "Impact" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#d9d9d9", "label": "ライトグレー" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#ffff00", "label": "黄" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#000000", "label": "黒" },
+        { "val": "#1a1a2e", "label": "ダークネイビー" },
+        { "val": "#003366", "label": "ネイビー" },
+        { "val": "#ffffff", "label": "白" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    },
+    "accentColor": {
+      "title": "アクセント色（数字）",
+      "type": "Select",
+      "options": [
+        { "val": "#ff8c00", "label": "オレンジ" },
+        { "val": "#e94560", "label": "レッド" },
+        { "val": "#00bfff", "label": "水色" },
+        { "val": "#ffff00", "label": "黄" },
+        { "val": "#00ff00", "label": "緑" },
+        { "val": "#ffffff", "label": "白" }
+      ]
+    }
+  }
+}

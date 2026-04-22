@@ -1,0 +1,45 @@
+{
+  "fields": [
+    "sample_text",
+    "sample_select",
+    "sample_color"
+  ],
+  "meta": {
+    "description": "ウィジェット名",
+    "details": "ウィジェットの説明文をここに記述する。"
+  },
+  "schema": {
+    "sample_text": {
+      "title": "テキスト入力例",
+      "type": "Text",
+      "help": "表示する内容を入力してください。",
+      "options": [
+        { "val": "デフォルトテキスト", "label": "デフォルト" }
+      ]
+    },
+    "sample_select": {
+      "title": "選択肢の例",
+      "type": "Select",
+      "help": "いずれかを選択してください。",
+      "options": [
+        { "val": "option1", "label": "選択肢1" },
+        { "val": "option2", "label": "選択肢2" },
+        { "val": "option3", "label": "選択肢3" }
+      ]
+    },
+    "sample_color": {
+      "title": "色選択の例",
+      "type": "Select",
+      "help": "色を選択してください。",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#ff0000", "label": "赤" },
+        { "val": "#ffff00", "label": "黄" },
+        { "val": "#00ff00", "label": "緑" },
+        { "val": "#00bfff", "label": "水色" },
+        { "val": "#ff8c00", "label": "オレンジ" }
+      ]
+    }
+  }
+}

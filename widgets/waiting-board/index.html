@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>ウェイティングボード</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:linear-gradient(160deg,#1a1200,#2d1f00);color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:rgba(0,0,0,.3);border-bottom:1px solid rgba(255,255,255,.1)}
+#shop-name{font-size:3vh;font-weight:bold;color:#fff;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.6);font-variant-numeric:tabular-nums}
+/* 呼び出し中 */
+#calling-box{flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.8em .8em .5em;background:rgba(255,200,0,.1);border-bottom:2px solid rgba(255,200,0,.4);gap:.1em}
+#calling-box.flash{animation:flash-anim .3s ease 3}
+@keyframes flash-anim{0%,100%{background:rgba(255,200,0,.1)}50%{background:rgba(255,200,0,.35)}}
+#call-prefix{font-size:2.2vh;color:rgba(255,200,0,.8);letter-spacing:.15em}
+#calling-row{display:flex;align-items:baseline;gap:.5em}
+#calling-num{font-size:5vh;color:rgba(255,200,0,.7);font-weight:bold}
+#calling-name{font-size:11vh;font-weight:bold;color:#fff200;line-height:1;text-shadow:0 4px 20px rgba(255,200,0,.4)}
+#calling-size{font-size:4vh;color:rgba(255,255,255,.6)}
+/* 待ちカウント */
+#wait-summary{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:.4em;padding:.4em;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+#wait-label{font-size:2.5vh;color:rgba(255,255,255,.6)}
+#wait-count{font-size:7vh;font-weight:bold;color:#fff;line-height:1}
+#wait-unit{font-size:3vh;color:rgba(255,255,255,.6)}
+/* 待ちリスト */
+#wait-list{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:.3em;padding:.4em .7em}
+.wait-item{display:flex;align-items:center;gap:.6em;padding:.35em .6em;border-radius:5px;background:rgba(255,255,255,.05);flex-shrink:0}
+.wait-item.next{background:rgba(255,200,0,.1);border:1px solid rgba(255,200,0,.3)}
+.wi-num{font-size:2vh;color:rgba(255,255,255,.45);min-width:4.5em;font-variant-numeric:tabular-nums}
+.wi-name{font-size:2.8vh;font-weight:bold;color:#fff;flex:1}
+.wi-size{font-size:2vh;color:rgba(255,255,255,.5)}
+.wi-next{font-size:1.6vh;padding:.1em .4em;border-radius:3px;background:rgba(255,200,0,.3);color:#fff9c4;font-weight:bold}
+.wi-order{font-size:1.6vh;color:rgba(255,255,255,.35)}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header"><span id="shop-name">ウェイティング</span><span id="clock">--:--</span></div>
+<div id="calling-box">
+  <span id="call-prefix">ただいまご案内中</span>
+  <div id="calling-row">
+    <span id="calling-num"></span>
+    <span id="calling-name">--</span>
+    <span id="calling-size"></span>
+  </div>
+</div>
+<div id="wait-summary">
+  <span id="wait-label">お待ちの組数</span>
+  <span id="wait-count">--</span>
+  <span id="wait-unit">組</span>
+</div>
+<div id="wait-list"></div>
+</body></html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>口コミ・評価ライブ表示</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#0d0d1a;color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#1a0d2e,#2d1a4a);border-bottom:2px solid #7b1fa2}
+#shop-name{font-size:3vh;font-weight:bold;color:#ce93d8;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.6)}
+/* 評価サマリー */
+#rating-summary{display:flex;align-items:center;gap:1em;padding:.5em .8em;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1)}
+#avg-rating{font-size:5vh;font-weight:bold;color:#ffca28}
+#avg-stars{font-size:2.5vh}
+.star.filled{color:#ffca28}
+.star{color:rgba(255,255,255,.2)}
+.star.mini{font-size:1.6vh}
+#review-count{font-size:1.8vh;color:rgba(255,255,255,.5);margin-left:.3em}
+/* スライド表示 */
+#slide-block{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1em 1.5em;text-align:center;gap:.5em;transition:opacity .3s;border-bottom:1px solid rgba(255,255,255,.08)}
+#slide-stars{font-size:4vh}
+#slide-author{font-size:2vh;color:rgba(255,255,255,.5)}
+#slide-cat{font-size:1.6vh;color:#ce93d8}
+#slide-comment{font-size:2.8vh;line-height:1.5;color:#fff;max-height:30vh;overflow:hidden}
+#slide-date{font-size:1.6vh;color:rgba(255,255,255,.35)}
+#dots{display:flex;gap:.4em;justify-content:center;margin-top:.3em}
+.dot{width:1vh;height:1vh;border-radius:50%;background:rgba(255,255,255,.2)}
+.dot.active{background:#ce93d8}
+/* ミニカード */
+#mini-list{display:grid;grid-template-columns:repeat(2,1fr);gap:.4em;padding:.5em;flex-shrink:0}
+.mini-card{background:rgba(255,255,255,.05);border-radius:.4em;padding:.4em .5em}
+.mini-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.2em}
+.mini-author{font-size:1.5vh;color:rgba(255,255,255,.6)}
+.mini-comment{font-size:1.6vh;color:rgba(255,255,255,.7);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header">
+  <span id="shop-name">口コミ・評価</span>
+  <span id="clock">--:--</span>
+</div>
+<div id="rating-summary">
+  <span id="avg-rating">-.-</span>
+  <div>
+    <div id="avg-stars"></div>
+    <span id="review-count">-件</span>
+  </div>
+</div>
+<div id="slide-block">
+  <div id="slide-stars"></div>
+  <div id="slide-cat"></div>
+  <div id="slide-comment">-</div>
+  <div id="slide-author">-</div>
+  <div id="slide-date"></div>
+  <div id="dots"></div>
+</div>
+<div id="mini-list"></div>
+</body></html>

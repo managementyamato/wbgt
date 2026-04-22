@@ -1,0 +1,94 @@
+{
+  "type": "dynamic",
+  "fields": [
+    "timeFormat",
+    "showDate",
+    "fontFamily",
+    "fontColor",
+    "bgColor",
+    "bold",
+    "fontSize"
+  ],
+  "meta": {
+    "description": "デジタル時計",
+    "details": "時刻・日付・曜日を表示するデジタル時計ウィジェット。任意のゾーンサイズに自動対応。"
+  },
+  "schema": {
+    "timeFormat": {
+      "title": "時刻フォーマット",
+      "type": "Select",
+      "help": "時刻の表示形式を選択してください。",
+      "options": [
+        { "val": "HH:MM:SS", "label": "HH:MM:SS（秒あり）" },
+        { "val": "HH:MM",    "label": "HH:MM（秒なし）" }
+      ]
+    },
+    "showDate": {
+      "title": "日付・曜日表示",
+      "type": "Select",
+      "help": "日付と曜日を表示するか選択してください。",
+      "options": [
+        { "val": "1", "label": "表示する" },
+        { "val": "0", "label": "非表示" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "help": "使用するフォントを選択してください。",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" },
+        { "val": "Impact, sans-serif",  "label": "Impact" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "help": "テキストの色を選択してください。",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#d9d9d9", "label": "ライトグレー" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#ffff00", "label": "黄" },
+        { "val": "#00ff00", "label": "緑" },
+        { "val": "#00bfff", "label": "水色" },
+        { "val": "#ff8c00", "label": "オレンジ" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "help": "背景の色を選択してください。",
+      "options": [
+        { "val": "#000000",     "label": "黒" },
+        { "val": "#ffffff",     "label": "白" },
+        { "val": "#1a1a2e",     "label": "ダークネイビー" },
+        { "val": "#003366",     "label": "ネイビー" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    },
+    "bold": {
+      "title": "太字",
+      "type": "Select",
+      "help": "テキストを太字にするか選択してください。",
+      "options": [
+        { "val": "0", "label": "なし" },
+        { "val": "1", "label": "太字にする" }
+      ]
+    },
+    "fontSize": {
+      "title": "フォントサイズ",
+      "type": "Select",
+      "help": "文字のサイズを選択してください。自動でゾーンいっぱいに表示します。",
+      "options": [
+        { "val": "auto", "label": "自動（ゾーンいっぱい）" },
+        { "val": "48",   "label": "48px" },
+        { "val": "64",   "label": "64px" },
+        { "val": "96",   "label": "96px" },
+        { "val": "128",  "label": "128px" },
+        { "val": "192",  "label": "192px" }
+      ]
+    }
+  }
+}

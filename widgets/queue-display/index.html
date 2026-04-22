@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>順番待ちディスプレイ</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #0a1628; font-family: keifont, sans-serif; }
+    body { display: flex; flex-direction: column; }
+
+    /* ヘッダー */
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.3em 0.8em; height: 9vh; flex-shrink: 0;
+      background: #0d1f3c; border-bottom: 2px solid #1565c0;
+    }
+    #title { font-size: 3.5vh; font-weight: bold; color: #90caf9; letter-spacing: 0.05em; }
+    #clock { font-size: 3vh; color: #64b5f6; font-weight: bold; }
+
+    /* メイン：現在呼び出し中 */
+    #now-section {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      flex: 1; background: #0d1f3c; border-bottom: 2px solid #1565c0;
+      padding: 0.5em;
+    }
+    #now-label { font-size: 3vh; color: #90caf9; letter-spacing: 0.1em; margin-bottom: 0.1em; }
+    #now-counter {
+      font-size: 22vh; font-weight: bold; color: #fff;
+      line-height: 1; letter-spacing: -0.02em;
+      text-shadow: 0 0 40px rgba(144,202,249,0.4);
+    }
+    #now-counter.countdown { color: #ffd54f; animation: pulse 0.8s ease-in-out infinite; }
+    #now-suffix { font-size: 5vh; color: #90caf9; margin-top: 0.1em; }
+    #now-window { font-size: 2.5vh; color: #64b5f6; margin-top: 0.3em; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.7; transform: scale(0.97); }
+    }
+
+    /* 待ち情報 */
+    #wait-section {
+      display: flex; align-items: stretch;
+      height: 18vh; flex-shrink: 0;
+      background: #111d33;
+    }
+    .wait-box {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      border-right: 1px solid #1565c0; padding: 0.4em;
+    }
+    .wait-box:last-child { border-right: none; }
+    .wait-label { font-size: 2vh; color: #78909c; margin-bottom: 0.2em; }
+    .wait-value { font-size: 6vh; font-weight: bold; color: #fff; }
+    .wait-value.warn { color: #ffd54f; }
+    .wait-value.ok   { color: #81c784; }
+    .wait-unit  { font-size: 2vh; color: #78909c; }
+
+    /* 次の番号リスト */
+    #next-section {
+      height: 9vh; flex-shrink: 0;
+      display: flex; align-items: center;
+      padding: 0 1em; gap: 0.8em;
+      background: #0a1628; border-top: 1px solid #1565c0;
+    }
+    #next-label { font-size: 2vh; color: #546e7a; flex-shrink: 0; }
+    #next-numbers { display: flex; gap: 0.5em; flex-wrap: wrap; }
+    .next-num {
+      font-size: 2.5vh; font-weight: bold; color: #546e7a;
+      background: #162032; padding: 0.1em 0.5em; border-radius: 4px;
+    }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="title">順番待ちディスプレイ</div>
+    <div id="clock"></div>
+  </div>
+  <div id="now-section">
+    <div id="now-label">ただいまお呼びしている番号</div>
+    <div id="now-counter">---</div>
+    <div id="now-suffix">番</div>
+    <div id="now-window"></div>
+  </div>
+  <div id="wait-section">
+    <div class="wait-box">
+      <div class="wait-label">待ち人数</div>
+      <div class="wait-value" id="wait-count">--</div>
+      <div class="wait-unit">人</div>
+    </div>
+    <div class="wait-box">
+      <div class="wait-label">目安待ち時間</div>
+      <div class="wait-value" id="wait-time">--</div>
+      <div class="wait-unit">分</div>
+    </div>
+    <div class="wait-box">
+      <div class="wait-label">本日の対応数</div>
+      <div class="wait-value ok" id="done-count">--</div>
+      <div class="wait-unit">件</div>
+    </div>
+  </div>
+  <div id="next-section">
+    <div id="next-label">次の番号：</div>
+    <div id="next-numbers"></div>
+  </div>
+</body>
+</html>

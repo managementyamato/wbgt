@@ -1,0 +1,39 @@
+{
+  "type": "dynamic",
+  "fields": ["projectTitle", "dataUrl", "refreshMin", "fontFamily"],
+  "meta": {
+    "description": "工程進捗ボード",
+    "details": "建設・製造の工程進捗をプログレスバーで一覧表示。完了/工程中/未着手/遅延を色分け、全体進捗率も自動計算。GoogleスプレッドシートCSVと連携可能。"
+  },
+  "schema": {
+    "projectTitle": {
+      "title": "プロジェクト名",
+      "type": "Text",
+      "help": "ヘッダーに表示するプロジェクト・現場名を入力してください。",
+      "options": [{ "val": "○○ビル新築工事", "label": "サンプル" }]
+    },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "GoogleスプレッドシートのCSV公開URLを入力。列順：工程名, 進捗率(0-100), ステータス(done/active/pending/delayed), 担当者, 備考。URLなしの場合はサンプルデータを表示。",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "refreshMin": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [
+        { "val": "5",  "label": "5分" },
+        { "val": "10", "label": "10分" },
+        { "val": "30", "label": "30分" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" }
+      ]
+    }
+  }
+}

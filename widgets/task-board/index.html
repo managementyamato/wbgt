@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>タスク共有ボード</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#0d1117;color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#0d2137,#1a3a5c);border-bottom:2px solid #1565c0}
+#board-title{font-size:3vh;font-weight:bold;color:#90caf9;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.6)}
+#summary{display:flex;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1)}
+.sum-box{flex:1;text-align:center;padding:.4em .2em;border-right:1px solid rgba(255,255,255,.08)}
+.sum-box:last-child{border-right:none}
+.sum-label{font-size:1.3vh;color:rgba(255,255,255,.4)}
+.sum-val{font-size:3vh;font-weight:bold}
+.col-ok{color:#66bb6a}
+.col-doing{color:#42a5f5}
+.col-blocked{color:#ef5350;animation:blink .8s step-end infinite}
+.col-todo{color:rgba(255,255,255,.6)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+#list-header{display:grid;grid-template-columns:1.5fr 6fr 2fr 2fr 2.5fr;gap:.3em;padding:.25em .5em;font-size:1.5vh;color:rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.1);flex-shrink:0}
+#task-list{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.task-row{display:grid;grid-template-columns:1.5fr 6fr 2fr 2fr 2.5fr;gap:.3em;padding:.35em .5em;border-bottom:1px solid rgba(255,255,255,.05);align-items:center}
+.st-blocked{background:rgba(239,83,80,.07)}
+.st-done{opacity:.45}
+.t-pri{font-size:1.6vh;font-weight:bold;text-align:center;padding:.2em .3em;border-radius:.3em}
+.pri-high{background:#b71c1c;color:#ef9a9a}
+.pri-medium{background:#1565c0;color:#90caf9}
+.pri-low{background:#2e3440;color:rgba(255,255,255,.5)}
+.t-task{font-size:1.9vh;font-weight:bold;color:#fff}
+.t-note{font-size:1.4vh;color:rgba(255,255,255,.4);font-weight:normal;display:block}
+.t-person{font-size:1.8vh;color:rgba(255,255,255,.6);text-align:center}
+.t-due{font-size:1.8vh;color:rgba(255,255,255,.5);text-align:center;font-variant-numeric:tabular-nums}
+.t-status.st-badge{font-size:1.5vh;font-weight:bold;text-align:center;padding:.2em .4em;border-radius:.3em}
+.st-badge.st-done{background:#1b5e20;color:#a5d6a7}
+.st-badge.st-doing{background:#0d47a1;color:#90caf9}
+.st-badge.st-blocked{background:#b71c1c;color:#ef9a9a}
+.st-badge.st-todo{background:#2e3440;color:rgba(255,255,255,.6)}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header">
+  <span id="board-title">タスク共有ボード</span>
+  <span id="clock">--:--</span>
+</div>
+<div id="summary">
+  <div class="sum-box"><div class="sum-label">完了</div><div class="sum-val col-ok" id="done-count">-</div></div>
+  <div class="sum-box"><div class="sum-label">進行中</div><div class="sum-val col-doing" id="doing-count">-</div></div>
+  <div class="sum-box"><div class="sum-label">停滞</div><div class="sum-val col-ok" id="blocked-count">-</div></div>
+  <div class="sum-box"><div class="sum-label">TODO</div><div class="sum-val col-todo" id="todo-count">-</div></div>
+</div>
+<div id="list-header">
+  <span style="text-align:center">優先</span><span>タスク</span><span style="text-align:center">担当</span><span style="text-align:center">期限</span><span style="text-align:center">状態</span>
+</div>
+<div id="task-list"></div>
+</body></html>

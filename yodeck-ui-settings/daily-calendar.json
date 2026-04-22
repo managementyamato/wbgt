@@ -1,0 +1,67 @@
+{
+  "type": "dynamic",
+  "fields": ["fontFamily", "fontColor", "bgColor", "accentColor", "showRokuyo", "endDate"],
+  "meta": {
+    "description": "日めくりカレンダー",
+    "details": "今日の日付・曜日・六曜・残工期日数を大きく表示する現場向けカレンダーウィジェット。"
+  },
+  "schema": {
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif", "label": "Arial" },
+        { "val": "Impact, sans-serif", "label": "Impact" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#d9d9d9", "label": "ライトグレー" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#ffff00", "label": "黄" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#1a1a2e", "label": "ダークネイビー" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#003366", "label": "ネイビー" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    },
+    "accentColor": {
+      "title": "アクセント色（日付）",
+      "type": "Select",
+      "options": [
+        { "val": "#e94560", "label": "レッド" },
+        { "val": "#ff8c00", "label": "オレンジ" },
+        { "val": "#00bfff", "label": "水色" },
+        { "val": "#ffff00", "label": "黄" },
+        { "val": "#ffffff", "label": "白" }
+      ]
+    },
+    "showRokuyo": {
+      "title": "六曜表示",
+      "type": "Select",
+      "options": [
+        { "val": "1", "label": "表示する" },
+        { "val": "0", "label": "非表示" }
+      ]
+    },
+    "endDate": {
+      "title": "工期終了日",
+      "type": "Text",
+      "help": "YYYY-MM-DD形式で入力。空欄で残工期非表示。",
+      "options": [
+        { "val": "", "label": "未設定" }
+      ]
+    }
+  }
+}

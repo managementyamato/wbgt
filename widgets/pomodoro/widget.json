@@ -1,0 +1,93 @@
+{
+  "type": "dynamic",
+  "fields": ["workMinutes", "breakMinutes", "maxCycles", "fontFamily", "fontColor", "bgColor", "workColor", "breakColor"],
+  "meta": {
+    "description": "ポモドーロタイマー",
+    "details": "25分作業＋5分休憩のサイクルを円形プログレスバーで表示する集中力管理ウィジェット。"
+  },
+  "schema": {
+    "workMinutes": {
+      "title": "作業時間（分）",
+      "type": "Select",
+      "options": [
+        { "val": "15", "label": "15分" },
+        { "val": "20", "label": "20分" },
+        { "val": "25", "label": "25分（標準）" },
+        { "val": "30", "label": "30分" },
+        { "val": "45", "label": "45分" },
+        { "val": "50", "label": "50分" },
+        { "val": "60", "label": "60分" }
+      ]
+    },
+    "breakMinutes": {
+      "title": "休憩時間（分）",
+      "type": "Select",
+      "options": [
+        { "val": "3", "label": "3分" },
+        { "val": "5", "label": "5分（標準）" },
+        { "val": "10", "label": "10分" },
+        { "val": "15", "label": "15分" }
+      ]
+    },
+    "maxCycles": {
+      "title": "サイクル数",
+      "type": "Select",
+      "help": "0で無限ループ。",
+      "options": [
+        { "val": "0", "label": "無限" },
+        { "val": "4", "label": "4回（標準）" },
+        { "val": "6", "label": "6回" },
+        { "val": "8", "label": "8回" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント" },
+        { "val": "Arial, sans-serif", "label": "Arial" },
+        { "val": "Impact, sans-serif", "label": "Impact" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#d9d9d9", "label": "ライトグレー" },
+        { "val": "#000000", "label": "黒" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#000000", "label": "黒" },
+        { "val": "#1a1a2e", "label": "ダークネイビー" },
+        { "val": "#0d0d0d", "label": "ほぼ黒" },
+        { "val": "#ffffff", "label": "白" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    },
+    "workColor": {
+      "title": "作業フェーズ色",
+      "type": "Select",
+      "options": [
+        { "val": "#e94560", "label": "レッド" },
+        { "val": "#ff8c00", "label": "オレンジ" },
+        { "val": "#ff6347", "label": "トマト" },
+        { "val": "#00bfff", "label": "水色" }
+      ]
+    },
+    "breakColor": {
+      "title": "休憩フェーズ色",
+      "type": "Select",
+      "options": [
+        { "val": "#4ade80", "label": "グリーン" },
+        { "val": "#00bfff", "label": "水色" },
+        { "val": "#a78bfa", "label": "パープル" },
+        { "val": "#fbbf24", "label": "イエロー" }
+      ]
+    }
+  }
+}

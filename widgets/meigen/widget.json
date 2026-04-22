@@ -1,0 +1,71 @@
+{
+  "type": "dynamic",
+  "fields": ["customQuotes", "interval", "shuffle", "fontFamily", "fontColor", "bgColor"],
+  "meta": {
+    "description": "名言・格言表示",
+    "details": "日本語の名言・格言をフェードアニメーションで表示。内蔵20種＋カスタム名言対応。"
+  },
+  "schema": {
+    "customQuotes": {
+      "title": "カスタム名言",
+      "type": "Text",
+      "help": "改行区切りで入力。「名言 - 著者」形式。空欄でデフォルト名言20種を表示。",
+      "options": [
+        { "val": "", "label": "デフォルト" }
+      ]
+    },
+    "interval": {
+      "title": "切替間隔（秒）",
+      "type": "Select",
+      "options": [
+        { "val": "8", "label": "8秒" },
+        { "val": "10", "label": "10秒" },
+        { "val": "15", "label": "15秒" },
+        { "val": "20", "label": "20秒" },
+        { "val": "30", "label": "30秒" },
+        { "val": "60", "label": "60秒" }
+      ]
+    },
+    "shuffle": {
+      "title": "シャッフル",
+      "type": "Select",
+      "options": [
+        { "val": "1", "label": "ランダム順" },
+        { "val": "0", "label": "順番通り" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント" },
+        { "val": "Arial, sans-serif", "label": "Arial" },
+        { "val": "Georgia, serif", "label": "Georgia" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#d9d9d9", "label": "ライトグレー" },
+        { "val": "#ffff00", "label": "黄" },
+        { "val": "#00bfff", "label": "水色" },
+        { "val": "#000000", "label": "黒" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#1a1a2e", "label": "ダークネイビー" },
+        { "val": "#000000", "label": "黒" },
+        { "val": "#0d0d0d", "label": "ほぼ黒" },
+        { "val": "#1a472a", "label": "ダークグリーン" },
+        { "val": "#2d1b3d", "label": "ダークパープル" },
+        { "val": "#ffffff", "label": "白" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    }
+  }
+}

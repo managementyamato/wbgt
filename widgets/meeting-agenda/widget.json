@@ -1,0 +1,33 @@
+{
+  "type": "dynamic",
+  "fields": ["meetingTitle", "dataUrl", "autoSec", "fontFamily"],
+  "meta": {
+    "description": "朝礼・ミーティング次第",
+    "details": "朝礼・会議のアジェンダと担当者・所要時間を大きく表示。現在進行中の項目をハイライト。自動送り設定で司会不要の進行も可能。GoogleスプレッドシートCSV連携。"
+  },
+  "schema": {
+    "meetingTitle": { "title": "タイトル", "type": "Text", "options": [{ "val": "朝礼次第", "label": "デフォルト" }] },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "列順：順番, 項目名, 担当者, 時間(分), 備考",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "autoSec": {
+      "title": "自動送り間隔（秒）",
+      "type": "Select",
+      "help": "設定秒数ごとに次の項目を自動ハイライト。0で手動。",
+      "options": [
+        { "val": "0",   "label": "手動（自動送りなし）" },
+        { "val": "60",  "label": "1分ごと" },
+        { "val": "120", "label": "2分ごと" },
+        { "val": "300", "label": "5分ごと" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }]
+    }
+  }
+}

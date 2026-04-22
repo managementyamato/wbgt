@@ -1,0 +1,56 @@
+{
+  "type": "dynamic",
+  "fields": ["title", "dataUrl", "fontFamily", "fontColor", "bgColor"],
+  "meta": {
+    "description": "フードロスカウントダウン",
+    "details": "廃棄時刻が近い商品の残り時間と割引率をリアルタイム表示。GoogleスプレッドシートのCSV公開URLを指定するとデータを自動取得。"
+  },
+  "schema": {
+    "title": {
+      "title": "タイトル",
+      "type": "Text",
+      "help": "ウィジェット上部に表示するタイトルを入力してください。",
+      "options": [
+        { "val": "フードロスカウントダウン", "label": "デフォルト" }
+      ]
+    },
+    "dataUrl": {
+      "title": "データURL（スプレッドシートCSV）",
+      "type": "Text",
+      "help": "GoogleスプレッドシートのCSV公開URLを入力。空欄はサンプルデータを表示します。列順：商品名, 廃棄時刻(HH:MM), 割引率(%), 備考",
+      "options": [
+        { "val": "", "label": "なし（サンプル表示）" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" },
+        { "val": "Impact, sans-serif",  "label": "Impact" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#d9d9d9", "label": "ライトグレー" },
+        { "val": "#000000", "label": "黒" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#111111",     "label": "ほぼ黒" },
+        { "val": "#000000",     "label": "黒" },
+        { "val": "#1a1a2e",     "label": "ダークネイビー" },
+        { "val": "#003366",     "label": "ネイビー" },
+        { "val": "#ffffff",     "label": "白" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    }
+  }
+}

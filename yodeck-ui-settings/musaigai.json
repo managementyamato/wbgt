@@ -1,0 +1,71 @@
+{
+  "fields": [
+    "startDay",
+    "target_days",
+    "reset_date",
+    "font_size",
+    "background_color"
+  ],
+  "meta": {
+    "description": "無災害記録表",
+    "details": "無災害継続日数と目標日数を表示するウィジェット。"
+  },
+  "schema": {
+    "startDay": {
+      "title": "起算日",
+      "type": "Text",
+      "help": "無災害の起算日を入力してください。例: 2024-01-01",
+      "options": [
+        {
+          "val": "2024-01-01",
+          "label": "サンプル"
+        }
+      ]
+    },
+    "target_days": {
+      "title": "目標日数",
+      "type": "Select",
+      "help": "無災害の目標日数を選択してください。",
+      "options": [
+        { "val": "100",  "label": "100日" },
+        { "val": "200",  "label": "200日" },
+        { "val": "365",  "label": "365日（1年）" },
+        { "val": "500",  "label": "500日" },
+        { "val": "730",  "label": "730日（2年）" },
+        { "val": "1000", "label": "1000日" }
+      ]
+    },
+    "reset_date": {
+      "title": "リセット日（任意）",
+      "type": "Text",
+      "help": "災害発生時のリセット日を入力してください。空欄の場合は起算日を使用します。例: 2024-06-01",
+      "options": [
+        {
+          "val": "",
+          "label": "なし"
+        }
+      ]
+    },
+    "font_size": {
+      "title": "フォントサイズ",
+      "type": "Select",
+      "help": "表示する文字のサイズを選択してください。",
+      "options": [
+        { "val": "small",  "label": "小" },
+        { "val": "medium", "label": "中" },
+        { "val": "large",  "label": "大" }
+      ]
+    },
+    "background_color": {
+      "title": "背景色",
+      "type": "Select",
+      "help": "背景の色を選択してください。",
+      "options": [
+        { "val": "yellow", "label": "黄色" },
+        { "val": "white",  "label": "白" },
+        { "val": "green",  "label": "緑" },
+        { "val": "blue",   "label": "青" }
+      ]
+    }
+  }
+}

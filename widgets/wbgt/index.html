@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>暑さ指数（WBGT）</title>
+    <script src="js/widget_init.js"></script>
+    <style>
+        @font-face {
+            font-family: "keifont";
+            src: url("fonts/keifont.ttf");
+        }
+        * {
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-style: normal;
+            font-weight: normal;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+        .wrap {
+            display: inline-block;
+            width: 100%;
+            height: auto;
+        }
+        .container {
+            display: inline-block;
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+        .hdr {
+            display: block;
+            width: 100%;
+            background-color: #f2be00;
+            font-family: "keifont", sans-serif;
+            font-size: 90pt;
+            text-align: center;
+            letter-spacing: 4px;
+            margin: 0;
+            line-height: 1;
+            overflow: hidden;
+        }
+        .current_date_wrap {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #ffffff;
+            font-family: "keifont", sans-serif;
+        }
+        .current_date {
+            font-size: 120pt;
+            color: #1a1a1a;
+        }
+        .tbl_container {
+            padding: 2%;
+            background-color: #eeeeee;
+        }
+        .info_row {
+            width: 100%;
+            background-color: #ffffff;
+            margin-bottom: 2%;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+        }
+        .info_label {
+            width: 55%;
+            padding: 2% 3%;
+            font-family: "keifont", sans-serif;
+            font-size: 85pt;
+            color: #555555;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+        .info_value {
+            width: 45%;
+            padding: 2% 3%;
+            font-family: "keifont", sans-serif;
+            font-size: 85pt;
+            color: #1a1a1a;
+            white-space: nowrap;
+            text-align: right;
+            vertical-align: middle;
+        }
+        .level-danger   { color: #dc2626; }
+        .level-warning  { color: #ea580c; }
+        .level-caution  { color: #ca8a04; }
+        .level-attention{ color: #16a34a; }
+        .level-safe     { color: #2563eb; }
+        .off-season-msg {
+            display: none;
+            text-align: center;
+            font-family: "keifont", sans-serif;
+            font-size: 40pt;
+            color: #888;
+            padding: 4%;
+        }
+        .off-season-msg.show { display: block; }
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="container">
+        <h2 class="hdr">暑さ指数（WBGT）</h2>
+        <div class="current_date_wrap">
+            <span id="todays_date" class="current_date"></span>
+        </div>
+        <div class="tbl_container">
+            <table class="info_row" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="info_label">測定地点</td>
+                    <td class="info_value" id="location_value">--</td>
+                </tr>
+            </table>
+            <table class="info_row" id="wbgt_row" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="info_label">暑さ指数</td>
+                    <td class="info_value" id="wbgt_value">--</td>
+                </tr>
+            </table>
+            <table class="info_row" id="level_row" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="info_label">危険度</td>
+                    <td class="info_value" id="level_value">--</td>
+                </tr>
+            </table>
+            <div class="off-season-msg" id="off_season_msg">
+                暑さ指数は4月下旬〜10月に配信されます
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

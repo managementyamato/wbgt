@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>気象警報・注意報</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: keifont, sans-serif; }
+    body { display: flex; flex-direction: column; transition: background 0.6s; }
+
+    /* テーマ */
+    body.theme-safe    { background: linear-gradient(160deg, #1b5e20 0%, #2e7d32 100%); }
+    body.theme-caution { background: linear-gradient(160deg, #e65100 0%, #bf360c 100%); }
+    body.theme-warning { background: linear-gradient(160deg, #b71c1c 0%, #7f0000 100%); }
+    body.theme-special { background: linear-gradient(160deg, #4a148c 0%, #7b1fa2 100%); }
+    body.theme-loading { background: #1a1a2e; }
+
+    /* ヘッダー */
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.5em 0.8em; flex-shrink: 0;
+      background: rgba(0,0,0,0.3);
+    }
+    #header-left { display: flex; align-items: center; gap: 0.5em; }
+    #header-icon { font-size: 3vh; }
+    #header-label { font-size: 2.5vh; color: rgba(255,255,255,0.8); }
+    #pref-name { font-size: 3vh; font-weight: bold; color: #fff; }
+    #clock { font-size: 2vh; color: rgba(255,255,255,0.6); }
+
+    /* メインエリア */
+    #main { flex: 1; display: flex; flex-direction: column; padding: 0.6em 0.8em; gap: 0.4em; overflow: hidden; }
+
+    /* 安全表示 */
+    #no-alert {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-size: 3.5vh; color: rgba(255,255,255,0.9);
+      letter-spacing: 0.1em; text-align: center; gap: 0.5em;
+    }
+    #no-alert-icon { font-size: 10vh; }
+
+    /* 警報リスト */
+    #alert-list { flex: 1; display: flex; flex-direction: column; gap: 0.35em; overflow: hidden; }
+
+    .alert-item {
+      display: flex; align-items: center; gap: 0.6em;
+      padding: 0.5em 0.8em; border-radius: 8px;
+      background: rgba(0,0,0,0.35);
+      border-left: 5px solid rgba(255,255,255,0.4);
+    }
+    .alert-item.level-5 { border-left-color: #ce93d8; background: rgba(123,31,162,0.4); }
+    .alert-item.level-4 { border-left-color: #ef9a9a; background: rgba(183,28,28,0.4); }
+    .alert-item.level-3 { border-left-color: #ffcc80; background: rgba(230,81,0,0.3);  }
+    .alert-item.level-2 { border-left-color: #90caf9; background: rgba(21,101,192,0.3); }
+
+    .alert-type {
+      font-size: 2.5vh; font-weight: bold; color: #fff;
+      min-width: 8em; flex-shrink: 0;
+      letter-spacing: 0.05em;
+    }
+    .alert-area {
+      font-size: 2.2vh; color: rgba(255,255,255,0.8);
+      letter-spacing: 0.05em;
+    }
+    .alert-more {
+      font-size: 2vh; color: rgba(255,255,255,0.5);
+      text-align: right; padding: 0.2em;
+    }
+
+    /* サマリー */
+    #summary-bar {
+      flex-shrink: 0; padding: 0.4em 0.8em;
+      background: rgba(0,0,0,0.25);
+    }
+    #summary { font-size: 2vh; color: rgba(255,255,255,0.7); }
+
+    /* 特別警報点滅 */
+    body.theme-special #header { animation: blink-bg 1s ease-in-out infinite alternate; }
+    @keyframes blink-bg {
+      from { background: rgba(0,0,0,0.3); }
+      to   { background: rgba(123,31,162,0.5); }
+    }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body class="theme-loading">
+  <div id="header">
+    <div id="header-left">
+      <span id="header-icon">⚡</span>
+      <span id="header-label">気象警報・注意報</span>
+      <span id="pref-name"></span>
+    </div>
+    <span id="clock"></span>
+  </div>
+  <div id="main">
+    <div id="no-alert">
+      <span id="no-alert-icon">✅</span>
+      データ取得中…
+    </div>
+    <div id="alert-list" style="display:none"></div>
+  </div>
+  <div id="summary-bar">
+    <div id="summary"></div>
+  </div>
+</body>
+</html>

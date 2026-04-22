@@ -1,0 +1,40 @@
+{
+  "type": "dynamic",
+  "fields": ["siteName", "dataUrl", "refreshMin", "fontFamily"],
+  "meta": {
+    "description": "入退場管理ボード",
+    "details": "現場の入場者数と入退場状況をリアルタイム表示。在場中は緑ドット・退場済はグレーで一目で識別。GoogleスプレッドシートCSVで管理。建設・工場・イベント向け。"
+  },
+  "schema": {
+    "siteName": {
+      "title": "現場名",
+      "type": "Text",
+      "help": "ヘッダーに表示する現場名を入力してください。",
+      "options": [{ "val": "第一建設現場", "label": "サンプル" }]
+    },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "GoogleスプレッドシートのCSV公開URLを入力。列順：名前, 所属, 入場時刻(HH:MM), 退場時刻(空欄=在場中), 備考。URLなしはサンプルデータ表示。",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "refreshMin": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [
+        { "val": "1",  "label": "1分" },
+        { "val": "3",  "label": "3分" },
+        { "val": "5",  "label": "5分" },
+        { "val": "10", "label": "10分" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" }
+      ]
+    }
+  }
+}

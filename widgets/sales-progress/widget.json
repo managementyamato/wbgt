@@ -1,0 +1,27 @@
+{
+  "type": "dynamic",
+  "fields": ["shopName", "dataUrl", "refreshMin", "fontFamily"],
+  "meta": {
+    "description": "本日売上進捗",
+    "details": "今日の目標売上に対する達成率を大きく表示。売上・客数・客単価など複数指標に対応。達成率で背景色が変化。GoogleスプレッドシートCSV連携。飲食・小売・美容向け。"
+  },
+  "schema": {
+    "shopName": { "title": "店舗名・タイトル", "type": "Text", "options": [{ "val": "本日の売上進捗", "label": "デフォルト" }] },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "列順：指標名, 現在値, 目標値, 単位(円/名/件など), 備考。1行目がメイン表示、2行目以降がサブ表示。",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "refreshMin": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [{ "val": "1", "label": "1分" }, { "val": "5", "label": "5分" }, { "val": "10", "label": "10分" }]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }]
+    }
+  }
+}

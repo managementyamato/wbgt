@@ -1,0 +1,60 @@
+{
+  "type": "dynamic",
+  "fields": ["title", "dataUrl", "refreshSec", "fontFamily", "fontColor", "bgColor"],
+  "meta": {
+    "description": "持ち出し管理ボード",
+    "details": "工具・機材の貸出中/返却済/点検中をリアルタイム表示。GoogleスプレッドシートのCSV公開URLでデータ連携。Googleフォームと組み合わせて貸出・返却を記録できます。"
+  },
+  "schema": {
+    "title": {
+      "title": "タイトル",
+      "type": "Text",
+      "help": "ウィジェット上部に表示するタイトルを入力してください。",
+      "options": [{ "val": "持ち出し管理ボード", "label": "デフォルト" }]
+    },
+    "dataUrl": {
+      "title": "データURL（スプレッドシートCSV）",
+      "type": "Text",
+      "help": "GoogleスプレッドシートのCSV公開URLを入力。空欄はサンプルデータを表示。列順：工具名, ステータス(available/checked-out/maintenance), 担当者, 更新時刻, 備考",
+      "options": [{ "val": "", "label": "なし（サンプル表示）" }]
+    },
+    "refreshSec": {
+      "title": "更新間隔",
+      "type": "Select",
+      "help": "データを再取得する間隔を選択してください。",
+      "options": [
+        { "val": "15",  "label": "15秒" },
+        { "val": "30",  "label": "30秒" },
+        { "val": "60",  "label": "1分" },
+        { "val": "300", "label": "5分" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#d9d9d9", "label": "ライトグレー" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#111111",     "label": "ほぼ黒" },
+        { "val": "#000000",     "label": "黒" },
+        { "val": "#1a1a2e",     "label": "ダークネイビー" },
+        { "val": "#003366",     "label": "ネイビー" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    }
+  }
+}

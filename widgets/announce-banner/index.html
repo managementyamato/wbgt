@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Announce Banner</title>
+  <style>
+    @font-face {
+      font-family: "keifont";
+      src: url("fonts/keifont.ttf");
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    #icon { line-height: 1; text-align: center; }
+    #title { line-height: 1.2; letter-spacing: 0.06em; text-align: center; font-weight: bold; }
+    #subtitle { line-height: 1.4; letter-spacing: 0.04em; text-align: center; opacity: 0.8; margin-top: 0.2em; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="icon"></div>
+  <div id="title"></div>
+  <div id="subtitle"></div>
+</body>
+</html>

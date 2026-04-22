@@ -1,0 +1,16 @@
+{
+  "type": "dynamic",
+  "fields": ["title", "dataUrl", "refreshSec", "fontFamily", "fontColor", "bgColor"],
+  "meta": {
+    "description": "スタッフ対応状況",
+    "details": "スタッフごとの対応可/対応中/離席中/不在をリアルタイム表示。クリニック・ホテル・オフィス受付に。GoogleスプレッドシートCSVと連携。"
+  },
+  "schema": {
+    "title": { "title": "タイトル", "type": "Text", "help": "ウィジェット上部のタイトル。", "options": [{ "val": "スタッフ対応状況", "label": "デフォルト" }] },
+    "dataUrl": { "title": "データURL（CSV）", "type": "Text", "help": "GoogleスプレッドシートのCSV公開URL。列順：名前, 役職, ステータス(free/busy/away/offline), ETA, 備考", "options": [{ "val": "", "label": "なし（サンプル）" }] },
+    "refreshSec": { "title": "更新間隔", "type": "Select", "options": [{ "val": "10", "label": "10秒" }, { "val": "15", "label": "15秒" }, { "val": "30", "label": "30秒" }, { "val": "60", "label": "1分" }] },
+    "fontFamily": { "title": "フォント", "type": "Select", "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }] },
+    "fontColor":  { "title": "文字色", "type": "Select", "options": [{ "val": "#ffffff", "label": "白" }, { "val": "#d9d9d9", "label": "ライトグレー" }] },
+    "bgColor":    { "title": "背景色", "type": "Select", "options": [{ "val": "#111111", "label": "ほぼ黒" }, { "val": "#000000", "label": "黒" }, { "val": "#1a1a2e", "label": "ダークネイビー" }, { "val": "transparent", "label": "透明" }] }
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>仕込み状況ボード</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#1a0f00;color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#bf360c,#e64a19);border-bottom:2px solid #ff8a65}
+#shop-name{font-size:3vh;font-weight:bold;color:#fff;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.65);font-variant-numeric:tabular-nums}
+#summary{display:flex;flex-shrink:0;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+.sum-box{flex:1;display:flex;flex-direction:column;align-items:center;padding:.4em 0;border-right:1px solid rgba(255,255,255,.07)}
+.sum-box:last-child{border-right:none}
+.sum-label{font-size:1.6vh;color:rgba(255,255,255,.5)}
+.sum-num{font-size:4.5vh;font-weight:bold;line-height:1.1}
+.sum-unit{font-size:1.4vh;color:rgba(255,255,255,.4)}
+.s-done .sum-num{color:#a5d6a7}
+.s-working .sum-num{color:#ff8a65}
+.s-pending .sum-num{color:rgba(255,255,255,.5)}
+.s-total .sum-num{color:rgba(255,255,255,.8)}
+#prep-list{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:.3em;padding:.4em .7em}
+.prep-item{display:flex;align-items:center;gap:.6em;padding:.35em .6em;border-radius:5px;background:rgba(255,255,255,.05);border-left:4px solid rgba(255,255,255,.15);flex-shrink:0}
+.status-done{border-left-color:#66bb6a;background:rgba(102,187,106,.07);opacity:.7}
+.status-working{border-left-color:#ff8a65;background:rgba(255,138,101,.1)}
+.status-pending{border-left-color:rgba(255,255,255,.2)}
+.status-low{border-left-color:#ffca28;background:rgba(255,202,40,.08)}
+.prep-icon{font-size:2.5vh;flex-shrink:0}
+.prep-info{flex:1;display:flex;flex-direction:column;gap:.05em;min-width:0}
+.prep-name{font-size:2.5vh;font-weight:bold;color:#fff}
+.prep-note{font-size:1.7vh;color:rgba(255,255,255,.5)}
+.prep-right{display:flex;align-items:center;gap:.5em;flex-shrink:0}
+.prep-qty{font-size:1.8vh;color:rgba(255,255,255,.6)}
+.prep-person{font-size:1.7vh;color:rgba(255,255,255,.45)}
+.prep-badge{font-size:1.5vh;padding:.1em .4em;border-radius:3px;font-weight:bold}
+.badge-done{background:rgba(102,187,106,.3);color:#c8e6c9}
+.badge-working{background:rgba(255,138,101,.3);color:#ffccbc}
+.badge-pending{background:rgba(255,255,255,.1);color:rgba(255,255,255,.45)}
+.badge-low{background:rgba(255,202,40,.3);color:#fff9c4}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header"><span id="shop-name">仕込み状況</span><span id="clock">--:--</span></div>
+<div id="summary">
+  <div class="sum-box s-done"><span class="sum-label">完了</span><span id="cnt-done" class="sum-num">--</span><span class="sum-unit">品</span></div>
+  <div class="sum-box s-working"><span class="sum-label">仕込み中</span><span id="cnt-working" class="sum-num">--</span><span class="sum-unit">品</span></div>
+  <div class="sum-box s-pending"><span class="sum-label">未着手</span><span id="cnt-pending" class="sum-num">--</span><span class="sum-unit">品</span></div>
+  <div class="sum-box s-total"><span class="sum-label">合計</span><span id="cnt-total" class="sum-num">--</span><span class="sum-unit">品</span></div>
+</div>
+<div id="prep-list"></div>
+</body></html>

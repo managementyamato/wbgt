@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>誕生日・記念日ボード</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: keifont, sans-serif; background: linear-gradient(160deg, #1a0533 0%, #2d1b69 100%); color: #fff; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: center;
+      padding: 0.5em 0.8em; flex-shrink: 0;
+      background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    #company-name { font-size: 3vh; font-weight: bold; color: #fff; letter-spacing: 0.1em; }
+
+    /* 今日のお祝い */
+    #today-section {
+      flex-shrink: 0; padding: 0.5em 0.8em;
+      background: rgba(255,200,0,0.12); border-bottom: 2px solid rgba(255,200,0,0.3);
+    }
+    #today-header { font-size: 2vh; color: rgba(255,200,0,0.8); margin-bottom: 0.3em; letter-spacing: 0.1em; }
+    #today-list { display: flex; flex-direction: column; gap: 0.3em; }
+    .today-item {
+      display: flex; align-items: center; gap: 0.6em;
+      background: rgba(255,200,0,0.1); border-radius: 8px; padding: 0.4em 0.7em;
+    }
+    .today-icon  { font-size: 5vh; line-height: 1; animation: bounce 1s ease-in-out infinite alternate; }
+    @keyframes bounce { from { transform: scale(1); } to { transform: scale(1.15); } }
+    .today-info  { display: flex; flex-direction: column; }
+    .today-name  { font-size: 3.5vh; font-weight: bold; color: #fff200; }
+    .today-label { font-size: 2.5vh; color: rgba(255,255,255,0.8); }
+    .today-msg   { font-size: 1.8vh; color: rgba(255,255,255,0.5); }
+
+    /* 今月リスト */
+    #month-section { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    #month-header { font-size: 2vh; color: rgba(255,255,255,0.5); padding: 0.4em 0.8em 0.2em; letter-spacing: 0.1em; flex-shrink: 0; }
+    #month-list { flex: 1; overflow: hidden; display: flex; flex-direction: column; gap: 0.25em; padding: 0 0.7em 0.5em; }
+
+    .month-item {
+      display: flex; align-items: center; gap: 0.5em;
+      padding: 0.3em 0.6em; border-radius: 5px;
+      background: rgba(255,255,255,0.05); flex-shrink: 0;
+    }
+    .month-date { font-size: 2vh; color: rgba(255,255,255,0.45); min-width: 4em; font-variant-numeric: tabular-nums; }
+    .month-icon { font-size: 2.5vh; }
+    .month-name { font-size: 2.5vh; font-weight: bold; color: #fff; flex: 1; }
+    .month-type { font-size: 1.8vh; color: rgba(255,255,255,0.5); flex-shrink: 0; }
+    .month-msg  { font-size: 1.6vh; color: rgba(255,255,255,0.4); }
+    .no-items   { font-size: 2vh; color: rgba(255,255,255,0.3); text-align: center; padding: 1em; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <span id="company-name">今月の誕生日・記念日</span>
+  </div>
+  <div id="today-section">
+    <div id="today-header">🎊 本日のお祝い</div>
+    <div id="today-list"></div>
+  </div>
+  <div id="month-section">
+    <div id="month-header">今月のお祝い</div>
+    <div id="month-list"></div>
+  </div>
+</body>
+</html>

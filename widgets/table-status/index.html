@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>テーブル状況ボード</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: keifont, sans-serif; background: #1a0f0a; color: #fff; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.4em 0.8em; flex-shrink: 0;
+      background: linear-gradient(90deg, #4e342e, #6d4c41);
+      border-bottom: 2px solid #a1887f;
+    }
+    #shop-name { font-size: 3vh; font-weight: bold; color: #fff; letter-spacing: 0.1em; }
+    #header-right { display: flex; align-items: center; gap: 1em; }
+    #clock { font-size: 2.5vh; color: rgba(255,255,255,0.7); font-variant-numeric: tabular-nums; }
+
+    #summary {
+      display: flex; gap: 0; flex-shrink: 0;
+      background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .sum-item { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 0.4em 0; border-right: 1px solid rgba(255,255,255,0.07); }
+    .sum-item:last-child { border-right: none; }
+    .sum-label { font-size: 1.7vh; color: rgba(255,255,255,0.5); }
+    .sum-num   { font-size: 4.5vh; font-weight: bold; line-height: 1.1; }
+    .sum-unit  { font-size: 1.5vh; color: rgba(255,255,255,0.45); }
+    .sum-available .sum-num { color: #66bb6a; }
+    .sum-occupied  .sum-num { color: #ef5350; }
+    .sum-total     .sum-num { color: rgba(255,255,255,0.8); }
+
+    #table-grid {
+      flex: 1; overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(16vh, 1fr));
+      gap: 0.5em; padding: 0.6em;
+      align-content: start;
+    }
+
+    .table-card {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 0.5em 0.3em; border-radius: 8px; gap: 0.15em;
+      border: 2px solid rgba(255,255,255,0.1);
+      transition: background 0.3s;
+    }
+    .table-card.status-available { background: rgba(102,187,106,0.15); border-color: rgba(102,187,106,0.4); }
+    .table-card.status-occupied  { background: rgba(239,83,80,0.15);   border-color: rgba(239,83,80,0.4); }
+    .table-card.status-cleaning  { background: rgba(255,202,40,0.1);   border-color: rgba(255,202,40,0.3); }
+    .table-card.status-reserved  { background: rgba(66,165,245,0.1);   border-color: rgba(66,165,245,0.3); }
+
+    .card-name  { font-size: 1.8vh; color: rgba(255,255,255,0.6); }
+    .card-icon  { font-size: 4vh; line-height: 1; }
+    .card-label { font-size: 2vh; font-weight: bold; color: #fff; }
+    .card-count { font-size: 1.7vh; color: rgba(255,255,255,0.6); }
+    .card-note  { font-size: 1.4vh; color: rgba(255,255,255,0.4); text-align: center; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <span id="shop-name">テーブル状況</span>
+    <div id="header-right">
+      <span id="clock">--:--</span>
+    </div>
+  </div>
+  <div id="summary">
+    <div class="sum-item sum-available">
+      <span class="sum-label">空席</span>
+      <span id="count-available" class="sum-num">--</span>
+      <span class="sum-unit">席</span>
+    </div>
+    <div class="sum-item sum-occupied">
+      <span class="sum-label">使用中</span>
+      <span id="count-occupied" class="sum-num">--</span>
+      <span class="sum-unit">席</span>
+    </div>
+    <div class="sum-item sum-total">
+      <span class="sum-label">合計</span>
+      <span id="count-total" class="sum-num">--</span>
+      <span class="sum-unit">席</span>
+    </div>
+  </div>
+  <div id="table-grid"></div>
+</body>
+</html>

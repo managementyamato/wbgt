@@ -1,0 +1,27 @@
+{
+  "type": "dynamic",
+  "fields": ["boardTitle", "dataUrl", "refreshMin", "fontFamily"],
+  "meta": {
+    "description": "作業許可証掲示板",
+    "details": "現在有効な危険作業許可証（高所作業・溶接・クレーン等）を一覧掲示。作業中/開始待ち/完了を色分け表示。GoogleスプレッドシートCSV連携。無許可作業防止に。"
+  },
+  "schema": {
+    "boardTitle": { "title": "タイトル", "type": "Text", "options": [{ "val": "作業許可証", "label": "デフォルト" }] },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "列順：許可証番号, 作業内容, 担当者, 開始時刻(HH:MM), 終了時刻(HH:MM), 場所, ステータス(active/pending/done)",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "refreshMin": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [{ "val": "5", "label": "5分" }, { "val": "10", "label": "10分" }, { "val": "30", "label": "30分" }]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }]
+    }
+  }
+}

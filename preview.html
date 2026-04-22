@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ゲンバルジャー ウィジェット プレビュー</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', 'Noto Sans JP', sans-serif;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    header {
+      background: #16213e;
+      padding: 16px 24px;
+      border-bottom: 2px solid #0f3460;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    header h1 { font-size: 1.4rem; color: #e94560; letter-spacing: 2px; }
+    header span { font-size: 0.85rem; color: #64748b; }
+    .server-note {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: #f59e0b;
+      background: rgba(245,158,11,0.1);
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(245,158,11,0.3);
+    }
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 20px;
+      padding: 24px;
+    }
+    .widget-card {
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .widget-card.wide { grid-column: 1 / -1; }
+    .card-header {
+      background: #0f3460;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-header h2 { font-size: 0.95rem; color: #e0e0e0; }
+    .badge {
+      font-size: 0.7rem;
+      background: #e94560;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .preview-frame {
+      width: 100%;
+      height: 400px;
+      border: none;
+      display: block;
+      background: #000;
+    }
+    .config-panel {
+      background: #0d0d1a;
+      padding: 12px 16px;
+      border-top: 1px solid #0f3460;
+    }
+    .config-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+    .config-field { display: flex; flex-direction: column; gap: 4px; }
+    .config-field label { font-size: 0.72rem; color: #94a3b8; }
+    .config-field input,
+    .config-field select {
+      background: #1a1a2e;
+      border: 1px solid #0f3460;
+      color: #e0e0e0;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+    .config-field input[type="text"],
+    .config-field input[type="date"],
+    .config-field input[type="number"] { min-width: 160px; }
+    .btn {
+      background: #e94560;
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .btn:hover { background: #c73652; }
+    .note { font-size: 0.72rem; color: #475569; margin-top: 6px; }
+    #loading {
+      text-align: center;
+      padding: 60px;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    #error-msg {
+      display: none;
+      margin: 24px;
+      padding: 16px;
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.3);
+      border-radius: 6px;
+      color: #fca5a5;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    /* ---- Yodeck 環境シミュレーター ---- */
+    #yodeck-sim {
+      margin: 16px 24px 0;
+      background: #0d1f0d;
+      border: 1px solid #1a4a1a;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    #yodeck-sim .sim-header {
+      background: #1a3a1a;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+    #yodeck-sim .sim-header h2 {
+      font-size: 0.85rem;
+      color: #4ade80;
+      flex: 1;
+    }
+    #yodeck-sim .sim-header .sim-status {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #14532d;
+      color: #86efac;
+    }
+    #yodeck-sim .sim-header .sim-status.offline {
+      background: #450a0a;
+      color: #fca5a5;
+    }
+    #yodeck-sim .sim-body {
+      padding: 12px 16px;
+      border-top: 1px solid #1a4a1a;
+    }
+    #yodeck-sim .sim-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    #yodeck-sim .sim-field { display: flex; flex-direction: column; gap: 4px; }
+    #yodeck-sim .sim-field label { font-size: 0.72rem; color: #86efac; }
+    #yodeck-sim .sim-field select,
+    #yodeck-sim .sim-field input {
+      background: #1a1a2e;
+      border: 1px solid #1a4a1a;
+      color: #e0e0e0;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+    #yodeck-sim .sim-result {
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: #94a3b8;
+      line-height: 1.7;
+    }
+    #yodeck-sim .sim-result .ok   { color: #4ade80; }
+    #yodeck-sim .sim-result .fail { color: #f87171; }
+    .btn-sim {
+      background: #16a34a;
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .btn-sim:hover { background: #15803d; }
+    .btn-sim-test {
+      background: #0369a1;
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .btn-sim-test:hover { background: #075985; }
+    .btn-sim-addr {
+      background: #7c3aed;
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .btn-sim-addr:hover { background: #6d28d9; }
+    .btn-sim-addr:disabled { background: #4b5563; cursor: wait; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ゲンバルジャー</h1>
+  <span>Yodeck ウィジェット ローカルプレビュー</span>
+  <span class="server-note">起動: python mock_server.py</span>
+</header>
+
+<!-- ======= Yodeck 環境シミュレーター ======= -->
+<div id="yodeck-sim">
+  <div class="sim-header" onclick="toggleSim()">
+    <h2>🍓 Yodeck 環境シミュレーター（GPS モック）</h2>
+    <span id="sim-status" class="sim-status offline">mock_server.py 未起動</span>
+    <span style="font-size:0.75rem;color:#86efac" id="sim-toggle-label">▼ 開く</span>
+  </div>
+  <div class="sim-body" id="sim-body" style="display:none">
+    <!-- 住所検索 -->
+    <div class="sim-row" style="margin-bottom:10px">
+      <div class="sim-field" style="flex:1;min-width:240px">
+        <label>住所を入力（例: 大阪府大阪市北区梅田1丁目）</label>
+        <input type="text" id="sim-address" placeholder="住所・建物名・地名など"
+          style="width:100%" onkeydown="if(event.key==='Enter')geocodeAddress()">
+      </div>
+      <div class="sim-field" style="justify-content:flex-end">
+        <button class="btn-sim-addr" id="btn-geocode" onclick="geocodeAddress()">📍 住所から検索</button>
+      </div>
+    </div>
+    <div class="sim-row">
+      <div class="sim-field">
+        <label>都市プリセット</label>
+        <select id="sim-preset" onchange="applyPreset()">
+          <option value="">── カスタム ──</option>
+          <option value="43.0608,141.3544,札幌">札幌</option>
+          <option value="38.2667,140.8667,仙台">仙台</option>
+          <option value="35.8617,139.6453,さいたま">さいたま</option>
+          <option value="35.6895,139.6917,東京" selected>東京</option>
+          <option value="35.4500,139.6500,横浜">横浜</option>
+          <option value="35.1667,136.9667,名古屋">名古屋</option>
+          <option value="35.0167,135.7333,京都">京都</option>
+          <option value="34.6833,135.5167,大阪">大阪</option>
+          <option value="34.6913,135.1830,神戸">神戸</option>
+          <option value="33.5833,130.3833,福岡">福岡</option>
+          <option value="26.2167,127.6833,那覇">那覇</option>
+        </select>
+      </div>
+      <div class="sim-field">
+        <label>緯度 (lat)</label>
+        <input type="number" id="sim-lat" value="35.6895" step="0.0001" style="width:120px">
+      </div>
+      <div class="sim-field">
+        <label>経度 (lon)</label>
+        <input type="number" id="sim-lon" value="139.6917" step="0.0001" style="width:120px">
+      </div>
+      <div class="sim-field" style="justify-content:flex-end">
+        <button class="btn-sim" onclick="setLocation()">GPS位置を適用</button>
+      </div>
+      <div class="sim-field" style="justify-content:flex-end">
+        <button class="btn-sim-test" onclick="testDevice()">接続テスト</button>
+      </div>
+    </div>
+    <div id="sim-result" class="sim-result">
+      ← 「接続テスト」で mock_server.py の動作確認ができます
+    </div>
+    <p style="font-size:0.72rem;color:#475569;margin-top:8px">
+      ⚠ <code>python -m http.server 8080</code> ではなく <code>python mock_server.py</code> で起動してください
+    </p>
+  </div>
+</div>
+
+<div id="error-msg"></div>
+<div id="loading">ウィジェット一覧を読み込み中...</div>
+<div id="grid"></div>
+
+<script>
+// ===== Yodeck 環境シミュレーター =========================================
+
+var _simOpen = false;
+
+function toggleSim() {
+  _simOpen = !_simOpen;
+  document.getElementById('sim-body').style.display = _simOpen ? 'block' : 'none';
+  document.getElementById('sim-toggle-label').textContent = _simOpen ? '▲ 閉じる' : '▼ 開く';
+  if (_simOpen) testDevice();
+}
+
+function geocodeAddress() {
+  var address = document.getElementById('sim-address').value.trim();
+  if (!address) { alert('住所を入力してください'); return; }
+
+  var btn = document.getElementById('btn-geocode');
+  btn.disabled = true;
+  btn.textContent = '検索中…';
+  setSimResult('住所を検索中: ' + address);
+
+  var url = 'https://msearch.gsi.go.jp/address-search/AddressSearch?q=' + encodeURIComponent(address);
+  fetch(url)
+    .then(function(r) { return r.json(); })
+    .then(function(results) {
+      btn.disabled = false;
+      btn.textContent = '📍 住所から検索';
+
+      if (!results || results.length === 0) {
+        setSimResult('<span class="fail">❌ 住所が見つかりませんでした。別の表記で試してください。</span>');
+        return;
+      }
+
+      // GeoJSON: coordinates = [lon, lat]
+      var best = results[0];
+      var lon = best.geometry.coordinates[0];
+      var lat = best.geometry.coordinates[1];
+      var title = best.properties.title || address;
+
+      document.getElementById('sim-lat').value = lat.toFixed(6);
+      document.getElementById('sim-lon').value = lon.toFixed(6);
+      document.getElementById('sim-preset').value = '';
+
+      // 候補が複数あれば一覧表示
+      var candidatesHtml = '';
+      if (results.length > 1) {
+        candidatesHtml = '<br>他の候補: ';
+        var max = Math.min(results.length, 4);
+        for (var i = 1; i < max; i++) {
+          var r = results[i];
+          var rLon = r.geometry.coordinates[0];
+          var rLat = r.geometry.coordinates[1];
+          var rTitle = r.properties.title || '';
+          candidatesHtml += '<a href="#" style="color:#93c5fd" onclick="pickCandidate(' +
+            rLat.toFixed(6) + ',' + rLon.toFixed(6) + ',\'' + rTitle.replace(/'/g,'') + '\');return false">' +
+            rTitle + '</a> ';
+        }
+      }
+
+      setSimResult(
+        '<span class="ok">✅ 住所を解決しました</span><br>' +
+        '📍 <strong>' + title + '</strong><br>' +
+        'lat=' + lat.toFixed(6) + ', lon=' + lon.toFixed(6) + '<br>' +
+        candidatesHtml +
+        '<br><button class="btn-sim" style="margin-top:6px" onclick="setLocation()">この位置でGPSを適用</button>'
+      );
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = '📍 住所から検索';
+      setSimResult('<span class="fail">❌ 国土地理院APIへの接続に失敗しました。ネットワークを確認してください。</span>');
+    });
+}
+
+function pickCandidate(lat, lon, title) {
+  document.getElementById('sim-lat').value = lat;
+  document.getElementById('sim-lon').value = lon;
+  setSimResult(
+    '<span class="ok">✅ 候補を選択しました</span><br>' +
+    '📍 <strong>' + title + '</strong><br>' +
+    'lat=' + lat + ', lon=' + lon + '<br>' +
+    '<button class="btn-sim" style="margin-top:6px" onclick="setLocation()">この位置でGPSを適用</button>'
+  );
+}
+
+function applyPreset() {
+  var val = document.getElementById('sim-preset').value;
+  if (!val) return;
+  var parts = val.split(',');
+  document.getElementById('sim-lat').value = parts[0];
+  document.getElementById('sim-lon').value = parts[1];
+}
+
+function setLocation() {
+  var lat = parseFloat(document.getElementById('sim-lat').value);
+  var lon = parseFloat(document.getElementById('sim-lon').value);
+  var preset = document.getElementById('sim-preset');
+  var name = preset.value ? preset.options[preset.selectedIndex].text : '';
+  if (isNaN(lat) || isNaN(lon)) { alert('緯度・経度を正しく入力してください'); return; }
+
+  fetch('http://localhost:8080/set-location', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ lat: lat, lon: lon, name: name })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    if (d.ok) {
+      setSimResult('<span class="ok">✅ GPS位置を更新しました → lat=' + lat + ', lon=' + lon + (name ? '（' + name + '）' : '') + '</span><br>ウィジェットの次回更新（約15分）で反映されます。すぐ確認したい場合はページをリロードしてください。');
+      updateSimStatus(true);
+    }
+  })
+  .catch(function() {
+    setSimResult('<span class="fail">❌ mock_server.py に接続できません。<br>コマンドプロンプトで <code>python mock_server.py</code> を実行してください。</span>');
+    updateSimStatus(false);
+  });
+}
+
+function testDevice() {
+  fetch('http://localhost:8080/device')
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    var loc = Array.isArray(d.location) ? d.location : [d.lat || d.latitude, d.lon || d.lng || d.longitude];
+    var lat = loc[0], lon = loc[1];
+    setSimResult(
+      '<span class="ok">✅ mock_server.py 起動中</span><br>' +
+      '現在のGPS位置: <strong>lat=' + lat + ', lon=' + lon + '</strong><br>' +
+      'デバイス名: ' + (d.name || '不明')
+    );
+    document.getElementById('sim-lat').value = lat;
+    document.getElementById('sim-lon').value = lon;
+    updateSimStatus(true);
+  })
+  .catch(function() {
+    setSimResult('<span class="fail">❌ mock_server.py 未起動<br>以下を実行してからページをリロードしてください：<br><code>cd C:/Claude/ゲンバルジャー大元 &amp;&amp; python mock_server.py</code></span>');
+    updateSimStatus(false);
+  });
+}
+
+function setSimResult(html) {
+  document.getElementById('sim-result').innerHTML = html;
+}
+
+function updateSimStatus(online) {
+  var el = document.getElementById('sim-status');
+  if (online) {
+    el.textContent = '✅ 稼働中';
+    el.className = 'sim-status';
+  } else {
+    el.textContent = 'mock_server.py 未起動';
+    el.className = 'sim-status offline';
+  }
+}
+
+// ページ読み込み時にサーバー状態を確認
+window.addEventListener('load', function() {
+  fetch('http://localhost:8080/device').then(function() { updateSimStatus(true); }).catch(function() {});
+});
+
+// ===== ウィジェットごとの設定UI定義 =====================================
+// 新しいウィジェットを追加する場合、ここにIDと一致するエントリを追加する。
+// 定義がないウィジェットは設定なしのカードとして表示される。
+
+var WIDGET_CONFIGS = {
+  'musaigai': {
+    frameHeight: 400,
+    fields: [
+      { id: 'startday', label: '起算日 (startDay)', type: 'date' },
+      { id: 'target',   label: '目標日数',          type: 'number', value: '365', style: 'width:80px' }
+    ],
+    note: '※ Yodeck上ではwidget_api.jsがinit_widgetを自動呼び出しします',
+    apply: function(widgetId) {
+      var startDay = document.getElementById(widgetId + '-startday').value;
+      var target   = parseInt(document.getElementById(widgetId + '-target').value) || 365;
+      if (!startDay) { alert('起算日を入力してください'); return; }
+      sendConfig(widgetId, {
+        startDay: startDay, target_days: target,
+        font_size: 'large', background_color: 'yellow'
+      });
+    }
+  },
+  'digital-clock': {
+    frameHeight: 300,
+    fields: [
+      { id: 'timeFormat', label: '時刻フォーマット', type: 'select', options: [{v:'HH:MM:SS',l:'HH:MM:SS（秒あり）',selected:true},{v:'HH:MM',l:'HH:MM（秒なし）'}] },
+      { id: 'showDate',   label: '日付表示',         type: 'select', options: [{v:'1',l:'表示する',selected:true},{v:'0',l:'非表示'}] },
+      { id: 'fontFamily', label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Impact, sans-serif',l:'Impact'}] },
+      { id: 'fontColor',  label: '文字色',           type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#d9d9d9',l:'ライトグレー'},{v:'#000000',l:'黒'},{v:'#ffff00',l:'黄'},{v:'#00ff00',l:'緑'},{v:'#00bfff',l:'水色'},{v:'#ff8c00',l:'オレンジ'}] },
+      { id: 'bgColor',    label: '背景色',           type: 'select', options: [{v:'#000000',l:'黒',selected:true},{v:'#ffffff',l:'白'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'#003366',l:'ネイビー'},{v:'transparent',l:'透明'}] },
+      { id: 'bold',       label: '太字',             type: 'select', options: [{v:'0',l:'なし',selected:true},{v:'1',l:'太字'}] },
+      { id: 'fontSize',   label: 'フォントサイズ',   type: 'select', options: [{v:'auto',l:'自動',selected:true},{v:'48',l:'48px'},{v:'64',l:'64px'},{v:'96',l:'96px'},{v:'128',l:'128px'},{v:'192',l:'192px'}] }
+    ],
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        timeFormat: document.getElementById(widgetId + '-timeFormat').value,
+        showDate:   document.getElementById(widgetId + '-showDate').value,
+        fontFamily: document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:  document.getElementById(widgetId + '-fontColor').value,
+        bgColor:    document.getElementById(widgetId + '-bgColor').value,
+        bold:       document.getElementById(widgetId + '-bold').value,
+        fontSize:   document.getElementById(widgetId + '-fontSize').value
+      });
+    }
+  },
+  'analog-clock': {
+    frameHeight: 400,
+    fields: [
+      { id: 'style',           label: 'スタイル',      type: 'select', options: [{v:'classic',l:'クラシック',selected:true},{v:'minimal',l:'シンプル'}] },
+      { id: 'showSeconds',     label: '秒針',          type: 'select', options: [{v:'1',l:'表示する',selected:true},{v:'0',l:'非表示'}] },
+      { id: 'showNumbers',     label: '数字表示',      type: 'select', options: [{v:'1',l:'表示する',selected:true},{v:'0',l:'非表示'}] },
+      { id: 'faceColor',       label: '文字盤色',         type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#000000',l:'黒'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'#003366',l:'ネイビー'},{v:'#f5f0e8',l:'クリーム'}] },
+      { id: 'handColor',       label: '針の色（時・分）', type: 'select', options: [{v:'#000000',l:'黒',selected:true},{v:'#ffffff',l:'白'},{v:'#d9d9d9',l:'ライトグレー'},{v:'#003366',l:'ネイビー'},{v:'#333333',l:'ダークグレー'}] },
+      { id: 'secondHandColor', label: '秒針の色',         type: 'select', options: [{v:'#ff0000',l:'赤',selected:true},{v:'#ff8c00',l:'オレンジ'},{v:'#ffffff',l:'白'},{v:'#000000',l:'黒'}] },
+      { id: 'bgColor',         label: '背景色',           type: 'select', options: [{v:'#1a1a2e',l:'ダークネイビー',selected:true},{v:'#000000',l:'黒'},{v:'#ffffff',l:'白'},{v:'transparent',l:'透明'}] }
+    ],
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        style:           document.getElementById(widgetId + '-style').value,
+        showSeconds:     document.getElementById(widgetId + '-showSeconds').value,
+        showNumbers:     document.getElementById(widgetId + '-showNumbers').value,
+        faceColor:       document.getElementById(widgetId + '-faceColor').value,
+        handColor:       document.getElementById(widgetId + '-handColor').value,
+        secondHandColor: document.getElementById(widgetId + '-secondHandColor').value,
+        bgColor:         document.getElementById(widgetId + '-bgColor').value
+      });
+    }
+  },
+  'scroll-text': {
+    frameHeight: 120,
+    wide: true,
+    fields: [
+      { id: 'text',       label: '表示テキスト', type: 'text',   value: '現場の安全を最優先に！　本日も無事故・無災害を目指しましょう。', style: 'min-width:300px' },
+      { id: 'direction',  label: '方向',         type: 'select', options: [{v:'horizontal',l:'横スクロール'},{v:'vertical',l:'縦スクロール'}] },
+      { id: 'speed',      label: '速度',         type: 'select', options: [{v:'80',l:'遅い'},{v:'150',l:'普通',selected:true},{v:'250',l:'速い'},{v:'400',l:'とても速い'}] },
+      { id: 'fontSize',   label: '文字サイズ',   type: 'select', options: [{v:'auto',l:'自動（画面いっぱい）',selected:true},{v:'32',l:'小(32)'},{v:'48',l:'中(48)'},{v:'64',l:'大(64)'},{v:'96',l:'特大(96)'},{v:'128',l:'超特大(128)'}] },
+      { id: 'fontFamily', label: 'フォント',     type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Georgia, serif',l:'Georgia'},{v:'Impact, sans-serif',l:'Impact'}] },
+      { id: 'fontColor',  label: '文字色',       type: 'color',  value: '#ffffff', style: 'width:48px;height:30px;padding:2px' },
+      { id: 'bgColor',    label: '背景色',       type: 'color',  value: '#000000', style: 'width:48px;height:30px;padding:2px' },
+      { id: 'bold',       label: '太字',         type: 'select', options: [{v:'0',l:'なし',selected:true},{v:'1',l:'太字'}] },
+      { id: 'italic',     label: '斜体',         type: 'select', options: [{v:'0',l:'なし',selected:true},{v:'1',l:'斜体'}] },
+      { id: 'shadow',     label: '影',           type: 'select', options: [{v:'0',l:'なし',selected:true},{v:'1',l:'影あり'}] },
+      { id: 'gap',        label: 'テキスト間隔', type: 'select', options: [{v:'40',l:'狭い'},{v:'80',l:'普通',selected:true},{v:'160',l:'広い'},{v:'300',l:'とても広い'}] }
+    ],
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        text:       document.getElementById(widgetId + '-text').value,
+        direction:  document.getElementById(widgetId + '-direction').value,
+        speed:      document.getElementById(widgetId + '-speed').value,
+        fontSize:   document.getElementById(widgetId + '-fontSize').value,
+        fontFamily: document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:  document.getElementById(widgetId + '-fontColor').value,
+        bgColor:    document.getElementById(widgetId + '-bgColor').value,
+        bold:       document.getElementById(widgetId + '-bold').value,
+        italic:     document.getElementById(widgetId + '-italic').value,
+        shadow:     document.getElementById(widgetId + '-shadow').value,
+        gap:        document.getElementById(widgetId + '-gap').value
+      });
+    }
+  },
+  'wbgt': {
+    frameHeight: 400,
+    fields: [
+      { id: 'location', label: '測定地点', type: 'select', options: [
+        {v:'東京',l:'東京'},{v:'大阪',l:'大阪'},{v:'名古屋',l:'名古屋'},
+        {v:'札幌',l:'札幌'},{v:'福岡',l:'福岡'},{v:'仙台',l:'仙台'},
+        {v:'広島',l:'広島'},{v:'那覇',l:'那覇'}
+      ]}
+    ],
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        location: document.getElementById(widgetId + '-location').value
+      });
+    }
+  },
+  'weather-wbgt': {
+    frameHeight: 500,
+    note: '設定はウィジェット内で自動読み込みされます'
+  },
+  'wbgt-auto': {
+    frameHeight: 480,
+    note: '気象庁AMeDASから気温・湿度を取得しWBGTを自動計算。Yodeck上ではGPS位置から最寄り観測所を自動選択。ローカル確認時は大阪（デフォルト）で動作します。'
+  },
+  'weather-forecast': {
+    frameHeight: 480,
+    note: '気象庁APIから今日・明日の天気予報を表示。Yodeck上ではGPS位置から最寄り観測所を自動選択。ローカル確認時は大阪（デフォルト）で動作します。'
+  },
+  'daily-calendar': {
+    frameHeight: 400,
+    fields: [
+      { id: 'fontFamily',  label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Impact, sans-serif',l:'Impact'}] },
+      { id: 'fontColor',   label: '文字色',           type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#d9d9d9',l:'ライトグレー'},{v:'#000000',l:'黒'},{v:'#ffff00',l:'黄'}] },
+      { id: 'bgColor',     label: '背景色',           type: 'select', options: [{v:'#1a1a2e',l:'ダークネイビー',selected:true},{v:'#000000',l:'黒'},{v:'#ffffff',l:'白'},{v:'#003366',l:'ネイビー'},{v:'transparent',l:'透明'}] },
+      { id: 'accentColor', label: 'アクセント色',     type: 'select', options: [{v:'#e94560',l:'レッド',selected:true},{v:'#ff8c00',l:'オレンジ'},{v:'#00bfff',l:'水色'},{v:'#ffff00',l:'黄'},{v:'#ffffff',l:'白'}] },
+      { id: 'showRokuyo',  label: '六曜表示',         type: 'select', options: [{v:'1',l:'表示する',selected:true},{v:'0',l:'非表示'}] },
+      { id: 'endDate',     label: '工期終了日',       type: 'date' }
+    ],
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        fontFamily:  document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:   document.getElementById(widgetId + '-fontColor').value,
+        bgColor:     document.getElementById(widgetId + '-bgColor').value,
+        accentColor: document.getElementById(widgetId + '-accentColor').value,
+        showRokuyo:  document.getElementById(widgetId + '-showRokuyo').value,
+        endDate:     document.getElementById(widgetId + '-endDate').value
+      });
+    }
+  },
+  'wbgt-new': {
+    frameHeight: 500,
+    fields: [
+      { id: 'address',    label: '住所・地名', type: 'text',   value: '東京都千代田区', style: 'min-width:240px' },
+      { id: 'refreshMin', label: '更新間隔',   type: 'select', options: [{v:'5',l:'5分'},{v:'10',l:'10分',selected:true},{v:'30',l:'30分'},{v:'60',l:'1時間'}] },
+      { id: 'fontFamily', label: 'フォント',   type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Impact, sans-serif',l:'Impact'}] }
+    ],
+    note: '住所を入力すると最寄りのAMeDAS観測所から気温・湿度を自動取得してWBGTを計算します。気象庁データ使用。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        address:    document.getElementById(widgetId+'-address').value,
+        refreshMin: document.getElementById(widgetId+'-refreshMin').value,
+        fontFamily: document.getElementById(widgetId+'-fontFamily').value
+      });
+    }
+  },
+  'staff-counter': {
+    frameHeight: 440,
+    fields: [
+      { id: 'title',      label: 'タイトル',     type: 'text',   value: '担当者実績カウンター', style: 'min-width:200px' },
+      { id: 'unit',       label: '単位',         type: 'text',   value: '件', style: 'min-width:60px' },
+      { id: 'dataUrl',    label: 'データURL',    type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec', label: '更新間隔',     type: 'select', options: [{v:'15',l:'15秒'},{v:'30',l:'30秒',selected:true},{v:'60',l:'1分'}] },
+      { id: 'fontFamily', label: 'フォント',     type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] },
+      { id: 'bgColor',    label: '背景色',       type: 'select', options: [{v:'#111111',l:'ほぼ黒',selected:true},{v:'#000000',l:'黒'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'transparent',l:'透明'}] }
+    ],
+    note: 'CSV列順：名前, 役職, 件数, 目標件数。件数の降順で自動ランキング。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        title: document.getElementById(widgetId+'-title').value,
+        unit: document.getElementById(widgetId+'-unit').value,
+        dataUrl: document.getElementById(widgetId+'-dataUrl').value,
+        refreshSec: document.getElementById(widgetId+'-refreshSec').value,
+        fontFamily: document.getElementById(widgetId+'-fontFamily').value,
+        fontColor: '#ffffff', bgColor: document.getElementById(widgetId+'-bgColor').value
+      });
+    }
+  },
+  'stock-live': {
+    frameHeight: 460,
+    fields: [
+      { id: 'title',      label: 'タイトル',     type: 'text',   value: '在庫・売切れライブ', style: 'min-width:180px' },
+      { id: 'dataUrl',    label: 'データURL',    type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec', label: '更新間隔',     type: 'select', options: [{v:'15',l:'15秒'},{v:'30',l:'30秒',selected:true},{v:'60',l:'1分'}] },
+      { id: 'unit',       label: '単位（共通）', type: 'text',   value: '', style: 'min-width:60px' },
+      { id: 'fontFamily', label: 'フォント',     type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] },
+      { id: 'bgColor',    label: '背景色',       type: 'select', options: [{v:'#111111',l:'ほぼ黒',selected:true},{v:'#000000',l:'黒'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'transparent',l:'透明'}] }
+    ],
+    note: 'CSV列順：商品名, 在庫数, 警告しきい値, 単位, 備考。売切れ→残りわずか→在庫ありの順で自動ソート。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        title: document.getElementById(widgetId+'-title').value,
+        dataUrl: document.getElementById(widgetId+'-dataUrl').value,
+        refreshSec: document.getElementById(widgetId+'-refreshSec').value,
+        unit: document.getElementById(widgetId+'-unit').value,
+        fontFamily: document.getElementById(widgetId+'-fontFamily').value,
+        fontColor: '#ffffff', bgColor: document.getElementById(widgetId+'-bgColor').value
+      });
+    }
+  },
+  'handover-board': {
+    frameHeight: 460,
+    fields: [
+      { id: 'title',      label: 'タイトル',          type: 'text',   value: '申し送りボード', style: 'min-width:180px' },
+      { id: 'dataUrl',    label: 'データURL（CSV）',  type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec', label: '更新間隔',          type: 'select', options: [{v:'15',l:'15秒'},{v:'30',l:'30秒',selected:true},{v:'60',l:'1分'}] },
+      { id: 'hint',       label: 'フッターメッセージ',type: 'text',   value: 'Googleフォームで追加・完了報告', style: 'min-width:250px' },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] },
+      { id: 'bgColor',    label: '背景色',            type: 'select', options: [{v:'#111111',l:'ほぼ黒',selected:true},{v:'#000000',l:'黒'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'transparent',l:'透明'}] }
+    ],
+    note: 'CSV列順：内容, ステータス(open/done/urgent), 担当者, 日時, カテゴリ。urgent→open→doneの順で自動ソート。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        title: document.getElementById(widgetId+'-title').value,
+        dataUrl: document.getElementById(widgetId+'-dataUrl').value,
+        refreshSec: document.getElementById(widgetId+'-refreshSec').value,
+        hint: document.getElementById(widgetId+'-hint').value,
+        fontFamily: document.getElementById(widgetId+'-fontFamily').value,
+        fontColor: '#ffffff',
+        bgColor: document.getElementById(widgetId+'-bgColor').value
+      });
+    }
+  },
+  'staff-status': {
+    frameHeight: 420,
+    fields: [
+      { id: 'title',      label: 'タイトル',          type: 'text',   value: 'スタッフ対応状況', style: 'min-width:180px' },
+      { id: 'dataUrl',    label: 'データURL（CSV）',  type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec', label: '更新間隔',          type: 'select', options: [{v:'10',l:'10秒'},{v:'15',l:'15秒',selected:true},{v:'30',l:'30秒'},{v:'60',l:'1分'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] },
+      { id: 'bgColor',    label: '背景色',            type: 'select', options: [{v:'#111111',l:'ほぼ黒',selected:true},{v:'#000000',l:'黒'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'transparent',l:'透明'}] }
+    ],
+    note: 'CSV列順：名前, 役職, ステータス(free/busy/away/offline), ETA, 備考。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        title: document.getElementById(widgetId+'-title').value,
+        dataUrl: document.getElementById(widgetId+'-dataUrl').value,
+        refreshSec: document.getElementById(widgetId+'-refreshSec').value,
+        fontFamily: document.getElementById(widgetId+'-fontFamily').value,
+        fontColor: '#ffffff',
+        bgColor: document.getElementById(widgetId+'-bgColor').value
+      });
+    }
+  },
+  'queue-display': {
+    frameHeight: 500,
+    fields: [
+      { id: 'title',       label: 'タイトル',         type: 'text',   value: '順番待ちディスプレイ', style: 'min-width:200px' },
+      { id: 'dataUrl',     label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec',  label: '更新間隔',         type: 'select', options: [{v:'5',l:'5秒'},{v:'10',l:'10秒',selected:true},{v:'30',l:'30秒'},{v:'60',l:'1分'}] },
+      { id: 'windowLabel', label: '窓口名',           type: 'text',   value: '1番窓口', style: 'min-width:120px' },
+      { id: 'fontFamily',  label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] },
+      { id: 'bgColor',     label: '背景色',           type: 'select', options: [{v:'#0a1628',l:'ダークブルー',selected:true},{v:'#000000',l:'黒'},{v:'#111111',l:'ほぼ黒'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'transparent',l:'透明'}] }
+    ],
+    note: 'dataURLが空欄の場合はサンプルデータを表示。CSV列順：現在番号, 待ち人数, 対応済件数, 目安待ち時間(分), 窓口名, 次の番号1, 次の番号2...',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        title:       document.getElementById(widgetId + '-title').value,
+        dataUrl:     document.getElementById(widgetId + '-dataUrl').value,
+        refreshSec:  document.getElementById(widgetId + '-refreshSec').value,
+        windowLabel: document.getElementById(widgetId + '-windowLabel').value,
+        fontFamily:  document.getElementById(widgetId + '-fontFamily').value,
+        bgColor:     document.getElementById(widgetId + '-bgColor').value
+      });
+    }
+  },
+  'near-miss-board': {
+    frameHeight: 480,
+    fields: [
+      { id: 'title',      label: 'タイトル',         type: 'text',   value: 'ヒヤリハット投稿ボード', style: 'min-width:200px' },
+      { id: 'formUrl',    label: '投稿フォームURL（QR）', type: 'text', value: 'https://forms.gle/example', style: 'min-width:300px' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec', label: '更新間隔',         type: 'select', options: [{v:'30',l:'30秒'},{v:'60',l:'1分',selected:true},{v:'300',l:'5分'}] },
+      { id: 'maxVisible', label: '表示件数',         type: 'select', options: [{v:'3',l:'3件'},{v:'4',l:'4件'},{v:'5',l:'5件',selected:true}] },
+      { id: 'fontFamily', label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] },
+      { id: 'bgColor',    label: '背景色',           type: 'select', options: [{v:'#111111',l:'ほぼ黒',selected:true},{v:'#000000',l:'黒'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'#003366',l:'ネイビー'},{v:'transparent',l:'透明'}] }
+    ],
+    note: 'dataURLが空欄の場合はサンプルデータを表示。GoogleフォームでSheetに書き込み、CSV公開URLを設定するとリアルタイム反映。件数超過時は5秒ごとに自動スクロール。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        title:      document.getElementById(widgetId + '-title').value,
+        formUrl:    document.getElementById(widgetId + '-formUrl').value,
+        dataUrl:    document.getElementById(widgetId + '-dataUrl').value,
+        refreshSec: document.getElementById(widgetId + '-refreshSec').value,
+        maxVisible: document.getElementById(widgetId + '-maxVisible').value,
+        fontFamily: document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:  '#ffffff',
+        bgColor:    document.getElementById(widgetId + '-bgColor').value
+      });
+    }
+  },
+  'tool-checkout': {
+    frameHeight: 460,
+    fields: [
+      { id: 'title',      label: 'タイトル',          type: 'text',   value: '持ち出し管理ボード', style: 'min-width:200px' },
+      { id: 'dataUrl',    label: 'データURL（CSV）',  type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec', label: '更新間隔',          type: 'select', options: [{v:'15',l:'15秒'},{v:'30',l:'30秒',selected:true},{v:'60',l:'1分'},{v:'300',l:'5分'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] },
+      { id: 'fontColor',  label: '文字色',            type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#d9d9d9',l:'ライトグレー'}] },
+      { id: 'bgColor',    label: '背景色',            type: 'select', options: [{v:'#111111',l:'ほぼ黒',selected:true},{v:'#000000',l:'黒'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'#003366',l:'ネイビー'},{v:'transparent',l:'透明'}] }
+    ],
+    note: 'dataURLが空欄の場合はサンプルデータを表示。GoogleフォームでステータスをSheetに書き込み、CSV公開URLを設定することで貸出・返却をリアルタイム反映。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        title:      document.getElementById(widgetId + '-title').value,
+        dataUrl:    document.getElementById(widgetId + '-dataUrl').value,
+        refreshSec: document.getElementById(widgetId + '-refreshSec').value,
+        fontFamily: document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:  document.getElementById(widgetId + '-fontColor').value,
+        bgColor:    document.getElementById(widgetId + '-bgColor').value
+      });
+    }
+  },
+  'food-loss-countdown': {
+    frameHeight: 420,
+    fields: [
+      { id: 'title',     label: 'タイトル',           type: 'text',   value: 'フードロスカウントダウン', style: 'min-width:220px' },
+      { id: 'dataUrl',   label: 'データURL（CSV）',   type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'fontFamily',label: 'フォント',           type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Impact, sans-serif',l:'Impact'}] },
+      { id: 'fontColor', label: '文字色',             type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#d9d9d9',l:'ライトグレー'},{v:'#000000',l:'黒'}] },
+      { id: 'bgColor',   label: '背景色',             type: 'select', options: [{v:'#111111',l:'ほぼ黒',selected:true},{v:'#000000',l:'黒'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'#003366',l:'ネイビー'},{v:'#ffffff',l:'白'},{v:'transparent',l:'透明'}] }
+    ],
+    note: 'dataURLが空欄の場合はサンプルデータを表示。GoogleスプレッドシートのCSV公開URL（列順：商品名, 廃棄時刻HH:MM, 割引率%, 備考）を指定するとリアルタイム取得。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        title:      document.getElementById(widgetId + '-title').value,
+        dataUrl:    document.getElementById(widgetId + '-dataUrl').value,
+        fontFamily: document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:  document.getElementById(widgetId + '-fontColor').value,
+        bgColor:    document.getElementById(widgetId + '-bgColor').value
+      });
+    }
+  },
+  'countdown-timer': {
+    frameHeight: 400,
+    fields: [
+      { id: 'label',       label: 'ラベル',           type: 'text',   value: '工期終了まで', style: 'min-width:160px' },
+      { id: 'targetDate',  label: '目標日',           type: 'date' },
+      { id: 'fontFamily',  label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Impact, sans-serif',l:'Impact'}] },
+      { id: 'fontColor',   label: '文字色',           type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#d9d9d9',l:'ライトグレー'},{v:'#000000',l:'黒'},{v:'#ffff00',l:'黄'}] },
+      { id: 'bgColor',     label: '背景色',           type: 'select', options: [{v:'#000000',l:'黒',selected:true},{v:'#1a1a2e',l:'ダークネイビー'},{v:'#003366',l:'ネイビー'},{v:'#ffffff',l:'白'},{v:'transparent',l:'透明'}] },
+      { id: 'accentColor', label: 'アクセント色',     type: 'select', options: [{v:'#ff8c00',l:'オレンジ',selected:true},{v:'#e94560',l:'レッド'},{v:'#00bfff',l:'水色'},{v:'#ffff00',l:'黄'},{v:'#00ff00',l:'緑'},{v:'#ffffff',l:'白'}] }
+    ],
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        label:       document.getElementById(widgetId + '-label').value,
+        targetDate:  document.getElementById(widgetId + '-targetDate').value,
+        fontFamily:  document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:   document.getElementById(widgetId + '-fontColor').value,
+        bgColor:     document.getElementById(widgetId + '-bgColor').value,
+        accentColor: document.getElementById(widgetId + '-accentColor').value
+      });
+    }
+  },
+  'safety-slogan': {
+    frameHeight: 350,
+    fields: [
+      { id: 'slogans',     label: 'スローガン（改行区切り）', type: 'text', value: '', style: 'min-width:300px' },
+      { id: 'interval',    label: '切替間隔',         type: 'select', options: [{v:'5',l:'5秒'},{v:'8',l:'8秒',selected:true},{v:'10',l:'10秒'},{v:'15',l:'15秒'},{v:'20',l:'20秒'},{v:'30',l:'30秒'}] },
+      { id: 'fontFamily',  label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Impact, sans-serif',l:'Impact'}] },
+      { id: 'fontColor',   label: '文字色',           type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#ffff00',l:'黄'},{v:'#ff0000',l:'赤'},{v:'#000000',l:'黒'},{v:'#00ff00',l:'緑'}] },
+      { id: 'bgColor',     label: '背景色',           type: 'select', options: [{v:'#1a472a',l:'ダークグリーン',selected:true},{v:'#000000',l:'黒'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'#003366',l:'ネイビー'},{v:'#8b0000',l:'ダークレッド'},{v:'transparent',l:'透明'}] },
+      { id: 'bold',        label: '太字',             type: 'select', options: [{v:'1',l:'太字',selected:true},{v:'0',l:'なし'}] },
+      { id: 'showCounter', label: 'カウンター',       type: 'select', options: [{v:'1',l:'表示する',selected:true},{v:'0',l:'非表示'}] }
+    ],
+    note: '空欄でデフォルトスローガン8種を表示。独自のスローガンを入力する場合は改行で区切ってください。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        slogans:     document.getElementById(widgetId + '-slogans').value,
+        interval:    document.getElementById(widgetId + '-interval').value,
+        fontFamily:  document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:   document.getElementById(widgetId + '-fontColor').value,
+        bgColor:     document.getElementById(widgetId + '-bgColor').value,
+        bold:        document.getElementById(widgetId + '-bold').value,
+        showCounter: document.getElementById(widgetId + '-showCounter').value
+      });
+    }
+  },
+  'qr-code': {
+    frameHeight: 450,
+    fields: [
+      { id: 'url',        label: 'URL',              type: 'text',   value: 'https://example.com', style: 'min-width:280px' },
+      { id: 'label',      label: 'ラベル（上部）',   type: 'text',   value: '現場安全書類', style: 'min-width:160px' },
+      { id: 'sublabel',   label: 'サブラベル（下部）', type: 'text', value: 'スマホで読み取ってください', style: 'min-width:200px' },
+      { id: 'fontFamily', label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] },
+      { id: 'fontColor',  label: '文字色',           type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#000000',l:'黒'},{v:'#ffff00',l:'黄'}] },
+      { id: 'bgColor',    label: '背景色',           type: 'select', options: [{v:'#1a1a2e',l:'ダークネイビー',selected:true},{v:'#000000',l:'黒'},{v:'#ffffff',l:'白'},{v:'#003366',l:'ネイビー'},{v:'transparent',l:'透明'}] },
+      { id: 'qrFgColor',  label: 'QR色',             type: 'select', options: [{v:'#000000',l:'黒',selected:true},{v:'#1a1a2e',l:'ダークネイビー'},{v:'#003366',l:'ネイビー'}] },
+      { id: 'qrBgColor',  label: 'QR背景色',         type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#f5f0e8',l:'クリーム'}] }
+    ],
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        url:        document.getElementById(widgetId + '-url').value,
+        label:      document.getElementById(widgetId + '-label').value,
+        sublabel:   document.getElementById(widgetId + '-sublabel').value,
+        fontFamily: document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:  document.getElementById(widgetId + '-fontColor').value,
+        bgColor:    document.getElementById(widgetId + '-bgColor').value,
+        qrFgColor:  document.getElementById(widgetId + '-qrFgColor').value,
+        qrBgColor:  document.getElementById(widgetId + '-qrBgColor').value
+      });
+    }
+  },
+  'meigen': {
+    frameHeight: 350,
+    fields: [
+      { id: 'customQuotes', label: 'カスタム名言（改行区切り）', type: 'text', value: '', style: 'min-width:300px' },
+      { id: 'interval',     label: '切替間隔',         type: 'select', options: [{v:'8',l:'8秒'},{v:'10',l:'10秒',selected:true},{v:'15',l:'15秒'},{v:'20',l:'20秒'},{v:'30',l:'30秒'},{v:'60',l:'60秒'}] },
+      { id: 'shuffle',      label: 'シャッフル',       type: 'select', options: [{v:'1',l:'ランダム',selected:true},{v:'0',l:'順番通り'}] },
+      { id: 'fontFamily',   label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Georgia, serif',l:'Georgia'}] },
+      { id: 'fontColor',    label: '文字色',           type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#d9d9d9',l:'ライトグレー'},{v:'#ffff00',l:'黄'},{v:'#00bfff',l:'水色'},{v:'#000000',l:'黒'}] },
+      { id: 'bgColor',      label: '背景色',           type: 'select', options: [{v:'#1a1a2e',l:'ダークネイビー',selected:true},{v:'#000000',l:'黒'},{v:'#0d0d0d',l:'ほぼ黒'},{v:'#1a472a',l:'ダークグリーン'},{v:'#2d1b3d',l:'ダークパープル'},{v:'#ffffff',l:'白'},{v:'transparent',l:'透明'}] }
+    ],
+    note: '空欄でデフォルト名言20種を表示。カスタムは「名言 - 著者」形式で改行区切り。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        customQuotes: document.getElementById(widgetId + '-customQuotes').value,
+        interval:     document.getElementById(widgetId + '-interval').value,
+        shuffle:      document.getElementById(widgetId + '-shuffle').value,
+        fontFamily:   document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:    document.getElementById(widgetId + '-fontColor').value,
+        bgColor:      document.getElementById(widgetId + '-bgColor').value
+      });
+    }
+  },
+  'pomodoro': {
+    frameHeight: 450,
+    fields: [
+      { id: 'workMinutes',  label: '作業（分）',       type: 'select', options: [{v:'15',l:'15分'},{v:'20',l:'20分'},{v:'25',l:'25分',selected:true},{v:'30',l:'30分'},{v:'45',l:'45分'},{v:'50',l:'50分'},{v:'60',l:'60分'}] },
+      { id: 'breakMinutes', label: '休憩（分）',       type: 'select', options: [{v:'3',l:'3分'},{v:'5',l:'5分',selected:true},{v:'10',l:'10分'},{v:'15',l:'15分'}] },
+      { id: 'maxCycles',    label: 'サイクル数',       type: 'select', options: [{v:'0',l:'無限'},{v:'4',l:'4回',selected:true},{v:'6',l:'6回'},{v:'8',l:'8回'}] },
+      { id: 'fontFamily',   label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Impact, sans-serif',l:'Impact'}] },
+      { id: 'fontColor',    label: '文字色',           type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#d9d9d9',l:'ライトグレー'},{v:'#000000',l:'黒'}] },
+      { id: 'bgColor',      label: '背景色',           type: 'select', options: [{v:'#000000',l:'黒',selected:true},{v:'#1a1a2e',l:'ダークネイビー'},{v:'#0d0d0d',l:'ほぼ黒'},{v:'#ffffff',l:'白'},{v:'transparent',l:'透明'}] },
+      { id: 'workColor',    label: '作業色',           type: 'select', options: [{v:'#e94560',l:'レッド',selected:true},{v:'#ff8c00',l:'オレンジ'},{v:'#ff6347',l:'トマト'},{v:'#00bfff',l:'水色'}] },
+      { id: 'breakColor',   label: '休憩色',           type: 'select', options: [{v:'#4ade80',l:'グリーン',selected:true},{v:'#00bfff',l:'水色'},{v:'#a78bfa',l:'パープル'},{v:'#fbbf24',l:'イエロー'}] }
+    ],
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        workMinutes:  document.getElementById(widgetId + '-workMinutes').value,
+        breakMinutes: document.getElementById(widgetId + '-breakMinutes').value,
+        maxCycles:    document.getElementById(widgetId + '-maxCycles').value,
+        fontFamily:   document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:    document.getElementById(widgetId + '-fontColor').value,
+        bgColor:      document.getElementById(widgetId + '-bgColor').value,
+        workColor:    document.getElementById(widgetId + '-workColor').value,
+        breakColor:   document.getElementById(widgetId + '-breakColor').value
+      });
+    }
+  },
+  'announce-banner': {
+    frameHeight: 350,
+    fields: [
+      { id: 'title',      label: 'タイトル',          type: 'text',   value: '本日13:00より安全大会', style: 'min-width:280px' },
+      { id: 'subtitle',   label: 'サブタイトル',      type: 'text',   value: '全員参加必須', style: 'min-width:200px' },
+      { id: 'icon',       label: 'アイコン',          type: 'select', options: [{v:'mega',l:'メガホン',selected:true},{v:'bell',l:'ベル'},{v:'info',l:'インフォ'},{v:'warning',l:'警告'},{v:'danger',l:'危険'},{v:'check',l:'チェック'},{v:'star',l:'スター'},{v:'fire',l:'炎'},{v:'party',l:'パーティー'},{v:'clock',l:'時計'},{v:'heart',l:'ハート'},{v:'helmet',l:'ヘルメット'},{v:'tools',l:'工具'},{v:'none',l:'なし'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Impact, sans-serif',l:'Impact'}] },
+      { id: 'fontColor',  label: '文字色',            type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#000000',l:'黒'},{v:'#ffff00',l:'黄'}] },
+      { id: 'bgColor',    label: '背景色',            type: 'select', options: [{v:'#e94560',l:'レッド',selected:true},{v:'#ff8c00',l:'オレンジ'},{v:'#16a34a',l:'グリーン'},{v:'#0369a1',l:'ブルー'},{v:'#7c3aed',l:'パープル'},{v:'#1a1a2e',l:'ダークネイビー'},{v:'#000000',l:'黒'},{v:'#ffffff',l:'白'}] }
+    ],
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        title:      document.getElementById(widgetId + '-title').value,
+        subtitle:   document.getElementById(widgetId + '-subtitle').value,
+        icon:       document.getElementById(widgetId + '-icon').value,
+        fontFamily: document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:  document.getElementById(widgetId + '-fontColor').value,
+        bgColor:    document.getElementById(widgetId + '-bgColor').value
+      });
+    }
+  },
+  'year-progress': {
+    frameHeight: 350,
+    fields: [
+      { id: 'showDay',    label: '今日の進捗',        type: 'select', options: [{v:'1',l:'表示する',selected:true},{v:'0',l:'非表示'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Impact, sans-serif',l:'Impact'}] },
+      { id: 'fontColor',  label: '文字色',            type: 'select', options: [{v:'#ffffff',l:'白',selected:true},{v:'#d9d9d9',l:'ライトグレー'},{v:'#000000',l:'黒'}] },
+      { id: 'bgColor',    label: '背景色',            type: 'select', options: [{v:'#1a1a2e',l:'ダークネイビー',selected:true},{v:'#000000',l:'黒'},{v:'#0d0d0d',l:'ほぼ黒'},{v:'#ffffff',l:'白'},{v:'transparent',l:'透明'}] },
+      { id: 'barColor',   label: 'バー色',            type: 'select', options: [{v:'#e94560',l:'レッド',selected:true},{v:'#ff8c00',l:'オレンジ'},{v:'#4ade80',l:'グリーン'},{v:'#00bfff',l:'水色'},{v:'#a78bfa',l:'パープル'},{v:'#fbbf24',l:'イエロー'}] }
+    ],
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        showDay:    document.getElementById(widgetId + '-showDay').value,
+        fontFamily: document.getElementById(widgetId + '-fontFamily').value,
+        fontColor:  document.getElementById(widgetId + '-fontColor').value,
+        bgColor:    document.getElementById(widgetId + '-bgColor').value,
+        barColor:   document.getElementById(widgetId + '-barColor').value
+      });
+    }
+  },
+  'safety-days': {
+    frameHeight: 480,
+    fields: [
+      { id: 'siteTitle',  label: '現場・会社名',    type: 'text',   value: '第一建設現場' },
+      { id: 'sinceDate',  label: '無災害開始日',    type: 'text',   value: '2022-01-15', style: 'min-width:140px' },
+      { id: 'noteText',   label: 'スローガン',      type: 'text',   value: 'みんなで続けよう、ゼロ災害！', style: 'min-width:260px' },
+      { id: 'fontFamily', label: 'フォント',        type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Impact, sans-serif',l:'Impact'}] }
+    ],
+    note: '無災害継続日数を大きく表示。100日→緑、365日→オレンジ、1000日→金色に変化。開始日はYYYY-MM-DD形式で入力。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        siteTitle:  document.getElementById(widgetId+'-siteTitle').value,
+        sinceDate:  document.getElementById(widgetId+'-sinceDate').value,
+        noteText:   document.getElementById(widgetId+'-noteText').value,
+        fontFamily: document.getElementById(widgetId+'-fontFamily').value
+      });
+    }
+  },
+  'weather-alert': {
+    frameHeight: 480,
+    fields: [
+      { id: 'prefCode',   label: '都道府県', type: 'select', options: [
+        {v:'011000',l:'北海道（宗谷）'},{v:'020000',l:'青森県'},{v:'030000',l:'岩手県'},{v:'040000',l:'宮城県'},
+        {v:'050000',l:'秋田県'},{v:'060000',l:'山形県'},{v:'070000',l:'福島県'},{v:'080000',l:'茨城県'},
+        {v:'090000',l:'栃木県'},{v:'100000',l:'群馬県'},{v:'110000',l:'埼玉県'},{v:'120000',l:'千葉県'},
+        {v:'130000',l:'東京都',selected:true},{v:'140000',l:'神奈川県'},{v:'150000',l:'新潟県'},
+        {v:'160000',l:'富山県'},{v:'170000',l:'石川県'},{v:'180000',l:'福井県'},{v:'190000',l:'山梨県'},
+        {v:'200000',l:'長野県'},{v:'210000',l:'岐阜県'},{v:'220000',l:'静岡県'},{v:'230000',l:'愛知県'},
+        {v:'240000',l:'三重県'},{v:'250000',l:'滋賀県'},{v:'260000',l:'京都府'},{v:'270000',l:'大阪府'},
+        {v:'280000',l:'兵庫県'},{v:'290000',l:'奈良県'},{v:'300000',l:'和歌山県'},{v:'310000',l:'鳥取県'},
+        {v:'320000',l:'島根県'},{v:'330000',l:'岡山県'},{v:'340000',l:'広島県'},{v:'350000',l:'山口県'},
+        {v:'360000',l:'徳島県'},{v:'370000',l:'香川県'},{v:'380000',l:'愛媛県'},{v:'390000',l:'高知県'},
+        {v:'400000',l:'福岡県'},{v:'410000',l:'佐賀県'},{v:'420000',l:'長崎県'},{v:'430000',l:'熊本県'},
+        {v:'440000',l:'大分県'},{v:'450000',l:'宮崎県'},{v:'460100',l:'鹿児島県'},{v:'471000',l:'沖縄本島地方'}
+      ]},
+      { id: 'refreshMin', label: '更新間隔', type: 'select', options: [{v:'5',l:'5分'},{v:'10',l:'10分',selected:true},{v:'30',l:'30分'}] },
+      { id: 'fontFamily', label: 'フォント', type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: '気象庁APIから現在の警報・注意報を自動取得。特別警報=紫、警報=赤、注意報=オレンジ、安全=緑で表示。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        prefCode:   document.getElementById(widgetId+'-prefCode').value,
+        refreshMin: document.getElementById(widgetId+'-refreshMin').value,
+        fontFamily: document.getElementById(widgetId+'-fontFamily').value
+      });
+    }
+  },
+  'progress-board': {
+    frameHeight: 520,
+    fields: [
+      { id: 'projectTitle', label: 'プロジェクト名', type: 'text',   value: '○○ビル新築工事', style: 'min-width:200px' },
+      { id: 'dataUrl',      label: 'データURL（CSV）', type: 'text', value: '', style: 'min-width:300px' },
+      { id: 'refreshMin',   label: '更新間隔',        type: 'select', options: [{v:'5',l:'5分',selected:true},{v:'10',l:'10分'},{v:'30',l:'30分'}] },
+      { id: 'fontFamily',   label: 'フォント',        type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'URLなしの場合はサンプルデータ表示。CSV列順：工程名, 進捗率(0-100), ステータス(done/active/pending/delayed), 担当者, 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        projectTitle: document.getElementById(widgetId+'-projectTitle').value,
+        dataUrl:      document.getElementById(widgetId+'-dataUrl').value,
+        refreshMin:   document.getElementById(widgetId+'-refreshMin').value,
+        fontFamily:   document.getElementById(widgetId+'-fontFamily').value
+      });
+    }
+  },
+  'site-entry': {
+    frameHeight: 500,
+    fields: [
+      { id: 'siteName',   label: '現場名',       type: 'text',   value: '第一建設現場' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text', value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',     type: 'select', options: [{v:'1',l:'1分',selected:true},{v:'3',l:'3分'},{v:'5',l:'5分'},{v:'10',l:'10分'}] },
+      { id: 'fontFamily', label: 'フォント',     type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'URLなしの場合はサンプルデータ表示。CSV列順：名前, 所属, 入場時刻(HH:MM), 退場時刻(空欄=在場中), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        siteName:   document.getElementById(widgetId+'-siteName').value,
+        dataUrl:    document.getElementById(widgetId+'-dataUrl').value,
+        refreshMin: document.getElementById(widgetId+'-refreshMin').value,
+        fontFamily: document.getElementById(widgetId+'-fontFamily').value
+      });
+    }
+  },
+  'emergency-contacts': {
+    frameHeight: 480,
+    fields: [
+      { id: 'boardTitle', label: 'タイトル',       type: 'text',   value: '緊急連絡先' },
+      { id: 'label1',     label: 'ラベル1',        type: 'text',   value: '現場責任者' },
+      { id: 'tel1',       label: '電話番号1',      type: 'text',   value: '090-XXXX-XXXX' },
+      { id: 'label2',     label: 'ラベル2',        type: 'text',   value: '警察' },
+      { id: 'tel2',       label: '電話番号2',      type: 'text',   value: '110' },
+      { id: 'label3',     label: 'ラベル3',        type: 'text',   value: '救急・消防' },
+      { id: 'tel3',       label: '電話番号3',      type: 'text',   value: '119' },
+      { id: 'label4',     label: 'ラベル4',        type: 'text',   value: '元請け連絡先' },
+      { id: 'tel4',       label: '電話番号4',      type: 'text',   value: '03-XXXX-XXXX' },
+      { id: 'label5',     label: 'ラベル5',        type: 'text',   value: '近隣病院' },
+      { id: 'tel5',       label: '電話番号5',      type: 'text',   value: '03-XXXX-XXXX' },
+      { id: 'qrUrl',      label: 'QRコードURL',   type: 'text',   value: '', style: 'min-width:240px' },
+      { id: 'qrLabel',    label: 'QR説明文',       type: 'text',   value: 'スマホで詳細確認' },
+      { id: 'fontFamily', label: 'フォント',       type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'},{v:'Impact, sans-serif',l:'Impact'}] }
+    ],
+    note: '5件の緊急連絡先を色分け大文字表示。QRコードURLを設定するとQRコードも表示されます。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        boardTitle: document.getElementById(widgetId+'-boardTitle').value,
+        label1: document.getElementById(widgetId+'-label1').value,
+        tel1:   document.getElementById(widgetId+'-tel1').value,
+        label2: document.getElementById(widgetId+'-label2').value,
+        tel2:   document.getElementById(widgetId+'-tel2').value,
+        label3: document.getElementById(widgetId+'-label3').value,
+        tel3:   document.getElementById(widgetId+'-tel3').value,
+        label4: document.getElementById(widgetId+'-label4').value,
+        tel4:   document.getElementById(widgetId+'-tel4').value,
+        label5: document.getElementById(widgetId+'-label5').value,
+        tel5:   document.getElementById(widgetId+'-tel5').value,
+        qrUrl:   document.getElementById(widgetId+'-qrUrl').value,
+        qrLabel: document.getElementById(widgetId+'-qrLabel').value,
+        fontFamily: document.getElementById(widgetId+'-fontFamily').value
+      });
+    }
+  },
+  'open-weather': {
+    frameHeight: 500,
+    fields: [
+      { id: 'address',    label: '住所・地名',  type: 'text',   value: '東京都千代田区', style: 'min-width:240px' },
+      { id: 'refreshMin', label: '更新間隔',    type: 'select', options: [{v:'15',l:'15分'},{v:'30',l:'30分',selected:true},{v:'60',l:'1時間'}] },
+      { id: 'fontFamily', label: 'フォント',    type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: '現在の気温・天気・体感・風速と3日間予報を表示。Open-Meteo API使用（APIキー不要・無料）。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        address:    document.getElementById(widgetId+'-address').value,
+        refreshMin: document.getElementById(widgetId+'-refreshMin').value,
+        fontFamily: document.getElementById(widgetId+'-fontFamily').value
+      });
+    }
+  },
+  'ky-board': {
+    frameHeight: 500,
+    fields: [
+      { id: 'siteTitle',  label: 'タイトル',         type: 'text',   value: '本日のKY活動' },
+      { id: 'dataUrl',    label: 'データURL（CSV）',  type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'formUrl',    label: 'Google FormのURL', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'qrLabel',    label: 'QR説明文',          type: 'text',   value: 'KY結果を投稿' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'1',l:'1分',selected:true},{v:'5',l:'5分'},{v:'10',l:'10分'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'URLなしはサンプルデータ表示。CSV列順：日付, リスク内容, 対策, レベル(high/medium/low), 担当班',
+    apply: function(widgetId) {
+      sendConfig(widgetId, {
+        siteTitle:  document.getElementById(widgetId+'-siteTitle').value,
+        dataUrl:    document.getElementById(widgetId+'-dataUrl').value,
+        formUrl:    document.getElementById(widgetId+'-formUrl').value,
+        qrLabel:    document.getElementById(widgetId+'-qrLabel').value,
+        refreshMin: document.getElementById(widgetId+'-refreshMin').value,
+        fontFamily: document.getElementById(widgetId+'-fontFamily').value
+      });
+    }
+  },
+  'rollcall-board': {
+    frameHeight: 480,
+    fields: [
+      { id: 'boardTitle', label: 'タイトル',        type: 'text',   value: '朝礼点呼' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',        type: 'select', options: [{v:'1',l:'1分',selected:true},{v:'3',l:'3分'},{v:'5',l:'5分'}] },
+      { id: 'fontFamily', label: 'フォント',        type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：名前, 所属, ステータス(present/absent/late/leave), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { boardTitle: document.getElementById(widgetId+'-boardTitle').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'work-permit': {
+    frameHeight: 480,
+    fields: [
+      { id: 'boardTitle', label: 'タイトル',        type: 'text',   value: '作業許可証' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',        type: 'select', options: [{v:'5',l:'5分',selected:true},{v:'10',l:'10分'},{v:'30',l:'30分'}] },
+      { id: 'fontFamily', label: 'フォント',        type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：許可証番号, 作業内容, 担当者, 開始時刻(HH:MM), 終了時刻(HH:MM), 場所, ステータス(active/pending/done)',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { boardTitle: document.getElementById(widgetId+'-boardTitle').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'table-status': {
+    frameHeight: 500,
+    fields: [
+      { id: 'shopName',   label: '店舗名',          type: 'text',   value: 'テーブル状況' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec', label: '更新間隔',        type: 'select', options: [{v:'15',l:'15秒'},{v:'30',l:'30秒',selected:true},{v:'60',l:'1分'}] },
+      { id: 'fontFamily', label: 'フォント',        type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：テーブル名, ステータス(available/occupied/cleaning/reserved), 人数, 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { shopName: document.getElementById(widgetId+'-shopName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshSec: document.getElementById(widgetId+'-refreshSec').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'sales-progress': {
+    frameHeight: 500,
+    fields: [
+      { id: 'shopName',   label: '店舗名・タイトル', type: 'text',   value: '本日の売上進捗' },
+      { id: 'dataUrl',    label: 'データURL（CSV）',  type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'1',l:'1分'},{v:'5',l:'5分',selected:true},{v:'10',l:'10分'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：指標名, 現在値, 目標値, 単位(円/名/件など), 備考。1行目がメイン表示。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { shopName: document.getElementById(widgetId+'-shopName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'room-status': {
+    frameHeight: 500,
+    fields: [
+      { id: 'facilityName', label: '施設名・タイトル', type: 'text',   value: '診察室・室内状況' },
+      { id: 'dataUrl',      label: 'データURL（CSV）',  type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec',   label: '更新間隔',          type: 'select', options: [{v:'15',l:'15秒'},{v:'30',l:'30秒',selected:true},{v:'60',l:'1分'}] },
+      { id: 'fontFamily',   label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：部屋名, ステータス(available/busy/cleaning/reserved), 担当者/用途, 終了予定時刻(HH:MM), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { facilityName: document.getElementById(widgetId+'-facilityName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshSec: document.getElementById(widgetId+'-refreshSec').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'license-expiry': {
+    frameHeight: 500,
+    fields: [
+      { id: 'boardTitle', label: 'タイトル',           type: 'text',   value: '資格・免許 期限管理' },
+      { id: 'dataUrl',    label: 'データURL（CSV）',    type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'warnDays',   label: '黄色警告（日前）',   type: 'text',   value: '90', style: 'min-width:60px' },
+      { id: 'dangerDays', label: '赤警告（日前）',     type: 'text',   value: '30', style: 'min-width:60px' },
+      { id: 'fontFamily', label: 'フォント',           type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：氏名, 資格名, 有効期限(YYYY-MM-DD), 所属, 備考。期限が近い順に自動ソート。',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { boardTitle: document.getElementById(widgetId+'-boardTitle').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, warnDays: document.getElementById(widgetId+'-warnDays').value, dangerDays: document.getElementById(widgetId+'-dangerDays').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'production-kpi': {
+    frameHeight: 500,
+    fields: [
+      { id: 'lineName',   label: 'ライン名・タイトル', type: 'text',   value: '製造KPI' },
+      { id: 'dataUrl',    label: 'データURL（CSV）',    type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec', label: '更新間隔',           type: 'select', options: [{v:'30',l:'30秒',selected:true},{v:'60',l:'1分'},{v:'300',l:'5分'}] },
+      { id: 'fontFamily', label: 'フォント',           type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'KPI行：指標名, 現在値, 目標値, 単位, 前日比, 備考 / ライン行：ライン名, running/stopped/maintenance',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { lineName: document.getElementById(widgetId+'-lineName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshSec: document.getElementById(widgetId+'-refreshSec').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'meeting-agenda': {
+    frameHeight: 500,
+    fields: [
+      { id: 'meetingTitle', label: 'タイトル',      type: 'text',   value: '朝礼次第' },
+      { id: 'dataUrl',      label: 'データURL（CSV）', type: 'text', value: '', style: 'min-width:300px' },
+      { id: 'autoSec',      label: '自動送り間隔',  type: 'select', options: [{v:'0',l:'手動',selected:true},{v:'60',l:'1分'},{v:'120',l:'2分'},{v:'300',l:'5分'}] },
+      { id: 'fontFamily',   label: 'フォント',      type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：順番, 項目名, 担当者, 時間(分), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { meetingTitle: document.getElementById(widgetId+'-meetingTitle').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, autoSec: document.getElementById(widgetId+'-autoSec').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'birthday-board': {
+    frameHeight: 500,
+    fields: [
+      { id: 'companyName', label: 'タイトル',        type: 'text',   value: '今月の誕生日・記念日' },
+      { id: 'dataUrl',     label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'fontFamily',  label: 'フォント',        type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：名前, 種別(birthday/anniversary), 月(1-12), 日(1-31), 生年 or 入社年(任意), 一言メッセージ(任意)',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { companyName: document.getElementById(widgetId+'-companyName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'equipment-status': {
+    frameHeight: 480,
+    fields: [
+      { id: 'boardTitle', label: 'ボードタイトル',   type: 'text',   value: '重機・設備稼働状況' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'1',l:'1分'},{v:'5',l:'5分',selected:true},{v:'10',l:'10分'},{v:'30',l:'30分'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：機械名, ステータス(active/standby/maintenance/out), オペレーター, 作業内容, 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { boardTitle: document.getElementById(widgetId+'-boardTitle').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'kitchen-prep': {
+    frameHeight: 480,
+    fields: [
+      { id: 'boardTitle', label: 'ボードタイトル',   type: 'text',   value: '本日の仕込み進捗' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'1',l:'1分'},{v:'5',l:'5分',selected:true},{v:'10',l:'10分'},{v:'30',l:'30分'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：品目名, ステータス(done/working/pending/low), 担当者, 数量, 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { boardTitle: document.getElementById(widgetId+'-boardTitle').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'waiting-board': {
+    frameHeight: 480,
+    fields: [
+      { id: 'shopName',    label: '店舗名',           type: 'text',   value: 'ウェイティング' },
+      { id: 'callPrefix',  label: '案内中の説明文',   type: 'text',   value: 'ただいまご案内中' },
+      { id: 'dataUrl',     label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec',  label: '更新間隔',          type: 'select', options: [{v:'15',l:'15秒',selected:true},{v:'30',l:'30秒'},{v:'60',l:'1分'}] },
+      { id: 'fontFamily',  label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：受付番号, 組名, 人数, ステータス(waiting/calling/seated/cancelled), 受付時刻',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { shopName: document.getElementById(widgetId+'-shopName').value, callPrefix: document.getElementById(widgetId+'-callPrefix').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshSec: document.getElementById(widgetId+'-refreshSec').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'allergen-board': {
+    frameHeight: 480,
+    fields: [
+      { id: 'shopName',   label: '店舗名',           type: 'text',   value: 'アレルゲン一覧' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'30',l:'30分',selected:true},{v:'60',l:'1時間'},{v:'360',l:'6時間'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：メニュー名, 小麦(1/0), 乳(1/0), 卵(1/0), 落花生(1/0), そば(1/0), えび(1/0), かに(1/0), 大豆(1/0), カテゴリ, 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { shopName: document.getElementById(widgetId+'-shopName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'noise-monitor': {
+    frameHeight: 480,
+    fields: [
+      { id: 'siteName',   label: '現場名',           type: 'text',   value: '騒音・振動モニター' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'noiseLimit', label: '騒音規制値(dB)',   type: 'text',   value: '85' },
+      { id: 'vibLimit',   label: '振動規制値(dB)',   type: 'text',   value: '75' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'1',l:'1分'},{v:'5',l:'5分',selected:true},{v:'10',l:'10分'},{v:'30',l:'30分'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：計測時刻, 騒音(dB), 振動(dB), 計測場所, 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { siteName: document.getElementById(widgetId+'-siteName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, noiseLimit: document.getElementById(widgetId+'-noiseLimit').value, vibLimit: document.getElementById(widgetId+'-vibLimit').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'energy-saving': {
+    frameHeight: 480,
+    fields: [
+      { id: 'facilityName', label: '施設名',          type: 'text',   value: '省エネモニター' },
+      { id: 'dataUrl',      label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin',   label: '更新間隔',         type: 'select', options: [{v:'5',l:'5分'},{v:'10',l:'10分',selected:true},{v:'30',l:'30分'},{v:'60',l:'1時間'}] },
+      { id: 'fontFamily',   label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：指標名, 現在値, 目標値, 単位, 前日比(%), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { facilityName: document.getElementById(widgetId+'-facilityName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'height-worker': {
+    frameHeight: 480,
+    fields: [
+      { id: 'siteName',   label: '現場名',           type: 'text',   value: '高所作業者管理' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'1',l:'1分'},{v:'5',l:'5分',selected:true},{v:'10',l:'10分'},{v:'30',l:'30分'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：氏名, 所属, 作業場所, 作業高さ(m), 開始時刻(HH:MM), 終了予定(HH:MM), 安全帯確認(ok/ng), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { siteName: document.getElementById(widgetId+'-siteName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'subcontractor-attendance': {
+    frameHeight: 480,
+    fields: [
+      { id: 'siteName',   label: '現場名',           type: 'text',   value: '協力業者勤怠サマリー' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'1',l:'1分'},{v:'5',l:'5分',selected:true},{v:'10',l:'10分'},{v:'30',l:'30分'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：業者名, 予定人数, 出勤人数, 欠勤人数, 遅刻人数, 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { siteName: document.getElementById(widgetId+'-siteName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'defect-monitor': {
+    frameHeight: 480,
+    fields: [
+      { id: 'facilityName', label: '施設名',          type: 'text',   value: '歩留まりモニター' },
+      { id: 'dataUrl',      label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin',   label: '更新間隔',         type: 'select', options: [{v:'1',l:'1分'},{v:'5',l:'5分',selected:true},{v:'10',l:'10分'},{v:'30',l:'30分'}] },
+      { id: 'fontFamily',   label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：ライン名, 生産数, 良品数, 不良数, 目標歩留まり(%), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { facilityName: document.getElementById(widgetId+'-facilityName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'overtime-alert': {
+    frameHeight: 480,
+    fields: [
+      { id: 'deptName',   label: '部署名・タイトル', type: 'text',   value: '残業アラートボード' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'10',l:'10分'},{v:'30',l:'30分'},{v:'60',l:'1時間',selected:true},{v:'360',l:'6時間'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：氏名 or 部署名, 今月残業(時間), 月間上限(時間), 先月比(±時間), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { deptName: document.getElementById(widgetId+'-deptName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'deadline-countdown': {
+    frameHeight: 480,
+    fields: [
+      { id: 'boardTitle', label: 'ボードタイトル',   type: 'text',   value: '納期カウントダウン' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'10',l:'10分'},{v:'30',l:'30分'},{v:'60',l:'1時間',selected:true},{v:'360',l:'6時間'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：案件名, 納期(YYYY-MM-DD), 担当者, ステータス(active/done/hold), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { boardTitle: document.getElementById(widgetId+'-boardTitle').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'waste-management': {
+    frameHeight: 480,
+    fields: [
+      { id: 'siteName',   label: '現場名・タイトル', type: 'text',   value: '産廃管理ボード' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'warnPct',    label: '警戒ライン(%)',    type: 'text',   value: '80' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'10',l:'10分'},{v:'30',l:'30分',selected:true},{v:'60',l:'1時間'},{v:'360',l:'6時間'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：廃棄物区分, 今月排出量, 月間上限, 単位, マニフェスト番号, 処理業者, 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { siteName: document.getElementById(widgetId+'-siteName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, warnPct: document.getElementById(widgetId+'-warnPct').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'prescription-wait': {
+    frameHeight: 500,
+    fields: [
+      { id: 'pharmacyName', label: '施設名',          type: 'text',   value: '処方箋お待ちの方' },
+      { id: 'readyPrefix',  label: '呼び出し文言',    type: 'text',   value: 'お呼びしています' },
+      { id: 'dataUrl',      label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshSec',   label: '更新間隔',         type: 'select', options: [{v:'15',l:'15秒',selected:true},{v:'30',l:'30秒'},{v:'60',l:'1分'}] },
+      { id: 'fontFamily',   label: 'フォント',         type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：受付番号, お名前(任意), 待ち時間(分), ステータス(waiting/preparing/ready/called), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { pharmacyName: document.getElementById(widgetId+'-pharmacyName').value, readyPrefix: document.getElementById(widgetId+'-readyPrefix').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshSec: document.getElementById(widgetId+'-refreshSec').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'review-board': {
+    frameHeight: 500,
+    fields: [
+      { id: 'shopName',   label: '店舗名',           type: 'text',   value: '口コミ・評価' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'10',l:'10分'},{v:'30',l:'30分',selected:true},{v:'60',l:'1時間'},{v:'360',l:'6時間'}] },
+      { id: 'slideSec',   label: 'スライド間隔',      type: 'select', options: [{v:'5',l:'5秒'},{v:'8',l:'8秒',selected:true},{v:'12',l:'12秒'},{v:'20',l:'20秒'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：投稿者名, 評価(1-5), コメント, 日付(YYYY-MM-DD), カテゴリ',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { shopName: document.getElementById(widgetId+'-shopName').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, slideSec: document.getElementById(widgetId+'-slideSec').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'task-board': {
+    frameHeight: 480,
+    fields: [
+      { id: 'boardTitle', label: 'ボードタイトル',   type: 'text',   value: 'タスク共有ボード' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'1',l:'1分'},{v:'5',l:'5分',selected:true},{v:'10',l:'10分'},{v:'30',l:'30分'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：タスク名, 担当者, 優先度(high/medium/low), ステータス(todo/doing/done/blocked), 期限(MM/DD), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { boardTitle: document.getElementById(widgetId+'-boardTitle').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'work-calendar': {
+    frameHeight: 520,
+    fields: [
+      { id: 'calTitle',   label: 'タイトル',         type: 'text',   value: '稼働日カレンダー' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'60',l:'1時間',selected:true},{v:'360',l:'6時間'},{v:'1440',l:'1日'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：日付(YYYY-MM-DD), 種別(work/holiday/half/special), ラベル, 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { calTitle: document.getElementById(widgetId+'-calTitle').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'ojt-progress': {
+    frameHeight: 500,
+    fields: [
+      { id: 'boardTitle', label: 'ボードタイトル',   type: 'text',   value: 'OJT進捗ボード' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'10',l:'10分'},{v:'30',l:'30分',selected:true},{v:'60',l:'1時間'},{v:'360',l:'6時間'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：研修員名, 所属, 項目名, ステータス(done/doing/pending/skip), 担当指導員, 完了日(YYYY-MM-DD), 備考',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { boardTitle: document.getElementById(widgetId+'-boardTitle').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  },
+  'safety-quiz': {
+    frameHeight: 500,
+    fields: [
+      { id: 'quizTitle',  label: 'タイトル',         type: 'text',   value: '安全クイズ' },
+      { id: 'dataUrl',    label: 'データURL（CSV）', type: 'text',   value: '', style: 'min-width:300px' },
+      { id: 'displaySec', label: '問題表示時間',      type: 'select', options: [{v:'10',l:'10秒'},{v:'15',l:'15秒',selected:true},{v:'20',l:'20秒'},{v:'30',l:'30秒'}] },
+      { id: 'answerSec',  label: '解説表示時間',      type: 'select', options: [{v:'5',l:'5秒'},{v:'8',l:'8秒',selected:true},{v:'12',l:'12秒'},{v:'20',l:'20秒'}] },
+      { id: 'refreshMin', label: '更新間隔',          type: 'select', options: [{v:'30',l:'30分'},{v:'60',l:'1時間',selected:true},{v:'360',l:'6時間'}] },
+      { id: 'fontFamily', label: 'フォント',          type: 'select', options: [{v:'keifont, sans-serif',l:'けいフォント',selected:true},{v:'Arial, sans-serif',l:'Arial'}] }
+    ],
+    note: 'CSV列順：問題文, 選択肢A, 選択肢B, 選択肢C, 選択肢D, 正解(A/B/C/D), 解説, カテゴリ',
+    apply: function(widgetId) {
+      sendConfig(widgetId, { quizTitle: document.getElementById(widgetId+'-quizTitle').value, dataUrl: document.getElementById(widgetId+'-dataUrl').value, displaySec: document.getElementById(widgetId+'-displaySec').value, answerSec: document.getElementById(widgetId+'-answerSec').value, refreshMin: document.getElementById(widgetId+'-refreshMin').value, fontFamily: document.getElementById(widgetId+'-fontFamily').value });
+    }
+  }
+};
+
+// ===== Yodeck postMessage送信 ============================================
+
+function sendConfig(widgetId, config) {
+  var frame = document.getElementById('frame-' + widgetId);
+  if (!frame) return;
+  frame.contentWindow.postMessage({
+    functions: [{ fname: 'init_widget', data: config }]
+  }, '*');
+}
+
+// ===== フィールドHTML生成 ===============================================
+
+function buildField(widgetId, field) {
+  var id = widgetId + '-' + field.id;
+  var style = field.style ? ' style="' + field.style + '"' : '';
+  var html = '<div class="config-field"><label for="' + id + '">' + field.label + '</label>';
+
+  if (field.type === 'select') {
+    html += '<select id="' + id + '"' + style + '>';
+    field.options.forEach(function(opt) {
+      html += '<option value="' + opt.v + '"' + (opt.selected ? ' selected' : '') + '>' + opt.l + '</option>';
+    });
+    html += '</select>';
+  } else {
+    var value = field.value ? ' value="' + field.value + '"' : '';
+    html += '<input type="' + field.type + '" id="' + id + '"' + value + style + '>';
+  }
+  return html + '</div>';
+}
+
+// ===== ウィジェットカードHTML生成 ========================================
+
+function buildCard(widget) {
+  var cfg = WIDGET_CONFIGS[widget.id] || {};
+  var height = cfg.frameHeight || 400;
+  var wideClass = cfg.wide ? ' wide' : '';
+
+  var html = '<div class="widget-card' + wideClass + '">';
+  html += '<div class="card-header"><h2>' + widget.name + '</h2><span class="badge">' + widget.id + '</span></div>';
+  html += '<iframe id="frame-' + widget.id + '" class="preview-frame" style="height:' + height + 'px" src="widgets/' + widget.id + '/index.html"></iframe>';
+  html += '<div class="config-panel">';
+
+  if (cfg.fields && cfg.fields.length > 0) {
+    html += '<div class="config-row">';
+    cfg.fields.forEach(function(field) {
+      html += buildField(widget.id, field);
+    });
+    html += '<div class="config-field" style="justify-content:flex-end"><button class="btn" onclick="WIDGET_CONFIGS[\'' + widget.id + '\'].apply(\'' + widget.id + '\')">適用</button></div>';
+    html += '</div>';
+  }
+
+  if (cfg.note) html += '<p class="note">' + cfg.note + '</p>';
+  if (widget.details && !cfg.note) html += '<p class="note">' + widget.details + '</p>';
+
+  html += '</div></div>';
+  return html;
+}
+
+// ===== manifest.json を読み込んでカードを生成 ============================
+
+fetch('widgets/manifest.json')
+  .then(function(res) {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return res.json();
+  })
+  .then(function(widgets) {
+    document.getElementById('loading').style.display = 'none';
+    var grid = document.getElementById('grid');
+    widgets.forEach(function(widget) {
+      grid.innerHTML += buildCard(widget);
+    });
+
+    // 起算日のデフォルトを今日に設定
+    var startdayEl = document.getElementById('musaigai-startday');
+    if (startdayEl) {
+      startdayEl.value = new Date().toISOString().split('T')[0];
+    }
+  })
+  .catch(function(err) {
+    document.getElementById('loading').style.display = 'none';
+    var errEl = document.getElementById('error-msg');
+    errEl.style.display = 'block';
+    errEl.innerHTML = [
+      '<strong>manifest.json の読み込みに失敗しました</strong>',
+      'ローカルサーバーが起動していない可能性があります。',
+      '',
+      '以下のコマンドでサーバーを起動してから、このページを開いてください：',
+      '<code style="display:block;margin-top:8px;padding:8px;background:#1a1a2e;border-radius:4px">cd C:/Claude/ゲンバルジャー大元 &amp;&amp; python -m http.server 8080</code>',
+      '<code style="display:block;margin-top:4px;padding:8px;background:#1a1a2e;border-radius:4px">→ http://localhost:8080/preview.html</code>',
+      '',
+      '新しいウィジェットを追加したら <code>./build.sh</code> を実行してmanifest.jsonを更新してください。'
+    ].join('<br>');
+  });
+</script>
+
+</body>
+</html>

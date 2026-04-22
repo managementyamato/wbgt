@@ -1,0 +1,57 @@
+{
+  "type": "dynamic",
+  "fields": ["title", "dataUrl", "refreshSec", "windowLabel", "fontFamily", "bgColor"],
+  "meta": {
+    "description": "順番待ちディスプレイ",
+    "details": "現在呼び出し中の番号・待ち人数・目安待ち時間・次の番号を表示。クリニック・役所・銀行・飲食店の受付に。GoogleスプレッドシートCSVで番号管理システムと連携。"
+  },
+  "schema": {
+    "title": {
+      "title": "タイトル",
+      "type": "Text",
+      "help": "ウィジェット上部に表示するタイトルを入力してください。",
+      "options": [{ "val": "順番待ちディスプレイ", "label": "デフォルト" }]
+    },
+    "dataUrl": {
+      "title": "データURL（スプレッドシートCSV）",
+      "type": "Text",
+      "help": "GoogleスプレッドシートのCSV公開URLを入力。空欄はサンプルデータを表示。列順：現在番号, 待ち人数, 対応済件数, 目安待ち時間(分), 窓口名, 次の番号1, 次の番号2...",
+      "options": [{ "val": "", "label": "なし（サンプル表示）" }]
+    },
+    "refreshSec": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [
+        { "val": "5",  "label": "5秒" },
+        { "val": "10", "label": "10秒" },
+        { "val": "30", "label": "30秒" },
+        { "val": "60", "label": "1分" }
+      ]
+    },
+    "windowLabel": {
+      "title": "窓口名",
+      "type": "Text",
+      "help": "「○○番窓口へお越しください」のように表示します。空欄で非表示。",
+      "options": [{ "val": "1番窓口", "label": "サンプル" }]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#0a1628",     "label": "ダークブルー（デフォルト）" },
+        { "val": "#000000",     "label": "黒" },
+        { "val": "#111111",     "label": "ほぼ黒" },
+        { "val": "#1a1a2e",     "label": "ダークネイビー" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    }
+  }
+}

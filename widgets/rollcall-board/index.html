@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>点呼・出欠ボード</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: keifont, sans-serif; background: #0d1117; color: #fff; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.45em 0.8em; flex-shrink: 0;
+      background: linear-gradient(90deg, #37474f, #455a64);
+      border-bottom: 2px solid #78909c;
+    }
+    #board-title { font-size: 3.2vh; font-weight: bold; color: #fff; letter-spacing: 0.1em; }
+    #today-date  { font-size: 2.2vh; color: rgba(255,255,255,0.65); }
+
+    #summary {
+      display: flex; align-items: stretch; flex-shrink: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .sum-box {
+      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 0.5em 0; gap: 0.15em;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .sum-box:last-child { border-right: none; }
+    .sum-label { font-size: 1.8vh; color: rgba(255,255,255,0.5); }
+    .sum-num   { font-size: 5vh; font-weight: bold; line-height: 1; }
+    .sum-unit  { font-size: 1.6vh; color: rgba(255,255,255,0.5); }
+    .sum-present .sum-num { color: #66bb6a; }
+    .sum-absent  .sum-num { color: #ef5350; }
+    .sum-late    .sum-num { color: #ffca28; }
+    .sum-total   .sum-num { font-size: 3vh; color: rgba(255,255,255,0.7); }
+
+    #roll-list {
+      flex: 1; overflow: hidden; display: flex; flex-direction: column;
+      gap: 0.25em; padding: 0.4em 0.7em;
+    }
+    .roll-item {
+      display: flex; align-items: center; gap: 0.5em;
+      padding: 0.35em 0.6em; border-radius: 5px;
+      background: rgba(255,255,255,0.04); flex-shrink: 0;
+    }
+    .roll-item.status-absent { background: rgba(239,83,80,0.08); }
+    .roll-item.status-late   { background: rgba(255,202,40,0.07); }
+
+    .roll-dot     { font-size: 1.8vh; flex-shrink: 0; }
+    .roll-name    { font-size: 2.3vh; font-weight: bold; color: #fff; min-width: 7em; }
+    .roll-company { font-size: 1.8vh; color: rgba(255,255,255,0.45); flex: 1; }
+    .roll-badge   { font-size: 1.6vh; padding: 0.15em 0.5em; border-radius: 3px; font-weight: bold; flex-shrink: 0; }
+    .badge-present { background: rgba(102,187,106,0.25); color: #a5d6a7; }
+    .badge-absent  { background: rgba(239,83,80,0.3);   color: #ef9a9a; }
+    .badge-late    { background: rgba(255,202,40,0.25);  color: #fff9c4; }
+    .badge-leave   { background: rgba(66,165,245,0.25);  color: #90caf9; }
+    .roll-note    { font-size: 1.6vh; color: rgba(255,255,255,0.4); flex-shrink: 0; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <span id="board-title">朝礼点呼</span>
+    <span id="today-date"></span>
+  </div>
+  <div id="summary">
+    <div class="sum-box sum-total">
+      <span class="sum-label">本日</span>
+      <span id="count-total" class="sum-num">--</span>
+    </div>
+    <div class="sum-box sum-present">
+      <span class="sum-label">出勤</span>
+      <span id="count-present" class="sum-num">--</span>
+      <span class="sum-unit">名</span>
+    </div>
+    <div class="sum-box sum-absent">
+      <span class="sum-label">欠勤</span>
+      <span id="count-absent" class="sum-num">--</span>
+      <span class="sum-unit">名</span>
+    </div>
+    <div class="sum-box sum-late">
+      <span class="sum-label">遅刻</span>
+      <span id="count-late" class="sum-num">--</span>
+      <span class="sum-unit">名</span>
+    </div>
+  </div>
+  <div id="roll-list"></div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天気予報</title>
+  <style>
+    @font-face { font-family:"keifont"; src:url("fonts/keifont.ttf"); }
+    *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;border:0;font-style:normal;font-weight:normal;}
+    html,body{width:100%;height:100%;overflow:hidden;background:#fff;}
+    .wrap{display:block;width:100%;height:100%;}
+
+    .hdr{display:block;width:100%;background:#1565c0;font-family:"keifont",sans-serif;text-align:center;letter-spacing:4px;color:#fff;overflow:hidden;}
+
+    .date_wrap{display:flex;width:100%;align-items:center;justify-content:center;background:#e3f2fd;position:relative;}
+    .current_date{color:#1a1a1a;font-family:"keifont",sans-serif;}
+    #status_msg{position:absolute;right:2%;font-size:1.2vw;color:#aaa;font-family:sans-serif;}
+
+    .body_content{width:100%;overflow:hidden;display:flex;flex-direction:column;}
+
+    /* 地点行 */
+    .location_row{display:flex;align-items:center;justify-content:center;background:#bbdefb;font-family:"keifont",sans-serif;color:#0d47a1;padding:0 2%;flex-shrink:0;height:13%;}
+    #location_note{font-size:0.7em;color:#888;margin-left:1%;font-family:sans-serif;}
+
+    /* 現在気象行 */
+    .current_row{display:flex;align-items:center;justify-content:center;gap:6%;background:#fff;padding:0 4%;flex-shrink:0;height:13%;border-bottom:2px solid #e3f2fd;}
+    .current_item{display:flex;align-items:center;gap:4%;}
+    .current_row .label{font-family:"keifont",sans-serif;color:#555;}
+    .current_row .value{font-family:"keifont",sans-serif;color:#1a1a1a;font-weight:bold;}
+
+    /* 今日・明日エリア */
+    .forecast_area{display:flex;flex:1;min-height:0;}
+    .day_block{flex:1;display:flex;flex-direction:column;overflow:hidden;}
+    .day_block:first-child{border-right:3px solid #e3f2fd;}
+
+    .day_header{display:flex;align-items:center;justify-content:center;font-family:"keifont",sans-serif;color:#fff;padding:0 2%;flex-shrink:0;height:20%;}
+    .day_header.today{background:#1565c0;}
+    .day_header.tomorrow{background:#0277bd;}
+
+    .day_body{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;padding:2% 3%;gap:4%;}
+    .weather_icon{font-family:"keifont",sans-serif;color:#1565c0;text-align:center;line-height:1;}
+    .weather_desc{font-family:"keifont",sans-serif;color:#333;text-align:center;line-height:1.35;white-space:pre-line;overflow:hidden;}
+    .weather_pop{font-family:"keifont",sans-serif;color:#1976d2;font-size:0.85em;text-align:center;}
+    .weather_temp{font-family:"keifont",sans-serif;color:#555;font-size:0.8em;text-align:center;}
+
+    #error_msg{display:none;width:100%;text-align:center;font-family:"keifont",sans-serif;font-size:2vw;color:#e00;padding:4%;white-space:pre-line;}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h2 class="hdr">天気予報</h2>
+  <div class="date_wrap">
+    <span id="current_time" class="current_date"></span>
+    <span id="status_msg"></span>
+  </div>
+  <div class="body_content">
+
+    <div id="error_msg"></div>
+
+    <div class="location_row">
+      <span id="location_name">取得中…</span>
+      <span id="location_note"></span>
+    </div>
+
+    <div class="current_row">
+      <div class="current_item">
+        <span class="label">気温</span>
+        <span class="value" id="current_temp">--</span>
+      </div>
+      <div class="current_item">
+        <span class="label">湿度</span>
+        <span class="value" id="current_hum">--</span>
+      </div>
+    </div>
+
+    <div class="forecast_area">
+      <!-- 今日 -->
+      <div class="day_block">
+        <div class="day_header today">今日</div>
+        <div class="day_body">
+          <div class="weather_icon" id="today_icon">－</div>
+          <div class="weather_desc" id="today_text">--</div>
+          <div class="weather_pop"  id="today_pop"></div>
+          <div class="weather_temp" id="today_temp"></div>
+        </div>
+      </div>
+      <!-- 明日 -->
+      <div class="day_block">
+        <div class="day_header tomorrow">明日</div>
+        <div class="day_body">
+          <div class="weather_icon" id="tomorrow_icon">－</div>
+          <div class="weather_desc" id="tomorrow_text">--</div>
+          <div class="weather_pop"  id="tomorrow_pop"></div>
+          <div class="weather_temp" id="tomorrow_temp"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script src="js/widget_init.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

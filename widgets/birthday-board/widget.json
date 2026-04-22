@@ -1,0 +1,22 @@
+{
+  "type": "dynamic",
+  "fields": ["companyName", "dataUrl", "fontFamily"],
+  "meta": {
+    "description": "社員誕生日・記念日ボード",
+    "details": "今日の誕生日・入社記念日をアニメーション付きでお祝い表示。今月のお祝い一覧も表示。入社年数・年齢も自動計算。チームの一体感醸成・モチベーション向上に。"
+  },
+  "schema": {
+    "companyName": { "title": "タイトル", "type": "Text", "options": [{ "val": "今月の誕生日・記念日", "label": "デフォルト" }] },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "列順：名前, 種別(birthday/anniversary), 月(1-12), 日(1-31), 生年 or 入社年(任意), 一言メッセージ(任意)",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }]
+    }
+  }
+}

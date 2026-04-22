@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>アレルゲン表示ボード</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#0d1a0d;color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#1a237e,#283593);border-bottom:2px solid #5c6bc0}
+#shop-name{font-size:3vh;font-weight:bold;color:#fff;letter-spacing:.1em}
+#sub-title{font-size:1.8vh;color:rgba(255,255,255,.55)}
+#allergen-table{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.a-row{display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.07);min-height:0}
+.a-head{background:rgba(255,255,255,.08);flex-shrink:0}
+.a-menu{flex:2;padding:.3em .5em;font-size:2vh;color:#fff;min-width:0}
+.a-head .a-menu{font-size:1.8vh;color:rgba(255,255,255,.7)}
+.a-cat{font-size:1.4vh;color:rgba(255,255,255,.4);margin-left:.4em}
+.a-cell{flex:1;text-align:center;padding:.2em 0;font-size:2.2vh}
+.a-label{font-size:1.5vh;color:rgba(255,255,255,.6);writing-mode:horizontal-tb}
+.has-allergen{color:#ff8a65;font-size:2.5vh}
+.no-allergen{color:rgba(255,255,255,.1)}
+.a-note-col{flex:1.2;font-size:1.5vh;color:rgba(255,255,255,.4);padding:0 .4em;text-align:right}
+.a-head .a-note-col{color:rgba(255,255,255,.5)}
+/* 行ごと交互カラー */
+.a-row:nth-child(even):not(.a-head){background:rgba(255,255,255,.03)}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header">
+  <span id="shop-name">アレルゲン一覧</span>
+  <span id="sub-title">●=含む　空白=含まない（8大アレルゲン）</span>
+</div>
+<div id="allergen-table"></div>
+</body></html>

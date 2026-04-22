@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>産廃・廃棄物管理ボード</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1a15; font-family: keifont, sans-serif; color: #e0e0e0; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.4em 1em;
+      background: linear-gradient(135deg, #1b4332, #2d6a4f);
+      border-bottom: 3px solid #40916c;
+      height: 9vh; flex-shrink: 0;
+    }
+    #header-left { display: flex; align-items: center; gap: 0.6em; }
+    #site-name   { font-size: 3.6vh; font-weight: bold; color: #fff; letter-spacing: 0.05em; }
+    #header-icon { font-size: 3.2vh; }
+    #clock       { font-size: 2.2vh; color: rgba(255,255,255,0.8); font-weight: bold; }
+
+    #summary-bar {
+      display: flex; align-items: center; gap: 1.5em;
+      padding: 0.3em 1em; background: rgba(0,0,0,0.3);
+      border-bottom: 1px solid #1b4332; flex-shrink: 0; height: 6vh;
+    }
+    .summary-item { font-size: 2vh; color: #aaa; }
+    .summary-item span { font-weight: bold; }
+    .summary-item span.ok   { color: #52b788; }
+    .summary-item span.warn { color: #f9c74f; }
+    .summary-item span.over { color: #e63946; }
+
+    #table-wrap {
+      flex: 1; overflow: hidden; padding: 0.3em 0.6em;
+    }
+
+    table {
+      width: 100%; border-collapse: collapse; table-layout: fixed;
+    }
+    thead th {
+      font-size: 1.8vh; color: #95d5b2; text-align: left;
+      padding: 0.3em 0.5em; border-bottom: 2px solid #2d6a4f;
+      white-space: nowrap;
+    }
+    tbody td {
+      font-size: 2.1vh; padding: 0.4em 0.5em;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      vertical-align: middle; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+    /* Column widths */
+    .col-category  { width: 16%; }
+    .col-amount    { width: 14%; text-align: right; }
+    .col-bar       { width: 26%; }
+    .col-manifest  { width: 14%; }
+    .col-company   { width: 16%; }
+    .col-note      { width: 14%; }
+
+    .amount-text { font-weight: bold; }
+    .amount-text .unit { font-size: 0.85em; color: #888; margin-left: 0.2em; }
+
+    .bar-container {
+      width: 100%; height: 2.2vh; background: rgba(255,255,255,0.08);
+      border-radius: 3px; overflow: hidden; position: relative;
+    }
+    .bar-fill {
+      height: 100%; border-radius: 3px; transition: width 0.5s ease;
+    }
+    .bar-label {
+      position: absolute; right: 0.4em; top: 50%; transform: translateY(-50%);
+      font-size: 1.6vh; font-weight: bold; color: #fff;
+      text-shadow: 0 0 4px rgba(0,0,0,0.8);
+    }
+
+    .status-ok   .bar-fill { background: linear-gradient(90deg, #2d6a4f, #52b788); }
+    .status-warn .bar-fill { background: linear-gradient(90deg, #e09f3e, #f9c74f); }
+    .status-over .bar-fill { background: linear-gradient(90deg, #c1121f, #e63946); }
+
+    .status-ok   .category-dot { color: #52b788; }
+    .status-warn .category-dot { color: #f9c74f; }
+    .status-over .category-dot { color: #e63946; }
+
+    .note-warn { color: #f9c74f; font-weight: bold; }
+
+    #empty { color: #555; text-align: center; padding: 3em; font-size: 2.2vh; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="header-left">
+      <span id="header-icon">&#9851;</span>
+      <span id="site-name">産廃管理ボード</span>
+    </div>
+    <div id="clock"></div>
+  </div>
+  <div id="summary-bar"></div>
+  <div id="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-category">廃棄物区分</th>
+          <th class="col-amount">排出量 / 上限</th>
+          <th class="col-bar">使用率</th>
+          <th class="col-manifest">マニフェスト番号</th>
+          <th class="col-company">処理業者</th>
+          <th class="col-note">備考</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</body>
+</html>

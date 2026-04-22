@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>重機・車両稼働ボード</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#0d1a0a;color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#1b5e20,#33691e);border-bottom:2px solid #8bc34a}
+#site-name{font-size:3vh;font-weight:bold;color:#fff;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.65);font-variant-numeric:tabular-nums}
+#summary{display:flex;flex-shrink:0;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+.sum-box{flex:1;display:flex;flex-direction:column;align-items:center;padding:.4em 0;border-right:1px solid rgba(255,255,255,.07)}
+.sum-box:last-child{border-right:none}
+.sum-label{font-size:1.6vh;color:rgba(255,255,255,.5)}
+.sum-num{font-size:4.5vh;font-weight:bold;line-height:1.1}
+.sum-unit{font-size:1.4vh;color:rgba(255,255,255,.4)}
+.s-active .sum-num{color:#8bc34a}
+.s-standby .sum-num{color:#ffca28}
+.s-maint .sum-num{color:#ff8a65}
+.s-total .sum-num{color:rgba(255,255,255,.8)}
+#equip-list{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:.3em;padding:.4em .7em}
+.equip-item{display:flex;align-items:center;gap:.6em;padding:.35em .6em;border-radius:5px;background:rgba(255,255,255,.05);border-left:4px solid rgba(255,255,255,.15);flex-shrink:0}
+.status-active{border-left-color:#8bc34a;background:rgba(139,195,74,.08)}
+.status-standby{border-left-color:#ffca28;background:rgba(255,202,40,.06)}
+.status-maintenance{border-left-color:#ff8a65;background:rgba(255,138,101,.07)}
+.status-out{border-left-color:rgba(255,255,255,.15);opacity:.5}
+.eq-icon{font-size:2.2vh;flex-shrink:0}
+.eq-info{flex:1;display:flex;flex-direction:column;gap:.05em;min-width:0}
+.eq-name{font-size:2.4vh;font-weight:bold;color:#fff}
+.eq-work{font-size:1.8vh;color:rgba(255,255,255,.55)}
+.eq-right{display:flex;align-items:center;gap:.5em;flex-shrink:0}
+.eq-op{font-size:1.7vh;color:rgba(255,255,255,.5)}
+.eq-badge{font-size:1.5vh;padding:.1em .4em;border-radius:3px;font-weight:bold}
+.badge-active{background:rgba(139,195,74,.3);color:#dcedc8}
+.badge-standby{background:rgba(255,202,40,.3);color:#fff9c4}
+.badge-maintenance{background:rgba(255,138,101,.3);color:#ffccbc}
+.badge-out{background:rgba(255,255,255,.1);color:rgba(255,255,255,.4)}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header"><span id="site-name">重機・車両稼働状況</span><span id="clock">--:--</span></div>
+<div id="summary">
+  <div class="sum-box s-active"><span class="sum-label">稼働中</span><span id="cnt-active" class="sum-num">--</span><span class="sum-unit">台</span></div>
+  <div class="sum-box s-standby"><span class="sum-label">待機</span><span id="cnt-standby" class="sum-num">--</span><span class="sum-unit">台</span></div>
+  <div class="sum-box s-maint"><span class="sum-label">点検中</span><span id="cnt-maintenance" class="sum-num">--</span><span class="sum-unit">台</span></div>
+  <div class="sum-box s-total"><span class="sum-label">合計</span><span id="cnt-total" class="sum-num">--</span><span class="sum-unit">台</span></div>
+</div>
+<div id="equip-list"></div>
+</body></html>

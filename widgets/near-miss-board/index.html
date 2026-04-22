@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ヒヤリハット投稿ボード</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #111; font-family: keifont, sans-serif; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.3em 0.8em; border-bottom: 3px solid #e65100;
+      background: rgba(0,0,0,0.3); height: 9vh; flex-shrink: 0;
+    }
+    #header-left  { display: flex; align-items: center; gap: 0.5em; }
+    #title        { font-size: 3.8vh; font-weight: bold; color: #fff; letter-spacing: 0.05em; }
+    #total-badge  { background: #e65100; color: #fff; font-size: 2.2vh; font-weight: bold; padding: 0.1em 0.6em; border-radius: 20px; }
+    #header-right { font-size: 2vh; color: #888; text-align: right; line-height: 1.5; }
+
+    /* メインエリア：左feed ＋ 右QR */
+    #main {
+      flex: 1; display: flex; overflow: hidden;
+    }
+
+    #feed-area {
+      flex: 1; display: flex; flex-direction: column;
+      border-right: 1px solid #2a2a2a; overflow: hidden;
+    }
+
+    #feed {
+      flex: 1; display: flex; flex-direction: column;
+      gap: 0.35em; padding: 0.4em 0.5em; overflow: hidden;
+    }
+
+    .card {
+      display: flex; align-items: flex-start;
+      padding: 0.45em 0.7em; border-radius: 8px;
+      background: rgba(255,255,255,0.05); border-left: 5px solid #555;
+      gap: 0.6em; flex-shrink: 0;
+    }
+    .card.high   { border-left-color: #e53935; background: rgba(229,57,53,0.08); }
+    .card.medium { border-left-color: #ffa000; }
+    .card.low    { border-left-color: #43a047; }
+
+    .card-level {
+      font-size: 1.8vh; font-weight: bold;
+      padding: 0.1em 0.4em; border-radius: 4px;
+      flex-shrink: 0; align-self: center; min-width: 3.5em; text-align: center;
+    }
+    .card.high   .card-level { background: #e53935; color: #fff; }
+    .card.medium .card-level { background: #ffa000; color: #111; }
+    .card.low    .card-level { background: #43a047; color: #fff; }
+
+    .card-body   { flex: 1; min-width: 0; }
+    .card-text   { font-size: 2.5vh; color: #fff; line-height: 1.3; }
+    .card-meta   { font-size: 1.8vh; color: #888; margin-top: 0.15em; }
+
+    #feed-footer {
+      display: flex; align-items: center;
+      padding: 0.3em 0.5em; background: rgba(0,0,0,0.2);
+      border-top: 1px solid #222; gap: 1.5em; flex-shrink: 0;
+      height: 5.5vh;
+    }
+    .stat { font-size: 1.9vh; color: #aaa; }
+    .stat span { font-weight: bold; }
+    .stat span.h { color: #e53935; }
+    .stat span.m { color: #ffa000; }
+    .stat span.l { color: #43a047; }
+
+    /* QRコードパネル */
+    #qr-panel {
+      width: 28%; flex-shrink: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 0.8em 0.5em; gap: 0.6em;
+      background: rgba(0,0,0,0.15);
+    }
+    #qr-label    { font-size: 2.2vh; font-weight: bold; color: #fff; text-align: center; line-height: 1.4; }
+    #qr-canvas   { /* filled by JS */ }
+    #qr-sublabel { font-size: 1.8vh; color: #aaa; text-align: center; line-height: 1.4; }
+    #qr-no-url   { font-size: 1.8vh; color: #555; text-align: center; padding: 1em; }
+
+    #empty { color: #555; text-align: center; padding: 2em; font-size: 2vh; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="header-left">
+      <div id="title">ヒヤリハット投稿ボード</div>
+      <div id="total-badge">0 件</div>
+    </div>
+    <div id="header-right"></div>
+  </div>
+  <div id="main">
+    <div id="feed-area">
+      <div id="feed"></div>
+      <div id="feed-footer"></div>
+    </div>
+    <div id="qr-panel">
+      <div id="qr-label">ヒヤリハットを<br>匿名投稿する</div>
+      <canvas id="qr-canvas"></canvas>
+      <div id="qr-sublabel">スマホで読み取って<br>投稿してください</div>
+      <div id="qr-no-url" style="display:none">投稿URLを<br>設定してください</div>
+    </div>
+  </div>
+</body>
+</html>

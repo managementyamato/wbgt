@@ -1,0 +1,33 @@
+{
+  "type": "dynamic",
+  "fields": ["address", "refreshMin", "fontFamily"],
+  "meta": {
+    "description": "現場天気予報",
+    "details": "住所を入力すると現在の気温・天気・体感温度・風速と3日間予報を自動取得表示。Open-Meteo APIを使用（APIキー不要・無料）。屋外作業の計画に。"
+  },
+  "schema": {
+    "address": {
+      "title": "住所・地名",
+      "type": "Text",
+      "help": "現場の住所または地名を入力してください（例：大阪市北区）。",
+      "options": [{ "val": "東京都千代田区", "label": "サンプル（東京）" }]
+    },
+    "refreshMin": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [
+        { "val": "15", "label": "15分" },
+        { "val": "30", "label": "30分" },
+        { "val": "60", "label": "1時間" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" }
+      ]
+    }
+  }
+}

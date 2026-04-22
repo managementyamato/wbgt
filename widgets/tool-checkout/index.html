@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>持ち出し管理ボード</title>
+  <style>
+    @font-face { font-family: "keifont"; src: url("fonts/keifont.ttf"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #111; font-family: keifont, sans-serif; }
+    body { display: flex; flex-direction: column; }
+
+    #header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.3em 0.7em; border-bottom: 3px solid #0077cc;
+      background: rgba(0,0,0,0.3); height: 9vh; flex-shrink: 0;
+    }
+    #title  { font-size: 4vh; font-weight: bold; color: #fff; letter-spacing: 0.05em; }
+    #meta   { font-size: 2.2vh; color: #aaa; text-align: right; line-height: 1.4; }
+
+    #grid {
+      flex: 1; display: grid; gap: 0.4em; padding: 0.5em;
+      overflow: hidden; align-content: start;
+    }
+
+    .card {
+      display: flex; align-items: center;
+      padding: 0.4em 0.8em; border-radius: 8px;
+      background: rgba(255,255,255,0.05); border-left: 6px solid #555; gap: 0.8em;
+    }
+    .card.available  { border-left-color: #00c853; }
+    .card.checked-out{ border-left-color: #e53935; background: rgba(229,57,53,0.08); }
+    .card.maintenance{ border-left-color: #ffd600; background: rgba(255,214,0,0.05); }
+
+    .status-dot {
+      width: 2.5vh; height: 2.5vh; border-radius: 50%; flex-shrink: 0;
+    }
+    .available   .status-dot { background: #00c853; }
+    .checked-out .status-dot { background: #e53935; }
+    .maintenance .status-dot { background: #ffd600; }
+
+    .card-name { flex: 1; font-size: 3.2vh; font-weight: bold; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .card-note { font-size: 2vh; color: #aaa; }
+
+    .card-right { flex-shrink: 0; text-align: right; }
+    .card-person { font-size: 3vh; font-weight: bold; }
+    .available   .card-person { color: #00c853; }
+    .checked-out .card-person { color: #ff6659; }
+    .maintenance .card-person { color: #ffd600; }
+    .card-time { font-size: 2vh; color: #888; margin-top: 0.1em; }
+
+    .status-label { font-size: 2.2vh; font-weight: bold; }
+    .available   .status-label { color: #00c853; }
+    .checked-out .status-label { color: #e53935; }
+    .maintenance .status-label { color: #ffd600; }
+
+    #summary {
+      display: flex; gap: 1.5em; align-items: center;
+      padding: 0.3em 0.7em; background: rgba(0,0,0,0.25);
+      border-top: 1px solid #333; height: 5vh; flex-shrink: 0;
+    }
+    .sum-item { font-size: 2vh; color: #aaa; }
+    .sum-item span { font-weight: bold; }
+    .sum-item span.ok   { color: #00c853; }
+    .sum-item span.out  { color: #e53935; }
+    .sum-item span.warn { color: #ffd600; }
+
+    #empty { color: #555; text-align: center; padding: 3em; font-size: 2vh; }
+  </style>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="title">持ち出し管理ボード</div>
+    <div id="meta"></div>
+  </div>
+  <div id="grid"></div>
+  <div id="summary"></div>
+</body>
+</html>

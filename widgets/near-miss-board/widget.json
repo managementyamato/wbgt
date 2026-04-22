@@ -1,0 +1,74 @@
+{
+  "type": "dynamic",
+  "fields": ["title", "formUrl", "dataUrl", "refreshSec", "maxVisible", "fontFamily", "fontColor", "bgColor"],
+  "meta": {
+    "description": "ヒヤリハット投稿ボード",
+    "details": "ヒヤリハット報告をリアルタイムで掲示。右側にQRコードを表示し匿名投稿を促進。重大/注意/軽微の3段階レベルを色分け表示。GoogleスプレッドシートCSVと連携。"
+  },
+  "schema": {
+    "title": {
+      "title": "タイトル",
+      "type": "Text",
+      "help": "ウィジェット上部に表示するタイトル。",
+      "options": [{ "val": "ヒヤリハット投稿ボード", "label": "デフォルト" }]
+    },
+    "formUrl": {
+      "title": "投稿フォームURL（QRコード表示）",
+      "type": "Text",
+      "help": "GoogleフォームなどのURLを入力するとウィジェット右側にQRコードとして表示されます。空欄でQR非表示。",
+      "options": [{ "val": "", "label": "なし（QR非表示）" }]
+    },
+    "dataUrl": {
+      "title": "データURL（スプレッドシートCSV）",
+      "type": "Text",
+      "help": "GoogleスプレッドシートのCSV公開URLを入力。空欄はサンプルデータを表示。列順：投稿日時, レベル(high/medium/low), 内容, 場所, 投稿者",
+      "options": [{ "val": "", "label": "なし（サンプル表示）" }]
+    },
+    "refreshSec": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [
+        { "val": "30",  "label": "30秒" },
+        { "val": "60",  "label": "1分" },
+        { "val": "300", "label": "5分" }
+      ]
+    },
+    "maxVisible": {
+      "title": "表示件数",
+      "type": "Select",
+      "help": "一度に表示するヒヤリハット件数。件数超過時は5秒ごとに自動スクロール。",
+      "options": [
+        { "val": "3", "label": "3件" },
+        { "val": "4", "label": "4件" },
+        { "val": "5", "label": "5件" }
+      ]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [
+        { "val": "keifont, sans-serif", "label": "けいフォント（現場標準）" },
+        { "val": "Arial, sans-serif",   "label": "Arial" }
+      ]
+    },
+    "fontColor": {
+      "title": "文字色",
+      "type": "Select",
+      "options": [
+        { "val": "#ffffff", "label": "白" },
+        { "val": "#d9d9d9", "label": "ライトグレー" }
+      ]
+    },
+    "bgColor": {
+      "title": "背景色",
+      "type": "Select",
+      "options": [
+        { "val": "#111111",     "label": "ほぼ黒" },
+        { "val": "#000000",     "label": "黒" },
+        { "val": "#1a1a2e",     "label": "ダークネイビー" },
+        { "val": "#003366",     "label": "ネイビー" },
+        { "val": "transparent", "label": "透明" }
+      ]
+    }
+  }
+}

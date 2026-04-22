@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"/><title>OJT進捗ボード</title>
+<style>
+@font-face{font-family:"keifont";src:url("fonts/keifont.ttf")}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:keifont,sans-serif;background:#0d1117;color:#fff}
+body{display:flex;flex-direction:column}
+#header{display:flex;align-items:center;justify-content:space-between;padding:.4em .8em;flex-shrink:0;background:linear-gradient(90deg,#1a2a0d,#2e4a1a);border-bottom:2px solid #558b2f}
+#board-title{font-size:3vh;font-weight:bold;color:#aed581;letter-spacing:.1em}
+#clock{font-size:2.5vh;color:rgba(255,255,255,.6)}
+#summary{display:flex;align-items:center;gap:1em;padding:.4em .8em;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1)}
+.sum-stat{display:flex;flex-direction:column;align-items:center;min-width:5em}
+.sum-label{font-size:1.3vh;color:rgba(255,255,255,.4)}
+.sum-val{font-size:2.8vh;font-weight:bold}
+.col-green{color:#66bb6a}
+.col-blue{color:#42a5f5}
+.col-all{color:#fff}
+#overall-bar-wrap{flex:1;height:1.8vh;background:rgba(255,255,255,.1);border-radius:1em;overflow:hidden}
+#overall-bar{height:100%;border-radius:1em;transition:width .6s ease}
+#overall-pct{font-size:2.5vh;font-weight:bold;min-width:4em;text-align:right}
+#trainee-list{flex:1;overflow-y:auto;padding:.4em;display:flex;flex-direction:column;gap:.5em}
+.trainee-section{background:rgba(255,255,255,.04);border-radius:.5em;overflow:hidden}
+.trainee-header{display:flex;align-items:center;gap:.5em;padding:.4em .6em;background:rgba(255,255,255,.06);flex-wrap:wrap}
+.trainee-name{font-size:2.2vh;font-weight:bold;color:#fff}
+.trainee-dept{font-size:1.5vh;color:rgba(255,255,255,.4)}
+.trainee-pct{font-size:1.6vh;color:#aed581;margin-left:auto;font-variant-numeric:tabular-nums}
+.trainee-bar-wrap{width:100%;height:1.2vh;background:rgba(255,255,255,.1);border-radius:1em;overflow:hidden;flex-basis:100%}
+.trainee-bar{height:100%;border-radius:1em;transition:width .5s ease}
+.items-grid{display:flex;flex-wrap:wrap;gap:.3em;padding:.4em .5em}
+.item-chip{display:flex;align-items:center;gap:.2em;font-size:1.5vh;padding:.2em .5em;border-radius:1em}
+.st-done{background:#1b5e20;color:#a5d6a7}
+.st-doing{background:#0d47a1;color:#90caf9}
+.st-pending{background:#2e3440;color:rgba(255,255,255,.4)}
+.st-skip{background:transparent;color:rgba(255,255,255,.2)}
+.item-icon{font-size:1.3vh}
+</style>
+<script src="app.js"></script>
+</head>
+<body>
+<div id="header">
+  <span id="board-title">OJT進捗ボード</span>
+  <span id="clock">--:--</span>
+</div>
+<div id="summary">
+  <div class="sum-stat"><span class="sum-label">全項目</span><span class="sum-val col-all" id="total-items">-</span></div>
+  <div class="sum-stat"><span class="sum-label">完了</span><span class="sum-val col-green" id="done-items">-</span></div>
+  <div class="sum-stat"><span class="sum-label">実施中</span><span class="sum-val col-blue" id="doing-items">-</span></div>
+  <div id="overall-bar-wrap"><div id="overall-bar" style="width:0%"></div></div>
+  <span class="sum-val col-green" id="overall-pct">-</span>
+</div>
+<div id="trainee-list"></div>
+</body></html>

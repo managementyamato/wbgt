@@ -1,0 +1,27 @@
+{
+  "type": "dynamic",
+  "fields": ["facilityName", "dataUrl", "refreshSec", "fontFamily"],
+  "meta": {
+    "description": "診察室・会議室ステータス",
+    "details": "診察室・処置室・会議室などの空き/使用中/清掃中/予約済をカードグリッドで表示。担当者名・終了予定時刻も表示。クリニック・病院・オフィス・ホテル向け。"
+  },
+  "schema": {
+    "facilityName": { "title": "施設名・タイトル", "type": "Text", "options": [{ "val": "診察室・室内状況", "label": "デフォルト" }] },
+    "dataUrl": {
+      "title": "データURL（CSV）",
+      "type": "Text",
+      "help": "列順：部屋名, ステータス(available/busy/cleaning/reserved), 担当者/用途, 終了予定時刻(HH:MM), 備考",
+      "options": [{ "val": "", "label": "サンプルデータを使用" }]
+    },
+    "refreshSec": {
+      "title": "更新間隔",
+      "type": "Select",
+      "options": [{ "val": "15", "label": "15秒" }, { "val": "30", "label": "30秒" }, { "val": "60", "label": "1分" }]
+    },
+    "fontFamily": {
+      "title": "フォント",
+      "type": "Select",
+      "options": [{ "val": "keifont, sans-serif", "label": "けいフォント" }, { "val": "Arial, sans-serif", "label": "Arial" }]
+    }
+  }
+}
