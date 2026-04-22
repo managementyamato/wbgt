@@ -1,0 +1,94 @@
+@charset "utf-8";
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+         -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-style:normal;
+    font-weight: normal;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+ol, ul{list-style:none;}
+table{border-collapse: collapse; border-spacing:0;}
+img {border: none;}
+body {
+	color: #1a1a1a;
+	font-size: 16px;
+	font-family: Verdana, Arial,'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif;
+}
+a,body,p,th,td,h1,h2,h3,div,ul,li{
+	-webkit-text-size-adjust: 100%;
+	max-height: 999999px;
+	max-height: 100%;
+}
+
+/* 回り込み */
+.f-right {float: right;}
+.f-left {float: left}
+.f-clear {clear: both;}
+.clearfix:after,article:after,section:after,header:after,footer:after,.wrapper:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+/* 段落 */
+p {line-height: 1.7em; margin-bottom: 15px;}
+p:last-child {margin-bottom: 0px;}
+.t-right {text-align :right;}
+.t-left {text-align: left;}
+.t-center {text-align: center;}
+
+/* 余白 */
+.mb10 {margin-bottom: 10px;}
+.mb20 {margin-bottom: 20px;}
+.mb30 {margin-bottom: 30px;}
+.mb50 {margin-bottom: 50px;}
+.mt10 {margin-top: 10px;}
+.mt20 {margin-top: 20px;}
+.mt30 {margin-top: 30px;}
+.mt50 {margin-top: 50px;}
+
+.ml10 { margin-left:10px;}
+.mr10 { margin-right:10px;}
+.ml20 { margin-left:20px;}
+.mr20 { margin-right:20px;}
+
+/* 文字 */
+.bold {font-weight: bold;}
+.under {text-decoration:underline;}
+.t-red {color:#D83535;}
+.fs12 {font-size:12px;}
+.fs13 {font-size:13px;}
+html{
+	width:100%;
+	height:auto;
+}
+.wrap{
+	display:inline-block;
+	width:100%;
+	height:auto;
+	margin:0 auto;
+}

@@ -282,6 +282,14 @@ def main():
         out_path = os.path.join(OUTDIR, f'{code}.json')
         with open(out_path, 'w', encoding='utf-8') as f:
             json.dump(record, f, ensure_ascii=False, separators=(',', ':'))
+
+        # JSONP 版も生成（<script> タグで読み込める形式）
+        # XHR が塞がれた環境（Yodeckテンプレ配布時など）の代替手段
+        js_path = os.path.join(OUTDIR, f'{code}.js')
+        json_str = json.dumps(record, ensure_ascii=False, separators=(',', ':'))
+        with open(js_path, 'w', encoding='utf-8') as f:
+            f.write(f'window.__WBGT_CB && window.__WBGT_CB({json_str});\n')
+
         written += 1
 
         if code in PREF_CODES:

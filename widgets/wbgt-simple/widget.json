@@ -2,13 +2,12 @@
   "type": "dynamic",
   "fields": [
     "prefecture",
-    "dataBaseUrl",
     "theme",
     "refreshMin"
   ],
   "meta": {
     "description": "暑さ指数（WBGT）シンプル版",
-    "details": "都道府県を選ぶだけで、環境省の公式WBGT予測値をそのまま表示。データは GitHub Actions が環境省CSVを定期取得して GitHub Pages で配信する専用プロキシ経由で供給される。CORS制限のある環境でも確実に動作。"
+    "details": "都道府県を選ぶだけで、環境省の公式WBGT実況値をそのまま表示。データは GitHub Actions が環境省CSVを定期取得して GitHub Pages で配信する専用プロキシ経由で供給される。CORS制限のある現場環境でも確実に動作。"
   },
   "schema": {
     "prefecture": {
@@ -63,14 +62,6 @@
         { "val": "宮崎県",   "label": "宮崎県（宮崎）" },
         { "val": "鹿児島県", "label": "鹿児島県（鹿児島）" },
         { "val": "沖縄県",   "label": "沖縄県（那覇）" }
-      ]
-    },
-    "dataBaseUrl": {
-      "title": "データURL（必須）",
-      "type": "Text",
-      "help": "GitHub Pages で公開した WBGT データのベースURL。例: https://yourname.github.io/yourrepo/wbgt （末尾に /{code}.json が付く想定）",
-      "options": [
-        { "val": "https://yourname.github.io/yourrepo/wbgt", "label": "要変更" }
       ]
     },
     "theme": {

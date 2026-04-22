@@ -1,190 +1,42 @@
 <!DOCTYPE html>
-<html lang="ja">
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js"><!--<![endif]-->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WBGT</title>
-  <style>
-    @font-face {
-      font-family: "keifont";
-      src: url("fonts/keifont.woff2") format("woff2");
-    }
-    :root {
-      --bg: #ffffff;
-      --fg: #111111;
-      --sub: #555555;
-      --accent: #1a73e8;
-
-      --lvl-safe:      #27ae60;
-      --lvl-attention: #f39c12;
-      --lvl-caution:   #e67e22;
-      --lvl-warning:   #e74c3c;
-      --lvl-danger:    #c0392b;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      width: 100%; height: 100%;
-      overflow: hidden;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: "keifont", "Noto Sans JP", sans-serif;
-    }
-    /*
-     * フルレスポンシブ: 可用領域の min(幅, 高さ) に対して相対スケール。
-     * すべて cqmin / min(vw,vh) ベースで記述 → 任意のアスペクト比に追従。
-     * Yodeck は様々なゾーンサイズで widget を配置するため。
-     */
-    #stage {
-      position: fixed;
-      inset: 0;
-      width: 100%; height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: space-between;
-      padding: 3% 4%;
-      gap: 2%;
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 2%;
-      border-bottom: 1px solid rgba(0,0,0,0.12);
-      padding-bottom: 1.5%;
-      flex-shrink: 0;
-    }
-    .title {
-      font-size: clamp(0.9rem, min(4vw, 3vh), 2.5rem);
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .loc {
-      font-size: clamp(0.8rem, min(3vw, 2.2vh), 2rem);
-      color: var(--sub);
-      white-space: nowrap;
-    }
-
-    .main {
-      flex: 1 1 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      gap: 2%;
-      min-height: 0;
-    }
-    .wbgt-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.2em;
-    }
-    /* バナー型（幅が高さの2倍以上）では wbgt-block と level を横配置 */
-    @media (min-aspect-ratio: 2/1) {
-      .main {
-        flex-direction: row;
-        gap: 4%;
-      }
-      .wbgt-value {
-        font-size: clamp(3rem, min(18vw, 72vh), 18rem);
-      }
-      .level {
-        font-size: clamp(1.3rem, min(6vw, 28vh), 6rem);
-      }
-    }
-    .wbgt-label {
-      font-size: clamp(0.7rem, min(2.2vw, 1.8vh), 1.4rem);
-      color: var(--sub);
-      letter-spacing: 0.08em;
-    }
-    .wbgt-value {
-      font-size: clamp(3rem, min(22vw, 42vh), 18rem);
-      font-weight: 900;
-      line-height: 0.95;
-      color: var(--accent);
-      letter-spacing: -0.03em;
-    }
-    .wbgt-unit {
-      font-size: 0.38em;
-      color: var(--fg);
-      margin-left: 0.05em;
-    }
-    .wbgt-time {
-      font-size: clamp(0.7rem, min(2.2vw, 1.8vh), 1.3rem);
-      color: var(--sub);
-      margin-top: -0.4em;
-    }
-    .level {
-      font-size: clamp(1.2rem, min(7vw, 6vh), 4.5rem);
-      font-weight: 700;
-      padding: 0.3em 1em;
-      border-radius: 0.25em;
-      white-space: nowrap;
-    }
-    .level.level-safe      { color: #fff; background: var(--lvl-safe); }
-    .level.level-attention { color: #222; background: var(--lvl-attention); }
-    .level.level-caution   { color: #fff; background: var(--lvl-caution); }
-    .level.level-warning   { color: #fff; background: var(--lvl-warning); }
-    .level.level-danger    { color: #fff; background: var(--lvl-danger); }
-
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2%;
-      font-size: clamp(0.55rem, min(1.6vw, 1.3vh), 1rem);
-      color: var(--sub);
-      padding-top: 1.5%;
-      border-top: 1px solid rgba(0,0,0,0.08);
-      flex-shrink: 0;
-    }
-    .src { opacity: 0.75; }
-
-    .loading, .error {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: clamp(0.9rem, min(3vw, 2.5vh), 1.8rem);
-      color: var(--sub);
-      padding: 5%;
-      line-height: 1.5;
-      white-space: pre-wrap;
-    }
-    .error { color: #c0392b; }
-  </style>
-  <script src="app.js"></script>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WBGT</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css?v=20260422a" />
+	<link rel="stylesheet" type="text/css" href="css/style.css?v=20260422a" />
+	<script src="js/font_size.js?v=20260422a"></script>
+	<script src="js/app.js?v=20260422a"></script>
 </head>
 <body>
-  <div id="stage">
-    <div class="loading" id="loading">データ取得中...</div>
+	<div class="loading centered" id="loading"><span class="inner">データ取得中...</span></div>
 
-    <div class="header" id="header" style="display:none">
-      <div class="title">暑さ指数（WBGT）</div>
-      <div class="loc" id="loc">--</div>
-    </div>
+	<div class="wrap" id="wrap" style="display:none">
+		<div class="container">
+			<h2 class="hdr">
+				暑さ指数（WBGT）<span class="loc" id="loc">--</span>
+			</h2>
 
-    <div class="main" id="main" style="display:none">
-      <div class="wbgt-block">
-        <div class="wbgt-label">WBGT（環境省実況値）</div>
-        <div class="wbgt-value"><span id="wbgt-val">--</span><span class="wbgt-unit">℃</span></div>
-        <div class="wbgt-time" id="wbgt-time">--</div>
-      </div>
-      <div class="level level-safe" id="level">--</div>
-    </div>
+			<div class="wbgt_wrap">
+				<div class="wbgt_row"><span class="wbgt_value" id="wbgt-val">--</span><span class="wbgt_unit">℃</span></div>
+				<div class="wbgt_time" id="wbgt-time">--</div>
+			</div>
 
-    <div class="footer" id="footer" style="display:none">
-      <span id="updated">--</span>
-      <span class="src">出典: 環境省 熱中症予防情報サイト</span>
-    </div>
-  </div>
+			<div class="tbl_container">
+				<table class="info_row" width="100%" cellpadding="0" cellspacing="0">
+					<tr>
+						<td class="info_label">熱中症レベル</td>
+						<td class="info_value level-safe" id="level">--</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- 診断バー（必要時のみ復活させる。トラブルシュートは docs/TROUBLESHOOTING.md 参照） -->
+	<!-- <div id="diag">diag: init</div> -->
 </body>
 </html>
