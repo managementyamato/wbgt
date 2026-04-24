@@ -4,7 +4,9 @@ on:
   # GitHub内側のcronは公開リポで頻繁にスキップされるので保険扱い（1時間毎）。
   # メインの起動経路は cron-job.org などの外部サービスからの workflow_dispatch。
   schedule:
-    - cron: '3 * * * *'
+    # GitHub仕様上の最短間隔 = 5分。高頻度でもスキップされるのは変わらないが、
+    # 発火チャンスを最大化する目的で最短にする。
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 permissions:
