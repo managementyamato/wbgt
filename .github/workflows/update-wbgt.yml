@@ -2,8 +2,9 @@ name: Update WBGT data
 
 on:
   schedule:
-    # 環境省の更新頻度は3時間毎なので、毎時10分と40分に取得（早すぎず遅すぎず）
-    - cron: '10,40 * * * *'
+    # 10分毎に実行（GitHub Actions の cron skip 耐性を高めるため高頻度化）
+    # XX:00 は全世界で負荷ピーク → skip 多いのでそこを避けて 5分ずらし
+    - cron: '5,15,25,35,45,55 * * * *'
   workflow_dispatch:   # 手動実行用
 
 permissions:

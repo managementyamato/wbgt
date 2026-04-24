@@ -53,7 +53,6 @@ function _start() {
 		_showError('都道府県が認識できません: ' + pref);
 		return;
 	}
-	_setText('loc', pref);
 	_fetchAndUpdate(code, pref);
 
 	var refreshMin = parseInt(_config.refreshMin || '15', 10);
@@ -108,7 +107,7 @@ function _pad2(n) { return (n < 10 ? '0' : '') + n; }
 /* ---------- データ取得（複数CDNフォールバック） ---------- */
 
 var _tryResults = [];
-var _jsonpDone = false;
+var _jsonpSeq = 0;
 
 function _fetchAndUpdate(code, pref) {
 	_tryResults = [];
@@ -118,34 +117,55 @@ function _fetchAndUpdate(code, pref) {
 /*
  * JSONP フォールバック：XHRが全部ダメな時に <script> タグで読み込む。
  * Yodeck テンプレ配信時など、connect-src で外部XHR が塞がれている環境での代替経路。
+ *
+ * リクエスト毎にユニークなコールバック名を使うので、古いレスポンスが新しい描画を
+ * 上書きする競合バグを回避できる。
  */
 function _tryJsonp(code, pref) {
-	_jsonpDone = false;
-	window.__WBGT_CB = function(data) {
-		if (_jsonpDone) return;
-		_jsonpDone = true;
-		_diag('JSONP OK wbgt=' + (data && data.current && data.current.wbgt));
+	_jsonpSeq += 1;
+	var mySeq = _jsonpSeq;
+	var cbName = '__WBGT_CB_' + mySeq;
+	var settled = false;
+	// URL パラメータで callback 名を env に渡したいところだが、
+	// ここでは固定の window.__WBGT_CB を一度だけ受けて自分のハンドラに転送する。
+	// 複数の古い script が遅れて来ても、最新の mySeq と一致しなければ無視。
+	window[cbName] = function(data) {
+		if (settled) return;
+		settled = true;
+		if (mySeq !== _jsonpSeq) {
+			// 既にもっと新しい要求が開始してる → 古いレスポンスは破棄
+			delete window[cbName];
+			return;
+		}
 		_render(data, pref);
+		delete window[cbName];
+	};
+	// 過去のコールバック（すでに遅延中の tag に対応するもの）に対しては、
+	// __WBGT_CB をラップして最新の mySeq に転送する
+	window.__WBGT_CB = function(data) {
+		var fn = window['__WBGT_CB_' + _jsonpSeq];
+		if (fn) fn(data);
 	};
 
-	var base = DATA_URLS[0]; // 最優先CDNの .js を試す
+	var base = DATA_URLS[0];
 	var host = base.replace(/^https?:\/\//, '').split('/')[0];
 	var scriptUrl = base + '/' + code + '.js?t=' + Date.now();
 	var s = document.createElement('script');
 	s.src = scriptUrl;
 	s.async = true;
 	s.onerror = function() {
-		if (_jsonpDone) return;
-		_jsonpDone = true;
+		if (settled) return;
+		settled = true;
+		if (mySeq !== _jsonpSeq) return;
 		_tryResults.push({ host: host + ' (JSONP)', reason: 'script load err' });
 		_showError('全経路取得失敗\n' + _tryResults.map(function(r){return '・'+r.host+': '+r.reason;}).join('\n'));
 	};
 	document.head.appendChild(s);
 
-	// JSONP タイムアウト
 	setTimeout(function() {
-		if (_jsonpDone) return;
-		_jsonpDone = true;
+		if (settled) return;
+		settled = true;
+		if (mySeq !== _jsonpSeq) return;
 		_tryResults.push({ host: host + ' (JSONP)', reason: 'timeout(15s)' });
 		_showError('全経路取得失敗\n' + _tryResults.map(function(r){return '・'+r.host+': '+r.reason;}).join('\n'));
 	}, 15000);
@@ -206,9 +226,9 @@ function _render(data, pref) {
 	var level = getLevel(wbgt);
 
 	_setText('wbgt-val', wbgt.toFixed(1));
-	_setText('loc', pref + '（' + (data.name || data.code) + '）');
+	_setText('obs-name', data.name || data.code);
 
-	/* 対象時刻 */
+	/* 対象時刻: "4/23 15:00 時点" */
 	var t = data.current.time ? new Date(data.current.time) : null;
 	if (t && !isNaN(t)) {
 		_setText('wbgt-time', (t.getMonth()+1) + '/' + t.getDate() + ' ' + _pad2(t.getHours()) + ':' + _pad2(t.getMinutes()) + ' 時点');
@@ -218,7 +238,7 @@ function _render(data, pref) {
 	var levelEl = document.getElementById('level');
 	if (levelEl) {
 		levelEl.textContent = level.label;
-		levelEl.className = 'info_value ' + level.cls;
+		levelEl.className = 'level ' + level.cls;
 	}
 
 	_showMain();

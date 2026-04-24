@@ -1,138 +1,164 @@
 @charset "utf-8";
 
+/*
+ * ASCII (数字・英字・記号) は必ず Western フォントで描画する。
+ * unicode-range を Basic Latin に限定することで、CJK フォントが
+ * 全角グリフで数字を描画するのを回避する。
+ */
 @font-face{
-	font-family: "keifont";
-	src: url("../fonts/keifont.ttf");
+	font-family: "WidgetLatin";
+	src: local("DejaVu Sans Bold"), local("DejaVu Sans"),
+	     local("Liberation Sans Bold"), local("Liberation Sans"),
+	     local("Arial Bold"), local("Arial"),
+	     local("Helvetica Bold"), local("Helvetica");
+	unicode-range: U+0020-007F;
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* 日本語フォント: Noto Sans JP / CJK JP を最優先 */
+body, .container{
+	/* WidgetLatin を先頭に置いて ASCII を Western フォントに強制 */
+	font-family: "WidgetLatin",
+	             "Noto Sans JP", "Noto Sans CJK JP",
+	             "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN",
+	             "メイリオ", Meiryo, Osaka,
+	             "ＭＳ Ｐゴシック", "MS PGothic",
+	             Verdana, Arial, sans-serif;
+	font-weight: bold;
 }
 
 .container{
-	display:inline-block;
-	width:100%;
-	height:auto;
+	display:block;
+	position:absolute;
+	top:0; left:0;
 	background-color:#ffffff;
+	overflow:hidden;
+	box-shadow:0 4px 16px rgba(0,0,0,0.12);
+	border-radius:6px;
 }
 
-/***************** ヘッダ *********************/
-.hdr{
-	display:block;
+/***************** 2カラムレイアウト *********************/
+/* display:table / table-cell で 50/50 分割。flex/grid 不使用で Pi 互換 */
+.container.mode-standard,
+.container.mode-banner,
+.container.mode-portrait-row {
+	display:table;
 	width:100%;
-	padding:2% 3%;
-	background-color:#1a73e8;
-	font-family: "keifont";
-	font-size:50pt;
-	text-align:left;
-	letter-spacing:2px;
-	margin:0;
-	color:#ffffff;
-	position:relative;
+	table-layout:fixed;
+}
+.col{
+	display:table-cell;
+	vertical-align:top;
 	box-sizing:border-box;
 }
-.hdr .loc{
-	font-family: "keifont";
-	float:right;
-	font-size:60%;
-	color:#ffffff;
-	opacity:0.9;
-}
-
-/***************** 中央: WBGT数値 *********************/
-.wbgt_wrap{
-	display:block;
-	width:100%;
+.col_left{
+	width:45%;
+	border-right:1px solid rgba(0,0,0,0.08);
+	padding:3% 3%;
 	text-align:center;
-	padding:3% 2%;
-	background-color:#ffffff;
-	box-sizing:border-box;
+	vertical-align:middle;
 }
-.wbgt_label{
+.col_right{
+	width:55%;
+	padding:2% 2%;
+	text-align:center;
+	vertical-align:middle;
+}
+
+/* 縦長モード: 縦積み */
+.container.mode-portrait{
 	display:block;
-	font-family: "keifont";
-	font-size:24pt;
-	color:#555555;
-	margin-bottom:1%;
 }
+.container.mode-portrait .col{
+	display:block;
+	width:100%;
+	border-right:0;
+	border-bottom:1px solid rgba(0,0,0,0.08);
+	padding:4%;
+	text-align:center;
+}
+.container.mode-portrait .col:last-child{
+	border-bottom:0;
+}
+
+/***************** 左カラム要素 *********************/
+.obs_block{
+	display:block;
+	margin-bottom:4%;
+	line-height:1.1;
+}
+.obs_tag{
+	display:block;
+	color:#888888;
+	font-family: inherit;
+	letter-spacing:0.05em;
+	margin-bottom:0.1em;
+	line-height:1;
+}
+.obs_name{
+	display:block;
+	font-family: inherit;
+	font-weight:bold;
+	color:#222222;
+	line-height:1;
+}
+.wbgt_time{
+	display:block;
+	font-family: inherit;
+	color:#555555;
+	line-height:1.1;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	font-weight:bold;
+	font-variant-east-asian: proportional-width;
+	font-feature-settings: "pwid" 1, "fwid" 0;
+}
+
+/***************** 右カラム要素 *********************/
 .wbgt_row{
 	display:block;
 	width:100%;
 	text-align:center;
-	line-height:1;
+	margin-bottom:5%;
+	white-space:nowrap;
 }
 .wbgt_value{
-	font-family: "DejaVu Sans", "Liberation Sans", Verdana, Arial, sans-serif;
+	/* 数字は WidgetLatin (Western) を強制。unicode-range で ASCII のみに限定 */
+	font-family: "WidgetLatin", "DejaVu Sans", "Liberation Sans", Arial, Helvetica, sans-serif;
 	font-weight:bold;
-	font-size:180pt;
 	color:#1a73e8;
-	letter-spacing:-4px;
+	letter-spacing:-0.04em;
 	line-height:1;
-	vertical-align:middle;
+	font-variant-east-asian: proportional-width;
+	font-feature-settings: "pwid" 1, "fwid" 0, "palt" 1;
 }
 .wbgt_unit{
-	font-family: "DejaVu Sans", "Liberation Sans", Verdana, Arial, sans-serif;
-	font-size:60pt;
+	font-family: "WidgetLatin", "DejaVu Sans", "Liberation Sans", Arial, Helvetica, sans-serif;
 	color:#333333;
-	margin-left:1%;
-}
-.wbgt_time{
-	display:block;
-	font-family: "keifont";
-	font-size:18pt;
-	color:#777777;
-	margin-top:0.5em;
-	clear:both;
+	margin-left:2%;
+	font-variant-east-asian: proportional-width;
+	font-feature-settings: "pwid" 1, "fwid" 0;
 }
 
-/***************** 下段: レベルバッジ *********************/
-.tbl_container{
-	padding:2%;
-	background-color:#eeeeee;
-	box-sizing:border-box;
-}
-.info_row{
+.level{
+	display:block;
 	width:100%;
-	background-color:#ffffff;
-	margin-bottom:2%;
-	box-shadow:2px 2px 4px rgba(0,0,0,0.15);
-}
-.info_label{
-	width:40%;
-	padding:2% 3%;
-	font-family: "keifont";
-	font-size:32pt;
-	color:#555555;
-	white-space:nowrap;
-	vertical-align:middle;
-}
-.info_value{
-	width:60%;
-	padding:2% 3%;
-	font-family: "keifont";
-	font-size:48pt;
+	padding:3% 2%;
+	font-family: inherit;
 	color:#ffffff;
-	white-space:nowrap;
 	text-align:center;
-	vertical-align:middle;
 	border-radius:4px;
-}
-
-/* レベル別配色（環境省熱中症予防情報サイト準拠の5段階） */
-.level-safe      { background-color:#1a73e8; }   /* 青: ほぼ安全 */
-.level-attention { background-color:#f39c12; color:#222222; }   /* 黄: 注意 */
-.level-caution   { background-color:#e67e22; }   /* 橙: 警戒 */
-.level-warning   { background-color:#e74c3c; }   /* 赤: 厳重警戒 */
-.level-danger    { background-color:#c0392b; }   /* 濃赤: 危険 */
-
-/***************** フッター *********************/
-.footer{
-	display:block;
-	width:100%;
-	padding:1% 3%;
-	background-color:#f5f5f5;
-	font-family: "keifont";
-	font-size:14pt;
-	color:#777777;
 	box-sizing:border-box;
+	font-weight:bold;
+	line-height:1;
 }
-.footer .src{float:right; opacity:0.8;}
+.level.level-safe      { background-color:#1a73e8; }
+.level.level-attention { background-color:#f39c12; color:#222222; }
+.level.level-caution   { background-color:#e67e22; }
+.level.level-warning   { background-color:#e74c3c; }
+.level.level-danger    { background-color:#c0392b; }
 
 /***************** ローディング・エラー *********************/
 .loading{
@@ -141,7 +167,7 @@
 	width:100%; height:100%;
 	display:block;
 	text-align:center;
-	font-family: "keifont";
+	font-family: inherit;
 	font-size:28pt;
 	color:#555555;
 	padding:5%;
@@ -151,7 +177,6 @@
 	box-sizing:border-box;
 }
 .loading.centered{
-	/* 簡易centering: テーブルアプローチ（flexなし） */
 	display:table;
 }
 .loading .inner{
