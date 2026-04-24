@@ -1,11 +1,11 @@
 name: Update WBGT data
 
 on:
+  # GitHub内側のcronは公開リポで頻繁にスキップされるので保険扱い（1時間毎）。
+  # メインの起動経路は cron-job.org などの外部サービスからの workflow_dispatch。
   schedule:
-    # 1時間毎に起動。公開リポジトリの高頻度cronは GitHub にスキップされるので、
-    # 低頻度で確実に起動して、1回のjob内でループで何度もfetchする方式に変更。
     - cron: '3 * * * *'
-  workflow_dispatch:   # 手動実行用
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -13,10 +13,11 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 10
     concurrency:
+      # 外部cronから短い間隔で叩かれた時、前の実行が走っていたらキューせず破棄
       group: update-wbgt
-      cancel-in-progress: false
+      cancel-in-progress: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,23 +27,18 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Fetch loop (6 iterations @ 9min = ~54min)
+      - name: Fetch WBGT data
+        run: python scripts/fetch_wbgt.py
+
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for i in 1 2 3 4 5 6; do
-            echo "=== iteration $i ==="
-            python scripts/fetch_wbgt.py || echo "fetch failed, continue"
-            git add docs/wbgt/
-            if git diff --cached --quiet; then
-              echo "No changes on iteration $i"
-            else
-              git commit -m "data: update WBGT $(date -u +%Y-%m-%dT%H:%MZ)"
-              git pull --rebase origin main || true
-              git push || echo "push failed"
-            fi
-            if [ $i -lt 6 ]; then
-              echo "sleeping 540s..."
-              sleep 540
-            fi
-          done
+          git add docs/wbgt/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "data: update WBGT $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase origin main || true
+            git push
+          fi
