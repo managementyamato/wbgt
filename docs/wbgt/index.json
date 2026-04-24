@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T19:50:16.208127+09:00",
+  "generatedAt": "2026-04-24T19:55:13.691193+09:00",
   "sources": {
     "actual": "https://www.wbgt.env.go.jp/est15WG/dl/wbgt_all_202604.csv",
     "forecast": "https://www.wbgt.env.go.jp/prev15WG/dl/yohou_all.csv"
@@ -440,9 +440,9 @@
       "name": "那覇",
       "prefecture": "沖縄県",
       "current": {
-        "time": "2026-04-24T00:00:00+09:00",
-        "wbgt": 22.1,
-        "level": "注意"
+        "time": "2026-04-24T19:00:00+09:00",
+        "wbgt": 20.1,
+        "level": "ほぼ安全"
       }
     }
   ]
