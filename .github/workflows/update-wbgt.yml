@@ -2,9 +2,9 @@ name: Update WBGT data
 
 on:
   schedule:
-    # 10分毎に実行（GitHub Actions の cron skip 耐性を高めるため高頻度化）
-    # XX:00 は全世界で負荷ピーク → skip 多いのでそこを避けて 5分ずらし
-    - cron: '5,15,25,35,45,55 * * * *'
+    # 1時間毎に起動。公開リポジトリの高頻度cronは GitHub にスキップされるので、
+    # 低頻度で確実に起動して、1回のjob内でループで何度もfetchする方式に変更。
+    - cron: '3 * * * *'
   workflow_dispatch:   # 手動実行用
 
 permissions:
@@ -13,6 +13,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 55
     concurrency:
       group: update-wbgt
       cancel-in-progress: false
@@ -25,17 +26,23 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Fetch WBGT data
-        run: python scripts/fetch_wbgt.py
-
-      - name: Commit and push if changed
+      - name: Fetch loop (6 iterations @ 9min = ~54min)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/wbgt/
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "data: update WBGT $(date -u +%Y-%m-%dT%H:%MZ)"
-            git push
-          fi
+          for i in 1 2 3 4 5 6; do
+            echo "=== iteration $i ==="
+            python scripts/fetch_wbgt.py || echo "fetch failed, continue"
+            git add docs/wbgt/
+            if git diff --cached --quiet; then
+              echo "No changes on iteration $i"
+            else
+              git commit -m "data: update WBGT $(date -u +%Y-%m-%dT%H:%MZ)"
+              git pull --rebase origin main || true
+              git push || echo "push failed"
+            fi
+            if [ $i -lt 6 ]; then
+              echo "sleeping 540s..."
+              sleep 540
+            fi
+          done
