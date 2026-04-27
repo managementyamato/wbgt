@@ -22,6 +22,7 @@ POINT_JS_URL = 'https://www.wbgt.env.go.jp/js/point.js'
 OUT_DOCS = 'docs/wbgt/stations.json'
 OUT_WIDGET = 'widgets/wbgt-simple/stations.json'
 OUT_WIDGET_JSON = 'widgets/wbgt-simple/widget.json'
+OUT_YODECK_UI = 'yodeck-ui-settings/wbgt-simple.json'
 
 # 都道府県内サブ地域コード（point.js の prefecture セクション）→ 47都道府県名
 # 北海道は14のサブ地域に分かれているので全部「北海道」に丸める。
@@ -107,18 +108,23 @@ def build_stations(point_obj):
 
 
 def write_widget_json(stations):
-    """Yodeck の Select 選択肢を 800+ 件で再構成"""
+    """Yodeck UI を Select ドロップダウン（地点名先頭で検索可能）に。
+    ラベルを「地点名 / 都道府県」形式にすることで、ブラウザの type-ahead 検索で
+    地点名先頭一致が効くようにしている。例: 「くまとり」と打つと熊取にジャンプ。
+    """
     options = []
     # 先頭にデフォルト（東京）
-    options.append({'val': '44132', 'label': '東京都｜東京'})
-    seen_codes = {'44132'}
-    for s in stations:
-        if s['code'] in seen_codes:
+    options.append({'val': '44132', 'label': '東京 / 東京都'})
+    seen = {'44132'}
+
+    # 地点名でソート（type-ahead 用）
+    for s in sorted(stations, key=lambda x: (x['name'], x['code'])):
+        if s['code'] in seen:
             continue
-        seen_codes.add(s['code'])
+        seen.add(s['code'])
         options.append({
             'val': s['code'],
-            'label': f"{s['prefecture']}｜{s['name']}",
+            'label': f"{s['name']} / {s['prefecture']}",
         })
 
     widget = {
@@ -126,13 +132,13 @@ def write_widget_json(stations):
         'fields': ['stationCode', 'refreshMin'],
         'meta': {
             'description': '暑さ指数（WBGT）シンプル版',
-            'details': '環境省が公開する全国841地点のWBGT実況値を表示。観測地点プルダウンから現場最寄りを選択してください。データは GitHub Actions が環境省CSVを定期取得し GitHub Pages で配信する専用プロキシ経由で供給。',
+            'details': '環境省が公開する全国841地点のWBGT実況値を表示。地点名を入力すると候補にジャンプします（例: 「くまとり」「とうきょう」）。',
         },
         'schema': {
             'stationCode': {
                 'title': '観測地点',
                 'type': 'Select',
-                'help': '表示する観測地点を選択してください（都道府県｜地点名 で並んでいます）',
+                'help': '一覧から選択、またはドロップダウンを開いて地点名をキーボード入力すると該当地点にジャンプします（例: 「くまとり」と打つと熊取/大阪府）',
                 'options': options,
             },
             'refreshMin': {
@@ -151,7 +157,41 @@ def write_widget_json(stations):
     }
     with open(OUT_WIDGET_JSON, 'w', encoding='utf-8') as f:
         json.dump(widget, f, ensure_ascii=False, indent=2)
-    print(f'wrote {OUT_WIDGET_JSON}: {len(options)} options', file=sys.stderr)
+    print(f'wrote {OUT_WIDGET_JSON}: Select検索可UI ({len(options)} options)', file=sys.stderr)
+
+    # Yodeck 管理画面用の widget 定義（Yodeck にアップロードする側）
+    os.makedirs(os.path.dirname(OUT_YODECK_UI), exist_ok=True)
+    with open(OUT_YODECK_UI, 'w', encoding='utf-8') as f:
+        json.dump(widget, f, ensure_ascii=False, indent=2)
+    print(f'wrote {OUT_YODECK_UI}: 同内容', file=sys.stderr)
+
+
+def write_stations_md(stations):
+    """検索しやすい全地点コード一覧を Markdown で生成"""
+    out_md = 'docs/STATIONS.md'
+    lines = ['# WBGT 観測地点コード一覧（全845地点）', '']
+    lines.append('Yodeck の wbgt-simple ウィジェット設定で「観測地点コード」欄に5桁の数字を入力してください。')
+    lines.append('')
+
+    pref_index = {p: i for i, p in enumerate(PREF_ORDER)}
+    by_pref = {}
+    for s in stations:
+        by_pref.setdefault(s['prefecture'], []).append(s)
+
+    for pref in PREF_ORDER:
+        if pref not in by_pref:
+            continue
+        lines.append(f'## {pref}')
+        lines.append('')
+        lines.append('| 地点名 | コード |')
+        lines.append('|---|---|')
+        for s in sorted(by_pref[pref], key=lambda x: x['code']):
+            lines.append(f"| {s['name']} | `{s['code']}` |")
+        lines.append('')
+
+    with open(out_md, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'wrote {out_md}', file=sys.stderr)
 
 
 def main():
@@ -177,6 +217,7 @@ def main():
     print(f'wrote {OUT_WIDGET}', file=sys.stderr)
 
     write_widget_json(stations)
+    write_stations_md(stations)
 
 
 if __name__ == '__main__':
