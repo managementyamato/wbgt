@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>WBGT Simple テスト</title>
+<style>
+  body { margin: 0; padding: 20px; background: #1a1a2e; color: #e0e0e0; font-family: sans-serif; }
+  h1 { font-size: 1rem; margin: 0 0 16px; }
+  .row { display: flex; flex-direction: column; gap: 20px; }
+  .case { background: #16213e; border-radius: 6px; padding: 12px; }
+  .case-label { font-size: 0.85rem; color: #94a3b8; margin-bottom: 8px; }
+  iframe { display: block; border: 2px solid #0f3460; background: #000; }
+</style>
+</head>
+<body>
+<h1>wbgt-simple レスポンシブテスト</h1>
+
+<div class="row">
+  <div class="case">
+    <div class="case-label">① standard (16:9) 800×450</div>
+    <iframe src="widgets/wbgt-simple/index.html" width="800" height="450"></iframe>
+  </div>
+
+  <div class="case">
+    <div class="case-label">② portrait (縦長) 300×700</div>
+    <iframe src="widgets/wbgt-simple/index.html" width="300" height="700"></iframe>
+  </div>
+
+  <div class="case">
+    <div class="case-label">③ flat (極薄横長) 1400×200</div>
+    <iframe src="widgets/wbgt-simple/index.html" width="1400" height="200"></iframe>
+  </div>
+
+  <div class="case">
+    <div class="case-label">④ standard 別比 (4:3) 600×450</div>
+    <iframe src="widgets/wbgt-simple/index.html" width="600" height="450"></iframe>
+  </div>
+
+  <div class="case">
+    <div class="case-label">⑤ 中間 (aspect 3) 900×300</div>
+    <iframe src="widgets/wbgt-simple/index.html" width="900" height="300"></iframe>
+  </div>
+
+  <div class="case">
+    <div class="case-label">⑥ 大阪・熊取 (62131) standard 800×450</div>
+    <iframe src="widgets/wbgt-simple/index.html" width="800" height="450"></iframe>
+  </div>
+</div>
+
+<script>
+// 各iframeにconfig送信
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var frames = document.querySelectorAll('iframe');
+    /* 各iframeに違う観測地点コードを送信（stationCode = 環境省WBGT地点コード）
+     * ① 大阪 ② 東京 ③ 宇都宮 ④ 福岡 ⑤ 札幌 ⑥ 大阪・熊取 */
+    var codes = ['62078', '44132', '41277', '82182', '14163', '62131'];
+    frames.forEach(function(f, i) {
+      var c = codes[i] || '44132';
+      try {
+        f.contentWindow.postMessage({
+          functions: [{ fname: 'init_widget', data: { stationCode: c } }]
+        }, '*');
+      } catch(e) {}
+    });
+  }, 1500);
+});
+</script>
+</body>
+</html>

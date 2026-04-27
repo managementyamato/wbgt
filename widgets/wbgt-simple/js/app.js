@@ -16,6 +16,10 @@ var DATA_URLS = [
 	'https://managementyamato.github.io/wbgt/wbgt'
 ];
 
+/*
+ * 後方互換用: 旧バージョン（prefecture指定）からの移行サポート。
+ * 47都道府県の代表地点コード。新版は stationCode 直接指定が基本。
+ */
 var PREF_TO_CODE = {
 	'北海道':'14163','青森県':'31312','岩手県':'33472','宮城県':'34392','秋田県':'32402',
 	'山形県':'35426','福島県':'36126','茨城県':'40201','栃木県':'41277','群馬県':'42251',
@@ -29,6 +33,22 @@ var PREF_TO_CODE = {
 	'鹿児島県':'88317','沖縄県':'91197'
 };
 
+/* config から地点コードを決定する。優先順:
+ *   1. config.stationCode が指定されていればそのまま使う（新版）
+ *   2. config.prefecture から PREF_TO_CODE で変換（旧版互換）
+ *   3. デフォルト: 東京（44132）
+ */
+function _resolveStationCode(config) {
+	if (!config) return '44132';
+	if (config.stationCode && /^\d+$/.test(String(config.stationCode))) {
+		return String(config.stationCode);
+	}
+	if (config.prefecture && PREF_TO_CODE[config.prefecture]) {
+		return PREF_TO_CODE[config.prefecture];
+	}
+	return '44132';
+}
+
 function init_widget(config) {
 	if (!config) return;
 	_config = config;
@@ -39,26 +59,32 @@ function init_widget(config) {
 	_start();
 }
 
+/*
+ * postMessage 待ち受け：Yodeck から config が届くのを待つ。
+ * 10秒経っても届かなければ既定（東京都）でフォールバック起動。
+ * これにより、Yodeck で設定した県と違う県が一瞬表示されるのを防ぐ。
+ */
 document.addEventListener('DOMContentLoaded', function() {
-	if (!_config) {
-		_config = { prefecture: '東京都' };
-		_start();
-	}
+	setTimeout(function() {
+		if (!_config) {
+			_config = { stationCode: '44132' };  /* 東京 */
+			_start();
+		}
+	}, 10000);
 });
 
 function _start() {
-	var pref = _config.prefecture || '東京都';
-	var code = PREF_TO_CODE[pref];
+	var code = _resolveStationCode(_config);
 	if (!code) {
-		_showError('都道府県が認識できません: ' + pref);
+		_showError('データ取得失敗');
 		return;
 	}
-	_fetchAndUpdate(code, pref);
+	_fetchAndUpdate(code);
 
 	var refreshMin = parseInt(_config.refreshMin || '15', 10);
 	if (!isFinite(refreshMin) || refreshMin < 1) refreshMin = 15;
 	if (_tickInterval) clearInterval(_tickInterval);
-	_tickInterval = setInterval(function() { _fetchAndUpdate(code, pref); }, refreshMin * 60 * 1000);
+	_tickInterval = setInterval(function() { _fetchAndUpdate(code); }, refreshMin * 60 * 1000);
 }
 
 /* ---------- 共通ユーティリティ ---------- */
@@ -109,9 +135,9 @@ function _pad2(n) { return (n < 10 ? '0' : '') + n; }
 var _tryResults = [];
 var _jsonpSeq = 0;
 
-function _fetchAndUpdate(code, pref) {
+function _fetchAndUpdate(code) {
 	_tryResults = [];
-	_tryUrls(DATA_URLS, 0, code, pref);
+	_tryUrls(DATA_URLS, 0, code);
 }
 
 /*
@@ -121,7 +147,7 @@ function _fetchAndUpdate(code, pref) {
  * リクエスト毎にユニークなコールバック名を使うので、古いレスポンスが新しい描画を
  * 上書きする競合バグを回避できる。
  */
-function _tryJsonp(code, pref) {
+function _tryJsonp(code) {
 	_jsonpSeq += 1;
 	var mySeq = _jsonpSeq;
 	var cbName = '__WBGT_CB_' + mySeq;
@@ -137,7 +163,7 @@ function _tryJsonp(code, pref) {
 			delete window[cbName];
 			return;
 		}
-		_render(data, pref);
+		_render(data);
 		delete window[cbName];
 	};
 	// 過去のコールバック（すでに遅延中の tag に対応するもの）に対しては、
@@ -157,8 +183,7 @@ function _tryJsonp(code, pref) {
 		if (settled) return;
 		settled = true;
 		if (mySeq !== _jsonpSeq) return;
-		_tryResults.push({ host: host + ' (JSONP)', reason: 'script load err' });
-		_showError('全経路取得失敗\n' + _tryResults.map(function(r){return '・'+r.host+': '+r.reason;}).join('\n'));
+		_showError('データ取得失敗');
 	};
 	document.head.appendChild(s);
 
@@ -166,16 +191,15 @@ function _tryJsonp(code, pref) {
 		if (settled) return;
 		settled = true;
 		if (mySeq !== _jsonpSeq) return;
-		_tryResults.push({ host: host + ' (JSONP)', reason: 'timeout(15s)' });
-		_showError('全経路取得失敗\n' + _tryResults.map(function(r){return '・'+r.host+': '+r.reason;}).join('\n'));
+		_showError('データ取得失敗');
 	}, 15000);
 }
 
-function _tryUrls(urls, idx, code, pref) {
+function _tryUrls(urls, idx, code) {
 	if (idx >= urls.length) {
 		// XHR全滅 → JSONPに切替え
 		_diag('XHR全滅 → JSONP フォールバック試行');
-		_tryJsonp(code, pref);
+		_tryJsonp(code);
 		return;
 	}
 	var base = urls[idx];
@@ -192,34 +216,34 @@ function _tryUrls(urls, idx, code, pref) {
 	xhr.onload = function() {
 		if (xhr.status !== 200) {
 			_tryResults.push({ host: host, reason: 'HTTP ' + xhr.status });
-			_tryUrls(urls, idx + 1, code, pref);
+			_tryUrls(urls, idx + 1, code);
 			return;
 		}
 		try {
 			var data = JSON.parse(xhr.responseText);
 			_diag('OK [' + host + '] wbgt=' + (data.current && data.current.wbgt));
-			_render(data, pref);
+			_render(data);
 		} catch (e) {
 			_tryResults.push({ host: host, reason: 'parse err' });
-			_tryUrls(urls, idx + 1, code, pref);
+			_tryUrls(urls, idx + 1, code);
 		}
 	};
 	xhr.ontimeout = function() {
 		_tryResults.push({ host: host, reason: 'timeout(15s)' });
-		_tryUrls(urls, idx + 1, code, pref);
+		_tryUrls(urls, idx + 1, code);
 	};
 	xhr.onerror = function() {
 		_tryResults.push({ host: host, reason: 'network err' });
-		_tryUrls(urls, idx + 1, code, pref);
+		_tryUrls(urls, idx + 1, code);
 	};
 	xhr.send();
 }
 
 /* ---------- 描画 ---------- */
 
-function _render(data, pref) {
+function _render(data) {
 	if (!data.current || typeof data.current.wbgt !== 'number') {
-		_showError('現在値データなし\n（環境省WBGTは4月下旬〜10月のみ配信）');
+		_showError('データ取得失敗');
 		return;
 	}
 	var wbgt = data.current.wbgt;
@@ -231,7 +255,7 @@ function _render(data, pref) {
 	/* 対象時刻: "4/23 15:00 時点" */
 	var t = data.current.time ? new Date(data.current.time) : null;
 	if (t && !isNaN(t)) {
-		_setText('wbgt-time', (t.getMonth()+1) + '/' + t.getDate() + ' ' + _pad2(t.getHours()) + ':' + _pad2(t.getMinutes()) + ' 時点');
+		_setText('wbgt-time', t.getDate() + '日 ' + _pad2(t.getHours()) + ':' + _pad2(t.getMinutes()));
 	}
 
 	/* レベルバッジ */

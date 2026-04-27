@@ -1,25 +1,20 @@
 @charset "utf-8";
 
-/*
- * ASCII (数字・英字・記号) は必ず Western フォントで描画する。
- * unicode-range を Basic Latin に限定することで、CJK フォントが
- * 全角グリフで数字を描画するのを回避する。
- */
+/* 同梱フォント: musaigai と同じ方式（TTF 直参照） */
+@font-face{
+	font-family: "keifont";
+	src: url("fonts/keifont.ttf");
+}
 @font-face{
 	font-family: "WidgetLatin";
-	src: local("DejaVu Sans Bold"), local("DejaVu Sans"),
-	     local("Liberation Sans Bold"), local("Liberation Sans"),
-	     local("Arial Bold"), local("Arial"),
-	     local("Helvetica Bold"), local("Helvetica");
+	src: url("fonts/DejaVuSans-Bold.ttf");
 	unicode-range: U+0020-007F;
-	font-weight: bold;
-	font-style: normal;
 }
 
-/* 日本語フォント: Noto Sans JP / CJK JP を最優先 */
+/* 日本語: keifont（手書き風）、ASCII: WidgetLatin(DejaVu Bold) */
 body, .container{
-	/* WidgetLatin を先頭に置いて ASCII を Western フォントに強制 */
 	font-family: "WidgetLatin",
+	             "keifont",
 	             "Noto Sans JP", "Noto Sans CJK JP",
 	             "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN",
 	             "メイリオ", Meiryo, Osaka,
@@ -38,63 +33,90 @@ body, .container{
 	border-radius:6px;
 }
 
-/***************** 2カラムレイアウト *********************/
-/* display:table / table-cell で 50/50 分割。flex/grid 不使用で Pi 互換 */
-.container.mode-standard,
-.container.mode-banner,
-.container.mode-portrait-row {
+/***************** standard (16:9等) = 2カラム横並び ***************
+ * 元の table レイアウト: 左カラム[地点名/時刻] | 右カラム[値/バッジ]
+ * table-cell + vertical-align:middle で縦中央
+ ******************************************************************/
+.container.mode-standard{
 	display:table;
 	width:100%;
 	table-layout:fixed;
 }
-.col{
+.container.mode-standard .col{
 	display:table-cell;
-	vertical-align:top;
 	box-sizing:border-box;
+	vertical-align:middle;
+	text-align:center;
 }
-.col_left{
+.container.mode-standard .col_left{
 	width:45%;
 	border-right:1px solid rgba(0,0,0,0.08);
-	padding:3% 3%;
-	text-align:center;
-	vertical-align:middle;
+	padding:3%;
 }
-.col_right{
+.container.mode-standard .col_right{
 	width:55%;
-	padding:2% 2%;
-	text-align:center;
-	vertical-align:middle;
+	padding:2%;
 }
 
-/* 縦長モード: 縦積み */
+/***************** portrait (縦長) = 縦2段、各段中央 *****************/
 .container.mode-portrait{
-	display:block;
+	display:flex;
+	flex-direction:column;
 }
 .container.mode-portrait .col{
-	display:block;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
 	width:100%;
-	border-right:0;
-	border-bottom:1px solid rgba(0,0,0,0.08);
+	flex:1 1 50%;
 	padding:4%;
 	text-align:center;
+	box-sizing:border-box;
 }
-.container.mode-portrait .col:last-child{
-	border-bottom:0;
+.container.mode-portrait .col_left{
+	border-bottom:1px solid rgba(0,0,0,0.08);
 }
 
-/***************** 左カラム要素 *********************/
+/***************** flat (横長) = 1行均等 / Pi互換のtable+inline-block *****/
+.container.mode-flat{
+	display:table;
+	width:100%;
+	height:100%;
+	table-layout:fixed;
+	white-space:nowrap;
+	text-align:center;
+	line-height:1;
+}
+.container.mode-flat .col{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	width:50%;
+	box-sizing:border-box;
+	padding:0 1.5%;
+}
+.container.mode-flat .col_left{
+	border-right:1px solid rgba(0,0,0,0.08);
+}
+.container.mode-flat .obs_block,
+.container.mode-flat .wbgt_time,
+.container.mode-flat .wbgt_row,
+.container.mode-flat .level{
+	display:inline-block;
+	vertical-align:middle;
+	margin:0 0.5em;
+	width:auto;
+}
+.container.mode-flat .level{
+	padding:0.45em 1em;
+}
+
+/***************** 共通: 各要素 *********************/
 .obs_block{
 	display:block;
 	margin-bottom:4%;
 	line-height:1.1;
-}
-.obs_tag{
-	display:block;
-	color:#888888;
-	font-family: inherit;
-	letter-spacing:0.05em;
-	margin-bottom:0.1em;
-	line-height:1;
 }
 .obs_name{
 	display:block;
@@ -115,8 +137,6 @@ body, .container{
 	font-variant-east-asian: proportional-width;
 	font-feature-settings: "pwid" 1, "fwid" 0;
 }
-
-/***************** 右カラム要素 *********************/
 .wbgt_row{
 	display:block;
 	width:100%;
@@ -125,7 +145,6 @@ body, .container{
 	white-space:nowrap;
 }
 .wbgt_value{
-	/* 数字は WidgetLatin (Western) を強制。unicode-range で ASCII のみに限定 */
 	font-family: "WidgetLatin", "DejaVu Sans", "Liberation Sans", Arial, Helvetica, sans-serif;
 	font-weight:bold;
 	color:#1a73e8;
@@ -141,7 +160,6 @@ body, .container{
 	font-variant-east-asian: proportional-width;
 	font-feature-settings: "pwid" 1, "fwid" 0;
 }
-
 .level{
 	display:block;
 	width:100%;
@@ -154,11 +172,19 @@ body, .container{
 	font-weight:bold;
 	line-height:1;
 }
-.level.level-safe      { background-color:#1a73e8; }
-.level.level-attention { background-color:#f39c12; color:#222222; }
-.level.level-caution   { background-color:#e67e22; }
-.level.level-warning   { background-color:#e74c3c; }
-.level.level-danger    { background-color:#c0392b; }
+/* 環境省 暑さ指数（WBGT）公式配色に統一
+ * https://www.wbgt.env.go.jp/ の凡例カラーに準拠
+ *   危険(31以上)     : 赤
+ *   厳重警戒(28-31)  : 橙
+ *   警戒(25-28)      : 黄（黒文字）
+ *   注意(21-25)      : 青
+ *   ほぼ安全(21未満) : 水色
+ */
+.level.level-safe      { background-color:#1a8ddc; color:#ffffff; }
+.level.level-attention { background-color:#0d4e9c; color:#ffffff; }
+.level.level-caution   { background-color:#ffd400; color:#222222; }
+.level.level-warning   { background-color:#ff8c00; color:#ffffff; }
+.level.level-danger    { background-color:#e60012; color:#ffffff; }
 
 /***************** ローディング・エラー *********************/
 .loading{

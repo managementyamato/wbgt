@@ -88,6 +88,26 @@ PREF_STATIONS = [
 ]
 PREF_CODES = {c: (n, p) for c, n, p in PREF_STATIONS}
 
+# 全国845地点のコード→（名前, 都道府県）マップ
+# generate_stations.py が出力した stations.json から読み込む
+def load_all_stations():
+    paths = [
+        os.path.join(OUTDIR, 'stations.json'),
+        'docs/wbgt/stations.json',
+        'widgets/wbgt-simple/stations.json',
+    ]
+    for p in paths:
+        if os.path.exists(p):
+            try:
+                with open(p, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                return {s['code']: (s['name'], s['prefecture']) for s in data.get('stations', [])}
+            except (json.JSONDecodeError, OSError):
+                continue
+    return {}
+
+ALL_STATIONS = load_all_stations()
+
 
 def fetch_url(url):
     print(f'fetching {url}', file=sys.stderr)
@@ -267,7 +287,8 @@ def main():
             for f in forecast_future
         ]
 
-        name, pref = PREF_CODES.get(code, ('', ''))
+        # 全845地点リストを優先、無ければ47都道府県代表、最後は仮名
+        name, pref = ALL_STATIONS.get(code) or PREF_CODES.get(code, ('', ''))
         record = {
             'code': code,
             'name': name or f'地点{code}',
