@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-27T13:00:29.505684+09:00",
+  "generatedAt": "2026-04-27T13:05:15.295096+09:00",
   "sources": {
     "actual": "https://www.wbgt.env.go.jp/est15WG/dl/wbgt_all_202604.csv",
     "forecast": "https://www.wbgt.env.go.jp/prev15WG/dl/yohou_all.csv"
@@ -26,12 +26,12 @@
       }
     },
     {
-      "code": "33472",
-      "name": "宮古",
+      "code": "33431",
+      "name": "盛岡",
       "prefecture": "岩手県",
       "current": {
         "time": "2026-04-27T12:00:00+09:00",
-        "wbgt": 15.2,
+        "wbgt": 13.8,
         "level": "ほぼ安全"
       }
     },
@@ -66,6 +66,16 @@
       }
     },
     {
+      "code": "36127",
+      "name": "福島",
+      "prefecture": "福島県",
+      "current": {
+        "time": "2026-04-27T12:00:00+09:00",
+        "wbgt": 13.1,
+        "level": "ほぼ安全"
+      }
+    },
+    {
       "code": "40201",
       "name": "水戸",
       "prefecture": "茨城県",
@@ -96,12 +106,22 @@
       }
     },
     {
-      "code": "43056",
-      "name": "熊谷",
+      "code": "43241",
+      "name": "さいたま",
       "prefecture": "埼玉県",
       "current": {
         "time": "2026-04-27T12:00:00+09:00",
-        "wbgt": 17.6,
+        "wbgt": 17.2,
+        "level": "ほぼ安全"
+      }
+    },
+    {
+      "code": "45212",
+      "name": "千葉",
+      "prefecture": "千葉県",
+      "current": {
+        "time": "2026-04-27T12:00:00+09:00",
+        "wbgt": 20.5,
         "level": "ほぼ安全"
       }
     },
@@ -176,12 +196,12 @@
       }
     },
     {
-      "code": "48331",
-      "name": "軽井沢",
+      "code": "48156",
+      "name": "長野",
       "prefecture": "長野県",
       "current": {
         "time": "2026-04-27T12:00:00+09:00",
-        "wbgt": 10.1,
+        "wbgt": 12.2,
         "level": "ほぼ安全"
       }
     },
@@ -326,13 +346,13 @@
       }
     },
     {
-      "code": "81428",
-      "name": "下関",
+      "code": "81286",
+      "name": "山口",
       "prefecture": "山口県",
       "current": {
         "time": "2026-04-27T12:00:00+09:00",
-        "wbgt": 19.7,
-        "level": "ほぼ安全"
+        "wbgt": 23.1,
+        "level": "注意"
       }
     },
     {
@@ -363,6 +383,16 @@
         "time": "2026-04-27T12:00:00+09:00",
         "wbgt": 20.7,
         "level": "ほぼ安全"
+      }
+    },
+    {
+      "code": "74182",
+      "name": "高知",
+      "prefecture": "高知県",
+      "current": {
+        "time": "2026-04-27T12:00:00+09:00",
+        "wbgt": 21.1,
+        "level": "注意"
       }
     },
     {
