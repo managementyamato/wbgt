@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T23:25:15.043586+09:00",
+  "generatedAt": "2026-09-03T23:30:30.801588+09:00",
   "sources": {
     "actual": "https://www.wbgt.env.go.jp/est15WG/dl/wbgt_all_202609.csv",
     "forecast": "https://www.wbgt.env.go.jp/prev15WG/dl/yohou_all.csv"
@@ -9,283 +9,471 @@
       "code": "14163",
       "name": "札幌",
       "prefecture": "北海道",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 18.4,
+        "level": "ほぼ安全"
+      }
     },
     {
       "code": "31312",
       "name": "青森",
       "prefecture": "青森県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 20.8,
+        "level": "ほぼ安全"
+      }
     },
     {
       "code": "33431",
       "name": "盛岡",
       "prefecture": "岩手県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 20.1,
+        "level": "ほぼ安全"
+      }
     },
     {
       "code": "34392",
       "name": "仙台",
       "prefecture": "宮城県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 21.4,
+        "level": "注意"
+      }
     },
     {
       "code": "32402",
       "name": "秋田",
       "prefecture": "秋田県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 21.2,
+        "level": "注意"
+      }
     },
     {
       "code": "35426",
       "name": "山形",
       "prefecture": "山形県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 20.9,
+        "level": "ほぼ安全"
+      }
     },
     {
       "code": "36127",
       "name": "福島",
       "prefecture": "福島県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 21.1,
+        "level": "注意"
+      }
     },
     {
       "code": "40201",
       "name": "水戸",
       "prefecture": "茨城県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 21.2,
+        "level": "注意"
+      }
     },
     {
       "code": "41277",
       "name": "宇都宮",
       "prefecture": "栃木県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 21.9,
+        "level": "注意"
+      }
     },
     {
       "code": "42251",
       "name": "前橋",
       "prefecture": "群馬県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 20.7,
+        "level": "ほぼ安全"
+      }
     },
     {
       "code": "43241",
       "name": "さいたま",
       "prefecture": "埼玉県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.2,
+        "level": "注意"
+      }
     },
     {
       "code": "45212",
       "name": "千葉",
       "prefecture": "千葉県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 24.0,
+        "level": "注意"
+      }
     },
     {
       "code": "44132",
       "name": "東京",
       "prefecture": "東京都",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 21.8,
+        "level": "注意"
+      }
     },
     {
       "code": "46106",
       "name": "横浜",
       "prefecture": "神奈川県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.4,
+        "level": "注意"
+      }
     },
     {
       "code": "54232",
       "name": "新潟",
       "prefecture": "新潟県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.2,
+        "level": "注意"
+      }
     },
     {
       "code": "55102",
       "name": "富山",
       "prefecture": "富山県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 21.5,
+        "level": "注意"
+      }
     },
     {
       "code": "56227",
       "name": "金沢",
       "prefecture": "石川県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.2,
+        "level": "注意"
+      }
     },
     {
       "code": "57066",
       "name": "福井",
       "prefecture": "福井県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.5,
+        "level": "注意"
+      }
     },
     {
       "code": "49142",
       "name": "甲府",
       "prefecture": "山梨県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 21.8,
+        "level": "注意"
+      }
     },
     {
       "code": "48156",
       "name": "長野",
       "prefecture": "長野県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 20.0,
+        "level": "ほぼ安全"
+      }
     },
     {
       "code": "52586",
       "name": "岐阜",
       "prefecture": "岐阜県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.5,
+        "level": "注意"
+      }
     },
     {
       "code": "50331",
       "name": "静岡",
       "prefecture": "静岡県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 25.3,
+        "level": "警戒"
+      }
     },
     {
       "code": "51106",
       "name": "名古屋",
       "prefecture": "愛知県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.5,
+        "level": "注意"
+      }
     },
     {
       "code": "53133",
       "name": "津",
       "prefecture": "三重県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.6,
+        "level": "注意"
+      }
     },
     {
       "code": "60131",
       "name": "彦根",
       "prefecture": "滋賀県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.5,
+        "level": "注意"
+      }
     },
     {
       "code": "61286",
       "name": "京都",
       "prefecture": "京都府",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.9,
+        "level": "注意"
+      }
     },
     {
       "code": "62078",
       "name": "大阪",
       "prefecture": "大阪府",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.1,
+        "level": "注意"
+      }
     },
     {
       "code": "63518",
       "name": "神戸",
       "prefecture": "兵庫県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.4,
+        "level": "注意"
+      }
     },
     {
       "code": "64036",
       "name": "奈良",
       "prefecture": "奈良県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.6,
+        "level": "注意"
+      }
     },
     {
       "code": "65042",
       "name": "和歌山",
       "prefecture": "和歌山県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.3,
+        "level": "注意"
+      }
     },
     {
       "code": "69122",
       "name": "鳥取",
       "prefecture": "鳥取県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.0,
+        "level": "注意"
+      }
     },
     {
       "code": "68132",
       "name": "松江",
       "prefecture": "島根県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 24.1,
+        "level": "注意"
+      }
     },
     {
       "code": "66408",
       "name": "岡山",
       "prefecture": "岡山県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.2,
+        "level": "注意"
+      }
     },
     {
       "code": "67437",
       "name": "広島",
       "prefecture": "広島県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 22.3,
+        "level": "注意"
+      }
     },
     {
       "code": "81286",
       "name": "山口",
       "prefecture": "山口県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.4,
+        "level": "注意"
+      }
     },
     {
       "code": "71106",
       "name": "徳島",
       "prefecture": "徳島県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.7,
+        "level": "注意"
+      }
     },
     {
       "code": "72086",
       "name": "高松",
       "prefecture": "香川県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.6,
+        "level": "注意"
+      }
     },
     {
       "code": "73166",
       "name": "松山",
       "prefecture": "愛媛県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.8,
+        "level": "注意"
+      }
     },
     {
       "code": "74182",
       "name": "高知",
       "prefecture": "高知県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 24.7,
+        "level": "注意"
+      }
     },
     {
       "code": "82182",
       "name": "福岡",
       "prefecture": "福岡県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 24.0,
+        "level": "注意"
+      }
     },
     {
       "code": "85142",
       "name": "佐賀",
       "prefecture": "佐賀県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.8,
+        "level": "注意"
+      }
     },
     {
       "code": "84496",
       "name": "長崎",
       "prefecture": "長崎県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 24.0,
+        "level": "注意"
+      }
     },
     {
       "code": "86141",
       "name": "熊本",
       "prefecture": "熊本県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.3,
+        "level": "注意"
+      }
     },
     {
       "code": "83216",
       "name": "大分",
       "prefecture": "大分県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 23.7,
+        "level": "注意"
+      }
     },
     {
       "code": "87376",
       "name": "宮崎",
       "prefecture": "宮崎県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 24.3,
+        "level": "注意"
+      }
     },
     {
       "code": "88317",
       "name": "鹿児島",
       "prefecture": "鹿児島県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 26.2,
+        "level": "警戒"
+      }
     },
     {
       "code": "91197",
       "name": "那覇",
       "prefecture": "沖縄県",
-      "current": null
+      "current": {
+        "time": "2026-09-03T23:00:00+09:00",
+        "wbgt": 26.7,
+        "level": "警戒"
+      }
     }
   ]
 }
