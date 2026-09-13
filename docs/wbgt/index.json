@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T03:10:18.447843+09:00",
+  "generatedAt": "2026-09-14T03:15:18.593853+09:00",
   "sources": {
     "actual": "https://www.wbgt.env.go.jp/est15WG/dl/wbgt_all_202609.csv",
     "forecast": "https://www.wbgt.env.go.jp/prev15WG/dl/yohou_all.csv"
