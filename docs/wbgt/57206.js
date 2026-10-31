@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"57206","name":"今庄","prefecture":"福井県","generatedAt":"2026-11-01T06:00:37.150921+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"57206","name":"今庄","prefecture":"福井県","generatedAt":"2026-11-01T06:05:14.661136+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
