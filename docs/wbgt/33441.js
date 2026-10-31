@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33441","name":"区界","prefecture":"岩手県","generatedAt":"2026-11-01T03:35:27.070153+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33441","name":"区界","prefecture":"岩手県","generatedAt":"2026-11-01T03:40:21.185881+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
