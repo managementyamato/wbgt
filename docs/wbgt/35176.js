@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"35176","name":"向町","prefecture":"山形県","generatedAt":"2026-11-01T04:15:20.135605+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"35176","name":"向町","prefecture":"山形県","generatedAt":"2026-11-01T04:20:18.408931+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
