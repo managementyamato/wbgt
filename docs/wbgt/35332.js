@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"35332","name":"村山","prefecture":"山形県","generatedAt":"2026-11-01T02:40:20.214800+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"35332","name":"村山","prefecture":"山形県","generatedAt":"2026-11-01T02:45:21.078166+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
