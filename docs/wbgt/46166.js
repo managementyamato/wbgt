@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"46166","name":"小田原","prefecture":"神奈川県","generatedAt":"2026-11-01T06:54:04.306618+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"46166","name":"小田原","prefecture":"神奈川県","generatedAt":"2026-11-01T06:55:14.831026+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
