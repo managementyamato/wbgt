@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"83216","name":"大分","prefecture":"大分県","generatedAt":"2026-11-01T02:50:20.548456+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"83216","name":"大分","prefecture":"大分県","generatedAt":"2026-11-01T02:55:12.861757+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
