@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"66127","name":"奈義","prefecture":"岡山県","generatedAt":"2026-11-01T05:05:23.555249+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"66127","name":"奈義","prefecture":"岡山県","generatedAt":"2026-11-01T05:10:18.749520+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
