@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"46211","name":"三浦","prefecture":"神奈川県","generatedAt":"2026-11-01T05:30:28.090850+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"46211","name":"三浦","prefecture":"神奈川県","generatedAt":"2026-11-01T05:35:16.353720+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
