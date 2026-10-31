@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"85142","name":"佐賀","prefecture":"佐賀県","generatedAt":"2026-11-01T04:35:13.942026+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"85142","name":"佐賀","prefecture":"佐賀県","generatedAt":"2026-11-01T04:40:18.490736+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
