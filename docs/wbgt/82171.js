@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"82171","name":"前原","prefecture":"福岡県","generatedAt":"2026-11-01T00:10:17.492539+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"82171","name":"前原","prefecture":"福岡県","generatedAt":"2026-11-01T00:15:19.384839+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
