@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"36836","name":"山田","prefecture":"福島県","generatedAt":"2026-11-01T00:50:19.369908+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"36836","name":"山田","prefecture":"福島県","generatedAt":"2026-11-01T00:55:13.835697+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
