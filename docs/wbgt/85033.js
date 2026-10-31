@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"85033","name":"唐津","prefecture":"佐賀県","generatedAt":"2026-11-01T01:10:18.718700+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"85033","name":"唐津","prefecture":"佐賀県","generatedAt":"2026-11-01T01:15:18.407474+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
