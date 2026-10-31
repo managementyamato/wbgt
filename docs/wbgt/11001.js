@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"11001","name":"宗谷岬","prefecture":"北海道","generatedAt":"2026-11-01T03:55:14.955146+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"11001","name":"宗谷岬","prefecture":"北海道","generatedAt":"2026-11-01T04:00:39.990788+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
