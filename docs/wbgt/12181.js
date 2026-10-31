@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"12181","name":"名寄","prefecture":"北海道","generatedAt":"2026-11-01T02:15:20.247887+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"12181","name":"名寄","prefecture":"北海道","generatedAt":"2026-11-01T02:20:20.382260+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
