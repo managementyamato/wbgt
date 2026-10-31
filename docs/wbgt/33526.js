@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33526","name":"川井","prefecture":"岩手県","generatedAt":"2026-11-01T02:05:15.880946+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33526","name":"川井","prefecture":"岩手県","generatedAt":"2026-11-01T02:10:16.843781+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
