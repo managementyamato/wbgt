@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"50331","name":"静岡","prefecture":"静岡県","generatedAt":"2026-11-01T07:40:24.681520+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"50331","name":"静岡","prefecture":"静岡県","generatedAt":"2026-11-01T07:45:18.424991+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
