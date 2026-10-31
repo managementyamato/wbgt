@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"65306","name":"西川","prefecture":"和歌山県","generatedAt":"2026-11-01T06:25:16.069229+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"65306","name":"西川","prefecture":"和歌山県","generatedAt":"2026-11-01T06:30:29.884890+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
