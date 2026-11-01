@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48531","name":"開田高原","prefecture":"長野県","generatedAt":"2026-11-01T18:25:13.462333+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48531","name":"開田高原","prefecture":"長野県","generatedAt":"2026-11-01T18:30:28.646146+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
