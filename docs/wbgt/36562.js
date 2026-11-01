@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"36562","name":"湯本","prefecture":"福島県","generatedAt":"2026-11-02T00:50:17.576057+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"36562","name":"湯本","prefecture":"福島県","generatedAt":"2026-11-02T00:55:14.972234+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
