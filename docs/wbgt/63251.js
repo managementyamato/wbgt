@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"63251","name":"一宮","prefecture":"兵庫県","generatedAt":"2026-11-01T20:35:14.062863+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"63251","name":"一宮","prefecture":"兵庫県","generatedAt":"2026-11-01T20:40:17.630815+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
