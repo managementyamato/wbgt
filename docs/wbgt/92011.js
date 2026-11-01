@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"92011","name":"南大東","prefecture":"沖縄県","generatedAt":"2026-11-01T11:20:22.533422+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"92011","name":"南大東","prefecture":"沖縄県","generatedAt":"2026-11-01T11:25:13.920083+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
