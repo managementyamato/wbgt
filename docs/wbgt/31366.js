@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"31366","name":"鰺ケ沢","prefecture":"青森県","generatedAt":"2026-11-01T19:30:28.017401+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"31366","name":"鰺ケ沢","prefecture":"青森県","generatedAt":"2026-11-01T19:35:16.167711+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
