@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"51226","name":"岡崎","prefecture":"愛知県","generatedAt":"2026-11-01T12:20:18.602788+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"51226","name":"岡崎","prefecture":"愛知県","generatedAt":"2026-11-01T12:25:15.345324+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
