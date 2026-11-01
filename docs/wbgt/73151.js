@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"73151","name":"四国中央","prefecture":"愛媛県","generatedAt":"2026-11-02T02:10:18.704688+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"73151","name":"四国中央","prefecture":"愛媛県","generatedAt":"2026-11-02T02:15:21.250954+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
