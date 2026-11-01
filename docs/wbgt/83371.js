@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"83371","name":"竹田","prefecture":"大分県","generatedAt":"2026-11-02T01:40:18.743927+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"83371","name":"竹田","prefecture":"大分県","generatedAt":"2026-11-02T01:45:20.643175+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
