@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"67016","name":"高野","prefecture":"広島県","generatedAt":"2026-11-01T14:40:19.378069+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"67016","name":"高野","prefecture":"広島県","generatedAt":"2026-11-01T14:45:20.664490+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
