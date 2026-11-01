@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"42286","name":"上里見","prefecture":"群馬県","generatedAt":"2026-11-01T22:44:09.917921+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"42286","name":"上里見","prefecture":"群馬県","generatedAt":"2026-11-01T22:45:20.995869+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
