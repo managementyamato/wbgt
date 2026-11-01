@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"62131","name":"熊取","prefecture":"大阪府","generatedAt":"2026-11-02T02:35:13.866128+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"62131","name":"熊取","prefecture":"大阪府","generatedAt":"2026-11-02T02:40:18.609344+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
