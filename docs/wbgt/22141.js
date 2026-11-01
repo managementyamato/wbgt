@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"22141","name":"日高門別","prefecture":"北海道","generatedAt":"2026-11-01T12:55:15.167959+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"22141","name":"日高門別","prefecture":"北海道","generatedAt":"2026-11-01T13:00:37.861392+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
