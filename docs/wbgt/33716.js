@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33716","name":"北上","prefecture":"岩手県","generatedAt":"2026-11-02T07:15:19.916526+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33716","name":"北上","prefecture":"岩手県","generatedAt":"2026-11-02T07:17:56.629439+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
