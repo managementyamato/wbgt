@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"36411","name":"浪江","prefecture":"福島県","generatedAt":"2026-11-02T09:50:17.221291+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"36411","name":"浪江","prefecture":"福島県","generatedAt":"2026-11-02T09:55:15.472226+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
