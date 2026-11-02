@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"73446","name":"近永","prefecture":"愛媛県","generatedAt":"2026-11-02T11:10:20.575812+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"73446","name":"近永","prefecture":"愛媛県","generatedAt":"2026-11-02T11:15:20.680488+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
