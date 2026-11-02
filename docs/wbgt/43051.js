@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"43051","name":"寄居","prefecture":"埼玉県","generatedAt":"2026-11-02T12:00:49.801283+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"43051","name":"寄居","prefecture":"埼玉県","generatedAt":"2026-11-02T12:05:16.758921+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
