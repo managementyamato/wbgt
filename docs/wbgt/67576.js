@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"67576","name":"呉市蒲刈","prefecture":"広島県","generatedAt":"2026-11-02T16:55:17.975823+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"67576","name":"呉市蒲刈","prefecture":"広島県","generatedAt":"2026-11-02T17:00:46.127779+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
