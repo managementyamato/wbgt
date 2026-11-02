@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"14206","name":"恵庭島松","prefecture":"北海道","generatedAt":"2026-11-02T13:15:20.842177+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"14206","name":"恵庭島松","prefecture":"北海道","generatedAt":"2026-11-02T13:20:19.105509+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
