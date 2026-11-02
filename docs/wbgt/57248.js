@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"57248","name":"敦賀","prefecture":"福井県","generatedAt":"2026-11-02T16:20:20.716662+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"57248","name":"敦賀","prefecture":"福井県","generatedAt":"2026-11-02T16:25:15.944563+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
