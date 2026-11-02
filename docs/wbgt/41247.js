@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"41247","name":"那須烏山","prefecture":"栃木県","generatedAt":"2026-11-03T07:55:16.128314+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"41247","name":"那須烏山","prefecture":"栃木県","generatedAt":"2026-11-03T08:00:42.551542+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
