@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"69061","name":"岩井","prefecture":"鳥取県","generatedAt":"2026-11-03T00:20:23.266585+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"69061","name":"岩井","prefecture":"鳥取県","generatedAt":"2026-11-03T00:25:16.611898+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
