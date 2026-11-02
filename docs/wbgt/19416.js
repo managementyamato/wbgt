@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"19416","name":"白糠","prefecture":"北海道","generatedAt":"2026-11-02T15:20:18.330648+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"19416","name":"白糠","prefecture":"北海道","generatedAt":"2026-11-02T15:25:17.798773+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
