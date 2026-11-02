@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"52511","name":"揖斐川","prefecture":"岐阜県","generatedAt":"2026-11-02T10:35:15.395905+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"52511","name":"揖斐川","prefecture":"岐阜県","generatedAt":"2026-11-02T10:40:20.760572+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
