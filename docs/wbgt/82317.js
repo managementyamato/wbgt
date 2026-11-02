@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"82317","name":"黒木","prefecture":"福岡県","generatedAt":"2026-11-02T18:20:38.100057+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"82317","name":"黒木","prefecture":"福岡県","generatedAt":"2026-11-02T18:25:18.839779+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
