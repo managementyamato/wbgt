@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"55206","name":"八尾","prefecture":"富山県","generatedAt":"2026-11-02T11:00:38.723039+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"55206","name":"八尾","prefecture":"富山県","generatedAt":"2026-11-02T11:05:13.845604+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
