@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"57066","name":"福井","prefecture":"福井県","generatedAt":"2026-11-03T02:40:22.165909+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"57066","name":"福井","prefecture":"福井県","generatedAt":"2026-11-03T02:45:24.537967+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
