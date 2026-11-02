@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"35116","name":"金山","prefecture":"山形県","generatedAt":"2026-11-03T08:30:33.130462+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"35116","name":"金山","prefecture":"山形県","generatedAt":"2026-11-03T08:35:14.596217+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
