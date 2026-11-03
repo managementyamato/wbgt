@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"87206","name":"神門","prefecture":"宮崎県","generatedAt":"2026-11-03T14:20:25.133735+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"87206","name":"神門","prefecture":"宮崎県","generatedAt":"2026-11-03T14:25:14.459874+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
