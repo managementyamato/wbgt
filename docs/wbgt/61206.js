@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"61206","name":"美山","prefecture":"京都府","generatedAt":"2026-11-03T17:15:21.117925+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"61206","name":"美山","prefecture":"京都府","generatedAt":"2026-11-03T17:20:18.571845+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
