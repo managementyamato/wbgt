@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"31721","name":"三戸","prefecture":"青森県","generatedAt":"2026-11-04T01:05:17.062768+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"31721","name":"三戸","prefecture":"青森県","generatedAt":"2026-11-04T01:10:23.043294+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
