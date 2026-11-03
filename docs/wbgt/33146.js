@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33146","name":"久慈","prefecture":"岩手県","generatedAt":"2026-11-03T14:15:22.089118+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33146","name":"久慈","prefecture":"岩手県","generatedAt":"2026-11-03T14:20:25.133735+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
