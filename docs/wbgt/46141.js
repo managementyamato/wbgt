@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"46141","name":"辻堂","prefecture":"神奈川県","generatedAt":"2026-11-04T05:00:54.558423+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"46141","name":"辻堂","prefecture":"神奈川県","generatedAt":"2026-11-04T05:05:28.661262+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
