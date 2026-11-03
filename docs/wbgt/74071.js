@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"74071","name":"本山","prefecture":"高知県","generatedAt":"2026-11-03T09:40:28.294506+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"74071","name":"本山","prefecture":"高知県","generatedAt":"2026-11-03T09:45:21.696890+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
