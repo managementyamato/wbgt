@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"32616","name":"にかほ","prefecture":"秋田県","generatedAt":"2026-11-03T12:55:15.633940+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"32616","name":"にかほ","prefecture":"秋田県","generatedAt":"2026-11-03T13:00:42.372336+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
