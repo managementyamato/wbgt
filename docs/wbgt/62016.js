@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"62016","name":"能勢","prefecture":"大阪府","generatedAt":"2026-11-04T02:25:23.836454+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"62016","name":"能勢","prefecture":"大阪府","generatedAt":"2026-11-04T02:30:39.875275+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
