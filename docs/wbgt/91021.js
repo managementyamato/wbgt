@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"91021","name":"奥","prefecture":"沖縄県","generatedAt":"2026-11-04T03:50:39.033392+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"91021","name":"奥","prefecture":"沖縄県","generatedAt":"2026-11-04T03:55:29.850920+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
