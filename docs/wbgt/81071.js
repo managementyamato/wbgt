@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"81071","name":"萩","prefecture":"山口県","generatedAt":"2026-11-03T22:00:42.116626+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"81071","name":"萩","prefecture":"山口県","generatedAt":"2026-11-03T22:05:16.030494+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
