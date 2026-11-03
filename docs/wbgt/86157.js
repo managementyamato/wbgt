@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"86157","name":"南阿蘇","prefecture":"熊本県","generatedAt":"2026-11-03T09:35:17.374359+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"86157","name":"南阿蘇","prefecture":"熊本県","generatedAt":"2026-11-03T09:40:28.294506+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
