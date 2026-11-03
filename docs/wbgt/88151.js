@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"88151","name":"川内","prefecture":"鹿児島県","generatedAt":"2026-11-03T20:40:22.988311+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"88151","name":"川内","prefecture":"鹿児島県","generatedAt":"2026-11-03T20:45:22.375517+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
