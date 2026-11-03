@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"60226","name":"信楽","prefecture":"滋賀県","generatedAt":"2026-11-04T03:45:35.136862+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"60226","name":"信楽","prefecture":"滋賀県","generatedAt":"2026-11-04T03:50:39.033392+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
