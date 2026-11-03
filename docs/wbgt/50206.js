@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"50206","name":"三島","prefecture":"静岡県","generatedAt":"2026-11-04T00:00:43.553025+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"50206","name":"三島","prefecture":"静岡県","generatedAt":"2026-11-04T00:05:16.433406+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
