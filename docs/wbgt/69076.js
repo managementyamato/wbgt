@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"69076","name":"米子","prefecture":"鳥取県","generatedAt":"2026-11-03T10:45:19.690623+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"69076","name":"米子","prefecture":"鳥取県","generatedAt":"2026-11-03T10:50:21.405084+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
