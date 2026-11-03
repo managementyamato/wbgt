@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"23206","name":"川汲","prefecture":"北海道","generatedAt":"2026-11-04T04:10:22.532827+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"23206","name":"川汲","prefecture":"北海道","generatedAt":"2026-11-04T04:15:38.420110+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
