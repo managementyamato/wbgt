@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33176","name":"奥中山","prefecture":"岩手県","generatedAt":"2026-11-03T09:15:23.525698+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33176","name":"奥中山","prefecture":"岩手県","generatedAt":"2026-11-03T09:20:22.697499+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
