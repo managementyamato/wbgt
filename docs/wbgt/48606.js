@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48606","name":"木曽福島","prefecture":"長野県","generatedAt":"2026-11-03T12:05:15.038695+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48606","name":"木曽福島","prefecture":"長野県","generatedAt":"2026-11-03T12:10:20.922746+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
