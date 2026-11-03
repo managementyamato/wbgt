@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"11016","name":"稚内","prefecture":"北海道","generatedAt":"2026-11-03T19:00:47.941635+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"11016","name":"稚内","prefecture":"北海道","generatedAt":"2026-11-03T19:05:19.000864+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
