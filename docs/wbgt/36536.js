@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"36536","name":"南郷","prefecture":"福島県","generatedAt":"2026-11-04T10:55:14.019162+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"36536","name":"南郷","prefecture":"福島県","generatedAt":"2026-11-04T11:00:43.475566+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
