@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"63321","name":"福崎","prefecture":"兵庫県","generatedAt":"2026-11-04T17:45:20.648923+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"63321","name":"福崎","prefecture":"兵庫県","generatedAt":"2026-11-04T17:50:20.035964+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
