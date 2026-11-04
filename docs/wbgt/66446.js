@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"66446","name":"倉敷","prefecture":"岡山県","generatedAt":"2026-11-04T15:15:21.279787+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"66446","name":"倉敷","prefecture":"岡山県","generatedAt":"2026-11-04T15:20:29.812503+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
