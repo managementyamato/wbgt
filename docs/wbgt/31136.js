@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"31136","name":"今別","prefecture":"青森県","generatedAt":"2026-11-05T06:28:24.157211+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"31136","name":"今別","prefecture":"青森県","generatedAt":"2026-11-05T06:30:32.475232+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
