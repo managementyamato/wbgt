@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"85161","name":"嬉野","prefecture":"佐賀県","generatedAt":"2026-11-05T00:11:13.817862+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"85161","name":"嬉野","prefecture":"佐賀県","generatedAt":"2026-11-05T00:20:33.321699+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
