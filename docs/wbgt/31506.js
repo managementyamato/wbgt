@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"31506","name":"三沢","prefecture":"青森県","generatedAt":"2026-11-05T07:30:31.928267+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"31506","name":"三沢","prefecture":"青森県","generatedAt":"2026-11-05T07:35:16.183294+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
