@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"69021","name":"塩津","prefecture":"鳥取県","generatedAt":"2026-11-05T03:35:17.696642+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"69021","name":"塩津","prefecture":"鳥取県","generatedAt":"2026-11-05T03:40:21.607124+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
