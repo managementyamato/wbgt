@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"81286","name":"山口","prefecture":"山口県","generatedAt":"2026-11-04T12:25:14.850817+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"81286","name":"山口","prefecture":"山口県","generatedAt":"2026-11-04T12:30:31.591481+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
