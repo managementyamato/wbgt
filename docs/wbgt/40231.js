@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"40231","name":"下館","prefecture":"茨城県","generatedAt":"2026-11-05T07:25:15.987150+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"40231","name":"下館","prefecture":"茨城県","generatedAt":"2026-11-05T07:30:31.928267+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
