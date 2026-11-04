@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"86271","name":"松島","prefecture":"熊本県","generatedAt":"2026-11-04T13:45:20.094398+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"86271","name":"松島","prefecture":"熊本県","generatedAt":"2026-11-04T13:50:19.986471+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
