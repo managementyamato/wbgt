@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"63051","name":"豊岡","prefecture":"兵庫県","generatedAt":"2026-11-04T11:55:15.814884+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"63051","name":"豊岡","prefecture":"兵庫県","generatedAt":"2026-11-04T12:00:39.938008+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
