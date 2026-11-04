@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"24041","name":"せたな","prefecture":"北海道","generatedAt":"2026-11-04T10:35:15.778954+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"24041","name":"せたな","prefecture":"北海道","generatedAt":"2026-11-04T10:40:19.194072+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
