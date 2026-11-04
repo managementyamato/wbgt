@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"41116","name":"土呂部","prefecture":"栃木県","generatedAt":"2026-11-05T00:20:33.321699+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"41116","name":"土呂部","prefecture":"栃木県","generatedAt":"2026-11-05T00:25:22.147848+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
