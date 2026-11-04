@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"67461","name":"竹原","prefecture":"広島県","generatedAt":"2026-11-05T05:55:17.587121+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"67461","name":"竹原","prefecture":"広島県","generatedAt":"2026-11-05T06:00:41.333892+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
