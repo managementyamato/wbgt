@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"52111","name":"栃尾","prefecture":"岐阜県","generatedAt":"2026-11-05T01:45:28.510558+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"52111","name":"栃尾","prefecture":"岐阜県","generatedAt":"2026-11-05T01:50:23.524139+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
