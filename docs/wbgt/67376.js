@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"67376","name":"東広島","prefecture":"広島県","generatedAt":"2026-11-05T04:10:19.737761+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"67376","name":"東広島","prefecture":"広島県","generatedAt":"2026-11-05T04:15:23.163269+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
