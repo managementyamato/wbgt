@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"32056","name":"八森","prefecture":"秋田県","generatedAt":"2026-11-05T04:50:19.739053+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"32056","name":"八森","prefecture":"秋田県","generatedAt":"2026-11-05T04:55:15.027687+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
