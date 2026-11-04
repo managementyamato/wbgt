@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"87141","name":"延岡","prefecture":"宮崎県","generatedAt":"2026-11-05T05:30:33.448527+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"87141","name":"延岡","prefecture":"宮崎県","generatedAt":"2026-11-05T05:35:17.389812+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
