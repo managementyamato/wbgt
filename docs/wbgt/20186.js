@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"20186","name":"ぬかびら源泉郷","prefecture":"北海道","generatedAt":"2026-11-05T04:55:15.027687+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"20186","name":"ぬかびら源泉郷","prefecture":"北海道","generatedAt":"2026-11-05T05:00:40.590628+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
