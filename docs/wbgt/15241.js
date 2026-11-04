@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"15241","name":"滝川","prefecture":"北海道","generatedAt":"2026-11-04T20:45:21.644497+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"15241","name":"滝川","prefecture":"北海道","generatedAt":"2026-11-04T20:50:24.156664+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
