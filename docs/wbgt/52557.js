@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"52557","name":"中津川","prefecture":"岐阜県","generatedAt":"2026-11-04T22:25:14.721495+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"52557","name":"中津川","prefecture":"岐阜県","generatedAt":"2026-11-04T22:30:37.888639+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
