@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"55166","name":"上市","prefecture":"富山県","generatedAt":"2026-11-04T16:30:30.924561+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"55166","name":"上市","prefecture":"富山県","generatedAt":"2026-11-04T16:35:18.116760+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
