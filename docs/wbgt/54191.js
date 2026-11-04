@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"54191","name":"下関","prefecture":"新潟県","generatedAt":"2026-11-04T13:05:16.270608+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"54191","name":"下関","prefecture":"新潟県","generatedAt":"2026-11-04T13:10:19.992960+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
