@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"31201","name":"蟹田","prefecture":"青森県","generatedAt":"2026-11-05T11:10:20.131138+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"31201","name":"蟹田","prefecture":"青森県","generatedAt":"2026-11-05T11:15:31.174833+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
