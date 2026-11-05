@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"84561","name":"口之津","prefecture":"長崎県","generatedAt":"2026-11-05T20:35:17.368178+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"84561","name":"口之津","prefecture":"長崎県","generatedAt":"2026-11-05T20:40:22.344220+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
