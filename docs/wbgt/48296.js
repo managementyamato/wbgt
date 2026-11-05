@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48296","name":"穂高","prefecture":"長野県","generatedAt":"2026-11-06T07:10:19.551982+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48296","name":"穂高","prefecture":"長野県","generatedAt":"2026-11-06T07:13:46.256345+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
