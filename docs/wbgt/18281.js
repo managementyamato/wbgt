@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"18281","name":"納沙布","prefecture":"北海道","generatedAt":"2026-11-05T15:05:20.244667+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"18281","name":"納沙布","prefecture":"北海道","generatedAt":"2026-11-05T15:10:21.744725+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
