@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48536","name":"木祖薮原","prefecture":"長野県","generatedAt":"2026-11-05T11:20:20.228833+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48536","name":"木祖薮原","prefecture":"長野県","generatedAt":"2026-11-05T11:25:14.494909+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
