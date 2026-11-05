@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"56052","name":"輪島","prefecture":"石川県","generatedAt":"2026-11-06T04:30:40.914385+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"56052","name":"輪島","prefecture":"石川県","generatedAt":"2026-11-06T04:35:15.737156+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
