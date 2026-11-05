@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"34186","name":"志津川","prefecture":"宮城県","generatedAt":"2026-11-05T22:20:25.593722+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"34186","name":"志津川","prefecture":"宮城県","generatedAt":"2026-11-05T22:25:23.138924+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
