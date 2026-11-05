@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"20556","name":"糠内","prefecture":"北海道","generatedAt":"2026-11-06T07:00:40.174326+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"20556","name":"糠内","prefecture":"北海道","generatedAt":"2026-11-06T07:05:16.248651+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
