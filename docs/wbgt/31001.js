@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"31001","name":"大間","prefecture":"青森県","generatedAt":"2026-11-06T04:50:25.250002+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"31001","name":"大間","prefecture":"青森県","generatedAt":"2026-11-06T04:55:19.867465+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
