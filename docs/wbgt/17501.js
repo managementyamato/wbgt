@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"17501","name":"生田原","prefecture":"北海道","generatedAt":"2026-11-05T13:55:17.394167+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"17501","name":"生田原","prefecture":"北海道","generatedAt":"2026-11-05T14:00:40.780260+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
