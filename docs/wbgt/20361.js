@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"20361","name":"鹿追","prefecture":"北海道","generatedAt":"2026-11-06T04:35:15.737156+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"20361","name":"鹿追","prefecture":"北海道","generatedAt":"2026-11-06T04:40:22.649804+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
