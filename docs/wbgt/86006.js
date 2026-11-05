@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"86006","name":"鹿北","prefecture":"熊本県","generatedAt":"2026-11-05T21:15:22.153496+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"86006","name":"鹿北","prefecture":"熊本県","generatedAt":"2026-11-05T21:20:21.033245+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
