@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"17561","name":"斜里","prefecture":"北海道","generatedAt":"2026-11-06T02:25:15.090132+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"17561","name":"斜里","prefecture":"北海道","generatedAt":"2026-11-06T02:30:36.270297+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
