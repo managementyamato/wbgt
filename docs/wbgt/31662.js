@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"31662","name":"休屋","prefecture":"青森県","generatedAt":"2026-11-06T05:45:23.598330+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"31662","name":"休屋","prefecture":"青森県","generatedAt":"2026-11-06T05:50:27.437230+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
