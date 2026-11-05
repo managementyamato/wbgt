@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"49086","name":"韮崎","prefecture":"山梨県","generatedAt":"2026-11-06T02:55:16.927148+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"49086","name":"韮崎","prefecture":"山梨県","generatedAt":"2026-11-06T03:00:48.156227+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
