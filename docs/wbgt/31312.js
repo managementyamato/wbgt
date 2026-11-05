@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"31312","name":"青森","prefecture":"青森県","generatedAt":"2026-11-05T17:00:48.514637+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"31312","name":"青森","prefecture":"青森県","generatedAt":"2026-11-05T17:05:16.070532+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
