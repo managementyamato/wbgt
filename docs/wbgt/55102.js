@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"55102","name":"富山","prefecture":"富山県","generatedAt":"2026-11-05T11:55:15.559155+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"55102","name":"富山","prefecture":"富山県","generatedAt":"2026-11-05T12:00:41.418424+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
