@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"54711","name":"糸魚川","prefecture":"新潟県","generatedAt":"2026-11-06T03:15:25.912529+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"54711","name":"糸魚川","prefecture":"新潟県","generatedAt":"2026-11-06T03:20:18.733773+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
