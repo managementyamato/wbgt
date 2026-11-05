@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"86236","name":"甲佐","prefecture":"熊本県","generatedAt":"2026-11-05T13:15:22.377908+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"86236","name":"甲佐","prefecture":"熊本県","generatedAt":"2026-11-05T13:20:23.348232+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
