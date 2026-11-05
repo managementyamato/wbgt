@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"13086","name":"遠別","prefecture":"北海道","generatedAt":"2026-11-05T14:05:23.587521+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"13086","name":"遠別","prefecture":"北海道","generatedAt":"2026-11-05T14:10:21.959353+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
