@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"82056","name":"八幡","prefecture":"福岡県","generatedAt":"2026-11-05T09:05:15.903273+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"82056","name":"八幡","prefecture":"福岡県","generatedAt":"2026-11-05T09:10:20.026048+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
