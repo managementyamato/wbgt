@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48256","name":"上田","prefecture":"長野県","generatedAt":"2026-11-05T18:30:34.436131+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48256","name":"上田","prefecture":"長野県","generatedAt":"2026-11-05T18:35:16.469348+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
