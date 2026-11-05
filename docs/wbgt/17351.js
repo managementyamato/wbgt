@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"17351","name":"宇登呂","prefecture":"北海道","generatedAt":"2026-11-06T00:05:16.084373+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"17351","name":"宇登呂","prefecture":"北海道","generatedAt":"2026-11-06T00:10:25.259010+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
