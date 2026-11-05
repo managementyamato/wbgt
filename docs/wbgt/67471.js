@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"67471","name":"生口島","prefecture":"広島県","generatedAt":"2026-11-05T15:45:21.402018+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"67471","name":"生口島","prefecture":"広島県","generatedAt":"2026-11-05T15:50:23.203771+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
