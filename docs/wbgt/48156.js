@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48156","name":"長野","prefecture":"長野県","generatedAt":"2026-11-06T14:55:16.919618+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48156","name":"長野","prefecture":"長野県","generatedAt":"2026-11-06T15:00:40.367897+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
