@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"74136","name":"大栃","prefecture":"高知県","generatedAt":"2026-11-06T21:05:15.777689+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"74136","name":"大栃","prefecture":"高知県","generatedAt":"2026-11-06T21:10:23.293287+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
