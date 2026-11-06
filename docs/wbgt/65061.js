@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"65061","name":"高野山","prefecture":"和歌山県","generatedAt":"2026-11-06T13:55:15.139464+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"65061","name":"高野山","prefecture":"和歌山県","generatedAt":"2026-11-06T14:00:39.865268+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
