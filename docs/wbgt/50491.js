@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"50491","name":"松崎","prefecture":"静岡県","generatedAt":"2026-11-07T08:05:14.964360+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"50491","name":"松崎","prefecture":"静岡県","generatedAt":"2026-11-07T08:10:18.912281+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
