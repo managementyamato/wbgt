@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33616","name":"山田","prefecture":"岩手県","generatedAt":"2026-11-06T18:20:22.532611+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33616","name":"山田","prefecture":"岩手県","generatedAt":"2026-11-06T18:25:19.415597+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
