@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"86336","name":"八代","prefecture":"熊本県","generatedAt":"2026-11-06T09:00:43.994913+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"86336","name":"八代","prefecture":"熊本県","generatedAt":"2026-11-06T09:05:13.780161+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
