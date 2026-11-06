@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"54086","name":"村上","prefecture":"新潟県","generatedAt":"2026-11-06T13:40:19.882575+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"54086","name":"村上","prefecture":"新潟県","generatedAt":"2026-11-06T13:45:21.300222+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
