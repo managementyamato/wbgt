@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48546","name":"辰野","prefecture":"長野県","generatedAt":"2026-11-06T12:45:23.444879+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48546","name":"辰野","prefecture":"長野県","generatedAt":"2026-11-06T12:50:19.800927+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
