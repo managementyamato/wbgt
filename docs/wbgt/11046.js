@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"11046","name":"礼文","prefecture":"北海道","generatedAt":"2026-11-06T22:20:21.788858+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"11046","name":"礼文","prefecture":"北海道","generatedAt":"2026-11-06T22:25:19.061925+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
