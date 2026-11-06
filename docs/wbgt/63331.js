@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"63331","name":"西脇","prefecture":"兵庫県","generatedAt":"2026-11-06T13:15:19.321632+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"63331","name":"西脇","prefecture":"兵庫県","generatedAt":"2026-11-06T13:20:19.254402+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
