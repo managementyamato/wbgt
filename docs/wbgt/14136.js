@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"14136","name":"江別","prefecture":"北海道","generatedAt":"2026-11-06T22:35:16.884701+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"14136","name":"江別","prefecture":"北海道","generatedAt":"2026-11-06T22:40:21.490206+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
