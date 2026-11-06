@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"94062","name":"西表島","prefecture":"沖縄県","generatedAt":"2026-11-06T17:50:22.482082+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"94062","name":"西表島","prefecture":"沖縄県","generatedAt":"2026-11-06T17:55:15.472690+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
