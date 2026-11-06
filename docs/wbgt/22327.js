@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"22327","name":"浦河","prefecture":"北海道","generatedAt":"2026-11-06T23:45:21.354430+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"22327","name":"浦河","prefecture":"北海道","generatedAt":"2026-11-06T23:50:25.199818+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
