@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33186","name":"葛巻","prefecture":"岩手県","generatedAt":"2026-11-06T11:05:14.542447+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33186","name":"葛巻","prefecture":"岩手県","generatedAt":"2026-11-06T11:10:21.240055+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
