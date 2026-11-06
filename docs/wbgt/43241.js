@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"43241","name":"さいたま","prefecture":"埼玉県","generatedAt":"2026-11-06T10:55:18.972090+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"43241","name":"さいたま","prefecture":"埼玉県","generatedAt":"2026-11-06T11:00:42.601200+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
