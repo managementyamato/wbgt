@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"36426","name":"只見","prefecture":"福島県","generatedAt":"2026-11-07T00:35:16.423801+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"36426","name":"只見","prefecture":"福島県","generatedAt":"2026-11-07T00:40:22.039939+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
