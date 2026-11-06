@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"41076","name":"五十里","prefecture":"栃木県","generatedAt":"2026-11-06T17:05:14.728136+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"41076","name":"五十里","prefecture":"栃木県","generatedAt":"2026-11-06T17:10:19.679604+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
