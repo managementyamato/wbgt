@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"32206","name":"湯瀬","prefecture":"秋田県","generatedAt":"2026-11-07T07:50:19.353456+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"32206","name":"湯瀬","prefecture":"秋田県","generatedAt":"2026-11-07T07:55:17.413710+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
