@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"36276","name":"猪苗代","prefecture":"福島県","generatedAt":"2026-11-07T23:35:17.760629+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"36276","name":"猪苗代","prefecture":"福島県","generatedAt":"2026-11-07T23:40:18.944118+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
