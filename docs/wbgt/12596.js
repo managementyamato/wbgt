@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"12596","name":"上富良野","prefecture":"北海道","generatedAt":"2026-11-07T12:10:18.160157+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"12596","name":"上富良野","prefecture":"北海道","generatedAt":"2026-11-07T12:15:21.690633+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
