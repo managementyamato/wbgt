@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"36221","name":"飯舘","prefecture":"福島県","generatedAt":"2026-11-07T16:20:17.204427+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"36221","name":"飯舘","prefecture":"福島県","generatedAt":"2026-11-07T16:25:17.133311+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
