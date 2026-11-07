@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"49316","name":"南部","prefecture":"山梨県","generatedAt":"2026-11-07T09:05:16.364928+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"49316","name":"南部","prefecture":"山梨県","generatedAt":"2026-11-07T09:10:19.198611+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
