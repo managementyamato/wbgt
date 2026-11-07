@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"69122","name":"鳥取","prefecture":"鳥取県","generatedAt":"2026-11-07T22:59:17.086678+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"69122","name":"鳥取","prefecture":"鳥取県","generatedAt":"2026-11-07T23:00:40.118851+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
