@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"14286","name":"支笏湖畔","prefecture":"北海道","generatedAt":"2026-11-07T14:45:22.165003+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"14286","name":"支笏湖畔","prefecture":"北海道","generatedAt":"2026-11-07T14:50:18.143519+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
