@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"57001","name":"三国","prefecture":"福井県","generatedAt":"2026-11-07T21:55:14.574952+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"57001","name":"三国","prefecture":"福井県","generatedAt":"2026-11-07T22:00:39.199847+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
