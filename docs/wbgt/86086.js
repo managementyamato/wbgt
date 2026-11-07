@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"86086","name":"岱明","prefecture":"熊本県","generatedAt":"2026-11-08T02:45:21.751118+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"86086","name":"岱明","prefecture":"熊本県","generatedAt":"2026-11-08T02:50:18.286240+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
