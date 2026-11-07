@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"61242","name":"園部","prefecture":"京都府","generatedAt":"2026-11-07T14:20:19.251260+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"61242","name":"園部","prefecture":"京都府","generatedAt":"2026-11-07T14:25:14.364373+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
