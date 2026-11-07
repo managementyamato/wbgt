@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"52051","name":"神岡","prefecture":"岐阜県","generatedAt":"2026-11-07T13:50:18.498844+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"52051","name":"神岡","prefecture":"岐阜県","generatedAt":"2026-11-07T13:55:14.539499+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
