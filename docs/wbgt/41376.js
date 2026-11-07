@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"41376","name":"小山","prefecture":"栃木県","generatedAt":"2026-11-07T11:20:19.720915+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"41376","name":"小山","prefecture":"栃木県","generatedAt":"2026-11-07T11:25:16.850365+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
