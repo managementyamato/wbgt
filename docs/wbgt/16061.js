@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"16061","name":"神恵内","prefecture":"北海道","generatedAt":"2026-11-07T18:10:21.016018+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"16061","name":"神恵内","prefecture":"北海道","generatedAt":"2026-11-07T18:15:20.058565+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
