@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"20421","name":"芽室","prefecture":"北海道","generatedAt":"2026-11-07T14:10:19.646309+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"20421","name":"芽室","prefecture":"北海道","generatedAt":"2026-11-07T14:15:20.069910+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
