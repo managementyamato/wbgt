@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"64036","name":"奈良","prefecture":"奈良県","generatedAt":"2026-11-07T23:45:24.091098+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"64036","name":"奈良","prefecture":"奈良県","generatedAt":"2026-11-07T23:50:18.806779+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
