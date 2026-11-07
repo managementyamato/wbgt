@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"35162","name":"新庄","prefecture":"山形県","generatedAt":"2026-11-07T13:35:13.836577+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"35162","name":"新庄","prefecture":"山形県","generatedAt":"2026-11-07T13:40:18.838552+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
