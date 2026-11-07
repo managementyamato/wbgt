@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"19261","name":"中徹別","prefecture":"北海道","generatedAt":"2026-11-07T15:05:13.685375+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"19261","name":"中徹別","prefecture":"北海道","generatedAt":"2026-11-07T15:10:19.035908+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
