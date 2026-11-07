@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"21323","name":"室蘭","prefecture":"北海道","generatedAt":"2026-11-07T10:35:15.897081+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"21323","name":"室蘭","prefecture":"北海道","generatedAt":"2026-11-07T10:40:19.340827+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
