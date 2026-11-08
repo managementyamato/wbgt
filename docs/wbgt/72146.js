@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"72146","name":"引田","prefecture":"香川県","generatedAt":"2026-11-08T13:55:14.366151+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"72146","name":"引田","prefecture":"香川県","generatedAt":"2026-11-08T14:00:39.423895+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
