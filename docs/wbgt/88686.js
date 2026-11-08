@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"88686","name":"屋久島","prefecture":"鹿児島県","generatedAt":"2026-11-08T12:20:19.287131+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"88686","name":"屋久島","prefecture":"鹿児島県","generatedAt":"2026-11-08T12:25:15.233880+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
