@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"22291","name":"三石","prefecture":"北海道","generatedAt":"2026-11-08T13:50:20.166185+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"22291","name":"三石","prefecture":"北海道","generatedAt":"2026-11-08T13:55:14.366151+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
