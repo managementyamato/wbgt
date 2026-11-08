@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"35052","name":"酒田","prefecture":"山形県","generatedAt":"2026-11-09T08:30:29.440382+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"35052","name":"酒田","prefecture":"山形県","generatedAt":"2026-11-09T08:35:14.335586+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
