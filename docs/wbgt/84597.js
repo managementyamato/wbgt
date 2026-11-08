@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"84597","name":"脇岬","prefecture":"長崎県","generatedAt":"2026-11-09T04:50:20.007059+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"84597","name":"脇岬","prefecture":"長崎県","generatedAt":"2026-11-09T04:55:17.543130+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
