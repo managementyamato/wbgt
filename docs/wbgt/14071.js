@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"14071","name":"厚田","prefecture":"北海道","generatedAt":"2026-11-09T08:00:42.211848+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"14071","name":"厚田","prefecture":"北海道","generatedAt":"2026-11-09T08:05:15.512838+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
