@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"74296","name":"梼原","prefecture":"高知県","generatedAt":"2026-11-08T13:40:19.089138+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"74296","name":"梼原","prefecture":"高知県","generatedAt":"2026-11-08T13:45:20.301870+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
