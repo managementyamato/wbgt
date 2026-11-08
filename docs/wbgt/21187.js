@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"21187","name":"苫小牧","prefecture":"北海道","generatedAt":"2026-11-08T09:05:15.653600+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"21187","name":"苫小牧","prefecture":"北海道","generatedAt":"2026-11-08T09:10:22.739379+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
