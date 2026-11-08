@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"84341","name":"有川","prefecture":"長崎県","generatedAt":"2026-11-08T16:55:14.650572+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"84341","name":"有川","prefecture":"長崎県","generatedAt":"2026-11-08T17:00:40.376347+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
