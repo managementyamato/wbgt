@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"20631","name":"大津","prefecture":"北海道","generatedAt":"2026-11-08T21:30:31.049201+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"20631","name":"大津","prefecture":"北海道","generatedAt":"2026-11-08T21:35:15.255707+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
