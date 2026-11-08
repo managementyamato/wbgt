@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"32126","name":"鷹巣","prefecture":"秋田県","generatedAt":"2026-11-08T13:10:17.232549+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"32126","name":"鷹巣","prefecture":"秋田県","generatedAt":"2026-11-08T13:15:21.566672+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
