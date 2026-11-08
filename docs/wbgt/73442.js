@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"73442","name":"宇和島","prefecture":"愛媛県","generatedAt":"2026-11-09T07:30:29.614718+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"73442","name":"宇和島","prefecture":"愛媛県","generatedAt":"2026-11-09T07:33:57.740130+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
