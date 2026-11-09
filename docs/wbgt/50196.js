@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"50196","name":"富士","prefecture":"静岡県","generatedAt":"2026-11-09T11:05:14.101168+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"50196","name":"富士","prefecture":"静岡県","generatedAt":"2026-11-09T11:10:32.641232+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
