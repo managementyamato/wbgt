@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"20276","name":"足寄","prefecture":"北海道","generatedAt":"2026-11-09T10:25:17.521128+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"20276","name":"足寄","prefecture":"北海道","generatedAt":"2026-11-09T10:30:29.690382+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
