@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"69006","name":"境","prefecture":"鳥取県","generatedAt":"2026-11-09T15:20:19.259746+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"69006","name":"境","prefecture":"鳥取県","generatedAt":"2026-11-09T15:25:14.852873+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
