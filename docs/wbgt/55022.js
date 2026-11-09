@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"55022","name":"朝日","prefecture":"富山県","generatedAt":"2026-11-09T20:15:23.134096+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"55022","name":"朝日","prefecture":"富山県","generatedAt":"2026-11-09T20:20:19.222358+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
