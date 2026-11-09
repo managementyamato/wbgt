@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"31336","name":"六ケ所","prefecture":"青森県","generatedAt":"2026-11-10T01:15:20.857927+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"31336","name":"六ケ所","prefecture":"青森県","generatedAt":"2026-11-10T01:20:23.804278+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
