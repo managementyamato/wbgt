@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"71291","name":"海陽","prefecture":"徳島県","generatedAt":"2026-11-10T08:15:24.151011+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"71291","name":"海陽","prefecture":"徳島県","generatedAt":"2026-11-10T08:20:25.793154+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
