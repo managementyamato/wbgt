@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"43256","name":"越谷","prefecture":"埼玉県","generatedAt":"2026-11-09T15:00:37.570523+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"43256","name":"越谷","prefecture":"埼玉県","generatedAt":"2026-11-09T15:05:16.249762+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
