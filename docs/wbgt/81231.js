@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"81231","name":"広瀬","prefecture":"山口県","generatedAt":"2026-11-09T17:20:21.627223+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"81231","name":"広瀬","prefecture":"山口県","generatedAt":"2026-11-09T17:25:16.105914+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
