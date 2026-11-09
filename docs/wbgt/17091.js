@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"17091","name":"西興部","prefecture":"北海道","generatedAt":"2026-11-09T19:20:22.303303+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"17091","name":"西興部","prefecture":"北海道","generatedAt":"2026-11-09T19:25:13.467556+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
