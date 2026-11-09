@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33751","name":"釜石","prefecture":"岩手県","generatedAt":"2026-11-09T14:40:22.667750+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33751","name":"釜石","prefecture":"岩手県","generatedAt":"2026-11-09T14:45:20.338230+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
