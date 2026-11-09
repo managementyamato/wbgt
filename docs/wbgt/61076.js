@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"61076","name":"宮津","prefecture":"京都府","generatedAt":"2026-11-10T00:25:19.471296+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"61076","name":"宮津","prefecture":"京都府","generatedAt":"2026-11-10T00:30:34.507714+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
