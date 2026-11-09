@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"63491","name":"家島","prefecture":"兵庫県","generatedAt":"2026-11-09T21:35:16.768516+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"63491","name":"家島","prefecture":"兵庫県","generatedAt":"2026-11-09T21:40:21.903391+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
