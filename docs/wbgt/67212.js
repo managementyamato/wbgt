@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"67212","name":"加計","prefecture":"広島県","generatedAt":"2026-11-09T12:15:26.344036+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"67212","name":"加計","prefecture":"広島県","generatedAt":"2026-11-09T12:20:20.370960+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
