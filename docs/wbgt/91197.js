@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"91197","name":"那覇","prefecture":"沖縄県","generatedAt":"2026-11-09T23:15:22.497385+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"91197","name":"那覇","prefecture":"沖縄県","generatedAt":"2026-11-09T23:20:21.341998+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
