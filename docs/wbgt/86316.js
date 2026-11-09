@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"86316","name":"本渡","prefecture":"熊本県","generatedAt":"2026-11-09T20:50:18.440035+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"86316","name":"本渡","prefecture":"熊本県","generatedAt":"2026-11-09T20:55:15.384487+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
