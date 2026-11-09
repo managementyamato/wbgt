@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"32407","name":"岩見三内","prefecture":"秋田県","generatedAt":"2026-11-10T08:20:25.793154+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"32407","name":"岩見三内","prefecture":"秋田県","generatedAt":"2026-11-10T08:25:20.437797+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
