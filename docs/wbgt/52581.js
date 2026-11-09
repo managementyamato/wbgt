@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"52581","name":"大垣","prefecture":"岐阜県","generatedAt":"2026-11-10T03:16:12.337107+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"52581","name":"大垣","prefecture":"岐阜県","generatedAt":"2026-11-10T03:25:20.657238+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
