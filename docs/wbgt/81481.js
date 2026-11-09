@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"81481","name":"柳井","prefecture":"山口県","generatedAt":"2026-11-10T06:25:16.742592+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"81481","name":"柳井","prefecture":"山口県","generatedAt":"2026-11-10T06:30:31.430868+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
