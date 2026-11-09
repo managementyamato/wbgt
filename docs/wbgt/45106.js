@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"45106","name":"船橋","prefecture":"千葉県","generatedAt":"2026-11-09T18:20:19.876903+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"45106","name":"船橋","prefecture":"千葉県","generatedAt":"2026-11-09T18:25:15.766539+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
