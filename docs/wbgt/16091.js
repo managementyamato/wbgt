@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"16091","name":"小樽","prefecture":"北海道","generatedAt":"2026-11-10T11:00:48.875619+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"16091","name":"小樽","prefecture":"北海道","generatedAt":"2026-11-10T11:05:16.496790+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
