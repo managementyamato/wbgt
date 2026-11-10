@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"42302","name":"伊勢崎","prefecture":"群馬県","generatedAt":"2026-11-10T12:15:21.942511+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"42302","name":"伊勢崎","prefecture":"群馬県","generatedAt":"2026-11-10T12:20:29.459270+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
