@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48196","name":"信州新町","prefecture":"長野県","generatedAt":"2026-11-10T14:55:17.359379+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48196","name":"信州新町","prefecture":"長野県","generatedAt":"2026-11-10T15:00:42.530362+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
