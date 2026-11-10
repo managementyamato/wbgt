@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"63496","name":"明石","prefecture":"兵庫県","generatedAt":"2026-11-10T10:35:23.900918+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"63496","name":"明石","prefecture":"兵庫県","generatedAt":"2026-11-10T10:40:22.024026+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
