@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"15311","name":"月形","prefecture":"北海道","generatedAt":"2026-11-10T13:10:18.788841+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"15311","name":"月形","prefecture":"北海道","generatedAt":"2026-11-10T13:15:22.450672+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
