@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48466","name":"奈川","prefecture":"長野県","generatedAt":"2026-11-11T08:15:20.710519+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48466","name":"奈川","prefecture":"長野県","generatedAt":"2026-11-11T08:20:19.268853+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
