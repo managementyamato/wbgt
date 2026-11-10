@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"12411","name":"上川","prefecture":"北海道","generatedAt":"2026-11-10T23:50:25.114550+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"12411","name":"上川","prefecture":"北海道","generatedAt":"2026-11-10T23:55:16.535955+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
