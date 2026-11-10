@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"91107","name":"名護","prefecture":"沖縄県","generatedAt":"2026-11-10T22:50:20.363276+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"91107","name":"名護","prefecture":"沖縄県","generatedAt":"2026-11-10T22:55:15.723580+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
