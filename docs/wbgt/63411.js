@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"63411","name":"三田","prefecture":"兵庫県","generatedAt":"2026-11-11T04:10:19.540748+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"63411","name":"三田","prefecture":"兵庫県","generatedAt":"2026-11-11T04:15:21.475044+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
