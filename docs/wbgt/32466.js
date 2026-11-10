@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"32466","name":"角館","prefecture":"秋田県","generatedAt":"2026-11-10T08:55:16.201775+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"32466","name":"角館","prefecture":"秋田県","generatedAt":"2026-11-10T09:00:43.982905+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
