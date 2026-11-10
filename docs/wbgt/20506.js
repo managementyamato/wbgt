@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"20506","name":"浦幌","prefecture":"北海道","generatedAt":"2026-11-10T13:20:21.457798+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"20506","name":"浦幌","prefecture":"北海道","generatedAt":"2026-11-10T13:25:15.569884+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
