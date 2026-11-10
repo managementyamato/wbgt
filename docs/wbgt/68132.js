@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"68132","name":"松江","prefecture":"島根県","generatedAt":"2026-11-11T01:30:32.553863+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"68132","name":"松江","prefecture":"島根県","generatedAt":"2026-11-11T01:35:24.157326+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
