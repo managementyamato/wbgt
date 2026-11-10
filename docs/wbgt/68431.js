@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"68431","name":"弥栄","prefecture":"島根県","generatedAt":"2026-11-10T23:05:15.657171+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"68431","name":"弥栄","prefecture":"島根県","generatedAt":"2026-11-10T23:10:23.326922+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
