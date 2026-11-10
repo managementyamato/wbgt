@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"62078","name":"大阪","prefecture":"大阪府","generatedAt":"2026-11-10T17:45:22.545146+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"62078","name":"大阪","prefecture":"大阪府","generatedAt":"2026-11-10T17:50:19.865658+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
