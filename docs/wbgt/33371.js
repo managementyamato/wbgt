@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33371","name":"薮川","prefecture":"岩手県","generatedAt":"2026-11-10T10:45:25.226753+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33371","name":"薮川","prefecture":"岩手県","generatedAt":"2026-11-10T10:50:22.209751+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
