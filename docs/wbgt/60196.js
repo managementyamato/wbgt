@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"60196","name":"東近江","prefecture":"滋賀県","generatedAt":"2026-11-10T16:20:19.344280+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"60196","name":"東近江","prefecture":"滋賀県","generatedAt":"2026-11-10T16:25:14.241053+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
