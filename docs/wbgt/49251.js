@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"49251","name":"河口湖","prefecture":"山梨県","generatedAt":"2026-11-11T03:25:21.321528+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"49251","name":"河口湖","prefecture":"山梨県","generatedAt":"2026-11-11T03:30:31.803552+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
