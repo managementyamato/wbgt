@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"71106","name":"徳島","prefecture":"徳島県","generatedAt":"2026-11-11T07:30:32.541506+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"71106","name":"徳島","prefecture":"徳島県","generatedAt":"2026-11-11T07:35:13.774509+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
