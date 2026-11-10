@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"49151","name":"勝沼","prefecture":"山梨県","generatedAt":"2026-11-10T20:35:16.043684+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"49151","name":"勝沼","prefecture":"山梨県","generatedAt":"2026-11-10T20:40:19.111110+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
