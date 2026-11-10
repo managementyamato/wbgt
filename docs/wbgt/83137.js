@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"83137","name":"日田","prefecture":"大分県","generatedAt":"2026-11-11T02:50:20.546819+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"83137","name":"日田","prefecture":"大分県","generatedAt":"2026-11-11T02:55:17.551855+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
