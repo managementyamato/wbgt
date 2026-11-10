@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"54012","name":"粟島","prefecture":"新潟県","generatedAt":"2026-11-10T13:45:23.809650+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"54012","name":"粟島","prefecture":"新潟県","generatedAt":"2026-11-10T13:50:18.375496+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
