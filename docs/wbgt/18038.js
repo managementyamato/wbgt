@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"18038","name":"羅臼","prefecture":"北海道","generatedAt":"2026-11-11T12:45:18.798750+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"18038","name":"羅臼","prefecture":"北海道","generatedAt":"2026-11-11T12:50:18.747781+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
