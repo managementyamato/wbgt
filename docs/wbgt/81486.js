@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"81486","name":"安下庄","prefecture":"山口県","generatedAt":"2026-11-12T00:00:39.458446+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"81486","name":"安下庄","prefecture":"山口県","generatedAt":"2026-11-12T00:05:15.500442+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
