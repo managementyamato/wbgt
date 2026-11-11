@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"86451","name":"水俣","prefecture":"熊本県","generatedAt":"2026-11-12T02:15:22.181598+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"86451","name":"水俣","prefecture":"熊本県","generatedAt":"2026-11-12T02:20:19.618617+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
