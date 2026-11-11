@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33336","name":"小本","prefecture":"岩手県","generatedAt":"2026-11-11T11:10:20.870196+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33336","name":"小本","prefecture":"岩手県","generatedAt":"2026-11-11T11:15:19.357691+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
