@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"83401","name":"佐伯","prefecture":"大分県","generatedAt":"2026-11-12T07:00:34.979374+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"83401","name":"佐伯","prefecture":"大分県","generatedAt":"2026-11-12T07:05:17.431365+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
