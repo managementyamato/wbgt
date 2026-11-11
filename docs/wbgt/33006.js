@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33006","name":"種市","prefecture":"岩手県","generatedAt":"2026-11-12T03:40:18.578648+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33006","name":"種市","prefecture":"岩手県","generatedAt":"2026-11-12T03:45:20.431816+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
