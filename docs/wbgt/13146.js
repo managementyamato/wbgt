@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"13146","name":"焼尻","prefecture":"北海道","generatedAt":"2026-11-12T02:20:19.618617+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"13146","name":"焼尻","prefecture":"北海道","generatedAt":"2026-11-12T02:25:15.036093+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
