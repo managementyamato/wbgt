@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"41361","name":"佐野","prefecture":"栃木県","generatedAt":"2026-11-11T19:20:18.084660+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"41361","name":"佐野","prefecture":"栃木県","generatedAt":"2026-11-11T19:25:15.739244+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
