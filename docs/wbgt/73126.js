@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"73126","name":"西条","prefecture":"愛媛県","generatedAt":"2026-11-11T11:30:28.978350+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"73126","name":"西条","prefecture":"愛媛県","generatedAt":"2026-11-11T11:35:14.945060+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
