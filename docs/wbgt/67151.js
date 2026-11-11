@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"67151","name":"大朝","prefecture":"広島県","generatedAt":"2026-11-11T15:45:19.630209+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"67151","name":"大朝","prefecture":"広島県","generatedAt":"2026-11-11T15:50:18.768010+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
