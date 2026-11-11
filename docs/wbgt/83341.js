@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"83341","name":"犬飼","prefecture":"大分県","generatedAt":"2026-11-12T07:05:17.431365+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"83341","name":"犬飼","prefecture":"大分県","generatedAt":"2026-11-12T07:10:22.719363+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
