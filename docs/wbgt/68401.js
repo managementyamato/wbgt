@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"68401","name":"瑞穂","prefecture":"島根県","generatedAt":"2026-11-11T09:10:18.894386+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"68401","name":"瑞穂","prefecture":"島根県","generatedAt":"2026-11-11T09:15:27.015350+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
