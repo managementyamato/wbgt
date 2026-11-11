@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"51281","name":"蒲郡","prefecture":"愛知県","generatedAt":"2026-11-12T01:39:03.192886+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"51281","name":"蒲郡","prefecture":"愛知県","generatedAt":"2026-11-12T01:40:20.396765+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
