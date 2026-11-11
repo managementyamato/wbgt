@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"68376","name":"浜田","prefecture":"島根県","generatedAt":"2026-11-11T12:50:18.747781+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"68376","name":"浜田","prefecture":"島根県","generatedAt":"2026-11-11T12:55:14.481015+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
