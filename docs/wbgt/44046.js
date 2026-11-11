@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"44046","name":"小河内","prefecture":"東京都","generatedAt":"2026-11-12T04:55:18.285223+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"44046","name":"小河内","prefecture":"東京都","generatedAt":"2026-11-12T05:00:36.215073+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
