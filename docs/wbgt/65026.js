@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"65026","name":"かつらぎ","prefecture":"和歌山県","generatedAt":"2026-11-11T16:55:17.837913+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"65026","name":"かつらぎ","prefecture":"和歌山県","generatedAt":"2026-11-11T17:00:38.211227+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
