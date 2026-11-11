@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"64127","name":"五條","prefecture":"奈良県","generatedAt":"2026-11-12T00:50:19.231916+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"64127","name":"五條","prefecture":"奈良県","generatedAt":"2026-11-12T00:55:14.375797+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
