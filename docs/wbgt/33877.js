@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33877","name":"大船渡","prefecture":"岩手県","generatedAt":"2026-11-11T12:25:14.912048+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33877","name":"大船渡","prefecture":"岩手県","generatedAt":"2026-11-11T12:30:32.668160+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
