@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"51106","name":"名古屋","prefecture":"愛知県","generatedAt":"2026-11-11T17:15:22.901484+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"51106","name":"名古屋","prefecture":"愛知県","generatedAt":"2026-11-11T17:20:21.332958+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
