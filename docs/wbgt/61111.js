@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"61111","name":"舞鶴","prefecture":"京都府","generatedAt":"2026-11-11T18:25:16.618029+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"61111","name":"舞鶴","prefecture":"京都府","generatedAt":"2026-11-11T18:30:26.683664+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
