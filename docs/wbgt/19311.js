@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"19311","name":"榊町","prefecture":"北海道","generatedAt":"2026-11-11T13:15:19.286538+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"19311","name":"榊町","prefecture":"北海道","generatedAt":"2026-11-11T13:20:17.040996+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
