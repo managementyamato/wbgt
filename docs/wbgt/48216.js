@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48216","name":"菅平","prefecture":"長野県","generatedAt":"2026-11-12T20:35:16.575637+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48216","name":"菅平","prefecture":"長野県","generatedAt":"2026-11-12T20:40:18.519731+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
