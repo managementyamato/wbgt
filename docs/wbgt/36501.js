@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"36501","name":"川内","prefecture":"福島県","generatedAt":"2026-11-12T18:40:18.315660+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"36501","name":"川内","prefecture":"福島県","generatedAt":"2026-11-12T18:45:21.224579+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
