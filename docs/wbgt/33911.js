@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"33911","name":"一関","prefecture":"岩手県","generatedAt":"2026-11-12T14:30:30.889988+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"33911","name":"一関","prefecture":"岩手県","generatedAt":"2026-11-12T14:35:14.861583+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
