@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"84266","name":"佐世保","prefecture":"長崎県","generatedAt":"2026-11-12T13:10:19.177395+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"84266","name":"佐世保","prefecture":"長崎県","generatedAt":"2026-11-12T13:15:21.461179+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
