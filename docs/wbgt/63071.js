@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"63071","name":"兎和野高原","prefecture":"兵庫県","generatedAt":"2026-11-12T23:10:28.188216+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"63071","name":"兎和野高原","prefecture":"兵庫県","generatedAt":"2026-11-12T23:15:21.260918+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
