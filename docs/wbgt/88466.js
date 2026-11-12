@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"88466","name":"枕崎","prefecture":"鹿児島県","generatedAt":"2026-11-12T17:10:17.420663+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"88466","name":"枕崎","prefecture":"鹿児島県","generatedAt":"2026-11-12T17:15:21.746011+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
