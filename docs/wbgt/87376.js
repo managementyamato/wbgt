@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"87376","name":"宮崎","prefecture":"宮崎県","generatedAt":"2026-11-13T02:35:15.265631+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"87376","name":"宮崎","prefecture":"宮崎県","generatedAt":"2026-11-13T02:40:24.254781+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
