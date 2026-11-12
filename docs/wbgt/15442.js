@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"15442","name":"夕張","prefecture":"北海道","generatedAt":"2026-11-12T19:50:22.799466+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"15442","name":"夕張","prefecture":"北海道","generatedAt":"2026-11-12T19:55:15.618885+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
