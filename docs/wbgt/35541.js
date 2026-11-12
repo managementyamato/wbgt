@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"35541","name":"高峰","prefecture":"山形県","generatedAt":"2026-11-13T05:25:15.203483+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"35541","name":"高峰","prefecture":"山形県","generatedAt":"2026-11-13T05:30:32.975502+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
