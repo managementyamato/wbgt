@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"54501","name":"長岡","prefecture":"新潟県","generatedAt":"2026-11-12T21:15:24.048389+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"54501","name":"長岡","prefecture":"新潟県","generatedAt":"2026-11-12T21:20:21.848430+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
