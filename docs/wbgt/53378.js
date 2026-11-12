@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"53378","name":"尾鷲","prefecture":"三重県","generatedAt":"2026-11-12T17:55:14.224562+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"53378","name":"尾鷲","prefecture":"三重県","generatedAt":"2026-11-12T18:00:39.170247+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
