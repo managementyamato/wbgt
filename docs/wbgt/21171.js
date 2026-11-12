@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"21171","name":"森野","prefecture":"北海道","generatedAt":"2026-11-12T15:50:20.938414+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"21171","name":"森野","prefecture":"北海道","generatedAt":"2026-11-12T15:55:15.534362+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
