@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"50561","name":"石廊崎","prefecture":"静岡県","generatedAt":"2026-11-12T20:55:15.428576+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"50561","name":"石廊崎","prefecture":"静岡県","generatedAt":"2026-11-12T21:00:39.202424+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
