@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"45061","name":"我孫子","prefecture":"千葉県","generatedAt":"2026-11-13T00:25:19.410154+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"45061","name":"我孫子","prefecture":"千葉県","generatedAt":"2026-11-13T00:30:35.252364+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
