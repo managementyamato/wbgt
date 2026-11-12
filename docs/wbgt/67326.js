@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"67326","name":"府中","prefecture":"広島県","generatedAt":"2026-11-13T01:55:16.058467+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"67326","name":"府中","prefecture":"広島県","generatedAt":"2026-11-13T02:00:42.193716+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
