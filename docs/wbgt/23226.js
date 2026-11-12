@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"23226","name":"北斗","prefecture":"北海道","generatedAt":"2026-11-13T08:35:19.526186+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"23226","name":"北斗","prefecture":"北海道","generatedAt":"2026-11-13T08:40:18.684286+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
