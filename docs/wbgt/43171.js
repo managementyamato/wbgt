@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"43171","name":"鳩山","prefecture":"埼玉県","generatedAt":"2026-11-12T12:35:15.998854+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"43171","name":"鳩山","prefecture":"埼玉県","generatedAt":"2026-11-12T12:40:04.043608+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
