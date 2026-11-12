@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"14116","name":"山口","prefecture":"北海道","generatedAt":"2026-11-13T08:15:22.266414+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"14116","name":"山口","prefecture":"北海道","generatedAt":"2026-11-13T08:20:21.987387+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
