@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48491","name":"諏訪","prefecture":"長野県","generatedAt":"2026-11-12T18:55:14.457780+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48491","name":"諏訪","prefecture":"長野県","generatedAt":"2026-11-12T19:00:38.054422+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
