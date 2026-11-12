@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48331","name":"軽井沢","prefecture":"長野県","generatedAt":"2026-11-13T00:20:22.837507+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48331","name":"軽井沢","prefecture":"長野県","generatedAt":"2026-11-13T00:25:19.410154+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
