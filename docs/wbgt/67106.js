@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"67106","name":"三次","prefecture":"広島県","generatedAt":"2026-11-13T18:25:20.184165+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"67106","name":"三次","prefecture":"広島県","generatedAt":"2026-11-13T18:30:36.140904+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
