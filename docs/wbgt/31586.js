@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"31586","name":"十和田","prefecture":"青森県","generatedAt":"2026-11-14T00:20:27.554616+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"31586","name":"十和田","prefecture":"青森県","generatedAt":"2026-11-14T00:25:17.022701+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
