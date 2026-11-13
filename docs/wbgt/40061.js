@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"40061","name":"大子","prefecture":"茨城県","generatedAt":"2026-11-14T00:05:31.097091+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"40061","name":"大子","prefecture":"茨城県","generatedAt":"2026-11-14T00:10:22.304886+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
