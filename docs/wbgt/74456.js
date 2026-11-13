@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"74456","name":"中村","prefecture":"高知県","generatedAt":"2026-11-14T04:55:17.028154+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"74456","name":"中村","prefecture":"高知県","generatedAt":"2026-11-14T05:00:38.769846+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
