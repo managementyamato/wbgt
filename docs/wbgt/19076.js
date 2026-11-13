@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"19076","name":"阿寒湖畔","prefecture":"北海道","generatedAt":"2026-11-14T03:30:33.785370+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"19076","name":"阿寒湖畔","prefecture":"北海道","generatedAt":"2026-11-14T03:35:16.154766+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
