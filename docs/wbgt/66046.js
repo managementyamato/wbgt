@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"66046","name":"上長田","prefecture":"岡山県","generatedAt":"2026-11-13T12:15:20.292968+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"66046","name":"上長田","prefecture":"岡山県","generatedAt":"2026-11-13T12:20:18.356189+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
