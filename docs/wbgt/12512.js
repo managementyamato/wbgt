@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"12512","name":"志比内","prefecture":"北海道","generatedAt":"2026-11-14T07:50:18.252667+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"12512","name":"志比内","prefecture":"北海道","generatedAt":"2026-11-14T07:55:16.436314+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
