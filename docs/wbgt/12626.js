@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"12626","name":"富良野","prefecture":"北海道","generatedAt":"2026-11-13T20:45:21.182325+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"12626","name":"富良野","prefecture":"北海道","generatedAt":"2026-11-13T20:50:20.094000+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
