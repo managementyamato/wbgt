@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"53296","name":"南伊勢","prefecture":"三重県","generatedAt":"2026-11-13T22:50:26.098359+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"53296","name":"南伊勢","prefecture":"三重県","generatedAt":"2026-11-13T22:55:14.753199+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
