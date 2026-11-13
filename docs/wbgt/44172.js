@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"44172","name":"大島","prefecture":"東京都","generatedAt":"2026-11-13T23:05:19.776315+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"44172","name":"大島","prefecture":"東京都","generatedAt":"2026-11-13T23:10:19.833820+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
