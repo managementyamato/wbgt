@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"22156","name":"新和","prefecture":"北海道","generatedAt":"2026-11-14T01:30:31.965653+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"22156","name":"新和","prefecture":"北海道","generatedAt":"2026-11-14T01:35:14.698539+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
