@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"20432","name":"帯広","prefecture":"北海道","generatedAt":"2026-11-14T06:04:17.655641+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"20432","name":"帯広","prefecture":"北海道","generatedAt":"2026-11-14T06:05:17.942316+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
