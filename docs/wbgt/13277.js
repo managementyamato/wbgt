@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"13277","name":"留萌","prefecture":"北海道","generatedAt":"2026-11-13T13:30:28.944936+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"13277","name":"留萌","prefecture":"北海道","generatedAt":"2026-11-13T13:35:17.989857+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
