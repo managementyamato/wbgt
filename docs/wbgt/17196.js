@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"17196","name":"滝上","prefecture":"北海道","generatedAt":"2026-11-13T16:35:14.489869+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"17196","name":"滝上","prefecture":"北海道","generatedAt":"2026-11-13T16:40:27.091730+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
