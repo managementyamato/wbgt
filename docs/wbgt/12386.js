@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"12386","name":"江丹別","prefecture":"北海道","generatedAt":"2026-11-14T02:05:15.348144+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"12386","name":"江丹別","prefecture":"北海道","generatedAt":"2026-11-14T02:10:24.756242+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
