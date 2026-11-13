@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"74372","name":"室戸岬","prefecture":"高知県","generatedAt":"2026-11-13T14:20:21.522243+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"74372","name":"室戸岬","prefecture":"高知県","generatedAt":"2026-11-13T14:25:13.819032+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
