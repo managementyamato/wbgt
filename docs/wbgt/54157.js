@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"54157","name":"相川","prefecture":"新潟県","generatedAt":"2026-11-13T15:35:14.654238+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"54157","name":"相川","prefecture":"新潟県","generatedAt":"2026-11-13T15:40:17.677502+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
