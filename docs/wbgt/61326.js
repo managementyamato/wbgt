@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"61326","name":"京田辺","prefecture":"京都府","generatedAt":"2026-11-13T16:45:20.193130+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"61326","name":"京田辺","prefecture":"京都府","generatedAt":"2026-11-13T16:50:19.698128+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
