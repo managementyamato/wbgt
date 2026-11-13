@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"35376","name":"左沢","prefecture":"山形県","generatedAt":"2026-11-14T00:15:34.110415+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"35376","name":"左沢","prefecture":"山形県","generatedAt":"2026-11-14T00:20:27.554616+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
