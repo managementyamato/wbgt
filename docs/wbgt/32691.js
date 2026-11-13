@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"32691","name":"湯沢","prefecture":"秋田県","generatedAt":"2026-11-13T22:10:19.545694+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"32691","name":"湯沢","prefecture":"秋田県","generatedAt":"2026-11-13T22:15:21.290077+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
