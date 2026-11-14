@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"36151","name":"相馬","prefecture":"福島県","generatedAt":"2026-11-15T02:50:26.927733+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"36151","name":"相馬","prefecture":"福島県","generatedAt":"2026-11-15T02:55:14.582972+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
