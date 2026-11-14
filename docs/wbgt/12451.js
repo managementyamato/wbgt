@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"12451","name":"東川","prefecture":"北海道","generatedAt":"2026-11-14T21:05:14.098116+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"12451","name":"東川","prefecture":"北海道","generatedAt":"2026-11-14T21:10:18.092430+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
