@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"32476","name":"田沢湖","prefecture":"秋田県","generatedAt":"2026-11-15T03:30:29.905411+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"32476","name":"田沢湖","prefecture":"秋田県","generatedAt":"2026-11-15T03:35:13.495257+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
