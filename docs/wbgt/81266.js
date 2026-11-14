@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"81266","name":"豊田","prefecture":"山口県","generatedAt":"2026-11-14T09:25:21.520443+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"81266","name":"豊田","prefecture":"山口県","generatedAt":"2026-11-14T09:30:30.357546+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
