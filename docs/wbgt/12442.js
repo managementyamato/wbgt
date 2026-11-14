@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"12442","name":"旭川","prefecture":"北海道","generatedAt":"2026-11-15T01:20:20.776468+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"12442","name":"旭川","prefecture":"北海道","generatedAt":"2026-11-15T01:25:15.050580+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
