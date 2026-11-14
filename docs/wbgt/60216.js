@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"60216","name":"大津","prefecture":"滋賀県","generatedAt":"2026-11-14T11:20:17.267730+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"60216","name":"大津","prefecture":"滋賀県","generatedAt":"2026-11-14T11:25:15.351071+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
