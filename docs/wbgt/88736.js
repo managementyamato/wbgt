@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"88736","name":"中之島","prefecture":"鹿児島県","generatedAt":"2026-11-15T05:25:22.805812+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"88736","name":"中之島","prefecture":"鹿児島県","generatedAt":"2026-11-15T05:30:30.286352+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
