@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"22306","name":"中杵臼","prefecture":"北海道","generatedAt":"2026-11-15T02:25:15.026271+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"22306","name":"中杵臼","prefecture":"北海道","generatedAt":"2026-11-15T02:30:32.110132+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
