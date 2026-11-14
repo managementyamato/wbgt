@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"72086","name":"高松","prefecture":"香川県","generatedAt":"2026-11-15T06:55:13.239270+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"72086","name":"高松","prefecture":"香川県","generatedAt":"2026-11-15T07:00:45.424359+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
