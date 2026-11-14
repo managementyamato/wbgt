@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"34292","name":"石巻","prefecture":"宮城県","generatedAt":"2026-11-14T19:45:20.849523+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"34292","name":"石巻","prefecture":"宮城県","generatedAt":"2026-11-14T19:50:21.564774+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
