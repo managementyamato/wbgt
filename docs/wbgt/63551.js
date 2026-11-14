@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"63551","name":"郡家","prefecture":"兵庫県","generatedAt":"2026-11-14T11:10:26.229796+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"63551","name":"郡家","prefecture":"兵庫県","generatedAt":"2026-11-14T11:15:22.808471+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
