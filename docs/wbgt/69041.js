@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"69041","name":"青谷","prefecture":"鳥取県","generatedAt":"2026-11-15T07:45:19.981937+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"69041","name":"青谷","prefecture":"鳥取県","generatedAt":"2026-11-15T07:50:21.082034+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
