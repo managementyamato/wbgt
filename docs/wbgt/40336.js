@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"40336","name":"つくば","prefecture":"茨城県","generatedAt":"2026-11-14T10:55:14.646637+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"40336","name":"つくば","prefecture":"茨城県","generatedAt":"2026-11-14T11:00:39.451331+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
