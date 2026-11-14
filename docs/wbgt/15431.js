@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"15431","name":"長沼","prefecture":"北海道","generatedAt":"2026-11-14T16:25:14.723722+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"15431","name":"長沼","prefecture":"北海道","generatedAt":"2026-11-14T16:30:30.795717+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
