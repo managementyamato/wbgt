@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"88317","name":"鹿児島","prefecture":"鹿児島県","generatedAt":"2026-11-15T02:10:20.217950+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"88317","name":"鹿児島","prefecture":"鹿児島県","generatedAt":"2026-11-15T02:15:30.036141+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
