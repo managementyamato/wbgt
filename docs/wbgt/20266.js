@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"20266","name":"上士幌","prefecture":"北海道","generatedAt":"2026-11-15T04:35:16.532716+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"20266","name":"上士幌","prefecture":"北海道","generatedAt":"2026-11-15T04:40:19.296690+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
