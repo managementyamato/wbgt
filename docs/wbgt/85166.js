@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"85166","name":"白石","prefecture":"佐賀県","generatedAt":"2026-11-14T20:45:21.723279+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"85166","name":"白石","prefecture":"佐賀県","generatedAt":"2026-11-14T20:50:18.438064+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
