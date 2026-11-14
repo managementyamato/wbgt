@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"48381","name":"立科","prefecture":"長野県","generatedAt":"2026-11-14T10:23:20.331797+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"48381","name":"立科","prefecture":"長野県","generatedAt":"2026-11-14T10:25:16.655752+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
