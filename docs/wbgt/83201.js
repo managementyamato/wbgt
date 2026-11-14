@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"83201","name":"湯布院","prefecture":"大分県","generatedAt":"2026-11-14T09:05:15.987023+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"83201","name":"湯布院","prefecture":"大分県","generatedAt":"2026-11-14T09:10:18.849518+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
