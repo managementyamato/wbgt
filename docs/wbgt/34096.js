@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"34096","name":"川渡","prefecture":"宮城県","generatedAt":"2026-11-15T01:35:14.456770+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"34096","name":"川渡","prefecture":"宮城県","generatedAt":"2026-11-15T01:40:16.873012+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
