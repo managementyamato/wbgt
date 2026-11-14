@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"63121","name":"和田山","prefecture":"兵庫県","generatedAt":"2026-11-14T21:50:24.770390+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"63121","name":"和田山","prefecture":"兵庫県","generatedAt":"2026-11-14T21:55:14.646899+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
