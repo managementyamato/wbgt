@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"91011","name":"伊是名","prefecture":"沖縄県","generatedAt":"2026-11-15T08:40:22.824274+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"91011","name":"伊是名","prefecture":"沖縄県","generatedAt":"2026-11-15T08:45:19.188998+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
