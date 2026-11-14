@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"69101","name":"倉吉","prefecture":"鳥取県","generatedAt":"2026-11-14T23:55:17.429655+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"69101","name":"倉吉","prefecture":"鳥取県","generatedAt":"2026-11-15T00:00:40.751122+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
