@@ -1,1 +1,1 @@
-window.__WBGT_CB && window.__WBGT_CB({"code":"71266","name":"日和佐","prefecture":"徳島県","generatedAt":"2026-11-15T04:10:24.495613+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
+window.__WBGT_CB && window.__WBGT_CB({"code":"71266","name":"日和佐","prefecture":"徳島県","generatedAt":"2026-11-15T04:15:20.182731+09:00","updated":"2026-10-22T00:25:00+09:00","current":null,"history":[],"forecast":[]});
